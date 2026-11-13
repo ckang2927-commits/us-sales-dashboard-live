@@ -1,0 +1,33 @@
+{
+  "schema": "complete-html-gzip-parts.v1",
+  "title": "美国站经营数据看板",
+  "version": "2026.11.13-514aead62cd5",
+  "generatedAt": "2026-11-13T10:05:10.666221+00:00",
+  "compression": "gzip",
+  "htmlBytes": 198682854,
+  "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
+  "compressedBytes": 56400395,
+  "compressedSha256": "050900ae00e35e57710ce68c586daefd164101fc518c1960b070b079412ca797",
+  "parts": [
+    {
+      "url": "part-001-f1050dfddf0ab2c9.bin",
+      "bytes": 20971520,
+      "sha256": "f1050dfddf0ab2c972a47a9da1aebc0ac4e201cc5424bba31f40da88260d18b0"
+    },
+    {
+      "url": "part-002-5e5e9682607daa4d.bin",
+      "bytes": 20971520,
+      "sha256": "5e5e9682607daa4db8276128e42eb6eb727dedafd4a4363c50adcf59aef8271c"
+    },
+    {
+      "url": "part-003-972d8697875e944b.bin",
+      "bytes": 14457355,
+      "sha256": "972d8697875e944bc77cdc74108e82f594265a6592ff79ef8a4172b83e8ca07c"
+    }
+  ],
+  "readySelectors": [
+    "#cxSalesBody .ov-overview",
+    "#rfModule"
+  ],
+  "integrity": "每片SHA-256；单gzip流CRC及原文长度；本地完整原文SHA-256回读"
+}
