@@ -1,0 +1,67 @@
+
+<style>
+/* 顶部模块导航恢复文字与底线选中，筛选按钮仍沿原有选中样式。 */
+.page-nav button.fa-state-control {
+ background:none !important;
+ border:0 !important;
+ border-bottom:2px solid transparent !important;
+ border-radius:0 !important;
+ box-shadow:none !important;
+ color:var(--muted,#64748b) !important;
+}
+.page-nav button.fa-state-control.active,
+.page-nav button.fa-state-control[aria-pressed="true"] {
+ color:var(--navy,#3b547b) !important;
+ border-bottom-color:var(--navy,#3b547b) !important;
+ font-weight:650;
+}
+
+</style>
+<script>
+/* 销量保留平台柱内数量，金额仅显示合计；统计与点击沿用现有模型。 */
+(function () {
+ 'use strict';
+ if(window.salesDisplayModel?.ready)return;
+ const ui=window.faUiModel;
+ function allowedMeasures(){
+  if(ui?.state.measure==='share')ui.state.measure='amount';
+  if(ui?.state.detailMeasure==='share')ui.state.detailMeasure='amount';
+ }
+ const previousOverview=ovOverviewHtml;
+ ovOverviewHtml=function(){
+  const fragment=document.createElement('template');
+  fragment.innerHTML=previousOverview.apply(this,arguments);
+  fragment.content.querySelectorAll('#operatingDailyPanel').forEach(node=>node.remove());
+  return fragment.innerHTML;
+ };
+ const previousTrend=sxTrendHtml;
+ sxTrendHtml=function(){
+  allowedMeasures();
+  const options=arguments[1]||{},action=options.actionAttribute||'data-sx-bucket';
+  const measure=action==='data-sx-detail-bucket'?ui?.state.detailMeasure:action==='data-sx-bucket'?ui?.state.measure:'units';
+  let html=previousTrend.apply(this,arguments);
+  if(measure==='amount')html=html.replace(/<text\b(?=[^>]*\bclass="[^"]*\bsx-trend-segment-label\b)[^>]*>[\s\S]*?<\/text>/g,'');
+  return html.replace(/<button\b(?=[^>]*\bdata-fa-measure="share")[^>]*>[\s\S]*?<\/button>/g,'');
+ };
+ function title(){
+  if(cxState.view!=='sales')return;
+  const heading=document.querySelector('header h1'),section=document.querySelector('#cxSalesPane h2');
+  if(heading)heading.textContent='全部SKU销量';
+  if(section)section.textContent='全部SKU销量';
+ }
+ const previousSales=cxRenderSales;
+ cxRenderSales=function(){allowedMeasures();const result=previousSales.apply(this,arguments);title();return result;};
+ const previousDetail=cxRenderSku;
+ cxRenderSku=function(){allowedMeasures();return previousDetail.apply(this,arguments);};
+ const previousView=setPageView;
+ setPageView=function(){const result=previousView.apply(this,arguments);title();return result;};
+ if(ui){const previousMeasure=ui.setMeasure;ui.setMeasure=function(measure,redraw,detail){return previousMeasure(measure==='share'?'amount':measure,redraw,detail);};}
+ allowedMeasures();
+ window.salesDisplayModel={ready:true};
+ if(cxState.view==='sales')cxRenderSales();
+})();
+
+</script>
+<script>
+(function(){if(!window.salesDisplayModel?.ready)throw new Error("销量展示精简尚未初始化");var node=document.createElement("span");node.id="qtyLabelsReady";node.hidden=true;document.body.appendChild(node);})();
+</script>
