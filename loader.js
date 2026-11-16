@@ -6,6 +6,8 @@
  const diagnostic={phase:'starting',verifiedParts:0,compressedBytes:0,decodedBytes:0,ready:false,htmlHashComputed:false};
  window.dashboardTransport=diagnostic;
  const bytes=value=>(value/1024/1024).toFixed(1)+' MB';
+ const downloadBytes=()=>manifest.compressedBytes+(manifest.extension?.bytes||0);
+ const partCount=()=>manifest.parts.length+(manifest.extension?1:0);
  const abort=()=>{throw new DOMException('加载已取消','AbortError');};
  function state(phase,message,description,value){diagnostic.phase=phase;status.textContent=message;detail.textContent=description;if(value==null)progress.removeAttribute('value');else progress.value=Math.max(0,Math.min(100,value));}
  function fail(error){
@@ -27,6 +29,10 @@
   if(value?.schema!=='complete-html-gzip-parts.v1'||value.compression!=='gzip'||!Array.isArray(value.parts)||!value.parts.length)throw new Error('版本信息不完整，请重新加载。');
   if(!Number.isSafeInteger(value.htmlBytes)||value.htmlBytes<1||value.htmlBytes>536870912||!Number.isSafeInteger(value.compressedBytes)||value.compressedBytes<1||!/^[a-f0-9]{64}$/.test(value.htmlSha256))throw new Error('版本校验信息异常，请重新加载。');
   if(value.parts.some(part=>!Number.isSafeInteger(part.bytes)||part.bytes<1||part.bytes>20971520||!/^[a-f0-9]{64}$/.test(part.sha256)||new URL(part.url,location.href).origin!==location.origin)||value.parts.reduce((sum,part)=>sum+part.bytes,0)!==value.compressedBytes)throw new Error('数据分片信息异常，请重新加载。');
+  if(value.extension){
+   const extra=value.extension;
+   if(!Number.isSafeInteger(extra.bytes)||extra.bytes<1||extra.bytes>20971520||!/^[a-f0-9]{64}$/.test(extra.sha256)||new URL(extra.url,location.href).origin!==location.origin||!Number.isSafeInteger(extra.insertAt)||extra.insertAt<0||extra.insertAt>value.htmlBytes||value.renderedHtmlBytes!==value.htmlBytes+extra.bytes||!/^[a-f0-9]{64}$/.test(value.renderedHtmlSha256))throw new Error('更新版本信息异常，请重新加载。');
+  }
   return value;
  }
  async function hash(blob){const digest=await crypto.subtle.digest('SHA-256',await blob.arrayBuffer());return Array.from(new Uint8Array(digest),byte=>byte.toString(16).padStart(2,'0')).join('');}
@@ -36,7 +42,7 @@
   if(!response.ok)throw new Error('数据暂时无法读取（HTTP '+response.status+'），请重新加载；若需要登录，请先完成登录。');
   if(!response.body)throw new Error('浏览器未返回完整数据流，请重新加载。');
   const reader=response.body.getReader(),chunks=[];let count=0;
-  try{for(;;){const {done,value}=await reader.read();if(done)break;count+=value.byteLength;received+=value.byteLength;if(count>part.bytes)throw new Error('数据大小与版本不一致，请重新加载最新版本。');chunks.push(value);diagnostic.compressedBytes=received;state('downloading','正在读取看板 '+Math.floor(received/manifest.compressedBytes*100)+'%','第 '+(index+1)+' / '+manifest.parts.length+' 部分 · '+bytes(received)+' / '+bytes(manifest.compressedBytes),received/manifest.compressedBytes*100);}}finally{reader.releaseLock();}
+  try{for(;;){const {done,value}=await reader.read();if(done)break;count+=value.byteLength;received+=value.byteLength;if(count>part.bytes)throw new Error('数据大小与版本不一致，请重新加载最新版本。');chunks.push(value);diagnostic.compressedBytes=received;state('downloading','正在读取看板 '+Math.floor(received/downloadBytes()*100)+'%','第 '+(index+1)+' / '+partCount()+' 部分 · '+bytes(received)+' / '+bytes(downloadBytes()),received/downloadBytes()*100);}}finally{reader.releaseLock();}
   if(count!==part.bytes)throw new Error('数据传输中断，请检查网络后重新加载。');
   const blob=new Blob(chunks,{type:'application/octet-stream'});chunks.length=0;
   if(await hash(blob)!==part.sha256)throw new Error('数据校验未通过，可能是网络缓存或登录页面替代了数据，请重新加载。');
@@ -48,9 +54,10 @@
   const response=await fetch('./dashboard-manifest.json?updated='+Date.now(),{credentials:'same-origin',cache:'no-store',signal:controller.signal});
   if(!response.ok)throw new Error('暂时无法读取版本信息（HTTP '+response.status+'），请重新加载。');
   try{manifest=validate(await response.json());}catch(error){if(error instanceof SyntaxError)throw new Error('版本信息无法读取，请先完成网站登录，再重新加载。');throw error;}
-  diagnostic.version=manifest.version;diagnostic.expectedHtmlSha256=manifest.htmlSha256;document.title=manifest.title||'美国站经营数据看板';
+  diagnostic.version=manifest.version;diagnostic.expectedHtmlSha256=manifest.renderedHtmlSha256||manifest.htmlSha256;document.title=manifest.title||'美国站经营数据看板';
   const parts=[];
   for(let index=0;index<manifest.parts.length;index++)parts.push(await download(manifest.parts[index],index));
+  const extension=manifest.extension?await download(manifest.extension,manifest.parts.length):null;
   if(controller.signal.aborted)abort();
   state('decompressing','正在恢复完整看板','下载校验已完成，正在浏览器本地恢复页面。',0);
   const compressed=new Blob(parts,{type:'application/octet-stream'});parts.length=0;
@@ -58,6 +65,11 @@
   let html;
   try{html=await new Response(compressed.stream().pipeThrough(new DecompressionStream('gzip')).pipeThrough(counter)).blob();}catch(error){if(error.name==='AbortError')throw error;throw new Error('完整页面恢复失败，请重新加载；持续失败时请联系看板维护人员。');}
   if(html.size!==manifest.htmlBytes)throw new Error('完整页面大小校验未通过，请重新加载。');
+  if(extension){
+   html=new Blob([html.slice(0,manifest.extension.insertAt),extension,html.slice(manifest.extension.insertAt)],{type:'text/html;charset=utf-8'});
+   if(html.size!==manifest.renderedHtmlBytes)throw new Error('更新页面大小校验未通过，请重新加载。');
+  }
+  diagnostic.renderedBytes=html.size;
   if(controller.signal.aborted)abort();
   state('starting-app','正在启动看板','数据已完整恢复，正在启动图表和查询模块。',null);
   objectUrl=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));
@@ -65,7 +77,8 @@
    try{
     if(controller.signal.aborted)return;
     if(frame.contentWindow.location.href!==objectUrl)return;
-    for(const selector of manifest.readySelectors||[])if(!frame.contentDocument.querySelector(selector))throw new Error('看板尚未正常启动，可能被浏览器策略阻止，请重新加载或更新浏览器。');
+    const required=[...(manifest.readySelectors||[]),...(manifest.extension?.readySelectors||[])];
+    for(const selector of required)if(!frame.contentDocument.querySelector(selector))throw new Error('看板尚未正常启动，可能被浏览器策略阻止，请重新加载或更新浏览器。');
     if(startTimer)clearTimeout(startTimer);diagnostic.frameOrigin=frame.contentWindow.origin;diagnostic.ready=true;diagnostic.phase='ready';ready=true;frame.style.visibility='visible';panel.hidden=true;cancel.hidden=true;
    }catch(error){fail(error);}
   });
