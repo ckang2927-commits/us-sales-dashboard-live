@@ -1,7 +1,7 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.16-sales-inventory-a03afb096b06",
+  "version": "2026.11.16-sku-query-e5c97ef3256a",
   "generatedAt": "2026-11-13T10:05:10.666221+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
@@ -51,17 +51,23 @@
         "url": "sales-inventory-addon-3b6f6ec7f410efd1.txt",
         "bytes": 1766982,
         "sha256": "3b6f6ec7f410efd1e48c595262ef0f4808366594f43f995f27a15e97b2bdad32"
+      },
+      {
+        "url": "sku-query-period-9448b3a836139dbe.txt",
+        "bytes": 2427451,
+        "sha256": "9448b3a836139dbe9a45a415e68bcc304b565cab5925ae175e8b051077905c90"
       }
     ],
-    "bytes": 9555952,
-    "sha256": "67a8812cdf66f206d87ff2a60d51ec8a28a8ad98c63ea25d2e46c5a4ef36b69e",
+    "bytes": 11983403,
+    "sha256": "4df9c8964aeb838789457aad74ebb7444bec3663b2a6c39231e8431ebf83e7c7",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
       "#raShowRefunds",
-      "#spPatchReady"
+      "#spPatchReady",
+      "#qpPatchReady"
     ]
   },
-  "renderedHtmlBytes": 208238806,
-  "renderedHtmlSha256": "a03afb096b06f0ef32bc5a72a31db7b07b615acf0b478a968e0127a1ee8852cb"
+  "renderedHtmlBytes": 210666257,
+  "renderedHtmlSha256": "e5c97ef3256ab44a46b60c99a32d426eea7eb4a99ec885bba451ba5fec935e2f"
 }
