@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.16-quantity-labels-ed090b80ac8b",
-  "generatedAt": "2026-11-16T05:25:18.099673+00:00",
+  "version": "2026.11.16-sales-refresh-a56accb7c4d7",
+  "generatedAt": "2026-11-16T07:41:15.451364+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -66,10 +66,50 @@
         "url": "quantity-labels-44c269da053db6a4.txt",
         "bytes": 3009,
         "sha256": "44c269da053db6a42554fff4d3870ae2ba2ae21071d91d9ee13f029bedefd31e"
+      },
+      {
+        "url": "sales-refresh-01-639d670b1cca4bf0.txt",
+        "bytes": 2097152,
+        "sha256": "639d670b1cca4bf026dc8f3cf8d8321629ebf4ef133fe5463dfa8e30b243f193"
+      },
+      {
+        "url": "sales-refresh-02-47dc8df16862e8da.txt",
+        "bytes": 2097152,
+        "sha256": "47dc8df16862e8daba35a334d8d0a8749524615c7bc69cc4cb4582ce9c4d5e99"
+      },
+      {
+        "url": "sales-refresh-03-23761c5d560c03ec.txt",
+        "bytes": 2097151,
+        "sha256": "23761c5d560c03ec2fe182bea046cef3f10b1b799d9d41ad64f517e475524da1"
+      },
+      {
+        "url": "sales-refresh-04-a2bdf9dc503cd153.txt",
+        "bytes": 2097152,
+        "sha256": "a2bdf9dc503cd1535ae99e6fabc7816ae24742d7039241b4d7bc7e82561cbc18"
+      },
+      {
+        "url": "sales-refresh-05-cd22b2386422f02c.txt",
+        "bytes": 2097152,
+        "sha256": "cd22b2386422f02c6a97e14aad4f3898c89750159fe16ebf5092852f3e589ccb"
+      },
+      {
+        "url": "sales-refresh-06-170bc5ef6dfe246c.txt",
+        "bytes": 2097152,
+        "sha256": "170bc5ef6dfe246c51dc96a6c2e4321288e55ca5514803103926723550154a0c"
+      },
+      {
+        "url": "sales-refresh-07-f64c264064714db6.txt",
+        "bytes": 2097152,
+        "sha256": "f64c264064714db65677adf5c6b66caee6945f6cf9ad5bfdc92c7bcd4e3a6537"
+      },
+      {
+        "url": "sales-refresh-08-81e440ea19e5bc62.txt",
+        "bytes": 1419441,
+        "sha256": "81e440ea19e5bc622a4c401c3b6f1fed99fb70137c6801a67ac246dd74ddb5e3"
       }
     ],
-    "bytes": 12067486,
-    "sha256": "e5c4205ded2faf0e9ce11ca3c18a2e3c3672b807cb18318646b4b8cc570430b0",
+    "bytes": 28166990,
+    "sha256": "00102425064e926c3254aab893c18d1105ef85b717fa5de61c6f723797a2e445",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -77,9 +117,10 @@
       "#spPatchReady",
       "#qpPatchReady",
       "#faPatchReady",
-      "#qtyLabelsReady"
+      "#qtyLabelsReady",
+      "#salesRefreshReady"
     ]
   },
-  "renderedHtmlBytes": 210750340,
-  "renderedHtmlSha256": "ed090b80ac8bd3d15c0ac3ec8113385fad7f1312a53f127bea113215175ce624"
+  "renderedHtmlBytes": 226849844,
+  "renderedHtmlSha256": "a56accb7c4d788c6a57f79ab75a3d779cbc037542205e8e59f2aabc7a728b6a9"
 }
