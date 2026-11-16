@@ -6,8 +6,9 @@
  const diagnostic={phase:'starting',verifiedParts:0,compressedBytes:0,decodedBytes:0,ready:false,htmlHashComputed:false};
  window.dashboardTransport=diagnostic;
  const bytes=value=>(value/1024/1024).toFixed(1)+' MB';
+ const extensionParts=extra=>extra?(Array.isArray(extra.parts)?extra.parts:[extra]):[];
  const downloadBytes=()=>manifest.compressedBytes+(manifest.extension?.bytes||0);
- const partCount=()=>manifest.parts.length+(manifest.extension?1:0);
+ const partCount=()=>manifest.parts.length+extensionParts(manifest.extension).length;
  const abort=()=>{throw new DOMException('加载已取消','AbortError');};
  function state(phase,message,description,value){diagnostic.phase=phase;status.textContent=message;detail.textContent=description;if(value==null)progress.removeAttribute('value');else progress.value=Math.max(0,Math.min(100,value));}
  function fail(error){
@@ -31,7 +32,9 @@
   if(value.parts.some(part=>!Number.isSafeInteger(part.bytes)||part.bytes<1||part.bytes>20971520||!/^[a-f0-9]{64}$/.test(part.sha256)||new URL(part.url,location.href).origin!==location.origin)||value.parts.reduce((sum,part)=>sum+part.bytes,0)!==value.compressedBytes)throw new Error('数据分片信息异常，请重新加载。');
   if(value.extension){
    const extra=value.extension;
-   if(!Number.isSafeInteger(extra.bytes)||extra.bytes<1||extra.bytes>20971520||!/^[a-f0-9]{64}$/.test(extra.sha256)||new URL(extra.url,location.href).origin!==location.origin||!Number.isSafeInteger(extra.insertAt)||extra.insertAt<0||extra.insertAt>value.htmlBytes||value.renderedHtmlBytes!==value.htmlBytes+extra.bytes||!/^[a-f0-9]{64}$/.test(value.renderedHtmlSha256))throw new Error('更新版本信息异常，请重新加载。');
+   const validPart=part=>{try{return typeof part?.url==='string'&&part.url.length>0&&Number.isSafeInteger(part.bytes)&&part.bytes>0&&part.bytes<=20971520&&/^[a-f0-9]{64}$/.test(part.sha256)&&new URL(part.url,location.href).origin===location.origin;}catch(_){return false;}};
+   const validParts=extra.parts===undefined?validPart(extra):Array.isArray(extra.parts)&&extra.parts.length>0&&extra.parts.every(validPart)&&extra.parts.reduce((sum,part)=>sum+part.bytes,0)===extra.bytes;
+   if(!Number.isSafeInteger(extra.bytes)||extra.bytes<1||extra.bytes>20971520||!/^[a-f0-9]{64}$/.test(extra.sha256)||!validParts||!Number.isSafeInteger(extra.insertAt)||extra.insertAt<0||extra.insertAt>value.htmlBytes||value.renderedHtmlBytes!==value.htmlBytes+extra.bytes||!/^[a-f0-9]{64}$/.test(value.renderedHtmlSha256))throw new Error('更新版本信息异常，请重新加载。');
   }
   return value;
  }
@@ -57,7 +60,15 @@
   diagnostic.version=manifest.version;diagnostic.expectedHtmlSha256=manifest.renderedHtmlSha256||manifest.htmlSha256;document.title=manifest.title||'美国站经营数据看板';
   const parts=[];
   for(let index=0;index<manifest.parts.length;index++)parts.push(await download(manifest.parts[index],index));
-  const extension=manifest.extension?await download(manifest.extension,manifest.parts.length):null;
+  const extensions=[];
+  for(const [index,part]of extensionParts(manifest.extension).entries())extensions.push(await download(part,manifest.parts.length+index));
+  if(manifest.extension&&Array.isArray(manifest.extension.parts)){
+   const extension=new Blob(extensions,{type:'application/octet-stream'});
+   if(extension.size!==manifest.extension.bytes)throw new Error('更新数据合计大小校验未通过，请重新加载。');
+   if(await hash(extension)!==manifest.extension.sha256)throw new Error('更新数据合并校验未通过，请重新加载。');
+   diagnostic.extensionHashComputed=true;
+  }
+  diagnostic.verifiedExtensionParts=extensions.length;
   if(controller.signal.aborted)abort();
   state('decompressing','正在恢复完整看板','下载校验已完成，正在浏览器本地恢复页面。',0);
   const compressed=new Blob(parts,{type:'application/octet-stream'});parts.length=0;
@@ -65,8 +76,8 @@
   let html;
   try{html=await new Response(compressed.stream().pipeThrough(new DecompressionStream('gzip')).pipeThrough(counter)).blob();}catch(error){if(error.name==='AbortError')throw error;throw new Error('完整页面恢复失败，请重新加载；持续失败时请联系看板维护人员。');}
   if(html.size!==manifest.htmlBytes)throw new Error('完整页面大小校验未通过，请重新加载。');
-  if(extension){
-   html=new Blob([html.slice(0,manifest.extension.insertAt),extension,html.slice(manifest.extension.insertAt)],{type:'text/html;charset=utf-8'});
+  if(manifest.extension){
+   html=new Blob([html.slice(0,manifest.extension.insertAt),...extensions,html.slice(manifest.extension.insertAt)],{type:'text/html;charset=utf-8'});
    if(html.size!==manifest.renderedHtmlBytes)throw new Error('更新页面大小校验未通过，请重新加载。');
   }
   diagnostic.renderedBytes=html.size;
