@@ -1,0 +1,47 @@
+
+<script>
+/* 销量页面展示精简；统计、图形几何及平台点击沿用现有模型。 */
+(function () {
+ 'use strict';
+ if(window.salesDisplayModel?.ready)return;
+ const ui=window.faUiModel;
+ function allowedMeasures(){
+  if(ui?.state.measure==='share')ui.state.measure='amount';
+  if(ui?.state.detailMeasure==='share')ui.state.detailMeasure='amount';
+ }
+ const previousOverview=ovOverviewHtml;
+ ovOverviewHtml=function(){
+  const fragment=document.createElement('template');
+  fragment.innerHTML=previousOverview.apply(this,arguments);
+  fragment.content.querySelectorAll('#operatingDailyPanel').forEach(node=>node.remove());
+  return fragment.innerHTML;
+ };
+ const previousTrend=sxTrendHtml;
+ sxTrendHtml=function(){
+  allowedMeasures();
+  return previousTrend.apply(this,arguments)
+   .replace(/<text\b(?=[^>]*\bclass="[^"]*\bsx-trend-segment-label\b)[^>]*>[\s\S]*?<\/text>/g,'')
+   .replace(/<button\b(?=[^>]*\bdata-fa-measure="share")[^>]*>[\s\S]*?<\/button>/g,'');
+ };
+ function title(){
+  if(cxState.view!=='sales')return;
+  const heading=document.querySelector('header h1'),section=document.querySelector('#cxSalesPane h2');
+  if(heading)heading.textContent='全部SKU销量';
+  if(section)section.textContent='全部SKU销量';
+ }
+ const previousSales=cxRenderSales;
+ cxRenderSales=function(){allowedMeasures();const result=previousSales.apply(this,arguments);title();return result;};
+ const previousDetail=cxRenderSku;
+ cxRenderSku=function(){allowedMeasures();return previousDetail.apply(this,arguments);};
+ const previousView=setPageView;
+ setPageView=function(){const result=previousView.apply(this,arguments);title();return result;};
+ if(ui){const previousMeasure=ui.setMeasure;ui.setMeasure=function(measure,redraw,detail){return previousMeasure(measure==='share'?'amount':measure,redraw,detail);};}
+ allowedMeasures();
+ window.salesDisplayModel={ready:true};
+ if(cxState.view==='sales')cxRenderSales();
+})();
+
+</script>
+<script>
+(function(){if(!window.salesDisplayModel?.ready)throw new Error("销量展示精简尚未初始化");var node=document.createElement("span");node.id="sdPatchReady";node.hidden=true;document.body.appendChild(node);})();
+</script>
