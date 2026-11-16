@@ -34,7 +34,7 @@
    const extra=value.extension;
    const validPart=part=>{try{return typeof part?.url==='string'&&part.url.length>0&&Number.isSafeInteger(part.bytes)&&part.bytes>0&&part.bytes<=20971520&&/^[a-f0-9]{64}$/.test(part.sha256)&&new URL(part.url,location.href).origin===location.origin;}catch(_){return false;}};
    const validParts=extra.parts===undefined?validPart(extra):Array.isArray(extra.parts)&&extra.parts.length>0&&extra.parts.every(validPart)&&extra.parts.reduce((sum,part)=>sum+part.bytes,0)===extra.bytes;
-   if(!Number.isSafeInteger(extra.bytes)||extra.bytes<1||extra.bytes>20971520||!/^[a-f0-9]{64}$/.test(extra.sha256)||!validParts||!Number.isSafeInteger(extra.insertAt)||extra.insertAt<0||extra.insertAt>value.htmlBytes||value.renderedHtmlBytes!==value.htmlBytes+extra.bytes||!/^[a-f0-9]{64}$/.test(value.renderedHtmlSha256))throw new Error('更新版本信息异常，请重新加载。');
+   if(!Number.isSafeInteger(extra.bytes)||extra.bytes<1||extra.bytes>(extra.parts===undefined?20971520:134217728)||!/^[a-f0-9]{64}$/.test(extra.sha256)||!validParts||!Number.isSafeInteger(extra.insertAt)||extra.insertAt<0||extra.insertAt>value.htmlBytes||value.renderedHtmlBytes!==value.htmlBytes+extra.bytes||value.renderedHtmlBytes>536870912||!/^[a-f0-9]{64}$/.test(value.renderedHtmlSha256))throw new Error('更新版本信息异常，请重新加载。');
   }
   return value;
  }
