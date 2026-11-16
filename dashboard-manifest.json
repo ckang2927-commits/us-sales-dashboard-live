@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.16-sales-display-48deb7c056d9",
-  "generatedAt": "2026-11-16T04:46:52.209283+00:00",
+  "version": "2026.11.16-nav-style-d2f34768a2d3",
+  "generatedAt": "2026-11-16T05:05:36.095474+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -66,10 +66,15 @@
         "url": "sales-display-b391ac9b447e44f6.txt",
         "bytes": 2186,
         "sha256": "b391ac9b447e44f647e68032b90160c1adb8ae881959078234879f3662a54dc5"
+      },
+      {
+        "url": "nav-style-07036d39de6fc547.txt",
+        "bytes": 791,
+        "sha256": "07036d39de6fc547cc5aa6ce00d6d43283f98a5477a997cb8d03e4bed0eff057"
       }
     ],
-    "bytes": 12066663,
-    "sha256": "c3d30cacab249f7d5c369c8016cbcc8ec328dd906d96a6333cf57eb0e44175fe",
+    "bytes": 12067454,
+    "sha256": "e7b860bff6c4e01f6e012ef63a44194122bff35133ad388a6ece70e637034c91",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -77,9 +82,10 @@
       "#spPatchReady",
       "#qpPatchReady",
       "#faPatchReady",
-      "#sdPatchReady"
+      "#sdPatchReady",
+      "#navStyleReady"
     ]
   },
-  "renderedHtmlBytes": 210749517,
-  "renderedHtmlSha256": "48deb7c056d910f08e5eefced775f6e5aae2aa73ceba15da3eac2c4eefa08016"
+  "renderedHtmlBytes": 210750308,
+  "renderedHtmlSha256": "d2f34768a2d325a24700f8510eb17451cf0bdf234e3e228d0097f7c596ce124a"
 }
