@@ -1,7 +1,7 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.13-514aead62cd5",
+  "version": "2026.11.16-432d6aa54ddf",
   "generatedAt": "2026-11-13T10:05:10.666221+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
@@ -39,5 +39,17 @@
     "#cxSalesBody .ov-overview",
     "#rfModule"
   ],
-  "integrity": "每片SHA-256；单gzip流CRC及原文长度；本地完整原文SHA-256回读"
+  "integrity": "每片SHA-256；单gzip流CRC及原文长度；本地完整原文SHA-256回读",
+  "extension": {
+    "url": "refund-aftersales-839fb1f05947f0b4.txt",
+    "bytes": 7788970,
+    "sha256": "839fb1f05947f0b40d42284c1393112faf7329bd20c87d240c79054d3b0f0a12",
+    "insertAt": 198682839,
+    "readySelectors": [
+      "#raPane",
+      "#raShowRefunds"
+    ]
+  },
+  "renderedHtmlBytes": 206471824,
+  "renderedHtmlSha256": "432d6aa54ddfe779da2b27432dd463e9a0cb5d5899c2cbf133bc2f043469cbaa"
 }
