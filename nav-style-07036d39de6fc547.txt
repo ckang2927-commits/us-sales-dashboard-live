@@ -1,0 +1,22 @@
+
+<style>
+/* 顶部模块导航恢复文字与底线选中，筛选按钮仍沿原有选中样式。 */
+.page-nav button.fa-state-control {
+ background:none !important;
+ border:0 !important;
+ border-bottom:2px solid transparent !important;
+ border-radius:0 !important;
+ box-shadow:none !important;
+ color:var(--muted,#64748b) !important;
+}
+.page-nav button.fa-state-control.active,
+.page-nav button.fa-state-control[aria-pressed="true"] {
+ color:var(--navy,#3b547b) !important;
+ border-bottom-color:var(--navy,#3b547b) !important;
+ font-weight:650;
+}
+
+</style>
+<script>
+(function(){if(!document.querySelector(".page-nav"))throw new Error("导航尚未初始化");var node=document.createElement("span");node.id="navStyleReady";node.hidden=true;document.body.appendChild(node);})();
+</script>
