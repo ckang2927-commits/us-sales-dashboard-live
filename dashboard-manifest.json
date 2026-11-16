@@ -1,7 +1,7 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.16-432d6aa54ddf",
+  "version": "2026.11.16-sales-inventory-a03afb096b06",
   "generatedAt": "2026-11-13T10:05:10.666221+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
@@ -41,15 +41,27 @@
   ],
   "integrity": "每片SHA-256；单gzip流CRC及原文长度；本地完整原文SHA-256回读",
   "extension": {
-    "url": "refund-aftersales-839fb1f05947f0b4.txt",
-    "bytes": 7788970,
-    "sha256": "839fb1f05947f0b40d42284c1393112faf7329bd20c87d240c79054d3b0f0a12",
+    "parts": [
+      {
+        "url": "refund-aftersales-839fb1f05947f0b4.txt",
+        "bytes": 7788970,
+        "sha256": "839fb1f05947f0b40d42284c1393112faf7329bd20c87d240c79054d3b0f0a12"
+      },
+      {
+        "url": "sales-inventory-addon-3b6f6ec7f410efd1.txt",
+        "bytes": 1766982,
+        "sha256": "3b6f6ec7f410efd1e48c595262ef0f4808366594f43f995f27a15e97b2bdad32"
+      }
+    ],
+    "bytes": 9555952,
+    "sha256": "67a8812cdf66f206d87ff2a60d51ec8a28a8ad98c63ea25d2e46c5a4ef36b69e",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
-      "#raShowRefunds"
+      "#raShowRefunds",
+      "#spPatchReady"
     ]
   },
-  "renderedHtmlBytes": 206471824,
-  "renderedHtmlSha256": "432d6aa54ddfe779da2b27432dd463e9a0cb5d5899c2cbf133bc2f043469cbaa"
+  "renderedHtmlBytes": 208238806,
+  "renderedHtmlSha256": "a03afb096b06f0ef32bc5a72a31db7b07b615acf0b478a968e0127a1ee8852cb"
 }
