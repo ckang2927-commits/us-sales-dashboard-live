@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.17-net-sales-9fd8587ee203",
-  "generatedAt": "2026-11-17T01:35:32.168939+00:00",
+  "version": "2026.11.17-profit-price-dce77091dff8",
+  "generatedAt": "2026-11-17T04:59:28.603864+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -116,10 +116,50 @@
         "url": "net-sales-tail-03-1a57f9a1722aa920.txt",
         "bytes": 1552538,
         "sha256": "1a57f9a1722aa9203f55c7d845ac2784e2c87b54f8af942cb237f1d8a2607714"
+      },
+      {
+        "url": "profit-price-01-db37a4f9ffb43f39.txt",
+        "bytes": 2097152,
+        "sha256": "db37a4f9ffb43f39306f7b7e9d7f1af19cfb5eaac91b3135dc97aa61663b3397"
+      },
+      {
+        "url": "profit-price-02-0e6be8ecf974c9fe.txt",
+        "bytes": 2097152,
+        "sha256": "0e6be8ecf974c9fe8804f8323e17ec6fb88600ffd4e1741dec5d130a14524be0"
+      },
+      {
+        "url": "profit-price-03-3edde1e5a8e1d873.txt",
+        "bytes": 2097152,
+        "sha256": "3edde1e5a8e1d87329638b9d40cf90fd97f4a0406d533a30a7e426dbeed19a49"
+      },
+      {
+        "url": "profit-price-04-2d8ed5cce3d0074f.txt",
+        "bytes": 2097152,
+        "sha256": "2d8ed5cce3d0074feaf2b9b449ad79971a28b11dbc3880a37f166c834f569ef9"
+      },
+      {
+        "url": "profit-price-05-bd22e71985b06604.txt",
+        "bytes": 2097152,
+        "sha256": "bd22e71985b06604ade16b3c470f92bdd9a3111de66f6032da696c23948b1ddc"
+      },
+      {
+        "url": "profit-price-06-f473a636bc1c9a79.txt",
+        "bytes": 2097152,
+        "sha256": "f473a636bc1c9a799158d470b471936a16ec7d991c32af57ac68a49469139fbf"
+      },
+      {
+        "url": "profit-price-07-d850675812fa244a.txt",
+        "bytes": 2097152,
+        "sha256": "d850675812fa244a8ba551e0361ec6bc0c302ec84cd0fe51b939656e2c1e8f14"
+      },
+      {
+        "url": "profit-price-08-4eb71bc123ea6f13.txt",
+        "bytes": 2087077,
+        "sha256": "4eb71bc123ea6f13fca30919939207aaf06b7383c846bfc6084f783b778f23d9"
       }
     ],
-    "bytes": 32494390,
-    "sha256": "290d5e8f647878934c3ecb6fc097f51dc56e76cd6bfbce4fc3ecae2d9fa26258",
+    "bytes": 49261531,
+    "sha256": "41726012d09b82fd53f27d1d1fcaac07b79d16041fda3e5f93fc3e40996914b2",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -130,9 +170,10 @@
       "#qtyLabelsReady",
       "#salesRefreshReady",
       "#monthTodayReady",
-      "#netRefreshReady"
+      "#netRefreshReady",
+      "#profitPriceReady"
     ]
   },
-  "renderedHtmlBytes": 231177244,
-  "renderedHtmlSha256": "9fd8587ee203d2433dd78f6657543f29d9bbf65f9b8bc7eff59849c30c736d27"
+  "renderedHtmlBytes": 247944385,
+  "renderedHtmlSha256": "dce77091dff8621154f21164509d23d02c030502aeec79ad0266727815d36132"
 }
