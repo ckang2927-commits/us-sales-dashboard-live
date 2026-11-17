@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.17-own-profit-980a5b830e62",
-  "generatedAt": "2026-11-17T06:50:35.280893+00:00",
+  "version": "2026.11.17-own-profit-d4d019d641bc",
+  "generatedAt": "2026-11-17T07:08:37.721180+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -218,13 +218,13 @@
         "sha256": "4da85dcd146e821795c36c3c2c61dc8ab1cbefedb79f0c3d26c8a044e727de57"
       },
       {
-        "url": "own-profit-12-b4e7cbc387b643dd.txt",
-        "bytes": 1267812,
-        "sha256": "b4e7cbc387b643dd78577026438eb32da82ba45ac9ec0e47f1a51a81fc0b90f2"
+        "url": "own-profit-12-db00fde44d431cd5.txt",
+        "bytes": 1269404,
+        "sha256": "db00fde44d431cd5752dc3603e6c429106572dc2fbdd63cfe1c44f70bf357509"
       }
     ],
-    "bytes": 73647946,
-    "sha256": "4da5243239055e8c579f37ef97c62a4d9cef8196e52f3203c246ddaf84290892",
+    "bytes": 73649538,
+    "sha256": "5be25d547dd83e5a57c6c0117098b3e09e7ba3f4cd17b8b67230f5737f9eac9b",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -241,6 +241,6 @@
       "#allSkuOwnProfitReady"
     ]
   },
-  "renderedHtmlBytes": 272330800,
-  "renderedHtmlSha256": "980a5b830e62a46f498343f42080fce77ebc97564582c3a12e82cabe3118e032"
+  "renderedHtmlBytes": 272332392,
+  "renderedHtmlSha256": "d4d019d641bc57029df522a51fe9d93634ab4ef5cfcab39c74486e8e72c0a9d0"
 }
