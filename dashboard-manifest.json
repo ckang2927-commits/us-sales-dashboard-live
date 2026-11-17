@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.16-month-today-0253fb5c80c1",
-  "generatedAt": "2026-11-16T11:49:01.438497+00:00",
+  "version": "2026.11.17-net-sales-9fd8587ee203",
+  "generatedAt": "2026-11-17T01:35:32.168939+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -103,18 +103,23 @@
         "sha256": "f64c264064714db65677adf5c6b66caee6945f6cf9ad5bfdc92c7bcd4e3a6537"
       },
       {
-        "url": "month-today-tail-01-a2318f23a1937e34.txt",
-        "bytes": 2097152,
-        "sha256": "a2318f23a1937e34e46b45a1873bbf5ed4ef62f8d58bc652c1cf740cb6403aca"
+        "url": "net-sales-tail-01-0a82bd5848aa3752.txt",
+        "bytes": 2097151,
+        "sha256": "0a82bd5848aa375235e28c5ca998920a2dfa53bbe0f73967b7b3d9de46070fc4"
       },
       {
-        "url": "month-today-tail-02-81ec14f4537b4b53.txt",
-        "bytes": 339017,
-        "sha256": "81ec14f4537b4b531c4c5ad7002cd7ab9cefa383b9e6bf5765798477e219b4e8"
+        "url": "net-sales-tail-02-df3c14ab0abf5fc7.txt",
+        "bytes": 2097152,
+        "sha256": "df3c14ab0abf5fc7650389974f071e7f549d8bbf20f5c4d224b6f6208a996c43"
+      },
+      {
+        "url": "net-sales-tail-03-1a57f9a1722aa920.txt",
+        "bytes": 1552538,
+        "sha256": "1a57f9a1722aa9203f55c7d845ac2784e2c87b54f8af942cb237f1d8a2607714"
       }
     ],
-    "bytes": 29183718,
-    "sha256": "dea51587122144a3177afcaa62ec647755997739bf571c05a8b47847c9279472",
+    "bytes": 32494390,
+    "sha256": "290d5e8f647878934c3ecb6fc097f51dc56e76cd6bfbce4fc3ecae2d9fa26258",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -124,9 +129,10 @@
       "#faPatchReady",
       "#qtyLabelsReady",
       "#salesRefreshReady",
-      "#monthTodayReady"
+      "#monthTodayReady",
+      "#netRefreshReady"
     ]
   },
-  "renderedHtmlBytes": 227866572,
-  "renderedHtmlSha256": "0253fb5c80c1827318e8d7dcd792c760a4480e6676be4b5194d254a1721cc407"
+  "renderedHtmlBytes": 231177244,
+  "renderedHtmlSha256": "9fd8587ee203d2433dd78f6657543f29d9bbf65f9b8bc7eff59849c30c736d27"
 }
