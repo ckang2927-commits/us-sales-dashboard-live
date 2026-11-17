@@ -1,0 +1,440 @@
+
+<script id="btzOwnProfitData" type="application/json">{"schema":"muku.exact-sku-own-order-supplement.v1","sku":"BTZ-001-05","status":"自身成本预估·原订单/原采购/同单配送已闭合","builtDate":"2026-11-17","samples":[{"key":"btz-own-KA1948-20251208-v1","sku":"BTZ-001-05","sourceSku":"BTZ-001-05","shopSku":"BTZ-001-05","platform":"Shopify","store":"KaguyasuUS","sourceStore":"KaguyasuUS","orderId":"KA1948","orderIds":["KA1948"],"sampleDate":"2025-12-08","priceDate":"2025-12-08","costDate":"2026-02-25","sourceDate":"2025-12-08","procurementDate":"2025-12-12","fulfillmentDate":"2026-01-29","quantity":2.0,"revenue":998.94,"price":499.47,"priceItem":384.295,"shipping":82.5,"priceTotal":499.47,"warehouse":"DAO_CA","warehouseStatus":"同SKU同订单原库表及YQN账单闭合，非销售当天在库证明","mappingBasis":"Shopify原Lineitem sku、采购登记SKU、库存出库SKU及YQN账单SKU均精确BTZ-001-05","sourceLineId":"7261376348479|BTZ-001-05","source":{"file":"/Volumes/美国站数据_存储.备份/店铺后台数据/26.11.16/order/shop_kagu_order_25.1.1-26.11.16.csv","sheet":"CSV","row":881,"sku":"BTZ-001-05","order":"KA1948","orderDate":"2025-12-08"},"sourceRows":[881],"sourceLineage":[{"file":"/Volumes/美国站数据_存储.备份/店铺后台数据/26.11.16/order/shop_kagu_order_25.1.1-26.11.16.csv","sheet":"CSV","row":881,"sku":"BTZ-001-05","order":"KA1948","orderDate":"2025-12-08"},{"file":"/Users/linhemuyu/PycharmProjects/macproject/windows_etl_code/ETL_25.12.13/25年-采购登记表-.xlsx","sheet":"12月份采购总表","row":131,"sku":"BTZ-001-05","order":"KA1948","date":"2025-12-12","priceCny":452,"quantity":2,"supplier":"鹿扬","platformOrder":"4939838857630379216"},{"file":"/Volumes/美国站数据_存储.备份/清洗后数据/sale_折扣_生命周期成本明细_20261019_核实补充.csv","sheet":"CSV","row":10201,"sku":"BTZ-001-05","order":"KA1948","purpose":"本SKU原历史模型参数对照"},{"file":"/Volumes/美国站数据_存储.备份/库存数据/库存量/美国站库存表.xlsx","sheet":"库存明细记录（CA）新","row":1626,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","container":"57-TIIU5619250","cbm":0.21965,"inboundDate":"2026-01-29"},{"file":"/Volumes/美国站数据_存储.备份/库存数据/库存量/美国站库存表.xlsx","sheet":"库存明细记录（CA）新","row":1627,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","container":"57-TIIU5619250","cbm":0.224616,"inboundDate":"2026-01-29"},{"file":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","sheet":"作业费","row":3713,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","amount":0.2,"currency":"USD","amountColumn":"T应收费用","tracking":"888295395552","billingItem":"面单费->- "},{"file":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","sheet":"作业费","row":3714,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","amount":4.8,"currency":"USD","amountColumn":"T应收费用","tracking":"888295395552","billingItem":"出库作业费->单件重量=(70 - 100]"},{"file":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","sheet":"作业费","row":3715,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","amount":0.2,"currency":"USD","amountColumn":"T应收费用","tracking":"888295395563","billingItem":"面单费->- "},{"file":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","sheet":"作业费","row":3716,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","amount":4.8,"currency":"USD","amountColumn":"T应收费用","tracking":"888295395563","billingItem":"出库作业费->单件重量=(70 - 100]"},{"file":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","sheet":"配送费","row":483,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","amount":95.5026,"currency":"USD","amountColumn":"AF结算总金额","tracking":"888295395552"},{"file":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","sheet":"配送费","row":484,"sku":"BTZ-001-05","order":"KA1948","warehouse":"DAO_CA","amount":95.5026,"currency":"USD","amountColumn":"AF结算总金额","tracking":"888295395563"}],"salesSourceRefs":[{"file":"/Volumes/美国站数据_存储.备份/店铺后台数据/26.11.16/order/shop_kagu_order_25.1.1-26.11.16.csv","sheet":"CSV","row":881,"sku":"BTZ-001-05","order":"KA1948","orderDate":"2025-12-08"}],"sourceRevenueField":"Shopify Total","incomeBasis":"原订单商品净额768.59＋客户运费165＋消费税65.35=998.94USD；本单两套，税费同步扣除","sourceActualPurchase":64.57142857142857,"sourceOperatingPurchase":96.85714285714286,"sourceActualPurchaseCny":452,"sourceOperatingPurchaseCny":678,"sourceActualPurchaseTotalCny":904,"sourceOperatingPurchaseTotalCny":1356,"sourcePurchaseCurrency":"CNY","sourcePurchaseUsdIsFxModel":true,"sourcePurchaseFxCnyPerUsd":7,"operatingPurchase":96.85714285714286,"truePurchase":64.57142857142857,"purchaseBasis":"同SKU同订单原采购登记452元/套；真实USD=452÷历史模型7，运营=真实×1.5；非(47)源运营采购÷1.5，非付款核销","componentTotals":{"head":34.55402222222222,"tariff":24.214285714285715,"handling":35.54128,"tail":191.0052,"platformFee":42.95,"advertising":166.49,"consumptionTax":65.35,"installation":0.0,"aftersalesReserve":32.27595368253968,"storage":null},"components":{"head":17.27701111111111,"tariff":12.107142857142858,"handling":17.77064,"tail":95.5026,"platformFee":21.475,"advertising":83.245,"consumptionTax":32.675,"installation":0.0,"aftersalesReserve":16.13797684126984,"storage":null},"pureOperatingProfitTotal":212.84497266666668,"pureTrueProfitTotal":277.41640123809526,"operatingProfit":106.42248633333334,"trueProfit":138.70820061904763,"operatingMargin":0.21307082774407538,"trueMargin":0.27771077465923405,"sourceFirstSaleProfitField":null,"sourceFirstSaleProfitTotal":null,"recomputedFirstSaleProfitTotal":245.12092634920634,"firstSaleProfitDifference":null,"sourceAlreadyIncludesStorage":false,"storageIncludedInPureProfit":false,"storageAmountKnown":false,"storageAmount":null,"aftersalesRate":0.05,"eligibleForMargin":true,"missingFields":[],"notes":["仅BTZ-001-05自身订单KA1948；未借BTZ-001-014、BTZ-001-037或BTZ-001-051的采购/费用。","原订单2025-12-08、采购登记2025-12-12、实际入库及出库2026-01-29、YQN发票2026-02-25是不同日期，未互相替代；不是近期有动销。","原订单只有此SKU一行，2套；998.94USD=商品853.98−折扣85.39＋运费165＋消费税65.35；消费税已作为支出扣回。","452CNY/套已在25年采购原登记12月份采购总表131行核实，2套采购登记904CNY；原列为采购单价，并非运营加成价。登记/开票不是付款核销证明。","真实采购=452÷7 USD/套、运营采购=真实×1.5；7是历史汇率模型参数，不是付款汇率或当前汇率。","尾程191.0052USD为同SKU同订单两张配送账单合计；出库作业及面单另有10USD原生证据。","完整出入库费用模型按同订单两包总体积0.444266m³×80=35.54128USD；仅扣此模型，不在其上再扣10USD。两者的差额不能称为已核入库费。","头程按同订单实物总体积×560/7.2估算；80/CBM作业与18.75%关税是历史模型参数，不是已结算头程、入库或报关税费。","原清洗关税12.11约为单套64.57×18.75%，未乘2；本次按真实采购总额×18.75%重算24.2142857143，已明确修正数量口径。","平台费42.95≈收入×4.3%，广告166.49=收入÷ROI6，保留此SKU原历史模型的已舍入参数；非该单实际支付手续费/广告归因。","安装0来自原订单只有商品、没有安装或服务收费行；5%售后储备为模型参数，双采购口径共用金额；未用实际退款0来推导售后储备0。","纯利润未计累计仓租；仓租null不表示实付0，含仓率须采用既有同SKU仓储情景另外展示。","因此本样本是自身成本预估，不是财务实结利润。原清洗通用体积0.38m³场景已被此订单实际包件尺寸0.444266m³替代。"],"isEstimate":true,"basisType":"historical","basisLabel":"自身成本预估·历史订单KA1948","estimateStatus":"own_sku_order_procurement_and_bill_with_disclosed_cost_model","estimatedFields":["真实采购=452÷7 USD/套、运营采购=真实×1.5；7是历史汇率模型参数，不是付款汇率或当前汇率。","完整出入库费用模型按同订单两包总体积0.444266m³×80=35.54128USD；仅扣此模型，不在其上再扣10USD。两者的差额不能称为已核入库费。","头程按同订单实物总体积×560/7.2估算；80/CBM作业与18.75%关税是历史模型参数，不是已结算头程、入库或报关税费。","原清洗关税12.11约为单套64.57×18.75%，未乘2；本次按真实采购总额×18.75%重算24.2142857143，已明确修正数量口径。","平台费42.95≈收入×4.3%，广告166.49=收入÷ROI6，保留此SKU原历史模型的已舍入参数；非该单实际支付手续费/广告归因。","安装0来自原订单只有商品、没有安装或服务收费行；5%售后储备为模型参数，双采购口径共用金额；未用实际退款0来推导售后储备0。","纯利润未计累计仓租；仓租null不表示实付0，含仓率须采用既有同SKU仓储情景另外展示。","因此本样本是自身成本预估，不是财务实结利润。原清洗通用体积0.38m³场景已被此订单实际包件尺寸0.444266m³替代。"],"knownFlags":{"revenue":true,"sourcePurchaseCny":true,"paymentFx":false,"sourcePurchasePaid":false,"tailActualBill":true,"outboundActualBill":true,"headActualBill":false,"tariffActualBill":false,"fullInboundOutboundActualBill":false,"platformFeeActual":false,"adAttributionActual":false,"storage":false,"sameSku":true,"sameStore":true,"warehouse":true},"actualOutboundHandlingControlTotal":10,"actualTailBillTotal":191.0052,"handlingModelIncludesOutbound":true,"billOutboundNotAddedAgain":true,"physicalVolumeCbm":0.444266,"legacyGenericVolumeCbm":0.38,"modelParameters":{"headUsdPerCbm":77.77777777777777,"fullHandlingUsdPerCbm":80,"tariffRate":0.1875,"platformFeeRate":0.043,"advertisingRoi":6,"aftersalesRate":0.05}}],"procurementEvidence":[{"file":"/Users/linhemuyu/PycharmProjects/macproject/windows_etl_code/ETL_25.12.13/25年-采购登记表-.xlsx","sheet":"12月份采购总表","row":131,"sku":"BTZ-001-05","order":"KA1948","date":"2025-12-12","priceCny":452,"quantity":2,"supplier":"鹿扬","platformOrder":"4939838857630379216","purchaseMeaning":"原供应商采购单价；未加运营系数","costCurrency":"CNY","totalCny":904,"actualPurchaseUnitCny":452,"operatingPurchaseUnitCny":678,"status":"exact_order_sku_native_register"},{"file":"/Volumes/美国站数据_存储.备份/清洗后数据/周报配套数据_26.11.9/采购单价映射表.xlsx","sheet":"采购单价映射","row":1616,"sha256":"ffed85b4cd49392726c3b075070f51263e20f04dd22412a33a9fc5afe538b2d0","sku":"BTZ-001-05","order":"KA1948","actualPurchaseUnitCny":452,"operatingPurchaseUnitCny":678,"sourceRegisterFile":"25年-采购登记表-.xlsx","sourceOrderDate":"2025-12-12","status":"mapping_corroborated_by_original_register_row131"},{"sku":"BTZ-001-05","sourcePath":"/Users/linhemuyu/Downloads/备货采购登记表 (60).xlsx","sourceSha256":"39e84a09d78d74df4916c063044f75bbc370b438446871bcb704d53f70c14676","sourceSheet":"25年备货","sourceRow":48,"orderId":"WW000","supplier":"义乌市鹿扬家具商行","platform":"1688（新）","platformOrderId":"2433417024597971972","quantity":12,"totalCny":5208,"truePurchaseCny":434,"operatingPurchaseCny":651,"formula":"5208元÷12套=434元；运营采购=434×1.5=651元","costMeaning":"原采购登记的原采购金额/数量；不是付款核销证明，未证当前柜批成本","dateRaw":"1月份","exactOrderDate":null,"unitPriceFormulaCell":"N48无缓存；使用同原行O48/M48重算","batchBinding":null,"usdFxVerified":false,"truePurchaseUsd":null,"operatingPurchaseUsd":null,"status":"exact_sku_native_procurement_register","role":"同SKU另一采购批价434元，仅作历史对照，不替换KA1948原登记452元、不平均"}],"notes":["仅BTZ-001-05自身订单KA1948；未借BTZ-001-014、BTZ-001-037或BTZ-001-051的采购/费用。","原订单2025-12-08、采购登记2025-12-12、实际入库及出库2026-01-29、YQN发票2026-02-25是不同日期，未互相替代；不是近期有动销。","原订单只有此SKU一行，2套；998.94USD=商品853.98−折扣85.39＋运费165＋消费税65.35；消费税已作为支出扣回。","452CNY/套已在25年采购原登记12月份采购总表131行核实，2套采购登记904CNY；原列为采购单价，并非运营加成价。登记/开票不是付款核销证明。","真实采购=452÷7 USD/套、运营采购=真实×1.5；7是历史汇率模型参数，不是付款汇率或当前汇率。","尾程191.0052USD为同SKU同订单两张配送账单合计；出库作业及面单另有10USD原生证据。","完整出入库费用模型按同订单两包总体积0.444266m³×80=35.54128USD；仅扣此模型，不在其上再扣10USD。两者的差额不能称为已核入库费。","头程按同订单实物总体积×560/7.2估算；80/CBM作业与18.75%关税是历史模型参数，不是已结算头程、入库或报关税费。","原清洗关税12.11约为单套64.57×18.75%，未乘2；本次按真实采购总额×18.75%重算24.2142857143，已明确修正数量口径。","平台费42.95≈收入×4.3%，广告166.49=收入÷ROI6，保留此SKU原历史模型的已舍入参数；非该单实际支付手续费/广告归因。","安装0来自原订单只有商品、没有安装或服务收费行；5%售后储备为模型参数，双采购口径共用金额；未用实际退款0来推导售后储备0。","纯利润未计累计仓租；仓租null不表示实付0，含仓率须采用既有同SKU仓储情景另外展示。","因此本样本是自身成本预估，不是财务实结利润。原清洗通用体积0.38m³场景已被此订单实际包件尺寸0.444266m³替代。"],"sources":[{"path":"/Users/linhemuyu/Downloads/sale_折扣_采购成本明细_字段与利润计算学习文档.md","bytes":9784,"sha256":"353b72186372eaf696c15e73776b47a7a01c7ba0c958efdebbacc2ed08b23b30"},{"path":"/Users/linhemuyu/PycharmProjects/macproject/windows_etl_code/ETL_25.12.13/25年-采购登记表-.xlsx","bytes":52046173,"sha256":"62d4ba7e33a7caa288567157f983a962317cd37ed50f4fee07be116eabb40952"},{"path":"/Volumes/美国站数据_存储.备份/库存数据/YQN账单/Muku Home Inc202602账单$180881.01.xlsx","bytes":2941590,"sha256":"1230d02c8506cea1701f18a25f8a3efb15a781fb6dc69fffc190e3bb0cb7252d"},{"path":"/Volumes/美国站数据_存储.备份/库存数据/库存量/美国站库存表.xlsx","bytes":31820884,"sha256":"d5a2ca0b650dda510a1ee0554654f70af7203fa2fc04da97f9b1535ec700e875"},{"path":"/Volumes/美国站数据_存储.备份/店铺后台数据/26.11.16/order/shop_kagu_order_25.1.1-26.11.16.csv","bytes":1754566,"sha256":"b217880d158d7fdad3d7c0907db76286a74eeb2d4e321bd8fab4f030aa8d17c6"},{"path":"/Volumes/美国站数据_存储.备份/清洗后数据/sale_折扣_生命周期成本明细_20261019_核实补充.csv","bytes":8373814,"sha256":"50f42ec9058f3a0c44fd854c2c7c1e1f6c240f37cf85f0cae7a85168efc9ed13"}],"controls":{"orderCount":1,"quantity":2,"platformCount":1,"storeCount":1,"platforms":["Shopify"],"stores":["KaguyasuUS"],"noCrossSkuFallback":true,"purchaseRatio":1.5,"sourcePurchaseRealCnyVerified":true,"nativeTailTotal":191.0052,"nativeOutboundOnly":10.0,"fullHandlingUsed":35.54128,"outboundNotDoubleCounted":true,"pureOperatingMargin":0.21307082774407538,"pureTrueMargin":0.27771077465923405},"notActualFinancialProfit":true,"excludedOtherSkus":["BTZ-001-014","BTZ-001-037","BTZ-001-051"]}</script>
+<style>.db-range-note{display:block;flex-basis:100%;margin:8px 0 0;padding:7px 9px;border-left:3px solid #6b86aa;background:#f2f5fa;color:#5b6e8a;font-size:11px;line-height:1.7}
+#sxDateDialog .db-state-control{background:#fff;color:#4b6387;border:1px solid #cbd7e8;border-radius:3px;transition:background .12s ease,color .12s ease}
+#sxDateDialog .db-state-control[aria-pressed="true"]{background:#415d87!important;color:#fff!important;border-color:#415d87!important;box-shadow:inset 0 0 0 1px #415d87}
+#sxDateDialog .db-state-control:hover{background:#edf2f9}
+#sxDateDialog .db-state-control:focus-visible,[data-sales-date-bounded]:focus-visible{outline:2px solid #6c8ab1;outline-offset:2px}
+#sxDateDialog #sxDateCoverageHint{color:#5f7492;line-height:1.75}
+#sxDateDialog #sxDateError{color:#8b693e;font-size:11px;line-height:1.7}
+[data-sales-date-bounded]{accent-color:#415d87}
+
+.sq-secondary .pcf-field{min-width:210px;flex:0 1 240px}
+.pcf-field select{background:#fff;color:#4a6082;border-color:#ccd7e7}
+.pcf-field.pcf-selected select{background:#edf2f9;border-color:#6f88aa;color:#36537f;font-weight:600}
+.pcf-field small{display:block;margin-top:4px;color:#7b879a;font-size:10px;line-height:1.5}
+.pcf-applied{margin:5px 0 8px}
+.pcf-chip{background:#edf2f9!important;border-color:#cad7e9!important;color:#3d5a82!important}
+.pcf-chip button{color:#5c7294!important}
+.pcf-field select:focus-visible,.pcf-chip button:focus-visible{outline:2px solid #7893b7;outline-offset:2px}
+</style>
+<script>
+/* 仅接入BTZ-001-05自身补证；其余SKU、销量、库存与原方案不变。 */
+(function (root) {
+  'use strict';
+  const packet = JSON.parse(document.getElementById('btzOwnProfitData').textContent);
+  const model = root.ppProfitModel, sku = 'BTZ-001-05';
+  if (!model?.ready || packet.sku !== sku) throw Error('BTZ自身利润补证身份无效');
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const rows = (packet.samples || []).filter(row => {
+    if (row.sku !== sku || row.sourceSku !== sku) throw Error('补证包含其他SKU，已停止接入');
+    return row.eligibleForMargin === true && row.quantity > 0 && row.revenue > 0 && finite(row.pureOperatingProfitTotal) && finite(row.pureTrueProfitTotal);
+  });
+  const compare = (a, b) => {
+    for (const key of ['sampleDate', 'platform', 'store', 'orderId', 'key']) {
+      const left = String(a[key] || ''), right = String(b[key] || '');
+      if (left !== right) return left < right ? 1 : -1;
+    }
+    return 0;
+  };
+  function decorate(row) {
+    const storage = model.storageFor(row), fee = storage.storage?.representative;
+    const factor = 1 + (row.aftersalesRate ?? 0.05), reduction = finite(fee) ? factor * fee * row.quantity : null;
+    return { ...row, storageScenario: storage, storageFee: finite(fee) ? fee : null,
+      storageFeeLower: storage.storage?.lower ?? null, storageFeeUpper: storage.storage?.upper ?? null,
+      storageOperatingProfitTotal: finite(reduction) ? row.pureOperatingProfitTotal - reduction : null,
+      storageTrueProfitTotal: finite(reduction) ? row.pureTrueProfitTotal - reduction : null,
+      storageOperatingMargin: finite(reduction) ? (row.pureOperatingProfitTotal - reduction) / row.revenue : null,
+      storageTrueMargin: finite(reduction) ? (row.pureTrueProfitTotal - reduction) / row.revenue : null,
+      storageReserveDeltaTotal: finite(fee) ? (factor - 1) * fee * row.quantity : null };
+  }
+  if (rows.length) {
+    const original = model.forSku;
+    model.forSku = function (id, filters = {}) {
+      const base = original(id, filters);
+      if (id !== sku) return base;
+      const originalRows = (model.data.orders.samples || []).filter(row => row.sku === sku && row.eligibleForMargin === true);
+      const dedup = new Map([...originalRows, ...rows].map(row => [row.platform + '|' + row.store + '|' + row.orderId + '|' + row.sku, row]));
+      const matching = [...dedup.values()].filter(row => model.channelMatches(row, filters)).sort(compare);
+      const samples = matching.slice(0, 20).map(decorate), summary = model.aggregate(samples);
+      if (!summary) return { ...base, ownEvidence: packet };
+      return { ...base, historical: summary, forecast: null, selected: summary, samples, historicalSamples: samples,
+        validSampleCount: matching.length, status: packet.displayStatus || '同SKU自身成本预估', isForecast: false,
+        isEstimate: true, isOwnCostEstimate: true, noCrossSkuFallback: true, ownEvidence: packet,
+        record: { ...(base.record || {}), sku, status: packet.displayStatus || '同SKU自身成本预估', recent20: summary } };
+    };
+  }
+  const esc = value => cxEsc(String(value ?? ''));
+  function evidenceHtml() {
+    const sources = packet.sources || [], notes = packet.notes || [];
+    return '<section class="pp-section btz-own-evidence"><h3>BTZ-001-05 · 自身订单与采购补证</h3>'
+      + '<div class="pp-note pp-warning">' + esc(packet.summary || '已核自身订单KA1948（2025-12-08，独立站KaguyasuUS，2套）、采购登记¥452/套及同单尾程$191.0052。其余费用含已披露模型；以下是自身成本预估，不是实际结算利润。') + '</div>'
+      + '<details><summary>查看自身采购、账单与估算口径</summary>'
+      + notes.map(note => '<p>' + esc(note) + '</p>').join('')
+      + (packet.procurementEvidence?.length ? '<h4>自身采购／批次核对</h4>' + cxTable(['采购／批次', '金额与口径', '证据'], packet.procurementEvidence.map(row => [
+        esc(row.label || row.batch || row.orderId || row.order || ''),
+        esc(row.description || row.basis || [
+          '真实采购¥' + (row.actualPurchaseUnitCny ?? row.priceCny ?? row.truePurchaseCny ?? '未核') + '/套',
+          '运营采购¥' + (row.operatingPurchaseUnitCny ?? row.operatingPurchaseCny ?? '未核') + '/套',
+          row.quantity != null ? row.quantity + '套' : '', row.role || row.purchaseMeaning || row.costMeaning || ''
+        ].filter(Boolean).join('；')),
+        esc(row.sourceText || [row.file || row.sourcePath || row.path, row.sheet || row.sourceSheet, row.row ?? row.sourceRow].filter(value => value != null).join(' · '))
+      ])) : '')
+      + (sources.length ? '<h4>本次补证来源 · ' + sources.length + '项</h4>' + cxTable(['来源', '定位／口径'], sources.map(source => [
+        esc(source.file || source.path || ''), esc([source.sheet, source.row != null ? '第' + source.row + '行' : '', source.basis || source.note || ''].filter(Boolean).join(' · '))
+      ])) : '') + '</details></section>';
+  }
+  const priorCell = sqUiCell;
+  sqUiCell = function (column, row) {
+    const html = priorCell(column, row);
+    if (row.sku !== sku || !row._profit20?.isOwnCostEstimate) return html;
+    if (column === 'operatingMargin' || column === 'realMargin') return html.replace(/最近\d+单综合/g, '同SKU自身成本预估');
+    if (column === 'scope') return html.replace('利润参考仓：', '报价原参考仓：') + '<small class="pp-sub">利润来源：' + esc(row._profit20.selected.stores.join('；')) + '</small>';
+    if (column === 'evidence') return html.replace('pp-status ', 'pp-status estimate ');
+    return html;
+  };
+  const priorDetail = cxRenderSku;
+  cxRenderSku = function () {
+    const result = priorDetail.apply(this, arguments);
+    if (cxState.detail?.sku !== sku) return result;
+    const body = cxEl('cxDetailBody');
+    if (body?.querySelector('.pp-section') && !body.querySelector('.btz-own-evidence')) body.insertAdjacentHTML('afterbegin', evidenceHtml());
+    return result;
+  };
+  const priorSources = model.data.sourceFiles || [];
+  model.data.sourceFiles = [...priorSources, ...(packet.sources || []).map(source => ({ ...source, role: 'BTZ-001-05-own-evidence' }))];
+  model.clearCaches(); root.spQueryPeriodModel?.clearCaches();
+  if (cxState.view === 'query') sqRenderQuery();
+  root.btzOwnProfitModel = { ready: true, sku, packet, sampleCount: rows.length, forSku: filters => model.forSku(sku, filters), evidenceHtml };
+})(window);
+
+</script>
+
+<script>
+/* 销售日期只允许已覆盖来源区间；不修改订单、退款、库存或利润原始数据。 */
+(function (root) {
+  'use strict';
+  if (root.salesDateBounds?.ready) return;
+  const core = root.salesRefreshModel;
+  if (!core?.runtimeReady) throw Error('销售日期边界需要完整销量运行时');
+  const validDay = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') && Number.isFinite(Date.parse(value + 'T00:00:00Z')) && new Date(value + 'T00:00:00Z').toISOString().slice(0, 10) === value;
+  const addDays = (day, days) => { const d = new Date(day + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + days); return d.toISOString().slice(0, 10); };
+  const monthEnd = month => { const d = new Date(month + '-01T00:00:00Z'); d.setUTCMonth(d.getUTCMonth() + 1, 0); return d.toISOString().slice(0, 10); };
+  const get = id => typeof cxEl === 'function' ? cxEl(id) : document.getElementById(id);
+  let lastNotice = '', pendingSync = false, selectedPreset = '';
+
+  function coverage(mode = 'native') {
+    // auto 可在完整年度来源中选日，再由既有模型判断净量或历史参考，孤立旧记录不扩边界。
+    const key = mode === 'native' ? 'native' : 'annual', source = core.getCoverage(key);
+    if (!source || !validDay(source.start) || !validDay(source.end) || source.start > source.end) throw Error('销售来源边界无效：' + key);
+    return { start: source.start, end: source.end, mode: key };
+  }
+  function normalize(start, end, mode = 'native') {
+    const source = coverage(mode), requestedStart = start, requestedEnd = end;
+    if (!validDay(start) || !validDay(end) || start > end) return { ...source, start, end, valid: false, changed: false, requestedStart, requestedEnd, message: '请填写有效日期，开始日期不能晚于结束日期。' };
+    const bounded = value => value < source.start ? source.start : value > source.end ? source.end : value;
+    start = bounded(start); end = bounded(end);
+    const changed = start !== requestedStart || end !== requestedEnd;
+    return { start, end, mode: source.mode, valid: true, changed, requestedStart, requestedEnd,
+      message: changed ? '已调整为来源可用日期 ' + start + '—' + end + '；可选范围 ' + source.start + '—' + source.end + '，范围外不补0。' : '可选来源日期 ' + source.start + '—' + source.end + '；实际选择 ' + start + '—' + end + '。' };
+  }
+  function preset(key, mode = 'native') {
+    const source = coverage(key === 'year' ? 'annual' : mode);
+    const range = key === 'year' ? { start: source.start, end: source.end, dataset: 'annual' }
+      : key === 'monthToday' || key === 'monthLatest' ? { start: source.end.slice(0, 7) + '-01', end: source.end }
+        : { start: addDays(source.end, 1 - Math.max(1, Number(key) || 30)), end: source.end };
+    return { ...normalize(range.start, range.end, source.mode), ...(range.dataset ? { dataset: range.dataset } : {}) };
+  }
+  function monthRange(month, mode) {
+    const source = coverage(mode);
+    if (!/^\d{4}-\d{2}$/.test(month || '') || !validDay(month + '-01')) return { valid: false, changed: false, message: '请选择有效月份。' };
+    const bounded = month < source.start.slice(0, 7) ? source.start.slice(0, 7) : month > source.end.slice(0, 7) ? source.end.slice(0, 7) : month;
+    const result = normalize(bounded + '-01', monthEnd(bounded), mode);
+    return { ...result, month: bounded, changed: result.changed || bounded !== month,
+      message: (bounded !== month ? '该月份未覆盖，已调整为 ' + bounded + '。' : '') + result.message };
+  }
+  function dialogMode() { return get('sxDateDataset')?.value || sxState.dataset || 'native'; }
+  function readDialog() { return { start: get('sxDateStart')?.value, end: get('sxDateEnd')?.value }; }
+  function setLimits(start, end, mode, month) {
+    const source = coverage(mode);
+    for (const input of [start, end]) if (input) { input.min = source.start; input.max = source.end; input.setAttribute('data-sales-date-bounded', 'true'); }
+    if (month) { month.min = source.start.slice(0, 7); month.max = source.end.slice(0, 7); month.setAttribute('data-sales-date-bounded', 'true'); }
+  }
+  function applyDialog(result, notify = true) {
+    if (result.valid) {
+      if (get('sxDateStart')) get('sxDateStart').value = result.start;
+      if (get('sxDateEnd')) get('sxDateEnd').value = result.end;
+      if (get('sxMonth')) get('sxMonth').value = result.end.slice(0, 7);
+    }
+    const error = get('sxDateError'); if (error) error.textContent = result.valid ? result.changed && notify ? result.message : '' : result.message;
+    if (result.changed) lastNotice = result.message;
+    return result;
+  }
+  function syncDialog(normalizeValues = false) {
+    const dialog = get('sxDateDialog'); if (!dialog || !get('sxDateStart')) return;
+    const mode = dialogMode(), source = coverage(mode);
+    setLimits(get('sxDateStart'), get('sxDateEnd'), mode, get('sxMonth'));
+    if (normalizeValues) applyDialog(normalize(readDialog().start, readDialog().end, mode));
+    const host = dialog.querySelector('.sx-date-presets');
+    if (host) for (const button of host.querySelectorAll('[data-mtt-preset],[data-srf-preset],[data-sx-preset]')) {
+      button.dataset.dbPreset = button.dataset.mttPreset || button.dataset.srfPreset || button.dataset.sxPreset;
+      for (const name of ['mttPreset', 'srfPreset', 'sxPreset']) button.removeAttribute('data-' + name.replace(/[A-Z]/g, c => '-' + c.toLowerCase()));
+    }
+    if (host) {
+      // priorDialog内部先hint再mtt.install，后者会重补旧monthToday；每次同步都归一化并去重。
+      const monthButtons = [...host.querySelectorAll('[data-db-preset="monthToday"],[data-db-preset="monthLatest"]')];
+      let keep = monthButtons.find(button => button.dataset.dbPreset === 'monthLatest') || monthButtons[0];
+      if (!keep) { keep = document.createElement('button'); keep.type = 'button'; host.prepend(keep); }
+      keep.dataset.dbPreset = 'monthLatest'; keep.textContent = '月初至最新数据';
+      for (const button of monthButtons) if (button !== keep) button.remove();
+      if (selectedPreset === 'monthToday') selectedPreset = 'monthLatest';
+    }
+    const range = readDialog(), buttons = [...dialog.querySelectorAll('[data-db-preset]')];
+    const matching = buttons.filter(button => { const expected = preset(button.dataset.dbPreset, mode); return (!expected.dataset || mode === expected.dataset) && range.start === expected.start && range.end === expected.end; });
+    if (!matching.some(button => button.dataset.dbPreset === selectedPreset)) selectedPreset = matching[0]?.dataset.dbPreset || '';
+    for (const button of buttons) {
+      const key = button.dataset.dbPreset, expected = preset(key, mode);
+      if (key === 'monthLatest') button.textContent = '月初至最新数据';
+      if (key === 'year') button.textContent = coverage('annual').start.slice(0, 4) + '年已覆盖 · 历史参考';
+      button.title = expected.start + '—' + expected.end + '；仅选择已覆盖来源日期';
+      button.classList.add('db-state-control');
+      button.setAttribute('aria-pressed', String(key === selectedPreset));
+    }
+    const hint = get('sxDateCoverageHint');
+    if (hint) hint.textContent = (mode === 'annual' ? '历史订单参考' : '已核净量') + '可选来源日期 ' + source.start + '—' + source.end + '。月初/近N天/年度快选均截至来源末日；来源外日期不可选，不补0。';
+  }
+  function boundedFilters(filters = {}) {
+    filters = filters || {};
+    const mode = filters.salesMode === 'native' ? 'native' : filters.salesMode === 'annual' ? 'annual' : 'auto';
+    const result = normalize(filters.start, filters.end, mode);
+    return { filters: result.valid ? { ...filters, start: result.start, end: result.end } : { ...filters }, result };
+  }
+  function queryInputs() {
+    const host = get('sqQueryBody');
+    return { host, start: host?.querySelector('[data-sq-field="start"]'), end: host?.querySelector('[data-sq-field="end"]'), mode: host?.querySelector('[data-sq-field="salesMode"]') };
+  }
+  function syncQuery(normalizeValues = false) {
+    if (typeof sqUiState === 'undefined') return;
+    const inputs = queryInputs(), mode = inputs.mode?.value || sqUiState.draft.salesMode || 'auto';
+    setLimits(inputs.start, inputs.end, mode);
+    if (normalizeValues) {
+      const draft = { ...sqUiState.draft, start: inputs.start?.value || sqUiState.draft.start, end: inputs.end?.value || sqUiState.draft.end, salesMode: mode };
+      const bounded = boundedFilters(draft);
+      if (bounded.result.valid) { Object.assign(sqUiState.draft, bounded.filters); if (inputs.start) inputs.start.value = bounded.filters.start; if (inputs.end) inputs.end.value = bounded.filters.end; }
+      if (bounded.result.changed) lastNotice = bounded.result.message;
+    }
+    if (inputs.host) {
+      let note = inputs.host.querySelector('[data-db-query-note]');
+      if (!note) { const form = inputs.host.querySelector('#sqQueryForm') || inputs.host.querySelector('.sq-filter-card'); if (form) { note = document.createElement('p'); note.dataset.dbQueryNote = 'true'; note.className = 'db-range-note'; form.appendChild(note); } }
+      if (note) { const source = coverage(mode); note.textContent = mode === 'auto' ? '自动口径可选 ' + source.start + '—' + source.end + '；' + coverage('native').start + '起按已核净量，较早日期按年度历史参考。' : (mode === 'native' ? '已核净量' : '历史订单参考') + '可选 ' + source.start + '—' + source.end + '；来源外日期不可选。'; }
+    }
+  }
+  function ensureSalesState() {
+    const result = normalize(sxState.start, sxState.end, sxState.dataset);
+    if (result.valid) { sxState.start = result.start; sxState.end = result.end; }
+    if (result.changed) { sxState.bucket = ''; lastNotice = result.message; }
+    return result;
+  }
+  function ensureQueryState() {
+    if (typeof sqUiState === 'undefined') return;
+    for (const key of ['filters', 'draft']) {
+      const bounded = boundedFilters(sqUiState[key]);
+      if (bounded.result.valid) Object.assign(sqUiState[key], bounded.filters);
+      if (bounded.result.changed) lastNotice = bounded.result.message;
+    }
+  }
+  function syncAll() { syncDialog(); syncQuery(); }
+  function scheduleSync() { if (pendingSync) return; pendingSync = true; Promise.resolve().then(() => { pendingSync = false; syncAll(); }); }
+
+  const priorRange = sxSetRange;
+  sxSetRange = function (start, end, grain) { const result = normalize(start, end, sxState.dataset); if (!result.valid) { lastNotice = result.message; return; } if (result.changed) lastNotice = result.message; return priorRange(result.start, result.end, grain); };
+  const priorDialog = sxDateDialog;
+  sxDateDialog = function () { ensureSalesState(); const result = priorDialog(); syncDialog(true); return result; };
+  const priorHint = sxDateHint;
+  sxDateHint = function () { const result = priorHint.apply(this, arguments); syncDialog(); return result; };
+  const priorSales = cxRenderSales;
+  cxRenderSales = function () { ensureSalesState(); const result = priorSales.apply(this, arguments); syncAll(); return result; };
+  const priorSku = cxRenderSku;
+  cxRenderSku = function () { ensureSalesState(); ensureQueryState(); const result = priorSku.apply(this, arguments); syncAll(); return result; };
+  const priorQuery = sqRenderQuery;
+  sqRenderQuery = function () { ensureQueryState(); const result = priorQuery.apply(this, arguments); syncQuery(); return result; };
+  const priorApply = sqUiApply;
+  sqUiApply = function () {
+    sqUiReadDraft(); const bounded = boundedFilters(sqUiState.draft);
+    if (!bounded.result.valid) { sqUiState.error = bounded.result.message; const host = get('sqQueryBody')?.querySelector('.sq-form-message'); if (host) host.textContent = bounded.result.message; return; }
+    Object.assign(sqUiState.draft, bounded.filters); const inputs = queryInputs(); if (inputs.start) inputs.start.value = bounded.filters.start; if (inputs.end) inputs.end.value = bounded.filters.end;
+    if (bounded.result.changed) lastNotice = bounded.result.message;
+    return priorApply.apply(this, arguments);
+  };
+  const priorExportRows = sqExportRows;
+  sqExportRows = function (filters, ...args) { const bounded = boundedFilters(filters); return bounded.result.valid ? priorExportRows.call(this, bounded.filters, ...args) : []; };
+  const priorQueryModel = sqQuery;
+  sqQuery = function (filters, ...args) { const bounded = boundedFilters(filters); return priorQueryModel.call(this, bounded.filters, ...args); };
+  const priorExport = sqUiExport;
+  sqUiExport = function () { ensureQueryState(); return priorExport.apply(this, arguments); };
+  const queryApi = root.spQueryPeriodModel;
+  if (queryApi) for (const name of ['getRows', 'query', 'salesFor', 'periodCoverage']) {
+    const original = queryApi[name]; if (typeof original !== 'function') continue;
+    queryApi[name] = name === 'salesFor' ? function (sku, filters, ...args) { return original.call(this, sku, boundedFilters(filters).filters, ...args); }
+      : function (filters, ...args) { return original.call(this, boundedFilters(filters).filters, ...args); };
+  }
+  const priorNear = sqUiRecentRange;
+  sqUiRecentRange = function (days) { const result = priorNear(days), bounded = normalize(result.start, result.end, 'native'); return { start: bounded.start, end: bounded.end }; };
+
+  root.addEventListener('click', event => {
+    const button = event.target.closest('[data-db-preset],[data-sx-date-apply],#export,[data-sq-export]');
+    if (!button) return;
+    if (button.id === 'export') { ensureSalesState(); ensureQueryState(); return; }
+    if (button.hasAttribute('data-sq-export')) { ensureQueryState(); return; }
+    if (button.hasAttribute('data-db-preset')) {
+      event.preventDefault(); event.stopImmediatePropagation(); selectedPreset = button.dataset.dbPreset; const result = preset(selectedPreset, dialogMode());
+      if (result.dataset) get('sxDateDataset').value = result.dataset; applyDialog(result); syncDialog(); return;
+    }
+    const result = normalize(readDialog().start, readDialog().end, dialogMode()); applyDialog(result);
+    if (!result.valid) { event.preventDefault(); event.stopImmediatePropagation(); } else syncDialog();
+  }, true);
+  root.addEventListener('change', event => {
+    const target = event.target;
+    if (target.id === 'sxMonth') { event.preventDefault(); event.stopImmediatePropagation(); selectedPreset = ''; applyDialog(monthRange(target.value, dialogMode())); syncDialog(); return; }
+    if (target.id === 'sxDateDataset') { selectedPreset = ''; applyDialog(normalize(readDialog().start, readDialog().end, target.value)); syncDialog(); scheduleSync(); return; }
+    if (['sxDateStart', 'sxDateEnd'].includes(target.id)) { selectedPreset = ''; applyDialog(normalize(readDialog().start, readDialog().end, dialogMode())); syncDialog(); return; }
+    if (target.id === 'sxDataset') { scheduleSync(); return; }
+    if (target.matches?.('#sqQueryBody [data-sq-field="start"],#sqQueryBody [data-sq-field="end"],#sqQueryBody [data-sq-field="salesMode"]')) { syncQuery(true); scheduleSync(); }
+  }, true);
+  document.addEventListener('input', event => {
+    const target = event.target;
+    if (['sxDateStart', 'sxDateEnd', 'sxMonth'].includes(target.id) || target.matches?.('#sqQueryBody [data-sq-field="start"],#sqQueryBody [data-sq-field="end"]')) scheduleSync();
+  }, true);
+  ensureSalesState(); ensureQueryState(); syncAll();
+  root.salesDateBounds = { ready: true, version: '20261117-available-dates-only', coverage, normalize, preset, monthRange, boundedFilters, ensureSalesState, ensureQueryState, syncAll,
+    get lastNotice() { return lastNotice; }, contract: '销售日期只限连续来源覆盖；历史孤立订单不扩完整日期；来源外不补0；退款发生日与计划/ETA不受此约束' };
+  root.salesDateBoundsModel = root.salesDateBounds;
+})(window);
+
+</script>
+
+<script>
+/* 调价记录只在原查询人口内筛选；调价史独立于销量日期，通知不等于逐店已生效。 */
+(function (root) {
+  'use strict';
+  if (root.priceChangeFilterModel?.ready) return;
+  const model = root.ppProfitModel;
+  if (!model?.ready || !root.ppPriceUi) throw Error('调价记录筛选需要利润与价格历史模型');
+  const options = [{ value: '', label: '全部（不限）' }, { value: 'down', label: '有降价记录' }, { value: 'up', label: '有价格上涨记录' }, { value: 'both', label: '降价和上涨均有记录' }];
+  const allowed = new Set(options.map(option => option.value));
+  const normalizeValue = value => allowed.has(value) ? value : '';
+  const labelFor = value => options.find(option => option.value === normalizeValue(value)).label;
+  const esc = value => typeof cxEsc === 'function' ? cxEsc(String(value ?? '')) : String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+  const list = value => Array.isArray(value) ? value : value ? [value] : [];
+  const platformName = value => value === '独立站' ? 'Shopify' : value;
+  const bySku = new Map(), cache = new Map();
+  for (const event of model.data.prices.events || []) {
+    if (!bySku.has(event.sku)) bySku.set(event.sku, []);
+    bySku.get(event.sku).push(event);
+  }
+  function channelMatches(event, filters = {}) {
+    if (model.channelMatches) return model.channelMatches(event, filters);
+    return (!list(filters.platform).length || list(filters.platform).map(platformName).includes(platformName(event.platform)))
+      && (!list(filters.store).length || list(filters.store).includes(event.store));
+  }
+  function eventMatches(event, filters = {}) {
+    // 与已上线ppPriceUi同一规则：精确链接跟随渠道，通用SKU通知保留未指店边界。
+    if (event.exact_listing) return channelMatches(event, filters);
+    const platforms = event.platform_scope || (event.platform ? [event.platform] : []);
+    if (list(filters.platform).length && platforms.length && !list(filters.platform).map(platformName).some(platform => platforms.includes(platform))) return false;
+    if (event.store && list(filters.store).length && !channelMatches({ platform: event.platform, store: event.store }, { store: filters.store })) return false;
+    return true;
+  }
+  function flags(sku, filters = {}) {
+    const key = JSON.stringify([sku, filters.platform || '', filters.store || '']);
+    if (cache.has(key)) return cache.get(key);
+    const events = (bySku.get(sku) || []).filter(event => event.badge_eligible && ['down', 'up'].includes(event.direction) && eventMatches(event, filters));
+    const from = events.map(event => String(event.interval_start || event.date || event.notice_at || '').slice(0, 10)).filter(Boolean).sort();
+    const through = events.map(event => String(event.interval_end || event.date || event.notice_at || '').slice(0, 10)).filter(Boolean).sort();
+    const generic = events.filter(event => !event.exact_listing && !event.store).length;
+    const result = { sku, hasDown: events.some(event => event.direction === 'down'), hasUp: events.some(event => event.direction === 'up'),
+      firstDate: from[0] || '', lastDate: through.at(-1) || '', eventCount: events.length, genericNoticeCount: generic,
+      eventIds: events.map(event => event.event_id), scopeNote: events.length ? '按当前平台／店铺匹配；不按销量日期截断调价史' + (generic ? '；含' + generic + '条未逐店指名的SKU通知，不代表所选店铺已核生效' : '；逐条身份与通知/快照性质见SKU详情') : '当前渠道未检出符合徽标规则的调价记录' };
+    cache.set(key, result); return result;
+  }
+  function matches(sku, value, filters = {}) {
+    const mode = normalizeValue(value);
+    if (!mode) return true;
+    const state = flags(sku, filters);
+    return mode === 'down' ? state.hasDown : mode === 'up' ? state.hasUp : state.hasDown && state.hasUp;
+  }
+  function ensureState() {
+    for (const name of ['filters', 'draft']) sqUiState[name].changeRecord = normalizeValue(sqUiState[name].changeRecord);
+  }
+  const priorBuild = sqBuildRow;
+  sqBuildRow = function (sku, filters) {
+    const row = priorBuild.apply(this, arguments), state = flags(sku, filters);
+    return { ...row, priceChangeDown: state.hasDown, priceChangeUp: state.hasUp, priceChangeFirstDate: state.firstDate, priceChangeLastDate: state.lastDate,
+      priceChangeScopeNote: state.scopeNote, _priceChangeRecord: state };
+  };
+  const priorMatches = sqMatches;
+  sqMatches = function (row, filters) { return priorMatches.apply(this, arguments) && matches(row.sku, filters?.changeRecord, filters); };
+  const priorChips = sqUiFilterChips;
+  sqUiFilterChips = function () {
+    const original = priorChips.apply(this, arguments), selected = normalizeValue(sqUiState.filters.changeRecord);
+    return original + (selected ? '<div class="pcf-applied"><span class="sq-filter-chip pcf-chip">调价记录：' + esc(labelFor(selected))
+      + '<button type="button" data-pcf-remove aria-label="取消调价记录筛选">×</button></span></div>' : '');
+  };
+  function install() {
+    ensureState();
+    const host = typeof cxEl === 'function' ? cxEl('sqQueryBody') : document.getElementById('sqQueryBody');
+    if (!host) return;
+    let select = host.querySelector('[data-sq-field="changeRecord"]');
+    if (!select) {
+      const row = host.querySelector('.sq-secondary');
+      if (!row) return;
+      row.insertAdjacentHTML('beforeend', '<label class="sq-field pcf-field"><span>调价记录</span><select data-sq-field="changeRecord" aria-label="调价记录筛选">'
+        + options.map(option => '<option value="' + option.value + '">' + esc(option.label) + '</option>').join('') + '</select>'
+        + '<small>按渠道调价史筛选；不受销量日期窗口截断</small></label>');
+      select = host.querySelector('[data-sq-field="changeRecord"]');
+    }
+    if (select) { select.value = sqUiState.draft.changeRecord; select.closest?.('.pcf-field')?.classList.toggle('pcf-selected', Boolean(select.value)); }
+  }
+  const priorRender = sqRenderQuery;
+  sqRenderQuery = function () { ensureState(); const result = priorRender.apply(this, arguments); install(); return result; };
+  const api = root.spQueryPeriodModel;
+  if (api?.defaults) { const defaults = api.defaults; api.defaults = function () { return { ...defaults.apply(this, arguments), changeRecord: '' }; }; }
+  const priorExport = sqUiExport;
+  sqUiExport = function () {
+    ensureState();
+    const rows = sqExportRows({ ...sqUiState.filters }, { ...sqUiState.sort }), stateBySku = new Map(rows.map(row => [row.sku, row._priceChangeRecord || flags(row.sku, sqUiState.filters)]));
+    const selected = sqUiState.filters.changeRecord, download = cxDownloadCsv;
+    cxDownloadCsv = function (name, headers, values) {
+      if (!String(name).startsWith('SKU数据查询_')) return download.apply(this, arguments);
+      const skuIndex = headers.indexOf('商品SKU') >= 0 ? headers.indexOf('商品SKU') : headers.indexOf('库存SKU');
+      if (skuIndex < 0) throw Error('调价记录导出缺少SKU定位列');
+      return download(name, [...headers, '调价记录筛选', '有降价记录', '有价格上涨记录', '调价记录最早日期', '调价记录最近日期', '调价记录作用域说明'], values.map(value => {
+        const state = stateBySku.get(value[skuIndex]);
+        if (!state) throw Error('调价记录筛选与导出人口不一致');
+        return [...value, labelFor(selected), state.hasDown ? '是' : '否', state.hasUp ? '是' : '否', state.firstDate || null, state.lastDate || null, state.scopeNote];
+      }));
+    };
+    try { return priorExport.apply(this, arguments); } finally { cxDownloadCsv = download; }
+  };
+  root.addEventListener('click', event => {
+    const button = event.target.closest('[data-pcf-remove]');
+    if (!button) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    sqUiState.filters.changeRecord = ''; sqUiState.draft = { ...sqUiState.filters }; sqUiState.page = 0; sqRenderQuery();
+  }, true);
+  root.addEventListener('change', event => {
+    const select = event.target;
+    if (select.dataset?.sqField !== 'changeRecord') return;
+    sqUiState.draft.changeRecord = normalizeValue(select.value);
+    select.closest?.('.pcf-field')?.classList.toggle('pcf-selected', Boolean(select.value));
+  }, true);
+  ensureState();
+  root.priceChangeFilterModel = { ready: true, version: '20261117-price-record-scope', options, normalizeValue, labelFor, flags, matches, eventMatches, ensureState, install,
+    filterRows: (rows, value, filters = {}) => rows.filter(row => matches(row.sku, value, filters)), clearCaches: () => cache.clear(),
+    contract: '仅筛选原查询人口；平台店铺规则与SKU徽标一致；SKU通用通知不证明逐店生效；调价史独立于销售日期窗口；两类都有记录不推断时间先后' };
+  if (cxState.view === 'query') sqRenderQuery();
+})(window);
+
+</script>
+
+<script>(function(){if(!window.btzOwnProfitModel?.ready||!window.salesDateBoundsModel?.ready||!window.priceChangeFilterModel?.ready)throw Error('同SKU利润、日期边界或调价筛选未就绪');var n=document.createElement('span');n.id='btzDateReady';n.hidden=true;document.body.appendChild(n);})();</script>
