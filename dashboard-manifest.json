@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.17-btz-date-83d0c7f40b49",
-  "generatedAt": "2026-11-17T05:45:36.300128+00:00",
+  "version": "2026.11.17-own-profit-980a5b830e62",
+  "generatedAt": "2026-11-17T06:50:35.280893+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -161,10 +161,70 @@
         "url": "btz-date-01-119e99d6132c7775.txt",
         "bytes": 49598,
         "sha256": "119e99d6132c77753feea6487a6bf0a29124f2676acf1ad90961b29440656f86"
+      },
+      {
+        "url": "own-profit-01-c6a260f15b29e25f.txt",
+        "bytes": 2097151,
+        "sha256": "c6a260f15b29e25f10d0678ab32383d3856c0c96d4668a6c26deeee0d2ea70f2"
+      },
+      {
+        "url": "own-profit-02-b4ddbd8934221b93.txt",
+        "bytes": 2097150,
+        "sha256": "b4ddbd8934221b93a56d86e755de226ef3cf05cacb999d5a70e533d18afc67c3"
+      },
+      {
+        "url": "own-profit-03-7ce3fcd9d7b58ee6.txt",
+        "bytes": 2097152,
+        "sha256": "7ce3fcd9d7b58ee6d98dccaa2d359a659178fa9d02a89b0f4d2c32b79e8cd37f"
+      },
+      {
+        "url": "own-profit-04-128676eb44ffc12b.txt",
+        "bytes": 2097152,
+        "sha256": "128676eb44ffc12bc9a81a859c25acf85839017a841022a24b9c8027149954d3"
+      },
+      {
+        "url": "own-profit-05-74d1ee5046c3ecab.txt",
+        "bytes": 2097150,
+        "sha256": "74d1ee5046c3ecabc793e95ca2c36eb02465e7cd4335413a3c571372fe49823f"
+      },
+      {
+        "url": "own-profit-06-1ded25226af81c25.txt",
+        "bytes": 2097152,
+        "sha256": "1ded25226af81c258fbed2a777e44be4642d06bae066c0d8999406b4eef9d391"
+      },
+      {
+        "url": "own-profit-07-47f7c14c9848ab8f.txt",
+        "bytes": 2097152,
+        "sha256": "47f7c14c9848ab8f643b8d9bb24ba22e2e3c7b55d9b90d6e60b9584f14225420"
+      },
+      {
+        "url": "own-profit-08-df173fc58f637f42.txt",
+        "bytes": 2097152,
+        "sha256": "df173fc58f637f42ed9989684a58be152a0936b388b1b5bebb7d6fbe7b0fbae5"
+      },
+      {
+        "url": "own-profit-09-0fc4c3ff29effcc7.txt",
+        "bytes": 2097152,
+        "sha256": "0fc4c3ff29effcc7084b01cb0caa5f6a1ecd136576d5f9b6bc48b7559c940b20"
+      },
+      {
+        "url": "own-profit-10-967e31ca6275ae50.txt",
+        "bytes": 2097150,
+        "sha256": "967e31ca6275ae507d1a2b526c9d4de721bc2905886b4790a64b951eab73b2a1"
+      },
+      {
+        "url": "own-profit-11-4da85dcd146e8217.txt",
+        "bytes": 2097152,
+        "sha256": "4da85dcd146e821795c36c3c2c61dc8ab1cbefedb79f0c3d26c8a044e727de57"
+      },
+      {
+        "url": "own-profit-12-b4e7cbc387b643dd.txt",
+        "bytes": 1267812,
+        "sha256": "b4e7cbc387b643dd78577026438eb32da82ba45ac9ec0e47f1a51a81fc0b90f2"
       }
     ],
-    "bytes": 49311469,
-    "sha256": "719a94e3e6cac3230c8616bca5256b05f3956c2d56294738b7f1047bbd3ba3ab",
+    "bytes": 73647946,
+    "sha256": "4da5243239055e8c579f37ef97c62a4d9cef8196e52f3203c246ddaf84290892",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -177,9 +237,10 @@
       "#monthTodayReady",
       "#netRefreshReady",
       "#profitPriceReady",
-      "#btzDateReady"
+      "#btzDateReady",
+      "#allSkuOwnProfitReady"
     ]
   },
-  "renderedHtmlBytes": 247994323,
-  "renderedHtmlSha256": "83d0c7f40b49fcdbe63159fc4aa8b20a652d2f8e316974730810ebf8c86bbade"
+  "renderedHtmlBytes": 272330800,
+  "renderedHtmlSha256": "980a5b830e62a46f498343f42080fce77ebc97564582c3a12e82cabe3118e032"
 }
