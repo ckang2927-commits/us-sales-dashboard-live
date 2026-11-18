@@ -44,6 +44,57 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
 @media(max-width:460px){.top{gap:9px}.top h1{font-size:20px}.top p{font-size:11px}.primary{font-size:12px}.indicator{padding:11px 10px}.indicator p{font-size:11px}.channel{grid-template-columns:65px minmax(55px,1fr) 64px;gap:7px}.channel .barline{grid-template-columns:minmax(15px,1fr) 77px}.channel .barline span:last-child{font-size:11px}.panel{padding:13px 11px}.section-head h2{font-size:15px}}
 
 .table-actions{display:flex;flex-wrap:wrap;gap:6px}
+
+/* 老板首页的图表与现有明细使用同一只读快照。 */
+.panel{min-width:0}
+.overview-grid{grid-template-columns:minmax(0,1.62fr) minmax(0,1fr)}
+.chart-link{flex:none;font-size:12px;font-weight:650}
+.trend-tools,.chart-legend,.trend-focus{display:flex;align-items:center;gap:12px}
+.trend-tools{justify-content:space-between;flex-wrap:wrap}
+.trend-panel .switch button{padding:5px 9px;font-size:12px}
+.chart-legend{color:var(--muted);font-size:11.5px;white-space:nowrap}
+.chart-legend span{display:inline-flex;align-items:center;gap:5px}
+.chart-legend i{width:14px;border-top:2px solid #245f9b}
+.chart-legend .previous i{border-top:2px dashed #876f9d}
+#salesTrend{display:block;width:100%;height:202px;margin:6px 0 1px;touch-action:pan-y}
+.trend-focus{min-height:33px;flex-wrap:wrap;font-size:12px;border-top:1px solid #e7edf4;padding-top:6px}
+.trend-focus label{white-space:nowrap;color:var(--muted)}
+.trend-focus input{width:112px;accent-color:var(--blue);margin:0}
+.trend-focus p{color:#34526f;font-variant-numeric:tabular-nums}
+.trend-focus p strong{color:var(--ink)}
+.channel-panel .channel{padding:14px 0}
+.channel-panel .annotation{margin-top:9px}
+.stock-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.stock-row{display:grid;grid-template-columns:85px minmax(0,1fr) 66px;align-items:center;gap:9px;padding:6px 0}
+.stock-row strong,.region-details{font-variant-numeric:tabular-nums}
+.stock-row .track{height:8px}
+.stock-row .stock-value{text-align:right;color:#284963}
+.stock-row .stock-label{color:#304d68;font-weight:650;white-space:nowrap;font-size:12px}
+#regionalStock .stock-row{padding:9px 0 1px}
+.region-details{font-size:11.5px;margin:0 0 4px 94px}
+.age-row{padding:2px 0}
+.age-row .track{height:7px}
+.age-row.older .track i{background:#a87550}
+.age-row .stock-label{font-weight:500}
+.candidate-chart{display:grid;grid-template-columns:minmax(0,1fr) minmax(215px,.44fr);align-items:stretch;gap:20px;padding:10px 0 15px}
+.scatter-wrapper{padding:5px 14px 0 53px;min-width:0}
+.scatter{height:184px;position:relative;margin:20px 0;border-bottom:1px solid #abbed1;border-left:1px solid #abbed1;background:linear-gradient(#f8fbfe,#fff)}
+.scatter-caption{position:absolute;left:0;top:-23px;font-size:11px;color:var(--muted);white-space:nowrap}
+.scatter-y-tick,.scatter-x-tick{position:absolute;pointer-events:none;color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.scatter-y-tick{left:0;right:0;border-top:1px solid #e2ebf3}
+.scatter-y-tick span{position:absolute;right:calc(100% + 7px);top:-9px}
+.scatter-x-tick{bottom:-19px;transform:translateX(-50%)}
+.scatter-x{font-size:11px;text-align:center}
+.scatter-mark{position:absolute;border:1.5px solid #fff;border-radius:50%;padding:0;background:#4e80b6bb;box-shadow:0 0 0 1px #4577a94d;transform:translate(-50%,50%)}
+.scatter-mark:hover,.scatter-mark:focus-visible,.scatter-mark[aria-pressed=true]{background:#245f9b;box-shadow:0 0 0 2px #d1e2f3;z-index:2}
+.scatter-mark.forecast{background:#a46747}
+.candidate-focus{border:1px solid #e0eaf3;border-radius:8px;background:#f6f9fc;padding:13px 14px;align-self:center}
+.candidate-focus strong{font-size:16px;display:block;margin-bottom:4px}.candidate-focus p{margin:5px 0;font-size:12px}
+.candidate-focus a{display:inline-block;margin-top:5px;font-size:12px;font-weight:700}
+.review-panel{margin-top:14px}.review-panel .review-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media(max-width:920px){.overview-grid{grid-template-columns:1fr}}
+@media(max-width:690px){.stock-grid,.candidate-chart,.review-panel .review-links{grid-template-columns:1fr}.candidate-chart{gap:11px}.candidate-focus{margin:0 0 6px}.trend-panel .section-head{flex-wrap:wrap;row-gap:8px}}
+@media(max-width:460px){.chart-link{font-size:11px}#salesTrend{height:175px}.trend-focus{column-gap:8px}.trend-focus input{width:90px}.table-foot{flex-wrap:wrap}.channel-panel .channel{padding:9px 0}}
 </style>
 </head>
 <body>
@@ -56,20 +107,51 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
   <main class="wrap">
     <section class="indicators" aria-label="最近30天关键指标" id="indicators"></section>
     <div class="overview-grid">
-      <section class="panel" aria-labelledby="comparison">
-        <div class="section-head"><div><h2 id="comparison">渠道变动</h2><p id="comparisonDates"></p></div></div>
-        <div id="platformCompare"></div>
-        <p class="annotation">商品额沿各渠道来源。Amazon为商品额，独立站为折扣前商品行金额，Wayfair为供货额。</p>
+      <section class="panel trend-panel" aria-labelledby="trendTitle">
+        <div class="section-head"><div><h2 id="trendTitle">每日经营走势</h2><p id="trendDates"></p></div>
+          <div class="switch" role="group" aria-label="走势指标">
+            <button type="button" data-metric="amountCents" aria-pressed="true">商品额</button><button type="button" data-metric="orders" aria-pressed="false">订单</button><button type="button" data-metric="lower" aria-pressed="false">净销量下界</button>
+          </div>
+        </div>
+        <div class="trend-tools">
+          <div class="switch" role="group" aria-label="走势渠道">
+            <button type="button" data-channel="total" aria-pressed="true">全部</button><button type="button" data-channel="Amazon" aria-pressed="false">Amazon</button><button type="button" data-channel="Shopify" aria-pressed="false">独立站</button><button type="button" data-channel="Wayfair" aria-pressed="false">Wayfair</button>
+          </div>
+          <div class="chart-legend"><span><i></i>本期</span><span class="previous"><i></i>前期</span></div>
+        </div>
+        <canvas id="salesTrend" role="img" aria-label="按各期第几天对齐的每日经营走势"></canvas>
+        <div class="trend-focus">
+          <label for="trendDay">第 <b id="trendDayNumber">30</b> 天</label>
+          <input id="trendDay" type="range" min="1" max="30" value="30" aria-label="对比两期的第几天">
+          <p id="trendValues"></p>
+        </div>
       </section>
-      <section class="panel" aria-labelledby="exceptions">
-        <div class="section-head"><div><h2 id="exceptions">经营复核入口</h2><p>按证据处理库存、清仓与退款差异</p></div></div>
-        <div id="reviewLinks" class="review-links"></div>
+      <section class="panel channel-panel" aria-labelledby="comparison">
+        <div class="section-head"><div><h2 id="comparison">渠道商品额</h2><p id="comparisonDates"></p></div></div>
+        <div id="platformCompare"></div>
+        <p class="annotation">独立站为折扣前商品行金额，Wayfair为供货额。</p>
+      </section>
+    </div>
+    <div class="stock-grid">
+      <section class="panel" aria-labelledby="stockTitle">
+        <div class="section-head"><div><h2 id="stockTitle">三区可用库存</h2><p id="stockChartDate"></p></div><a class="chart-link" href="./details.html?view=warehouses">库存明细 →</a></div>
+        <div id="regionalStock"></div>
+        <p class="annotation" id="stockChartNote"></p>
+      </section>
+      <section class="panel" aria-labelledby="ageTitle">
+        <div class="section-head"><div><h2 id="ageTitle">YQN库龄分布</h2><p id="ageChartDate"></p></div><a class="chart-link" href="./details.html?view=warehouses">库龄明细 →</a></div>
+        <div id="inventoryAge"></div>
+        <p class="annotation" id="ageChartNote"></p>
       </section>
     </div>
     <section class="panel products" aria-labelledby="priority-products">
       <div class="section-head">
         <div><h2 id="priority-products">高运营利润、低动销的在库老品</h2><p>常规品与滞销品 · 近30天净销量上界≤5 · 主表可用大于0</p></div>
         <div class="switch" role="group" aria-label="历史运营利润率下限"><button type="button" data-threshold=".15" aria-pressed="true">≥15%</button><button type="button" data-threshold=".20" aria-pressed="false">≥20%</button></div>
+      </div>
+      <div class="candidate-chart">
+        <div class="scatter-wrapper"><div id="candidatePlot" class="scatter" role="group" aria-label="近30天净销量上界与历史运营利润率"></div><p class="scatter-x">近30天净销量上界（套） · 棕色圆点的通知价估算低于15%</p></div>
+        <div id="candidateFocus" class="candidate-focus" aria-live="polite"></div>
       </div>
       <div class="table-scroll">
         <table>
@@ -80,6 +162,10 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
       <div class="table-foot"><p id="candidateCount" aria-live="polite"></p><div class="table-actions"><button id="downloadRows" class="secondary" type="button">导出清单</button><button id="toggleRows" class="secondary" type="button">展开全部</button></div></div>
       <p class="annotation" id="candidateDefinition"></p>
     </section>
+    <section class="panel review-panel" aria-labelledby="exceptions">
+      <div class="section-head"><h2 id="exceptions">经营复核入口</h2></div>
+      <div id="reviewLinks" class="review-links"></div>
+    </section>
   </main>
   <footer class="wrap footer">
     <nav aria-label="原看板全部模块">
@@ -89,11 +175,213 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
     </nav>
     <p id="statusDates"></p>
   </footer>
-  <script id="bossSummary" type="application/json">{"current":{"start":"2026-10-18","end":"2026-11-16","amount":688780.94,"lower":674,"upper":703,"pending":28,"orders":599},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":685835.97,"lower":628,"upper":676,"pending":44,"orders":571},"platforms":[{"platform":"Amazon","current":{"start":"2026-10-18","end":"2026-11-16","amount":354383.09,"lower":283,"upper":297,"pending":13,"orders":272},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":353526.01,"lower":274,"upper":301,"pending":23,"orders":286}},{"platform":"Shopify","current":{"start":"2026-10-18","end":"2026-11-16","amount":170576.39,"lower":159,"upper":168,"pending":9,"orders":100},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":195063.46,"lower":170,"upper":175,"pending":5,"orders":103}},{"platform":"Wayfair","current":{"start":"2026-10-18","end":"2026-11-16","amount":163821.46,"lower":232,"upper":238,"pending":6,"orders":227},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":137246.5,"lower":184,"upper":200,"pending":16,"orders":182}}],"queues":{"candidate":0,"toRecheck":18,"noStock":4},"candidates":[{"sku":"JDT-2217-55","category":"常规品","available":50,"lower":2,"upper":2,"latestBand":"90–120天（API档）","margin":0.2999285641442993,"forecastMargin":-0.01834060293463782,"sampleDate":"2026-09-03","samples":20,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先核同链接现价","days":750},{"sku":"JDZH-009N-24","category":"常规品","available":26,"lower":1,"upper":1,"latestBand":"60–90天（API档）","margin":0.2533180444350178,"forecastMargin":null,"sampleDate":"2026-08-31","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":780},{"sku":"BTZ-001-014","category":"常规品","available":24,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.16725044168138947,"forecastMargin":null,"sampleDate":"2026-01-01","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-001-037","category":"常规品","available":23,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.2262760986006338,"forecastMargin":0.18777811534786945,"sampleDate":"2026-01-25","samples":5,"sampleStores":3,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-GK031-01","category":"常规品","available":18,"lower":2,"upper":2,"latestBand":"90–120天（API档）","margin":0.1688197163330132,"forecastMargin":null,"sampleDate":"2026-10-18","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单"],"next":"先复核利润","days":270},{"sku":"YZ-M042-01","category":"滞销品","available":11,"lower":3,"upper":3,"latestBand":"180–360天（API档）","margin":0.4474954545454546,"forecastMargin":null,"sampleDate":"2026-08-13","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":110},{"sku":"JDT-144-15","category":"常规品","available":11,"lower":0,"upper":0,"latestBand":"90–120天（API档）","margin":0.2739821503086464,"forecastMargin":null,"sampleDate":"2026-08-22","samples":6,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"HYZ-046-05","category":"常规品","available":5,"lower":1,"upper":1,"latestBand":"30天内（API档）","margin":0.46954263824117254,"forecastMargin":null,"sampleDate":"2026-03-10","samples":2,"sampleStores":1,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":150},{"sku":"BSF-K040-01","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":null,"margin":0.3250695340605669,"forecastMargin":null,"sampleDate":"2025-05-24","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天","仓储测算待核"],"next":"先复核利润","days":null},{"sku":"BGZ-2501-15","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":"30天内（API档）","margin":0.26238475252914756,"forecastMargin":null,"sampleDate":"2026-08-06","samples":7,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-001-05","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":"90–120天（API档）","margin":0.21307082774407538,"forecastMargin":null,"sampleDate":"2025-12-08","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"HYZ-046-06","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"30天内（API档）","margin":0.30458380316838274,"forecastMargin":null,"sampleDate":"2026-02-11","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"JDT-GK008-02","category":"常规品","available":1,"lower":4,"upper":4,"latestBand":"60–90天（API档）","margin":0.2823606322482425,"forecastMargin":null,"sampleDate":"2026-11-10","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单"],"next":"先复核利润","days":8},{"sku":"JDT-7288-013","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.2694230735756984,"forecastMargin":null,"sampleDate":"2026-05-19","samples":2,"sampleStores":2,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"JDZH-2076-04","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":null,"margin":0.18518789740658714,"forecastMargin":null,"sampleDate":"2026-03-31","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天","仓储测算待核"],"next":"先复核利润","days":null},{"sku":"LBZ-2179-12","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.18342015474969697,"forecastMargin":null,"sampleDate":"2026-04-06","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null}],"coverage":{"active":529,"inStock":117,"identifiedOld":78,"unknownType":19,"oldWithMissingProfit":36},"inventory":{"activeSkuCount":529,"fullMasterSkuCount":2586,"knownActive":462,"unknownActive":67,"available":1662,"reserved":135,"transit":715,"conflicts":0},"stockDate":"2026-11-18","ageDate":"2026-11-18","yqnDifference":32,"coverageNative":{"start":"2026-09-10","end":"2026-11-16","observedEnd":"2026-11-16"},"commonCoverage":true,"refundDate":"2026-11-18","aftersalesDate":"2026-11-18","refundsSourceRead":"2026-11-18","wayfairThrough":"2026-11-16"}</script>
+  <script id="bossSummary" type="application/json">{"current":{"start":"2026-10-18","end":"2026-11-16","amount":688780.94,"lower":674,"upper":703,"pending":28,"orders":599},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":685835.97,"lower":628,"upper":676,"pending":44,"orders":571},"platforms":[{"platform":"Amazon","current":{"start":"2026-10-18","end":"2026-11-16","amount":354383.09,"lower":283,"upper":297,"pending":13,"orders":272},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":353526.01,"lower":274,"upper":301,"pending":23,"orders":286}},{"platform":"Shopify","current":{"start":"2026-10-18","end":"2026-11-16","amount":170576.39,"lower":159,"upper":168,"pending":9,"orders":100},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":195063.46,"lower":170,"upper":175,"pending":5,"orders":103}},{"platform":"Wayfair","current":{"start":"2026-10-18","end":"2026-11-16","amount":163821.46,"lower":232,"upper":238,"pending":6,"orders":227},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":137246.5,"lower":184,"upper":200,"pending":16,"orders":182}}],"queues":{"candidate":0,"toRecheck":18,"noStock":4},"chartSales":{"current":{"start":"2026-10-18","end":"2026-11-16","days":[{"index":1,"date":"2026-10-18","total":{"amountCents":1234583,"lower":10,"orders":13},"platforms":{"Amazon":{"amountCents":638844,"lower":4,"orders":6},"Shopify":{"amountCents":323297,"lower":3,"orders":3},"Wayfair":{"amountCents":272442,"lower":3,"orders":4}}},{"index":2,"date":"2026-10-19","total":{"amountCents":2862274,"lower":28,"orders":20},"platforms":{"Amazon":{"amountCents":1345192,"lower":10,"orders":9},"Shopify":{"amountCents":1133482,"lower":14,"orders":7},"Wayfair":{"amountCents":383600,"lower":4,"orders":4}}},{"index":3,"date":"2026-10-20","total":{"amountCents":2477879,"lower":19,"orders":18},"platforms":{"Amazon":{"amountCents":1630487,"lower":13,"orders":13},"Shopify":{"amountCents":847392,"lower":6,"orders":5},"Wayfair":{"amountCents":0,"lower":0,"orders":0}}},{"index":4,"date":"2026-10-21","total":{"amountCents":2565463,"lower":20,"orders":20},"platforms":{"Amazon":{"amountCents":2005066,"lower":16,"orders":14},"Shopify":{"amountCents":361897,"lower":3,"orders":3},"Wayfair":{"amountCents":198500,"lower":1,"orders":3}}},{"index":5,"date":"2026-10-22","total":{"amountCents":2857211,"lower":25,"orders":17},"platforms":{"Amazon":{"amountCents":1896634,"lower":15,"orders":9},"Shopify":{"amountCents":381597,"lower":3,"orders":3},"Wayfair":{"amountCents":578980,"lower":7,"orders":5}}},{"index":6,"date":"2026-10-23","total":{"amountCents":2799871,"lower":39,"orders":25},"platforms":{"Amazon":{"amountCents":1557987,"lower":13,"orders":13},"Shopify":{"amountCents":479584,"lower":16,"orders":2},"Wayfair":{"amountCents":762300,"lower":10,"orders":10}}},{"index":7,"date":"2026-10-24","total":{"amountCents":1659963,"lower":14,"orders":15},"platforms":{"Amazon":{"amountCents":794592,"lower":6,"orders":8},"Shopify":{"amountCents":532696,"lower":4,"orders":2},"Wayfair":{"amountCents":332675,"lower":4,"orders":5}}},{"index":8,"date":"2026-10-25","total":{"amountCents":1519952,"lower":15,"orders":17},"platforms":{"Amazon":{"amountCents":894393,"lower":6,"orders":6},"Shopify":{"amountCents":41599,"lower":1,"orders":1},"Wayfair":{"amountCents":583960,"lower":8,"orders":10}}},{"index":9,"date":"2026-10-26","total":{"amountCents":3088211,"lower":29,"orders":28},"platforms":{"Amazon":{"amountCents":1447391,"lower":11,"orders":10},"Shopify":{"amountCents":545195,"lower":5,"orders":4},"Wayfair":{"amountCents":1095625,"lower":13,"orders":14}}},{"index":10,"date":"2026-10-27","total":{"amountCents":2672954,"lower":20,"orders":19},"platforms":{"Amazon":{"amountCents":1235991,"lower":7,"orders":9},"Shopify":{"amountCents":1019693,"lower":7,"orders":4},"Wayfair":{"amountCents":417270,"lower":6,"orders":6}}},{"index":11,"date":"2026-10-28","total":{"amountCents":3996685,"lower":34,"orders":30},"platforms":{"Amazon":{"amountCents":2457952,"lower":18,"orders":15},"Shopify":{"amountCents":807793,"lower":7,"orders":6},"Wayfair":{"amountCents":730940,"lower":9,"orders":9}}},{"index":12,"date":"2026-10-29","total":{"amountCents":2274655,"lower":24,"orders":23},"platforms":{"Amazon":{"amountCents":1084340,"lower":9,"orders":10},"Shopify":{"amountCents":569895,"lower":5,"orders":3},"Wayfair":{"amountCents":620420,"lower":10,"orders":10}}},{"index":13,"date":"2026-10-30","total":{"amountCents":2435018,"lower":22,"orders":22},"platforms":{"Amazon":{"amountCents":1361140,"lower":10,"orders":10},"Shopify":{"amountCents":397898,"lower":2,"orders":2},"Wayfair":{"amountCents":675980,"lower":10,"orders":10}}},{"index":14,"date":"2026-10-31","total":{"amountCents":984094,"lower":11,"orders":12},"platforms":{"Amazon":{"amountCents":614395,"lower":4,"orders":5},"Shopify":{"amountCents":52999,"lower":1,"orders":1},"Wayfair":{"amountCents":316700,"lower":6,"orders":6}}},{"index":15,"date":"2026-11-01","total":{"amountCents":751928,"lower":13,"orders":13},"platforms":{"Amazon":{"amountCents":64999,"lower":1,"orders":1},"Shopify":{"amountCents":39499,"lower":1,"orders":1},"Wayfair":{"amountCents":647430,"lower":11,"orders":11}}},{"index":16,"date":"2026-11-02","total":{"amountCents":4862036,"lower":38,"orders":31},"platforms":{"Amazon":{"amountCents":1573288,"lower":11,"orders":12},"Shopify":{"amountCents":2192888,"lower":10,"orders":5},"Wayfair":{"amountCents":1095860,"lower":17,"orders":14}}},{"index":17,"date":"2026-11-03","total":{"amountCents":3032221,"lower":31,"orders":27},"platforms":{"Amazon":{"amountCents":1799441,"lower":17,"orders":14},"Shopify":{"amountCents":713195,"lower":5,"orders":4},"Wayfair":{"amountCents":519585,"lower":9,"orders":9}}},{"index":18,"date":"2026-11-04","total":{"amountCents":2275157,"lower":23,"orders":22},"platforms":{"Amazon":{"amountCents":1440288,"lower":13,"orders":12},"Shopify":{"amountCents":214999,"lower":1,"orders":1},"Wayfair":{"amountCents":619870,"lower":9,"orders":9}}},{"index":19,"date":"2026-11-05","total":{"amountCents":2542154,"lower":28,"orders":24},"platforms":{"Amazon":{"amountCents":735645,"lower":5,"orders":5},"Shopify":{"amountCents":952789,"lower":11,"orders":6},"Wayfair":{"amountCents":853720,"lower":12,"orders":13}}},{"index":20,"date":"2026-11-06","total":{"amountCents":2263634,"lower":24,"orders":23},"platforms":{"Amazon":{"amountCents":1171489,"lower":11,"orders":10},"Shopify":{"amountCents":604695,"lower":5,"orders":5},"Wayfair":{"amountCents":487450,"lower":8,"orders":8}}},{"index":21,"date":"2026-11-07","total":{"amountCents":997144,"lower":9,"orders":8},"platforms":{"Amazon":{"amountCents":552195,"lower":5,"orders":5},"Shopify":{"amountCents":208999,"lower":1,"orders":1},"Wayfair":{"amountCents":235950,"lower":3,"orders":2}}},{"index":22,"date":"2026-11-08","total":{"amountCents":1207987,"lower":12,"orders":12},"platforms":{"Amazon":{"amountCents":802994,"lower":6,"orders":6},"Shopify":{"amountCents":229498,"lower":2,"orders":2},"Wayfair":{"amountCents":175495,"lower":4,"orders":4}}},{"index":23,"date":"2026-11-09","total":{"amountCents":2751075,"lower":25,"orders":24},"platforms":{"Amazon":{"amountCents":1618238,"lower":12,"orders":11},"Shopify":{"amountCents":574586,"lower":5,"orders":5},"Wayfair":{"amountCents":558251,"lower":8,"orders":8}}},{"index":24,"date":"2026-11-10","total":{"amountCents":2869724,"lower":27,"orders":25},"platforms":{"Amazon":{"amountCents":2057939,"lower":19,"orders":18},"Shopify":{"amountCents":362297,"lower":3,"orders":3},"Wayfair":{"amountCents":449488,"lower":5,"orders":4}}},{"index":25,"date":"2026-11-11","total":{"amountCents":2664669,"lower":24,"orders":22},"platforms":{"Amazon":{"amountCents":1135770,"lower":10,"orders":10},"Shopify":{"amountCents":748997,"lower":3,"orders":1},"Wayfair":{"amountCents":779902,"lower":11,"orders":11}}},{"index":26,"date":"2026-11-12","total":{"amountCents":2492511,"lower":28,"orders":24},"platforms":{"Amazon":{"amountCents":808491,"lower":9,"orders":9},"Shopify":{"amountCents":1048484,"lower":10,"orders":7},"Wayfair":{"amountCents":635536,"lower":9,"orders":8}}},{"index":27,"date":"2026-11-13","total":{"amountCents":2311895,"lower":35,"orders":20},"platforms":{"Amazon":{"amountCents":773745,"lower":5,"orders":5},"Shopify":{"amountCents":434909,"lower":14,"orders":2},"Wayfair":{"amountCents":1103241,"lower":16,"orders":13}}},{"index":28,"date":"2026-11-14","total":{"amountCents":1322170,"lower":13,"orders":12},"platforms":{"Amazon":{"amountCents":398996,"lower":4,"orders":4},"Shopify":{"amountCents":673393,"lower":5,"orders":5},"Wayfair":{"amountCents":249781,"lower":4,"orders":3}}},{"index":29,"date":"2026-11-15","total":{"amountCents":657772,"lower":8,"orders":8},"platforms":{"Amazon":{"amountCents":190548,"lower":2,"orders":2},"Shopify":{"amountCents":324197,"lower":3,"orders":3},"Wayfair":{"amountCents":143027,"lower":3,"orders":3}}},{"index":30,"date":"2026-11-16","total":{"amountCents":2447204,"lower":26,"orders":25},"platforms":{"Amazon":{"amountCents":1349839,"lower":11,"orders":11},"Shopify":{"amountCents":239197,"lower":3,"orders":3},"Wayfair":{"amountCents":858168,"lower":12,"orders":11}}}],"total":{"amountCents":68878094,"lower":674,"orders":599},"platformTotals":{"Amazon":{"amountCents":35438309,"lower":283,"orders":272},"Shopify":{"amountCents":17057639,"lower":159,"orders":100},"Wayfair":{"amountCents":16382146,"lower":232,"orders":227}},"dailyOrdersSum":599,"windowOrdersEqualDailySum":true},"previous":{"start":"2026-09-18","end":"2026-10-17","days":[{"index":1,"date":"2026-09-18","total":{"amountCents":3310987,"lower":34,"orders":29},"platforms":{"Amazon":{"amountCents":1609367,"lower":12,"orders":14},"Shopify":{"amountCents":457295,"lower":3,"orders":3},"Wayfair":{"amountCents":1244325,"lower":19,"orders":12}}},{"index":2,"date":"2026-09-19","total":{"amountCents":492546,"lower":6,"orders":7},"platforms":{"Amazon":{"amountCents":91199,"lower":1,"orders":1},"Shopify":{"amountCents":153397,"lower":3,"orders":3},"Wayfair":{"amountCents":247950,"lower":2,"orders":3}}},{"index":3,"date":"2026-09-20","total":{"amountCents":1747442,"lower":20,"orders":19},"platforms":{"Amazon":{"amountCents":952340,"lower":10,"orders":9},"Shopify":{"amountCents":403797,"lower":3,"orders":3},"Wayfair":{"amountCents":391305,"lower":7,"orders":7}}},{"index":4,"date":"2026-09-21","total":{"amountCents":2336705,"lower":25,"orders":25},"platforms":{"Amazon":{"amountCents":1058579,"lower":10,"orders":11},"Shopify":{"amountCents":447096,"lower":4,"orders":3},"Wayfair":{"amountCents":831030,"lower":11,"orders":11}}},{"index":5,"date":"2026-09-22","total":{"amountCents":3354083,"lower":24,"orders":26},"platforms":{"Amazon":{"amountCents":1806690,"lower":12,"orders":15},"Shopify":{"amountCents":650993,"lower":7,"orders":6},"Wayfair":{"amountCents":896400,"lower":5,"orders":5}}},{"index":6,"date":"2026-09-23","total":{"amountCents":2549989,"lower":28,"orders":24},"platforms":{"Amazon":{"amountCents":1482796,"lower":14,"orders":13},"Shopify":{"amountCents":502293,"lower":7,"orders":4},"Wayfair":{"amountCents":564900,"lower":7,"orders":7}}},{"index":7,"date":"2026-09-24","total":{"amountCents":2487873,"lower":24,"orders":22},"platforms":{"Amazon":{"amountCents":1428339,"lower":11,"orders":10},"Shopify":{"amountCents":562096,"lower":4,"orders":3},"Wayfair":{"amountCents":497438,"lower":9,"orders":9}}},{"index":8,"date":"2026-09-25","total":{"amountCents":2993456,"lower":28,"orders":28},"platforms":{"Amazon":{"amountCents":2211358,"lower":20,"orders":19},"Shopify":{"amountCents":235498,"lower":2,"orders":2},"Wayfair":{"amountCents":546600,"lower":6,"orders":7}}},{"index":9,"date":"2026-09-26","total":{"amountCents":1507827,"lower":23,"orders":11},"platforms":{"Amazon":{"amountCents":674990,"lower":6,"orders":7},"Shopify":{"amountCents":705987,"lower":13,"orders":2},"Wayfair":{"amountCents":126850,"lower":4,"orders":2}}},{"index":10,"date":"2026-09-27","total":{"amountCents":1612485,"lower":17,"orders":16},"platforms":{"Amazon":{"amountCents":1207690,"lower":10,"orders":11},"Shopify":{"amountCents":226195,"lower":3,"orders":2},"Wayfair":{"amountCents":178600,"lower":4,"orders":3}}},{"index":11,"date":"2026-09-28","total":{"amountCents":2007426,"lower":17,"orders":17},"platforms":{"Amazon":{"amountCents":583842,"lower":8,"orders":8},"Shopify":{"amountCents":1248592,"lower":8,"orders":7},"Wayfair":{"amountCents":174992,"lower":1,"orders":2}}},{"index":12,"date":"2026-09-29","total":{"amountCents":2866471,"lower":23,"orders":24},"platforms":{"Amazon":{"amountCents":1965685,"lower":13,"orders":15},"Shopify":{"amountCents":571498,"lower":2,"orders":2},"Wayfair":{"amountCents":329288,"lower":8,"orders":7}}},{"index":13,"date":"2026-09-30","total":{"amountCents":2890521,"lower":24,"orders":23},"platforms":{"Amazon":{"amountCents":834332,"lower":6,"orders":8},"Shopify":{"amountCents":1470089,"lower":9,"orders":7},"Wayfair":{"amountCents":586100,"lower":9,"orders":8}}},{"index":14,"date":"2026-10-01","total":{"amountCents":3766565,"lower":31,"orders":24},"platforms":{"Amazon":{"amountCents":1603226,"lower":15,"orders":12},"Shopify":{"amountCents":1753589,"lower":11,"orders":8},"Wayfair":{"amountCents":409750,"lower":5,"orders":4}}},{"index":15,"date":"2026-10-02","total":{"amountCents":2572807,"lower":20,"orders":20},"platforms":{"Amazon":{"amountCents":1110343,"lower":6,"orders":6},"Shopify":{"amountCents":553596,"lower":4,"orders":4},"Wayfair":{"amountCents":908868,"lower":10,"orders":10}}},{"index":16,"date":"2026-10-03","total":{"amountCents":1040835,"lower":8,"orders":10},"platforms":{"Amazon":{"amountCents":692245,"lower":4,"orders":5},"Shopify":{"amountCents":0,"lower":0,"orders":0},"Wayfair":{"amountCents":348590,"lower":4,"orders":5}}},{"index":17,"date":"2026-10-04","total":{"amountCents":1453592,"lower":12,"orders":11},"platforms":{"Amazon":{"amountCents":1251992,"lower":8,"orders":7},"Shopify":{"amountCents":0,"lower":0,"orders":0},"Wayfair":{"amountCents":201600,"lower":4,"orders":4}}},{"index":18,"date":"2026-10-05","total":{"amountCents":1459080,"lower":15,"orders":15},"platforms":{"Amazon":{"amountCents":808543,"lower":7,"orders":7},"Shopify":{"amountCents":320199,"lower":1,"orders":1},"Wayfair":{"amountCents":330338,"lower":7,"orders":7}}},{"index":19,"date":"2026-10-06","total":{"amountCents":4139496,"lower":33,"orders":26},"platforms":{"Amazon":{"amountCents":1840753,"lower":13,"orders":15},"Shopify":{"amountCents":1923185,"lower":15,"orders":6},"Wayfair":{"amountCents":375558,"lower":5,"orders":5}}},{"index":20,"date":"2026-10-07","total":{"amountCents":2859652,"lower":30,"orders":25},"platforms":{"Amazon":{"amountCents":1537888,"lower":11,"orders":12},"Shopify":{"amountCents":716789,"lower":10,"orders":4},"Wayfair":{"amountCents":604975,"lower":9,"orders":9}}},{"index":21,"date":"2026-10-08","total":{"amountCents":2799395,"lower":26,"orders":26},"platforms":{"Amazon":{"amountCents":1548788,"lower":12,"orders":12},"Shopify":{"amountCents":771482,"lower":7,"orders":6},"Wayfair":{"amountCents":479125,"lower":7,"orders":8}}},{"index":22,"date":"2026-10-09","total":{"amountCents":1780152,"lower":12,"orders":16},"platforms":{"Amazon":{"amountCents":1130291,"lower":7,"orders":9},"Shopify":{"amountCents":256236,"lower":2,"orders":2},"Wayfair":{"amountCents":393625,"lower":3,"orders":5}}},{"index":23,"date":"2026-10-10","total":{"amountCents":384786,"lower":5,"orders":5},"platforms":{"Amazon":{"amountCents":282248,"lower":2,"orders":2},"Shopify":{"amountCents":0,"lower":0,"orders":0},"Wayfair":{"amountCents":102538,"lower":3,"orders":3}}},{"index":24,"date":"2026-10-11","total":{"amountCents":1454051,"lower":8,"orders":11},"platforms":{"Amazon":{"amountCents":810994,"lower":1,"orders":4},"Shopify":{"amountCents":337297,"lower":3,"orders":2},"Wayfair":{"amountCents":305760,"lower":4,"orders":5}}},{"index":25,"date":"2026-10-12","total":{"amountCents":3401060,"lower":40,"orders":25},"platforms":{"Amazon":{"amountCents":772935,"lower":7,"orders":6},"Shopify":{"amountCents":1965675,"lower":25,"orders":10},"Wayfair":{"amountCents":662450,"lower":8,"orders":9}}},{"index":26,"date":"2026-10-13","total":{"amountCents":3621619,"lower":32,"orders":25},"platforms":{"Amazon":{"amountCents":1684935,"lower":14,"orders":15},"Shopify":{"amountCents":1562684,"lower":12,"orders":4},"Wayfair":{"amountCents":374000,"lower":6,"orders":6}}},{"index":27,"date":"2026-10-14","total":{"amountCents":1566389,"lower":12,"orders":12},"platforms":{"Amazon":{"amountCents":1051191,"lower":8,"orders":8},"Shopify":{"amountCents":343598,"lower":2,"orders":2},"Wayfair":{"amountCents":171600,"lower":2,"orders":2}}},{"index":28,"date":"2026-10-15","total":{"amountCents":2737477,"lower":26,"orders":25},"platforms":{"Amazon":{"amountCents":1875233,"lower":16,"orders":15},"Shopify":{"amountCents":121499,"lower":1,"orders":1},"Wayfair":{"amountCents":740745,"lower":9,"orders":9}}},{"index":29,"date":"2026-10-16","total":{"amountCents":2471635,"lower":18,"orders":16},"platforms":{"Amazon":{"amountCents":949993,"lower":6,"orders":6},"Shopify":{"amountCents":987392,"lower":8,"orders":5},"Wayfair":{"amountCents":534250,"lower":4,"orders":5}}},{"index":30,"date":"2026-10-17","total":{"amountCents":917195,"lower":7,"orders":8},"platforms":{"Amazon":{"amountCents":493796,"lower":4,"orders":4},"Shopify":{"amountCents":258299,"lower":1,"orders":1},"Wayfair":{"amountCents":165100,"lower":2,"orders":3}}}],"total":{"amountCents":68583597,"lower":628,"orders":571},"platformTotals":{"Amazon":{"amountCents":35352601,"lower":274,"orders":286},"Shopify":{"amountCents":19506346,"lower":170,"orders":103},"Wayfair":{"amountCents":13724650,"lower":184,"orders":182}},"dailyOrdersSum":571,"windowOrdersEqualDailySum":true},"platforms":["Amazon","Shopify","Wayfair"],"amountUnit":"USD cents","hasOrderCalendarOverlap":false,"orderCountNote":"日订单与窗内订单均按平台、店铺、订单号去重。本次两窗的日订单相加与窗内去重数一致。"},"chartInventory":{"master":{"date":"2026-11-18","scopeSkus":529,"national":{"available":{"units":1662,"knownSkus":462,"unknownSkus":67},"reserved":{"units":135,"knownSkus":462,"unknownSkus":67},"transit":{"units":715,"knownSkus":462,"unknownSkus":67}},"regions":[{"key":"CA","label":"美西","listedSkus":430,"unlistedSkus":99,"available":{"units":781,"knownSkus":430,"unknownSkus":99,"listedUnknownSkus":0},"reserved":{"units":76,"knownSkus":430,"unknownSkus":99,"listedUnknownSkus":0},"transit":{"units":338,"knownSkus":430,"unknownSkus":99,"listedUnknownSkus":0}},{"key":"GA","label":"美东","listedSkus":126,"unlistedSkus":403,"available":{"units":696,"knownSkus":126,"unknownSkus":403,"listedUnknownSkus":0},"reserved":{"units":48,"knownSkus":126,"unknownSkus":403,"listedUnknownSkus":0},"transit":{"units":377,"knownSkus":126,"unknownSkus":403,"listedUnknownSkus":0}},{"key":"NJ","label":"美东北","listedSkus":39,"unlistedSkus":490,"available":{"units":185,"knownSkus":39,"unknownSkus":490,"listedUnknownSkus":0},"reserved":{"units":11,"knownSkus":39,"unknownSkus":490,"listedUnknownSkus":0},"transit":{"units":0,"knownSkus":39,"unknownSkus":490,"listedUnknownSkus":0}}],"totalsMatch":true,"mismatchedSkus":0},"yqnAge":{"date":"2026-11-18","scopeSkus":529,"coveredSkus":158,"bands":[{"key":"1–30天","label":"30天内（API档）","units":389,"skus":53,"knownGroups":251,"unknownGroups":0},{"key":"31–60天","label":"30–60天（API档）","units":298,"skus":20,"knownGroups":251,"unknownGroups":0},{"key":"61–90天","label":"60–90天（API档）","units":448,"skus":33,"knownGroups":251,"unknownGroups":0},{"key":"91–120天","label":"90–120天（API档）","units":317,"skus":23,"knownGroups":251,"unknownGroups":0},{"key":"121–180天","label":"120–180天（API档）","units":120,"skus":19,"knownGroups":251,"unknownGroups":0},{"key":"180–360天","label":"180–360天（API档）","units":37,"skus":11,"knownGroups":251,"unknownGroups":0},{"key":"360天以上","label":"360天以上（API档）","units":0,"skus":0,"knownGroups":251,"unknownGroups":0}]}},"candidates":[{"sku":"JDT-2217-55","category":"常规品","available":50,"lower":2,"upper":2,"latestBand":"90–120天（API档）","margin":0.2999285641442993,"forecastMargin":-0.01834060293463782,"sampleDate":"2026-09-03","samples":20,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先核同链接现价","days":750},{"sku":"JDZH-009N-24","category":"常规品","available":26,"lower":1,"upper":1,"latestBand":"60–90天（API档）","margin":0.2533180444350178,"forecastMargin":null,"sampleDate":"2026-08-31","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":780},{"sku":"BTZ-001-014","category":"常规品","available":24,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.16725044168138947,"forecastMargin":null,"sampleDate":"2026-01-01","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-001-037","category":"常规品","available":23,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.2262760986006338,"forecastMargin":0.18777811534786945,"sampleDate":"2026-01-25","samples":5,"sampleStores":3,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-GK031-01","category":"常规品","available":18,"lower":2,"upper":2,"latestBand":"90–120天（API档）","margin":0.1688197163330132,"forecastMargin":null,"sampleDate":"2026-10-18","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单"],"next":"先复核利润","days":270},{"sku":"YZ-M042-01","category":"滞销品","available":11,"lower":3,"upper":3,"latestBand":"180–360天（API档）","margin":0.4474954545454546,"forecastMargin":null,"sampleDate":"2026-08-13","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":110},{"sku":"JDT-144-15","category":"常规品","available":11,"lower":0,"upper":0,"latestBand":"90–120天（API档）","margin":0.2739821503086464,"forecastMargin":null,"sampleDate":"2026-08-22","samples":6,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"HYZ-046-05","category":"常规品","available":5,"lower":1,"upper":1,"latestBand":"30天内（API档）","margin":0.46954263824117254,"forecastMargin":null,"sampleDate":"2026-03-10","samples":2,"sampleStores":1,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":150},{"sku":"BSF-K040-01","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":null,"margin":0.3250695340605669,"forecastMargin":null,"sampleDate":"2025-05-24","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天","仓储测算待核"],"next":"先复核利润","days":null},{"sku":"BGZ-2501-15","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":"30天内（API档）","margin":0.26238475252914756,"forecastMargin":null,"sampleDate":"2026-08-06","samples":7,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-001-05","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":"90–120天（API档）","margin":0.21307082774407538,"forecastMargin":null,"sampleDate":"2025-12-08","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"HYZ-046-06","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"30天内（API档）","margin":0.30458380316838274,"forecastMargin":null,"sampleDate":"2026-02-11","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"JDT-GK008-02","category":"常规品","available":1,"lower":4,"upper":4,"latestBand":"60–90天（API档）","margin":0.2823606322482425,"forecastMargin":null,"sampleDate":"2026-11-10","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单"],"next":"先复核利润","days":8},{"sku":"JDT-7288-013","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.2694230735756984,"forecastMargin":null,"sampleDate":"2026-05-19","samples":2,"sampleStores":2,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"JDZH-2076-04","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":null,"margin":0.18518789740658714,"forecastMargin":null,"sampleDate":"2026-03-31","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天","仓储测算待核"],"next":"先复核利润","days":null},{"sku":"LBZ-2179-12","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.18342015474969697,"forecastMargin":null,"sampleDate":"2026-04-06","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null}],"coverage":{"active":529,"inStock":117,"identifiedOld":78,"unknownType":19,"oldWithMissingProfit":36},"inventory":{"activeSkuCount":529,"fullMasterSkuCount":2586,"knownActive":462,"unknownActive":67,"available":1662,"reserved":135,"transit":715,"conflicts":0},"stockDate":"2026-11-18","ageDate":"2026-11-18","yqnDifference":32,"coverageNative":{"start":"2026-09-10","end":"2026-11-16","observedEnd":"2026-11-16"},"commonCoverage":true,"refundDate":"2026-11-18","aftersalesDate":"2026-11-18","refundsSourceRead":"2026-11-18","wayfairThrough":"2026-11-16"}</script>
+  <script>/* 汇总图表沿用首页的已核口径，无外部图表依赖。 */
+(() => {
+  'use strict';
+  const get = id => document.getElementById(id);
+  const whole = new Intl.NumberFormat('zh-CN');
+  const currency = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD'});
+  const format = value => whole.format(value);
+  const usd = cents => currency.format(cents / 100);
+  const shortDate = date => date.slice(5).replace('-', '/');
+  const percent = value => (100 * value).toFixed(2) + '%';
+  const valueLabel = {
+    amountCents:[usd, value => value ? '$' + format(value / 100000) + 'k' : '$0'],
+    orders:[value => format(value)+' 单',format],
+    lower:[value => format(value)+' 源单位',format],
+  };
+  const escape = value => String(value ?? '待核').replace(/[&<>"']/g, char =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const colors = ['#245f9b','#876f9d'];
+  const channelNames = {total:'全部平台',Amazon:'Amazon',Shopify:'独立站',Wayfair:'Wayfair'};
+  const metricNames = {amountCents:'商品额（USD）',orders:'有效订单（单）',lower:'已核净量下界（源商品单位）'};
+
+  function renderSales(sales) {
+    const chart = get('salesTrend');
+    const ctx = chart.getContext('2d');
+    const dayControl = get('trendDay');
+    const readout = get('trendValues');
+    const periods = [sales.current,sales.previous];
+    const controls = {metric:[...document.querySelectorAll('[data-metric]')],
+      channel:[...document.querySelectorAll('[data-channel]')]};
+    const slot = {metric:'amountCents',channel:'total'};
+    const dayCount = periods[0].days.length;
+    dayControl.max = dayCount;
+    let hoveredDay = dayCount - 1;
+    const points = period => period.days.map(row => slot.channel === 'total' ? row.total : row.platforms[slot.channel]);
+    get('trendDates').textContent = '各期按第几天对齐 · ' + periods.map(period =>
+      shortDate(period.start)+'–'+shortDate(period.end)).join(' 对比 ');
+    function updateDetails(series) {
+      const values = series.map(rows => rows[hoveredDay][slot.metric]);
+      const [formatMetric] = valueLabel[slot.metric];
+      get('trendDayNumber').textContent = hoveredDay + 1;
+      dayControl.value = hoveredDay + 1;
+      dayControl.setAttribute('aria-valuetext', '第'+(hoveredDay + 1)+'天');
+      chart.setAttribute('aria-label',channelNames[slot.channel] + '每日' + metricNames[slot.metric] + ' · 本期与前期对比');
+      readout.title = slot.metric === 'orders' && sales.hasOrderCalendarOverlap ? sales.orderCountNote : '';
+      readout.innerHTML = ['本期','前期'].map((label,i) =>
+        label+' '+shortDate(periods[i].days[hoveredDay].date)+' <strong>'+formatMetric(values[i])+'</strong>').join('　／　');
+    }
+
+    function draw() {
+      const series = periods.map(points);
+      updateDetails(series);
+      if (!ctx) return;
+      const w = chart.clientWidth, h = chart.clientHeight;
+      if (!w || !h) return;
+      const ratio = Math.min(2, window.devicePixelRatio || 1);
+      chart.width = Math.round(w * ratio);
+      chart.height = Math.round(h * ratio);
+      ctx.setTransform(ratio,0,0,ratio,0,0);
+
+      const peak = Math.max(1,...series.flatMap(rows => rows.map(row => row[slot.metric])));
+      const targetStep = peak / 4;
+      const exponent = 10 ** Math.floor(Math.log10(targetStep));
+      const step = Math.max(slot.metric === 'amountCents' ? 100000 : 1,
+        [1,2,2.5,5,10].find(n => n * exponent >= targetStep) * exponent);
+      const top = Math.ceil(peak / step) * step;
+      const left = slot.metric === 'amountCents' ? 51 : 35;
+      const right = w - 13, base = h - 25, ceiling = 15;
+      const x = i => left + (right - left) * i / (periods[0].days.length - 1);
+      const y = value => base - (base - ceiling) * value / top;
+
+      ctx.font = '11px system-ui,sans-serif';
+      ctx.fillStyle = '#566d85';
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'right';
+      for (let tick = 0; tick <= top; tick += step) {
+        const ordinate = y(tick);
+        ctx.strokeStyle = tick ? '#e2eaf2' : '#aabed1';
+        ctx.beginPath(); ctx.moveTo(left,ordinate); ctx.lineTo(right,ordinate); ctx.stroke();
+        ctx.fillText(valueLabel[slot.metric][1](tick),left-7,ordinate);
+      }
+      ctx.textAlign = 'center';
+      for (const day of w < 410 ? [1,10,20,dayCount] : [1,5,10,15,20,25,dayCount]) {
+        ctx.textAlign = day === dayCount ? 'right' : 'center';
+        ctx.fillText('第'+day+'天',x(day-1),h-11);
+      }
+      const focus = x(hoveredDay);
+      ctx.strokeStyle = '#b3c6da';
+      ctx.beginPath(); ctx.moveTo(focus,ceiling); ctx.lineTo(focus,base); ctx.stroke();
+      for (const i of [1,0]) {
+        const values = series[i].map(row => row[slot.metric]);
+        ctx.strokeStyle = colors[i];
+        ctx.lineWidth = i ? 1.6 : 2.3;
+        ctx.setLineDash(i ? [5,4] : []);
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        values.forEach((value,k) => k ? ctx.lineTo(x(k),y(value)) : ctx.moveTo(x(k),y(value)));
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = colors[i];
+        ctx.beginPath(); ctx.arc(focus,y(values[hoveredDay]),4,0,Math.PI*2); ctx.fill();
+        ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.15; ctx.stroke();
+      }
+    }
+
+    for (const [key,buttons] of Object.entries(controls)) {
+      for (const button of buttons) button.addEventListener('click', () => {
+        slot[key] = button.dataset[key];
+        buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        draw();
+      });
+    }
+    dayControl.addEventListener('input', () => {hoveredDay = Number(dayControl.value) - 1;draw();});
+    function pointNear(event) {
+      const rect = chart.getBoundingClientRect();
+      const left = slot.metric === 'amountCents' ? 51 : 35;
+      const segment = (event.clientX - rect.left - left) / (rect.width - left - 13);
+      const next = Math.max(0,Math.min(dayCount-1,Math.round(segment * (dayCount-1))));
+      if (next !== hoveredDay) {hoveredDay = next;draw();}
+    }
+    chart.addEventListener('pointermove', event => {if (event.pointerType === 'mouse') pointNear(event);});
+    chart.addEventListener('pointerdown',pointNear);
+    new ResizeObserver(draw).observe(chart);
+    draw();
+  }
+
+  function renderInventory({master,yqnAge}) {
+    get('stockChartDate').textContent = master.date + ' 主表 · 已知套数';
+    get('ageChartDate').textContent = yqnAge.date + ' 仓配快照 · 物理齐套下界';
+    const bar = (label, units, max, extra = '') =>
+      '<div class="stock-row '+extra+'"><span class="stock-label">'+escape(label)+'</span><span class="track" aria-hidden="true"><i style="width:'+100*units/max+'%"></i></span><strong class="stock-value">'+format(units)+' 套</strong></div>';
+    if (master.totalsMatch) {
+      const max = Math.max(1,...master.regions.map(region => region.available.units));
+      get('regionalStock').innerHTML = master.regions.map(region =>
+        bar(region.label,region.available.units,max)+'<p class="region-details">预留 '+format(region.reserved.units)+' 套 · 在途 '+format(region.transit.units)+' 套</p>').join('');
+      get('stockChartNote').textContent = '三区合计可用 '+format(master.national.available.units)+' 套 · '+format(master.national.available.unknownSkus)+' 款主表可用待核。';
+    } else {
+      get('regionalStock').textContent = '区域主表小计与全国待核。';
+    }
+    const ageMax = Math.max(1,...yqnAge.bands.map(band => band.units));
+    get('inventoryAge').innerHTML = yqnAge.bands.map((band,index) =>
+      bar(band.label.replace(/（API档）$/u,''),band.units,ageMax,'age-row' + (index >= 4 ? ' older' : ''))).join('');
+    const aged = yqnAge.bands.slice(4).reduce((total,band) => total + band.units,0);
+    get('ageChartNote').textContent = '120天以上已核 '+format(aged)+' 套 · '+yqnAge.coveredSkus+'/'+yqnAge.scopeSkus+' 款有可量化库龄。含预留。';
+  }
+
+  function renderCandidatePlot(rows, population) {
+    const plot = get('candidatePlot');
+    const focus = get('candidateFocus');
+    if (!rows.length) {
+      plot.textContent = '';
+      focus.textContent = '当前利润门槛暂无候选。';
+      return;
+    }
+    const maxMargin = Math.max(.25,Math.ceil(Math.max(...population.map(row => row.margin))/.05)*.05);
+    const yMin = .12;
+    const yMax = maxMargin+.0175;
+    const xFor = (q,offset=0) => (q + .5 + offset) / 6 * 100;
+    const yFor = p => (p - yMin) / (yMax - yMin) * 100;
+    const ticks = [];
+    for (let tick = 15; tick <= Math.round(maxMargin*100); tick += 5) {
+      ticks.push('<div class="scatter-y-tick" style="bottom:'+yFor(tick/100)+'%"><span>'+tick+'%</span></div>');
+    }
+    for (let n = 0; n <= 5; n++) {
+      ticks.push('<div class="scatter-x-tick" style="left:'+xFor(n)+'%">'+n+'</div>');
+    }
+    const greatestStock = Math.max(1,...population.map(row => row.available));
+    const sizes = rows.map(row => 12 + 16 * Math.sqrt(row.available/greatestStock));
+    const offsets = new Array(rows.length).fill(0);
+    for (let quantity = 0; quantity <= 5; quantity++) {
+      const slots = [{offset:0},{offset:-.27},{offset:.27}];
+      const group = rows.map((row,index) => ({row,index})).filter(({row}) => row.upper === quantity)
+        .sort((a,b) => a.row.margin - b.row.margin);
+      for (const {row,index} of group) {
+        const bottom = yFor(row.margin)/100 * plot.clientHeight - sizes[index]/2;
+        const slot = slots.find(item => item.top === undefined || item.top + 2 < bottom)
+          || slots.reduce((earliest,item) => item.top < earliest.top ? item : earliest);
+        offsets[index] = slot.offset;
+        slot.top = bottom+sizes[index];
+      }
+    }
+    plot.innerHTML = '<div class="scatter-caption">历史运营利润率 · 圆点大小为可用库存</div>'+ticks.join('')+rows.map((row,i) => {
+      const size = sizes[i].toFixed(1);
+      const title = row.sku+' · 净量上界 '+format(row.upper)+' 套 · 历史运营利润率 '+percent(row.margin)+' · 可用 '+format(row.available)+' 套';
+      const forecast = row.forecastMargin !== null && row.forecastMargin < .15;
+      return '<button type="button" class="scatter-mark'+(forecast?' forecast':'')+'" aria-pressed="false" data-point="'+i+
+        '" title="'+escape(title)+'" aria-label="'+escape(title)+'" style="left:'+xFor(row.upper,offsets[i])+'%;bottom:'+yFor(row.margin)+
+        '%;width:'+size+'px;height:'+size+'px"></button>';
+    }).join('');
+    const markers = [...plot.querySelectorAll('.scatter-mark')];
+    function select(index) {
+      const row = rows[index];
+      markers.forEach((marker,i) => marker.setAttribute('aria-pressed',String(i===index)));
+      const scenario = row.forecastMargin === null ? '' : '<p>通知价模拟 '+percent(row.forecastMargin)+'</p>';
+      focus.innerHTML = '<strong>'+escape(row.sku)+'</strong><p>近30天净量上界 '+format(row.upper)+' 套 · 可用 '+format(row.available)+' 套</p><p>历史运营利润率 '+percent(row.margin)+'</p>' +
+        scenario+'<p>'+escape(row.next)+'</p><a href="./details.html?view=query" data-sku="'+escape(row.sku)+'">查看SKU明细 →</a>';
+    }
+    markers.forEach((marker,i) => marker.addEventListener('click',() => select(i)));
+    select(0);
+  }
+  window.bossCharts = {renderSales,renderInventory,renderCandidatePlot};
+})();
+</script>
   <script>(() => {
   'use strict';
   const data = JSON.parse(document.getElementById('bossSummary').textContent);
-  const {current,previous,platforms,inventory,coverage} = data;
+  const {current,previous,platforms,inventory,coverage,chartSales,chartInventory} = data;
   const int = value => new Intl.NumberFormat('zh-CN').format(value);
   const usd = value => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
   const pct = (value, digits=1) => value === null ? '待核' : (value * 100).toFixed(digits) + '%';
@@ -157,9 +445,14 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
     toggle.textContent = expanded ? '收起' : '展开全部 ' + rows.length + ' 款';
     toggle.setAttribute('aria-expanded',String(expanded));
   }
-  document.querySelectorAll('[data-threshold]').forEach(button => button.addEventListener('click', () => {threshold = Number(button.dataset.threshold);expanded = false;renderCandidates();}));
+  document.querySelectorAll('[data-threshold]').forEach(button => button.addEventListener('click', () => {
+    threshold = Number(button.dataset.threshold);
+    expanded = false;
+    window.bossCharts.renderCandidatePlot(filteredRows(),data.candidates);
+    renderCandidates();
+  }));
   toggle.addEventListener('click', () => {expanded = !expanded;renderCandidates();});
-  document.getElementById('candidates').addEventListener('click', event => {
+  document.querySelector('.products').addEventListener('click', event => {
     const link = event.target.closest('[data-sku]');
     if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
       try {sessionStorage.setItem('bossPendingSku', link.dataset.sku);} catch (_) { /* Query remains available. */ }
@@ -178,6 +471,9 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
     link.click();
     setTimeout(() => URL.revokeObjectURL(url),5000);
   });
+  window.bossCharts.renderSales(chartSales);
+  window.bossCharts.renderInventory(chartInventory);
+  window.bossCharts.renderCandidatePlot(filteredRows(),data.candidates);
   renderCandidates();
 })();
 </script>
