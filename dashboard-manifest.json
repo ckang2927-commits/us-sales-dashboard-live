@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.18-consistency-fix-2fd9b43223ed",
-  "generatedAt": "2026-11-18T03:40:03.594056+00:00",
+  "version": "2026.11.18-live-refresh-d0eaa1bcd58f",
+  "generatedAt": "2026-11-18T04:38:11.000309+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -43,9 +43,84 @@
   "extension": {
     "parts": [
       {
-        "url": "refund-aftersales-839fb1f05947f0b4.txt",
-        "bytes": 7788970,
-        "sha256": "839fb1f05947f0b40d42284c1393112faf7329bd20c87d240c79054d3b0f0a12"
+        "url": "live-refresh-refundAftersalesDetailData-01-2f601e8b2305650a.txt",
+        "bytes": 524288,
+        "sha256": "2f601e8b2305650a9afa351e106728c2e2815631c905d8ff9ace4f9b24b2b9b5"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-02-f176730668d9c25c.txt",
+        "bytes": 524288,
+        "sha256": "f176730668d9c25ce1a5ae2aa36374cb24a6dc3f6b776d62bcdf21a1e95f579a"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-03-fa9df8e524e21faa.txt",
+        "bytes": 524288,
+        "sha256": "fa9df8e524e21faae216d70384bdd19196f0f5668c29eb2e1a2bc56efdfa2ec8"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-04-1059bedecab97314.txt",
+        "bytes": 524287,
+        "sha256": "1059bedecab97314e9d607932186020a54b6435a5b68ef10317444be2b39a7fb"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-05-5dc16cb115f94e3b.txt",
+        "bytes": 524288,
+        "sha256": "5dc16cb115f94e3b8a7ec4c3d05f0bf5f6bc7bbde21494f68ad480ffc3673a94"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-06-6c487631e29af05e.txt",
+        "bytes": 524288,
+        "sha256": "6c487631e29af05e10a8f56e879cf7dfc32b4c390fa3b6a25ac2f6364a87d130"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-07-c4e8d8545d5823ec.txt",
+        "bytes": 524288,
+        "sha256": "c4e8d8545d5823ec75f102133cef8bbf66a8620de21f613aace120a86b538662"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-08-85cfb1274fc543ec.txt",
+        "bytes": 524288,
+        "sha256": "85cfb1274fc543ec7f52792f9cd8106212eff1667139c1b31ab242a890eabd43"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-09-aef233dfd9af8d34.txt",
+        "bytes": 524288,
+        "sha256": "aef233dfd9af8d3474e6fd180409e71236c804a53b0ecba78277ca51c2775f6d"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-10-397ac86cedd6e74f.txt",
+        "bytes": 524288,
+        "sha256": "397ac86cedd6e74f9d1b3185db206226e0c5d4f5bdb692a6bef6bfe46dfd514d"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-11-6e27783d2ac41850.txt",
+        "bytes": 524288,
+        "sha256": "6e27783d2ac41850907197be9ced8e8772f74bd758b1e219a5d3428446a22c88"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-12-c8e60252ea7e9a29.txt",
+        "bytes": 524288,
+        "sha256": "c8e60252ea7e9a296723d75baba4ce1a479a121ec6fb69db09f31c2fea946c30"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-13-83213005864ac7f8.txt",
+        "bytes": 524288,
+        "sha256": "83213005864ac7f89631904f44fe8097b18c05573be3ab91487e46769960efad"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-14-ec11d33e5450a28b.txt",
+        "bytes": 524288,
+        "sha256": "ec11d33e5450a28baf46a81690213c6336665022e3aaad1359e28c5808e51038"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-15-01c96ec1cac0c26e.txt",
+        "bytes": 524288,
+        "sha256": "01c96ec1cac0c26ecfbd3cb0aa943c9927a4f5914eec63e79bd3b68e3ddf11b5"
+      },
+      {
+        "url": "live-refresh-refundAftersalesDetailData-16-f8b6a218cde144b5.txt",
+        "bytes": 101198,
+        "sha256": "f8b6a218cde144b5503429b051d4873c4c36c52d709989270d85d730dc447263"
       },
       {
         "url": "sales-inventory-addon-3b6f6ec7f410efd1.txt",
@@ -103,19 +178,84 @@
         "sha256": "f64c264064714db65677adf5c6b66caee6945f6cf9ad5bfdc92c7bcd4e3a6537"
       },
       {
-        "url": "net-sales-tail-01-0a82bd5848aa3752.txt",
-        "bytes": 2097151,
-        "sha256": "0a82bd5848aa375235e28c5ca998920a2dfa53bbe0f73967b7b3d9de46070fc4"
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-01-da85673ed7d5575b.txt",
+        "bytes": 524288,
+        "sha256": "da85673ed7d5575beee7eff85fa92173883a98c375401005b336d2b4513cbcc4"
       },
       {
-        "url": "net-sales-tail-02-df3c14ab0abf5fc7.txt",
-        "bytes": 2097152,
-        "sha256": "df3c14ab0abf5fc7650389974f071e7f549d8bbf20f5c4d224b6f6208a996c43"
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-02-117a41a0ef9bd0bc.txt",
+        "bytes": 524288,
+        "sha256": "117a41a0ef9bd0bcc1f63ff793d0a89032cd9b81985ca121e89ecc513e8621f6"
       },
       {
-        "url": "net-sales-tail-03-1a57f9a1722aa920.txt",
-        "bytes": 1552538,
-        "sha256": "1a57f9a1722aa9203f55c7d845ac2784e2c87b54f8af942cb237f1d8a2607714"
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-03-7a187df97998afb7.txt",
+        "bytes": 524288,
+        "sha256": "7a187df97998afb7c49c68ac94af396647e9f78c0dd25f5e45c35323ad62c072"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-04-5abbc4233a010542.txt",
+        "bytes": 524288,
+        "sha256": "5abbc4233a010542d774998e4d39a1c3144a68a42e1be70bbf98aba8aa783f94"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-05-d0f51f8c0bb2c534.txt",
+        "bytes": 524288,
+        "sha256": "d0f51f8c0bb2c5344c6904c8cde5bf8a5412aadeae1bf3f02b77aa9d138135a6"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-06-0a2c172240d0c402.txt",
+        "bytes": 524288,
+        "sha256": "0a2c172240d0c4027377b131562b2bd55a73ab7f242d2c864257728915e04c91"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-07-86f4e7a4574d3237.txt",
+        "bytes": 524287,
+        "sha256": "86f4e7a4574d3237d9a57ecd64428e763071a15f69531a4a1bae1a5fd919b381"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-08-b593f74dc5538685.txt",
+        "bytes": 524287,
+        "sha256": "b593f74dc5538685c9309d2a8b0b2f9fa30414486edc67a3b06adf9e98f7844d"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-09-b9fd41f81b398399.txt",
+        "bytes": 524288,
+        "sha256": "b9fd41f81b39839956c75aa6a25cbccdadc308ae2e9b16ce80b2da7531f0cbe4"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-10-bc68da00a4eb1ffa.txt",
+        "bytes": 524288,
+        "sha256": "bc68da00a4eb1ffa442029768f2c8e41406a8d15bdf5c166cde84e1852a2a441"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-11-19734bc767c26da6.txt",
+        "bytes": 524288,
+        "sha256": "19734bc767c26da621b969d216d5e08323b154a1d9680b00494a058c7b8b5cc9"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-12-3d8f339d364f798b.txt",
+        "bytes": 524287,
+        "sha256": "3d8f339d364f798b317471058c4c705fcedd7d37e591299a58870f11a0d4b326"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-13-33240524b03d37c7.txt",
+        "bytes": 524288,
+        "sha256": "33240524b03d37c72ab8b146fdd99fda6f4cc0838e88c4193f00b541ca3474a6"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-14-ee86b51eeff016ee.txt",
+        "bytes": 524288,
+        "sha256": "ee86b51eeff016ee90a62878f932eabc8c2f48fcbe69baeb43a0b7bc62e3b3db"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-15-e1c98b2bfcd4da76.txt",
+        "bytes": 524288,
+        "sha256": "e1c98b2bfcd4da764759ace823edb59ece9df06c534357d63f91cbab3227448e"
+      },
+      {
+        "url": "live-refresh-monthTodaySalesDelta-businessScope-16-b6cc59360b0f1197.txt",
+        "bytes": 140629,
+        "sha256": "b6cc59360b0f119775a60188388642a2b340f5e1c8150100f59370f512064254"
       },
       {
         "url": "profit-price-01-db37a4f9ffb43f39.txt",
@@ -228,28 +368,123 @@
         "sha256": "9adfd813bf180d2f6bc3e64699d94110f0697d4fd6c61946211d538f35e97431"
       },
       {
-        "url": "consistency-fix-01-55006a01556bb543.txt",
+        "url": "live-refresh-inventoryConsistencyData-salesScope-01-ebd93aa341e2cb41.txt",
         "bytes": 524288,
-        "sha256": "55006a01556bb543e565b6c1e36bc829bbab7c6675ec34f9027a7d0ca91951f0"
+        "sha256": "ebd93aa341e2cb41130b8c1531314b5695d6b56eeafecc61c4672e2a17be8edb"
       },
       {
-        "url": "consistency-fix-02-4b680fb5e13ff4cb.txt",
+        "url": "live-refresh-inventoryConsistencyData-salesScope-02-82074f81482e7b4f.txt",
         "bytes": 524288,
-        "sha256": "4b680fb5e13ff4cb05a3696851ec9f2a33bf689bee45759e82eda954a506faf2"
+        "sha256": "82074f81482e7b4f56a8747a33dfc7370a4bb58fc0456ee077abc1c95732a2fc"
       },
       {
-        "url": "consistency-fix-03-f95f2da80a5e0b7e.txt",
+        "url": "live-refresh-inventoryConsistencyData-salesScope-03-f82d01e4a1a85415.txt",
         "bytes": 524288,
-        "sha256": "f95f2da80a5e0b7e3d46eead5d45360b623b737c7c11aeb82cd68076606379f0"
+        "sha256": "f82d01e4a1a85415b71a626e2fe3666f6e4616e2d63e5ce00cac9a052a65b54b"
       },
       {
-        "url": "consistency-fix-04-786a7bf682ad1c9f.txt",
-        "bytes": 519416,
-        "sha256": "786a7bf682ad1c9fe5079388203c5ce7360e81d7e174ff14e8771f226b4572fa"
+        "url": "live-refresh-inventoryConsistencyData-salesScope-04-7ac6b89ceb1ad49a.txt",
+        "bytes": 471744,
+        "sha256": "7ac6b89ceb1ad49aa1727168c11ec8ca2c23c8b44af3879dacfffd7bc162e31c"
+      },
+      {
+        "url": "live-refresh-yqn-01-31b1d0f085af3494.txt",
+        "bytes": 524288,
+        "sha256": "31b1d0f085af3494a4818bb5546da23f2ae91413f493bd0bcde08a2ff9a3b2f9"
+      },
+      {
+        "url": "live-refresh-yqn-02-43641b2055be75ac.txt",
+        "bytes": 524287,
+        "sha256": "43641b2055be75ac922b20cd032869b6b7f4acd72c8d1f8b3d3f9b1b44a61ba6"
+      },
+      {
+        "url": "live-refresh-yqn-03-1c158153f5f6150f.txt",
+        "bytes": 524288,
+        "sha256": "1c158153f5f6150f36ac94182765e7bb7d432da7e93e56e78d546fe978b0a12c"
+      },
+      {
+        "url": "live-refresh-yqn-04-d9f32f956faab682.txt",
+        "bytes": 524288,
+        "sha256": "d9f32f956faab6824292574b8cefa19d49293ab4cf95679b5fd89824616d098f"
+      },
+      {
+        "url": "live-refresh-yqn-05-1bc3b743a336b5cc.txt",
+        "bytes": 524288,
+        "sha256": "1bc3b743a336b5cce90d15f571b23e8c8e8501a065d493347d2562a0b98a08ec"
+      },
+      {
+        "url": "live-refresh-yqn-06-db55a28b9ec31047.txt",
+        "bytes": 524288,
+        "sha256": "db55a28b9ec3104778221e59aba06addbf7137439c287f0017bbd90c31c1e188"
+      },
+      {
+        "url": "live-refresh-yqn-07-3937c06c915b3ee9.txt",
+        "bytes": 524288,
+        "sha256": "3937c06c915b3ee920b3831a8440168bd2160d83805f3dbe73d43b2c930ffce5"
+      },
+      {
+        "url": "live-refresh-yqn-08-a4c38db025507efa.txt",
+        "bytes": 524288,
+        "sha256": "a4c38db025507efa39d815393fabb2ae1d44d30d5ee16e7ff826e74863bc5f02"
+      },
+      {
+        "url": "live-refresh-yqn-09-37ba9272c7299d80.txt",
+        "bytes": 524288,
+        "sha256": "37ba9272c7299d80a53ff4260ac978683a0c1af711b700340cec8d5465af7e7c"
+      },
+      {
+        "url": "live-refresh-yqn-10-770f96da597d79a9.txt",
+        "bytes": 524288,
+        "sha256": "770f96da597d79a95b1f92f8719673c6ef11ce5ec92f7b781d5d43175bac8e03"
+      },
+      {
+        "url": "live-refresh-yqn-11-1ae14eabfd000616.txt",
+        "bytes": 524288,
+        "sha256": "1ae14eabfd0006161c5dab5b22d1a4b78ea0ee386ae293d38ec4212d4bd69661"
+      },
+      {
+        "url": "live-refresh-yqn-12-e71f5bc6ac31221e.txt",
+        "bytes": 524288,
+        "sha256": "e71f5bc6ac31221e42330be356d89481d549fd1188de0bebe18a7bc88b00222e"
+      },
+      {
+        "url": "live-refresh-yqn-13-7af2f474f0536bce.txt",
+        "bytes": 524288,
+        "sha256": "7af2f474f0536bce6242d38276fe42e6e07dbc01463145bc60e4cab77ed5002b"
+      },
+      {
+        "url": "live-refresh-yqn-14-bb2f7bc2956487bf.txt",
+        "bytes": 524288,
+        "sha256": "bb2f7bc2956487bf52520b005897da0df3e91085c6451ccad1a000aa96a3ce5d"
+      },
+      {
+        "url": "live-refresh-yqn-15-b3d906ed08d4cf2d.txt",
+        "bytes": 524288,
+        "sha256": "b3d906ed08d4cf2d4673001423baa382fa3d9f6d58ddfb56d063d6578e07d0fc"
+      },
+      {
+        "url": "live-refresh-yqn-16-3d8d7e39a954dc25.txt",
+        "bytes": 524288,
+        "sha256": "3d8d7e39a954dc25819a6a22426ec7abc145718e8c1786a5077bd4d7d0885a51"
+      },
+      {
+        "url": "live-refresh-yqn-17-ee816b7a6a443f75.txt",
+        "bytes": 524288,
+        "sha256": "ee816b7a6a443f757125ba8a7b381aab418c9a23ffb66ca76d0348c00a2b3d3c"
+      },
+      {
+        "url": "live-refresh-yqn-18-88f6f21c7a4795dd.txt",
+        "bytes": 524288,
+        "sha256": "88f6f21c7a4795ddaff8a67d262dc2cd13b26471971c72929b358cb08f74f6aa"
+      },
+      {
+        "url": "live-refresh-yqn-19-6d077937b6acdd62.txt",
+        "bytes": 19903,
+        "sha256": "6d077937b6acdd6272a11fc596f27b681d384dfb16271a759dc78fb4a8f83447"
       }
     ],
-    "bytes": 76377436,
-    "sha256": "f2c3dbbf72849d0cb24d1e2894f80fc278c9c986b9aa909edbac6ea419a706cb",
+    "bytes": 88221502,
+    "sha256": "ec6ecc1355bd3e28b81ddc6a5e8cf2864bb849a377f8a216ee3603730d96afbd",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -265,9 +500,11 @@
       "#btzDateReady",
       "#allSkuOwnProfitReady",
       "#markdownReviewReady",
-      "#dashboardConsistencyReady"
+      "#dashboardConsistencyReady",
+      "#freshYqnReady",
+      "#liveRefreshReady"
     ]
   },
-  "renderedHtmlBytes": 275060290,
-  "renderedHtmlSha256": "2fd9b43223ed55b7a0cab9de94785a09cadcefd742ab0e0205316dc33afb9fdd"
+  "renderedHtmlBytes": 286904356,
+  "renderedHtmlSha256": "d0eaa1bcd58f43a926ea80e031e723efe28b687b8676a65ed199dc95e3a07cfb"
 }
