@@ -1,0 +1,350 @@
+<script type="application/json" id="bossSourceDates">{"net": "2026-09-10 至 2026-11-16", "history": "2026-01-01 至 2026-11-16", "stock": "2026-11-18", "age": "2026-11-18", "refunds": "2026-11-18", "aftersales": "2026-11-18", "wayfair": "2026-11-16"}</script>
+<style data-boss-patch="operations.css">
+.boss-residual-note {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  border: 1px solid #d8e0eb;
+  border-radius: 6px;
+  background: #f5f8fc;
+}
+.boss-residual-note h3 { margin: 0 0 6px; color: #31496b; }
+.boss-residual-note p { margin: 6px 0; }
+.boss-residual-note summary { color: #31496b; cursor: pointer; }
+.boss-residual-scroll { max-width: 100%; overflow: auto; }
+
+</style>
+
+<style data-boss-patch="audit.css">
+.ra-audit-flag{display:inline-block;margin:4px 4px 0 0;font-size:11px;background:#fff1da;color:#704600}
+
+</style>
+
+<script data-boss-patch="operations.js">
+/* 残件旧台账及新外仓旁证；数量按卖品归属、仓库、库存类型及包装精确核对。 */
+(function (root) {
+  'use strict';
+  const yqn = root.freshYqnModel;
+  const markdown = root.markdownFollowupModel;
+  const master = root.inventoryConsistencyModel;
+  if (!yqn?.ready || !markdown?.ready || !master?.ready) throw Error('经营修复依赖的库存或降价模块未完成初始化');
+  const esc = value => cxEsc(String(value ?? ''));
+  const known = value => typeof value === 'number' && Number.isFinite(value);
+  const oldDate = pieceInventory.meta?.stock_date;
+  const currentDate = yqn.data.meta.queryDateShanghai;
+
+  function residualComparison(groups = pieceGroups) {
+    const candidates = groups.filter(group => group.ledger === 'YQN' && group.residual_package_units > 0);
+    const matched = candidates.flatMap(group => {
+      const inventory = yqn.bySku.get(group.sku)?.warehouseGroups || [];
+      const possible = inventory.filter(item =>
+        item.warehouse_code === group.warehouse_code && item.inventory_type === group.inventory_type &&
+        item.pack_parts === group.package_count && item.pack_version === (group.packaging_version || '') &&
+        item.inventory_source_rows?.length && known(item.physical_residual_cartons));
+      if (possible.length !== 1) return [];
+      const item = possible[0];
+      return [{
+        sku:group.sku, warehouse:group.warehouse_code, type:group.inventory_type, parts:group.package_count,
+        version:group.packaging_version, old:group.residual_package_units, current:item.physical_residual_cartons,
+        currentCompleteSets:item.physical_complete_sets, currentCartons:item.physical_observed_cartons,
+        sourceRows:item.inventory_source_rows,
+      }];
+    });
+    return {
+      oldDate,currentDate,candidates:candidates.length,comparable:matched.length,missing:candidates.length-matched.length,
+      changes:matched.filter(item=>item.old!==item.current),
+    };
+  }
+
+  function residualHtml() {
+    const view = residualComparison(currentPieceGroups());
+    const evidence = view.changes.length ? cxTable(
+      ['精确SKU','仓库／类型','包装／版本','历史余箱','最新余箱','最新物理箱／完整套','新库存API源行'],
+      view.changes.map(item=>[
+        esc(item.sku),esc(item.warehouse+' / '+item.type),esc(item.parts+'包 / '+(item.version||'原包装')),
+        cxQty(item.old),cxQty(item.current),
+        cxQty(item.currentCartons)+'箱 / '+(known(item.currentCompleteSets)?cxQty(item.currentCompleteSets)+'套':'待核'),
+        esc(item.sourceRows.join('、')),
+      ])) : '<p>当前筛选未见已证余箱变化。</p>';
+    return '<section class="boss-residual-note" aria-labelledby="bossResidualHeading">'
+      + '<h3 id="bossResidualHeading">残件／配件历史台账 · '+esc(oldDate||'日期待核')+'</h3>'
+      + '<p>下方图表和明细为该日台账。主表与 YQN 分账记录，分类沿原确认依据保留。</p>'
+      + '<details><summary>查看 '+esc(currentDate)+' YQN 余箱核对 · '+view.changes.length+'组变化</summary>'
+      + '<p>当前筛选下历史正余箱 '+view.candidates+' 组，精确匹配 '+view.comparable+' 组，有 '+view.missing
+      + ' 组待核。按 SKU、仓库、库存类型、包数及版本匹配；只展示可比组的变化。</p>'
+      + '<div class="boss-residual-scroll">'+evidence+'</div></details></section>';
+  }
+
+  const beforeRender = renderPieces;
+  renderPieces = function () {
+    const prior = beforeRender.apply(this, arguments);
+    const counts = document.getElementById('pieceCount');
+    if (counts) counts.textContent += ' · 历史快照 '+(oldDate||'日期待核');
+    const block = document.getElementById('bossResidualStatus');
+    if (block) {
+      const expanded = block.querySelector('details')?.open;
+      block.innerHTML = residualHtml();
+      if (expanded && block.querySelector('details')) block.querySelector('details').open = true;
+    }
+    return prior;
+  };
+  const pane = document.getElementById('piecesPane');
+  const residualStatus = document.createElement('div');
+  residualStatus.id = 'bossResidualStatus';
+  if (pane) pane.insertAdjacentElement('afterbegin',residualStatus);
+  const originalPieceValues = piecePlainValues;
+  piecePlainValues = function (group) {
+    const result = originalPieceValues.apply(this,arguments);
+    const last = result.length-1;
+    result[last] = '历史台账 '+(oldDate||'日期待核')+' · '+result[last];
+    return result;
+  };
+  if (pageState.view === 'pieces') renderPieces();
+
+  function markdownActionCounts() {
+    const counts = {candidate:0,toRecheck:0,noStock:0};
+    for (const row of markdown.rows) {
+      const code = markdown.actionStatus(row).code;
+      if (code === 'candidate') counts.candidate++;
+      if (code === 'no_stock') counts.noStock++;
+      if (code.startsWith('review_')) counts.toRecheck++;
+    }
+    return counts;
+  }
+
+  function stockCoverage() {
+    const {knownActive,unknownActive,available,reserved,transit} = master.data.summary;
+    const positiveWithoutAge = yqn.data.rows.filter(row=>row.active && master.current(row.sku).available>0 &&
+      !Object.values(row.ageBands || {}).some(value=>value>0));
+    return {knownActive,unknownActive,available,reserved,transit,positiveWithoutAge:positiveWithoutAge.length,
+      positiveWithoutAgeMasterAvailable:positiveWithoutAge.reduce((units,row)=>units+master.current(row.sku).available,0),
+      inventoryDate:master.data.meta.sourceSnapshotDate,yqnDate:currentDate};
+  }
+
+  function openMonitorOrder(index) {
+    if (!Number.isInteger(index) || index < 0 || cxState.view !== 'newproducts' || nmState.mode !== 'monitor') return false;
+    const product = nmBySku.get(cxState.detail.sku);
+    const order = product ? nmDetailRecords(product)[index] : null;
+    if (!order) return false;
+    const dialog = cxEl('cxOrderDialog');
+    if (dialog.open) dialog.close();
+    cxEl('cxOrderTitle').textContent = order.orderId+' · '+order.sku+' · 新品出单监控';
+    const status = order.excluded ? (order.exclusionReasons || []).join('；') : [
+      order.fullRefundOrReturned ? '全退或退货' : '',
+      order.partialRefundPending ? '部分退款数量待核' : '',
+      order.identityPending ? '商品身份待核' : '',
+      order.countryPending ? '国家或区域待核' : '',
+      order.statusUnknown ? '订单状态待核' : '',
+    ].filter(Boolean).join('；');
+    cxEl('cxOrderBody').innerHTML = cxTable(['字段','源内记录'],[
+      ['平台／店铺',esc(order.platform+' / '+order.store)],['美西日期',esc(order.date)],
+      ['精确SKU／店铺码',esc(order.sku)+' / '+esc(order.shopSku||'待核')],
+      ['原数量／状态保留参考',cxQty(order.quantity)+' / '+esc(order.excluded?'已剔除':nmRange(order.netReferenceLower,order.netReferenceUpper))],
+      ['原订单状态',esc(order.status||'待核')],['处理依据',esc(status||'按源内订单状态保留参考')],
+      ['来源',esc(String(order.sourcePath||'').split(/[\\/]/).at(-1)||'最新订单来源')+' · '+esc(order.sourceSheet)+' '+esc(order.sourceRow)],
+    ]);
+    dialog.showModal();
+    return true;
+  }
+
+  root.bossOperations = {residualComparison,markdownActionCounts,stockCoverage,openMonitorOrder};
+  const marker = document.createElement('span');
+  marker.id = 'bossOperationsReady';
+  marker.hidden = true;
+  document.body.appendChild(marker);
+})(window);
+
+</script>
+
+<script data-boss-patch="sales_repair.js">
+/* 逐店年度来源声明，及使用相同九店证据的两个连续30天。 */
+(function (root) {
+  'use strict';
+  if (root.bossSalesRepairModel?.ready) return;
+  const core = root.salesRefreshModel, query = root.spQueryPeriodModel, scope = root.salesScopeConsistencyModel;
+  if (!core?.ready || !query?.ready || !scope?.ready) throw Error('经营销量复核依赖未就绪');
+  const coverage = core.coverage.native, channels = scope.coverageStores;
+  const platformKeys = [...new Set(channels.map(row => row.platform))];
+  const verifiedStores = new Set(channels.map(row => ldStoreKey(row)));
+  const amountBasis = {
+    Amazon: '商品金额，不含单列客户运费',
+    Shopify: '折扣前商品行毛额',
+    Wayfair: '供货额'
+  };
+  const nearRange = query.nearRange(30);
+  const previousRange = { start: sxAdd(nearRange.start, -30), end: sxAdd(nearRange.start, -1) };
+  function stats(range, platform = '') {
+    const covered = scope.latestCoverageVerified && range.start >= coverage.start && range.end <= coverage.end;
+    if (!covered) return { ...range, covered, lower: null, upper: null, amount: null, orders: null, pendingRows: null };
+    const rows = core.sourceRows('native').filter(row => row.date >= range.start && row.date <= range.end
+      && (!platform || row.platform === platform) && verifiedStores.has(ldStoreKey(row)) && core.inScope(row, 'business'));
+    const totals = core.aggregateRows(rows, 'native');
+    return { ...range, covered, lower: totals.lower, upper: totals.upper, amount: totals.amount === null ? null : Number(totals.amount.toFixed(2)),
+      orders: totals.orderCount, pendingRows: rows.filter(row => row.pending).length };
+  }
+  function comparison(platform = '') {
+    const recent = stats(nearRange, platform), previous = stats(previousRange, platform);
+    const fields = ['lower', 'amount', 'orders'];
+    const change = Object.fromEntries(fields.map(key => [key, recent[key] !== null && previous[key] > 0 ? recent[key] / previous[key] - 1 : null]));
+    return { recent, previous, change };
+  }
+  const nearComparison = { cutoff: coverage.end, coverageStart: coverage.start, coverageEnd: coverage.end,
+    platformCount: platformKeys.length, storeCount: channels.length, amountBasis, timezone: 'America/Los_Angeles',
+    method: '按共同已核的美西原订单日，比较两个等长、连续且不重叠的30天。有效订单按平台、规范店铺和订单号去重，净量保留待核区间；金额按各平台源字段汇总。',
+    ...comparison(), byPlatform: platformKeys.map(platform => ({ platform, ...comparison(platform) })) };
+
+  function currentAnnualCoverage({ forTrend = false } = {}) {
+    if (!sxAnnual()) return null;
+    const bucket = forTrend ? null : sxBucketBounds(sxState.bucket);
+    let start = sxState.start, end = sxState.end;
+    if (bucket) { start = start > bucket.start ? start : bucket.start; end = end < bucket.end ? end : bucket.end; }
+    const selected = ldState.filters.store || '';
+    const selectedParts = selected.split('|');
+    const platform = selectedParts.length > 1 ? selectedParts[0] : cxState.sales.platform || (!forTrend ? sxState.chartPlatform : '') || '';
+    const store = selectedParts.length > 1 ? selectedParts.slice(1).join('|') : (!forTrend ? sxState.store : '') || '';
+    return query.periodCoverage({ ...query.defaults(), start, end, platform, store, salesMode: 'annual' });
+  }
+  const previousOverview = ovOverviewHtml;
+  ovOverviewHtml = function (context) {
+    const annual = sxAnnual(), evidence = currentAnnualCoverage();
+    const showUnknown = evidence && !evidence.periodComplete && !context.orders.length;
+    const checkedContext = showUnknown ? { ...context, period: { ...context.period, empty: true } } : context;
+    let html = previousOverview(checkedContext).replace(/ 单金额完整(?=<\/small>)/, annual ? ' 笔参考订单金额完整' : ' 笔有效订单金额完整');
+    if (showUnknown) html = html.replace(/未覆盖/g, '待核').replace(/0 \/ 0 笔参考订单金额完整/, '本期无可核商品行');
+    if (annual) return html;
+    return html.replace('商品行毛额 · 不含税运费', '三平台按各自商品额口径 · 未扣退款');
+  };
+  const previousCoverageNote = sxCoverageNote;
+  sxCoverageNote = function () {
+    const evidence = currentAnnualCoverage();
+    return evidence ? evidence.note : previousCoverageNote.apply(this, arguments);
+  };
+  const previousQueryCoverageHtml = sqUiCoverage;
+  sqUiCoverage = function (result) {
+    const html = previousQueryCoverageHtml.apply(this, arguments), stores = result.meta?.period?.coverageByStore;
+    if (!stores?.length) return html;
+    const items = stores.map(store => {
+      const proof = store.verifiedStart ? '请求内已验 ' + store.verifiedStart + '—' + store.verifiedEnd : '请求内无已验日期';
+      const observed = store.observedStart ? '所见记录 ' + store.observedStart + '—' + store.observedEnd : '请求内未见记录';
+      return '<li><strong>' + cxEsc(sxPlatformName(store.platform) + '／' + store.store) + '</strong> · ' + cxEsc(proof + '；' + observed) + '</li>';
+    });
+    return html.replace('</dl>', '<dt>逐店年度来源</dt><dd><ul>' + items.join('') + '</ul></dd></dl>');
+  };
+
+  function maskUnprovedBuckets(html, rows, options, evidence, action) {
+    const grain = options.grain;
+    const observed = new Set(rows.map(row => grain === 'day' ? row.date : grain === 'week' ? sxWeek(row.date) : row.date.slice(0, 7)));
+    const holes = new Set(sxTrendBuckets(rows, options).filter(bucket => bucket.covered && !observed.has(bucket.key)
+      && !(evidence.actualStart && bucket.start >= evidence.actualStart && bucket.end <= evidence.actualEnd)).map(bucket => bucket.key));
+    if (!holes.size) return html;
+
+    // 复用原图缺值的断线及隐藏标记逻辑，空窗用灰区表达，不伪造待核商品行数。
+    const groups = options.groups || sxPlatforms;
+    const hidden = new Set([...holes].flatMap(key => groups.map(group => key + '|' + group.key)));
+    const masked = root.freshStatusModel.trendHtml(html, options, { pending: holes.size, hidden, hiddenTotals: holes, map: new Map() }, 'units');
+    const emptyBucketKey = new RegExp(action + '="([^"]+)"');
+    return masked.slice(0, masked.lastIndexOf('<p class="cx-caption fsc-status-note">'))
+      .replace(/<g\b([^>]*class="sx-trend-bucket[^>]*>)([\s\S]*?)<\/g>/g, (tag, attributes, body) => {
+        const key = emptyBucketKey.exec(attributes)?.[1];
+        if (!holes.has(key)) return tag;
+        const area = /<rect class="sx-trend-hit"([^>]*)><\/rect>/.exec(body)?.[1] || '';
+        return '<g class="sx-trend-uncovered" data-sx-uncovered-bucket="' + cxEsc(key)
+          + '"><title>该时间段未见来源记录，覆盖待核</title><rect' + area + '></rect></g>';
+      });
+  }
+
+  const previousTrend = sxTrendHtml;
+  sxTrendHtml = function (rows, options = {}) {
+    const action = options.actionAttribute || 'data-sx-bucket';
+    if (!sxAnnual() || !/^data-sx-(?:detail-)?bucket$/.test(action)) return previousTrend(rows, options);
+    // 年度记录保留原值；缺少逐店证明时，首末观测记录外的日期不画零值。
+    const evidence = currentAnnualCoverage({ forTrend: true });
+    let adjusted = options;
+    if (evidence && !evidence.periodComplete) {
+      const dated = rows.filter(row => row.date >= options.start && row.date <= options.end).map(row => row.date).sort();
+      const starts = [dated[0], evidence.actualStart].filter(Boolean).sort(), ends = [dated.at(-1), evidence.actualEnd].filter(Boolean).sort();
+      adjusted = { ...options, coverageStart: starts[0] || '', coverageEnd: ends.at(-1) || '' };
+    }
+    let html = previousTrend(rows, adjusted);
+    if (evidence && !evidence.periodComplete) html = maskUnprovedBuckets(html, rows, adjusted, evidence, action);
+    html = html.replace('Amazon商品额不含单列运费，独立站按折扣前商品行毛额，Wayfair按供货额；各平台均保留源口径，未扣后续退款。', core.sourceLabel + '。');
+    return html;
+  };
+
+  root.bossSalesRepairModel = { ready: true, nearComparison, currentAnnualCoverage };
+  const marker = document.createElement('span');
+  marker.id = 'bossSalesRepairReady';
+  marker.hidden = true;
+  document.body.appendChild(marker);
+  if (cxState.view === 'sales') cxRenderSales();
+  else if (cxState.view === 'query') sqRenderQuery();
+})(window);
+
+</script>
+
+<script data-boss-patch="detail_sources.js">
+/* 来源核验使用业务来源名和明确的数据窗口。 */
+(function () {
+  'use strict';
+  const dialog = document.getElementById('cxSourcesDialog');
+  const body = document.getElementById('cxSourcesBody');
+  const frozen = JSON.parse(document.getElementById('bossSourceDates').textContent);
+  const rows = [
+    ['商品已核净量', frozen.net, 'Amazon、独立站与Wayfair已接入的九店'],
+    ['年度历史订单参考', frozen.history, '逐店覆盖范围见全部SKU销量'],
+    ['美国站库存主表', frozen.stock, '三区当期可用、预留和在途'],
+    ['YQN库龄与分仓', frozen.age, '仓配接口，物理量与主表分开核对'],
+    ['飞书退款／售后登记', frozen.refunds + '／' + frozen.aftersales, '登记更新日，按发生日筛选金额'],
+    ['Wayfair结算扣款凭证', frozen.wayfair, '部分覆盖，买家实际退款日期另核'],
+    ['新品拟定补货、原残件台账', '参见各视图的历史快照', '旧计划与原记录单独保留'],
+  ];
+  document.addEventListener('click', event => {
+    if (!event.target.closest?.('#goSources')) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const files = cxData.sources.map(source => {
+      const filename = String(source.path || source.file || '').split(/[\\/]/).filter(Boolean).at(-1) || '来源批次文件';
+      return [cxEsc(filename),cxQty(source.bytes) + ' bytes','<span class="cx-source">' + cxEsc(source.sha256) + '</span>'];
+    });
+    body.innerHTML = cxTable(['来源／口径','已接入日期','适用范围'],rows.map(row => row.map(cxEsc))) +
+      '<details class="cx-fold"><summary>历史底表的文件名与指纹</summary>' +
+      cxTable(['文件名','大小','SHA-256'],files) + '</details>';
+    if (!dialog.open) dialog.showModal();
+  }, true);
+})();
+
+</script>
+
+<script data-boss-patch="detail_route.js">
+/* 老板首页进入明细时复用看板现有路由和SKU查询。 */
+(function () {
+  'use strict';
+  const views = ['sales','warehouses','plans','audit','pieces','refunds','query','replenishment','newproducts'];
+  window.bossOpenDetail = function (view, sku) {
+    const target = views.includes(view) ? view : 'sales';
+    const search = typeof sku === 'string' ? sku.trim() : '';
+    if (target !== 'query' || !/^[A-Z0-9][A-Z0-9-]{0,99}$/i.test(search)) {
+      setPageView(target);
+      return;
+    }
+    const filters = {...window.spQueryPeriodModel.defaults(), search};
+    sqUiState.filters = filters;
+    sqUiState.draft = {...filters};
+    sqUiState.page = 0;
+    sqUiState.error = '';
+    setPageView(target);
+    const exact = sqActiveRows.find(row => row.sku === search);
+    if (exact) {
+      sqOpenSku(exact.sku);
+      return;
+    }
+    const folded = search.toUpperCase();
+    const matches = sqActiveRows.filter(row => row.sku.toUpperCase() === folded);
+    if (matches.length === 1) sqOpenSku(matches[0].sku);
+  };
+  const marker = document.createElement('span');
+  marker.hidden = true;
+  marker.id = 'bossDetailReady';
+  document.body.appendChild(marker);
+})();
+
+</script>

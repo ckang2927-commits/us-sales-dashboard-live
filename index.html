@@ -1,18 +1,185 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow,noarchive">
-<meta http-equiv="Cache-Control" content="no-store">
-<title>美国站经营数据看板</title>
-<style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#334b6c;background:#f5f7fa}#loading{position:fixed;inset:0;z-index:2;min-height:100%;display:grid;place-items:center;padding:24px;background:#f5f7fa}#loading[hidden]{display:none!important}.card{width:min(560px,100%);padding:34px;border:1px solid #dce4ef;border-radius:10px;background:#fff;box-shadow:0 9px 32px #29436409}h1{font-size:22px;margin:0 0 24px;font-weight:650}#status{font-size:16px;margin:0 0 13px;color:#3d5d87}#detail,.note{font-size:12px;line-height:1.8;color:#71819a}#detail{min-height:43px;margin:0 0 13px}.note{border-top:1px solid #e9edf3;padding-top:16px;margin-top:22px}progress{width:100%;height:8px;accent-color:#567ba9;display:block;border:0;border-radius:4px}.actions{display:flex;gap:10px;margin-top:22px}button{font:inherit;font-size:12px;border:1px solid #c7d5e8;border-radius:4px;padding:8px 13px;background:#fff;color:#4b688e;cursor:pointer}#retry{background:#3f5d87;color:#fff;border-color:#3f5d87}#dashboard{border:0;width:100%;height:100%;height:100dvh;display:block;background:#f5f7fa}noscript{display:block;padding:24px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>美国站经营看板</title>
+  <style>:root{color-scheme:light;--ink:#172c47;--muted:#556980;--line:#d9e3ed;--paper:#fff;--back:#f3f6fa;--blue:#305e91;--up:#255c8d;--down:#9a4d35;--subtle:#eaf1f8}
+*{box-sizing:border-box}body{margin:0;background:var(--back);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:3px solid #7eafe0;outline-offset:3px}
+.wrap{max-width:1300px;margin:auto;padding-inline:28px}
+.mast{background:var(--paper);border-top:5px solid #2b527d;border-bottom:1px solid var(--line)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:23px 20px}
+h1{font-size:26px;letter-spacing:.01em;margin:0;font-weight:720}p{margin:0;color:var(--muted)}
+.top p{font-size:13px;margin-top:4px}.primary,.secondary{padding:8px 14px;border-radius:6px;border:1px solid transparent;font-weight:650;white-space:nowrap}
+.primary{background:#244f7f;color:white}.primary span{margin-left:6px}.primary:hover{background:#193b61;text-decoration:none}
+.secondary{color:var(--blue);background:#f6f9fc;border-color:var(--line)}.secondary[hidden]{display:none}
+.indicators{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-block:20px 14px}
+.indicator,.panel{background:var(--paper);border:1px solid var(--line);border-radius:9px}
+.indicator{padding:15px 17px;min-width:0}.indicator:first-child{border-color:#b9cfe4;background:#fafdff}
+.indicator .label{font-size:13px;font-weight:640;color:#365373}.indicator strong{font-size:clamp(19px,2.15vw,28px);line-height:1.2;letter-spacing:-.02em;display:block;margin:8px 0 6px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.indicator p{font-size:12px}.up{color:var(--up)}.down{color:var(--down)}
+.overview-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
+.panel{padding:17px 18px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:12px}
+h2{font-size:17px;letter-spacing:.01em;margin:0 0 4px}.section-head p{font-size:12px}
+.channel{display:grid;grid-template-columns:95px minmax(70px,1fr) 90px;gap:10px;align-items:center;border-top:1px solid #e8eef4;padding:9px 0}
+.channel:first-child{border-top:0}.channel .name{font-weight:680}.channel small{display:block;font-size:11px;color:var(--muted)}
+.channel .volume{display:grid;gap:5px}.channel .barline{display:grid;grid-template-columns:minmax(20px,1fr) 96px;gap:8px;align-items:center}
+.channel .barline span:last-child{text-align:right;font-size:12px;font-variant-numeric:tabular-nums;color:#304c6a}
+.track{display:block;height:6px;border-radius:3px;background:#edf2f7}.track i{display:block;height:100%;border-radius:3px;background:#426d9b}.prior .track i{background:#9ab3ca}
+.channel .change{text-align:right;font-variant-numeric:tabular-nums}.change b{font-size:13px}.change small{font-size:11px}
+.annotation{font-size:11.5px;border-top:1px solid #e7edf4;margin-top:9px;padding-top:9px}
+.review-links{display:grid;gap:6px}.review-link{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 10px;border-radius:5px;background:#f3f7fb;color:var(--ink)}
+.review-link:hover{background:#e6eff8;text-decoration:none}.review-link b{font-size:13px}.review-link small{display:block;margin-top:1px;color:var(--muted);font-size:11.5px}
+.review-link > span:last-child{color:var(--blue);flex:none}
+.products{margin-top:14px}.switch{display:flex;white-space:nowrap;border:1px solid #cbd9e8;border-radius:6px;overflow:hidden}.switch button{border:0;background:#fff;color:#335681;padding:6px 11px}.switch button+button{border-left:1px solid #cbd9e8}.switch button[aria-pressed=true]{background:#244f7f;color:#fff}
+.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:750px}th,td{padding:9px 10px;text-align:left;border-bottom:1px solid #e8eef5;font-variant-numeric:tabular-nums}
+th{background:#eef4fa;color:#385572;font-size:12px;white-space:nowrap}td small{display:block;color:var(--muted);font-size:11px}td b{font-size:13px}
+td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content:space-between;gap:13px;padding-top:9px}.table-foot p{font-size:12px}
+.footer{padding-block:14px 25px}.footer nav{display:flex;gap:7px 16px;flex-wrap:wrap;margin-bottom:8px;font-size:12px}.footer p{font-size:11.5px}
+@media(max-width:850px){.wrap{padding-inline:14px}.indicators{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-grid{grid-template-columns:1fr}}
+@media(max-width:460px){.top{gap:9px}.top h1{font-size:20px}.top p{font-size:11px}.primary{font-size:12px}.indicator{padding:11px 10px}.indicator p{font-size:11px}.channel{grid-template-columns:65px minmax(55px,1fr) 64px;gap:7px}.channel .barline{grid-template-columns:minmax(15px,1fr) 77px}.channel .barline span:last-child{font-size:11px}.panel{padding:13px 11px}.section-head h2{font-size:15px}}
+
+.table-actions{display:flex;flex-wrap:wrap;gap:6px}
 </style>
 </head>
 <body>
-<main id="loading"><section class="card"><h1>美国站经营数据看板</h1><p id="status" role="status" aria-live="polite">正在准备完整看板</p><p id="detail">首次打开需要读取完整数据，请稍候。</p><progress id="progress" max="100" aria-label="看板加载进度"></progress><div class="actions"><button id="cancel" type="button">取消加载</button><button id="retry" type="button" hidden>重新加载</button></div><p class="note">建议使用电脑上的新版Chrome或Edge。首次打开约需下载101 MB；之后刷新同一网址即可读取已发布的新版本。看板中的销售、库存和退款各有各的来源截止日期。</p></section></main>
-<iframe id="dashboard" title="美国站完整经营数据看板" referrerpolicy="no-referrer" style="visibility:hidden"></iframe>
-<noscript>此看板需要JavaScript。请启用JavaScript后重新打开。</noscript>
-<script src="./loader.js?v=debb95cdf6a45202"></script>
+  <header class="mast">
+    <div class="wrap top">
+      <div><h1>美国站经营看板</h1><p id="scope"></p></div>
+      <a class="primary" href="./details.html?view=sales">进入明细 <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="indicators" aria-label="最近30天关键指标" id="indicators"></section>
+    <div class="overview-grid">
+      <section class="panel" aria-labelledby="comparison">
+        <div class="section-head"><div><h2 id="comparison">渠道变动</h2><p id="comparisonDates"></p></div></div>
+        <div id="platformCompare"></div>
+        <p class="annotation">商品额沿各渠道来源。Amazon为商品额，独立站为折扣前商品行金额，Wayfair为供货额。</p>
+      </section>
+      <section class="panel" aria-labelledby="exceptions">
+        <div class="section-head"><div><h2 id="exceptions">经营复核入口</h2><p>按证据处理库存、清仓与退款差异</p></div></div>
+        <div id="reviewLinks" class="review-links"></div>
+      </section>
+    </div>
+    <section class="panel products" aria-labelledby="priority-products">
+      <div class="section-head">
+        <div><h2 id="priority-products">高运营利润、低动销的在库老品</h2><p>常规品与滞销品 · 近30天净销量上界≤5 · 主表可用大于0</p></div>
+        <div class="switch" role="group" aria-label="历史运营利润率下限"><button type="button" data-threshold=".15" aria-pressed="true">≥15%</button><button type="button" data-threshold=".20" aria-pressed="false">≥20%</button></div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">SKU</th><th scope="col">主表可用／YQN最高龄档</th><th scope="col">近30天净销量</th><th scope="col">历史运营利润率</th><th scope="col">样本笔数和截止日</th><th scope="col">下一步</th></tr></thead>
+          <tbody id="candidates"></tbody>
+        </table>
+      </div>
+      <div class="table-foot"><p id="candidateCount" aria-live="polite"></p><div class="table-actions"><button id="downloadRows" class="secondary" type="button">导出清单</button><button id="toggleRows" class="secondary" type="button">展开全部</button></div></div>
+      <p class="annotation" id="candidateDefinition"></p>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <nav aria-label="原看板全部模块">
+      <a href="./details.html?view=sales">全部SKU销量</a><a href="./details.html?view=warehouses">库存与在途</a><a href="./details.html?view=query">SKU数据查询</a>
+      <a href="./details.html?view=plans">清仓与促销</a><a href="./details.html?view=refunds">退款与售后</a><a href="./details.html?view=newproducts">新品跟踪</a>
+      <a href="./details.html?view=replenishment">备货计划</a><a href="./details.html?view=audit">累计降幅核对</a><a href="./details.html?view=pieces">残件与配件</a>
+    </nav>
+    <p id="statusDates"></p>
+  </footer>
+  <script id="bossSummary" type="application/json">{"current":{"start":"2026-10-18","end":"2026-11-16","amount":688780.94,"lower":674,"upper":703,"pending":28,"orders":599},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":685835.97,"lower":628,"upper":676,"pending":44,"orders":571},"platforms":[{"platform":"Amazon","current":{"start":"2026-10-18","end":"2026-11-16","amount":354383.09,"lower":283,"upper":297,"pending":13,"orders":272},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":353526.01,"lower":274,"upper":301,"pending":23,"orders":286}},{"platform":"Shopify","current":{"start":"2026-10-18","end":"2026-11-16","amount":170576.39,"lower":159,"upper":168,"pending":9,"orders":100},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":195063.46,"lower":170,"upper":175,"pending":5,"orders":103}},{"platform":"Wayfair","current":{"start":"2026-10-18","end":"2026-11-16","amount":163821.46,"lower":232,"upper":238,"pending":6,"orders":227},"previous":{"start":"2026-09-18","end":"2026-10-17","amount":137246.5,"lower":184,"upper":200,"pending":16,"orders":182}}],"queues":{"candidate":0,"toRecheck":18,"noStock":4},"candidates":[{"sku":"JDT-2217-55","category":"常规品","available":50,"lower":2,"upper":2,"latestBand":"90–120天（API档）","margin":0.2999285641442993,"forecastMargin":-0.01834060293463782,"sampleDate":"2026-09-03","samples":20,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先核同链接现价","days":750},{"sku":"JDZH-009N-24","category":"常规品","available":26,"lower":1,"upper":1,"latestBand":"60–90天（API档）","margin":0.2533180444350178,"forecastMargin":null,"sampleDate":"2026-08-31","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":780},{"sku":"BTZ-001-014","category":"常规品","available":24,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.16725044168138947,"forecastMargin":null,"sampleDate":"2026-01-01","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-001-037","category":"常规品","available":23,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.2262760986006338,"forecastMargin":0.18777811534786945,"sampleDate":"2026-01-25","samples":5,"sampleStores":3,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-GK031-01","category":"常规品","available":18,"lower":2,"upper":2,"latestBand":"90–120天（API档）","margin":0.1688197163330132,"forecastMargin":null,"sampleDate":"2026-10-18","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单"],"next":"先复核利润","days":270},{"sku":"YZ-M042-01","category":"滞销品","available":11,"lower":3,"upper":3,"latestBand":"180–360天（API档）","margin":0.4474954545454546,"forecastMargin":null,"sampleDate":"2026-08-13","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":110},{"sku":"JDT-144-15","category":"常规品","available":11,"lower":0,"upper":0,"latestBand":"90–120天（API档）","margin":0.2739821503086464,"forecastMargin":null,"sampleDate":"2026-08-22","samples":6,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"HYZ-046-05","category":"常规品","available":5,"lower":1,"upper":1,"latestBand":"30天内（API档）","margin":0.46954263824117254,"forecastMargin":null,"sampleDate":"2026-03-10","samples":2,"sampleStores":1,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":150},{"sku":"BSF-K040-01","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":null,"margin":0.3250695340605669,"forecastMargin":null,"sampleDate":"2025-05-24","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天","仓储测算待核"],"next":"先复核利润","days":null},{"sku":"BGZ-2501-15","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":"30天内（API档）","margin":0.26238475252914756,"forecastMargin":null,"sampleDate":"2026-08-06","samples":7,"sampleStores":3,"samplePlatforms":2,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"BTZ-001-05","category":"常规品","available":2,"lower":0,"upper":0,"latestBand":"90–120天（API档）","margin":0.21307082774407538,"forecastMargin":null,"sampleDate":"2025-12-08","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"HYZ-046-06","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"30天内（API档）","margin":0.30458380316838274,"forecastMargin":null,"sampleDate":"2026-02-11","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null},{"sku":"JDT-GK008-02","category":"常规品","available":1,"lower":4,"upper":4,"latestBand":"60–90天（API档）","margin":0.2823606322482425,"forecastMargin":null,"sampleDate":"2026-11-10","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单"],"next":"先复核利润","days":8},{"sku":"JDT-7288-013","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.2694230735756984,"forecastMargin":null,"sampleDate":"2026-05-19","samples":2,"sampleStores":2,"samplePlatforms":1,"flags":["样本超60天"],"next":"先复核利润","days":null},{"sku":"JDZH-2076-04","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":null,"margin":0.18518789740658714,"forecastMargin":null,"sampleDate":"2026-03-31","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天","仓储测算待核"],"next":"先复核利润","days":null},{"sku":"LBZ-2179-12","category":"常规品","available":1,"lower":0,"upper":0,"latestBand":"60–90天（API档）","margin":0.18342015474969697,"forecastMargin":null,"sampleDate":"2026-04-06","samples":1,"sampleStores":1,"samplePlatforms":1,"flags":["仅1单","样本超60天"],"next":"先复核利润","days":null}],"coverage":{"active":529,"inStock":117,"identifiedOld":78,"unknownType":19,"oldWithMissingProfit":36},"inventory":{"activeSkuCount":529,"fullMasterSkuCount":2586,"knownActive":462,"unknownActive":67,"available":1662,"reserved":135,"transit":715,"conflicts":0},"stockDate":"2026-11-18","ageDate":"2026-11-18","yqnDifference":32,"coverageNative":{"start":"2026-09-10","end":"2026-11-16","observedEnd":"2026-11-16"},"commonCoverage":true,"refundDate":"2026-11-18","aftersalesDate":"2026-11-18","refundsSourceRead":"2026-11-18","wayfairThrough":"2026-11-16"}</script>
+  <script>(() => {
+  'use strict';
+  const data = JSON.parse(document.getElementById('bossSummary').textContent);
+  const {current,previous,platforms,inventory,coverage} = data;
+  const int = value => new Intl.NumberFormat('zh-CN').format(value);
+  const usd = value => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
+  const pct = (value, digits=1) => value === null ? '待核' : (value * 100).toFixed(digits) + '%';
+  const sign = value => value >= 0 ? '+' : '−';
+  const short = date => date.slice(5).replace('-', '/');
+  const windowLabel = period => short(period.start) + '–' + short(period.end);
+  const encode = value => String(value ?? '待核').replace(/[&<>"']/g, token => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[token]));
+  const quantity = record => record.lower === record.upper ? int(record.lower) : record.upper === null ? '≥' + int(record.lower) : int(record.lower) + '–' + int(record.upper);
+  const currentDelta = (current.amount - previous.amount) / previous.amount;
+  const orderDelta = (current.orders - previous.orders) / previous.orders;
+  const label = (value, formatter) => sign(value) + formatter(Math.abs(value));
+  const classFor = value => value < 0 ? 'down' : 'up';
+  const modules = {
+    warehouses:['库存差异复核', '主表缺可用依据 ' + inventory.unknownActive + ' 款 · 主表与YQN有数差 ' + (data.yqnDifference ?? '待核') + ' 款'],
+    plans:['清仓待办', data.queues.toRecheck + ' 款待复核 · ' + data.queues.noStock + ' 款暂无可用'],
+    refunds:['退款与售后凭证', '飞书登记至 ' + short(data.refundDate) + ' · Wayfair结算扣款至 ' + short(data.wayfairThrough) + '（部分）']
+  };
+  document.getElementById('scope').textContent = '最近完整30天 · 美西 ' + current.start + ' 至 ' + current.end + ' · 已核三平台9店';
+  document.getElementById('comparisonDates').textContent = '本期 ' + windowLabel(current) + ' 对比前期 ' + windowLabel(previous);
+  const kpis = [
+    ['商品额参考',usd(current.amount),'较前30天 ' + label(currentDelta, v => pct(v,2)),currentDelta],
+    ['已核净数量',quantity(current),'前30天 ' + quantity(previous) + ' · ' + int(current.pending) + ' 条净量待核',null],
+    ['有效订单',int(current.orders),'前30天 ' + int(previous.orders) + ' · ' + label(orderDelta,v => pct(v,1)),orderDelta],
+    ['主表已知可用',int(inventory.available) + ' 套','预留 ' + int(inventory.reserved) + ' · 在途 ' + int(inventory.transit),null]
+  ];
+  document.getElementById('indicators').innerHTML = kpis.map(([name,value,note,movement]) =>
+    '<div class="indicator"><div class="label">'+encode(name)+'</div><strong>'+encode(value)+'</strong><p class="'+(movement===null?'':classFor(movement))+'">'+encode(note)+'</p></div>').join('');
+  const max = Math.max(...platforms.flatMap(row => [row.current.amount,row.previous.amount]));
+  const names = {Amazon:'Amazon',Shopify:'独立站',Wayfair:'Wayfair'};
+  document.getElementById('platformCompare').innerHTML = platforms.map(row => {
+    const delta = row.current.amount - row.previous.amount;
+    const compareRow = (amount, caption, earlier = false) => '<div class="barline'+(earlier?' prior':'')+'" aria-label="'+caption+' '+encode(usd(amount))+'"><span class="track" aria-hidden="true"><i style="width:'+(100 * amount/max).toFixed(2)+'%"></i></span><span>'+encode(usd(amount))+'</span></div>';
+    return '<div class="channel"><div class="name">'+encode(names[row.platform])+'<small>本期 / 前期</small></div><div class="volume">'
+      + compareRow(row.current.amount,'本期') + compareRow(row.previous.amount,'前期',true)
+      + '</div><div class="change '+classFor(delta)+'"><b>'+encode(label(delta/row.previous.amount,v=>pct(v,1)))+'</b><small>'+encode(label(delta,usd))+'</small></div></div>';
+  }).join('');
+  document.getElementById('reviewLinks').innerHTML = Object.entries(modules).map(([view,[title,note]]) =>
+    '<a class="review-link" href="./details.html?view='+view+'"><span><b>'+encode(title)+'</b><small>'+encode(note)+'</small></span><span aria-hidden="true">→</span></a>').join('');
+  document.getElementById('candidateDefinition').textContent = '销量按净量上界筛选，历史运营利润未含累计仓储。已知有货的老品 ' + coverage.identifiedOld + ' 款，其中低动销但缺利润依据 ' + coverage.oldWithMissingProfit + ' 款；另有在库且商品类型待核 ' + coverage.unknownType + ' 款。';
+  document.getElementById('statusDates').textContent = '数据时间 · 主表 ' + data.stockDate + ' · YQN库龄 ' + data.ageDate + ' · 飞书售后／退款记录至 ' + data.aftersalesDate + '／' + data.refundDate;
+  let threshold = .15;
+  let expanded = false;
+  const toggle = document.getElementById('toggleRows');
+  const filteredRows = () => data.candidates.filter(row => row.margin >= threshold);
+  function renderCandidates() {
+    const rows = filteredRows();
+    const limit = expanded ? rows.length : 8;
+    document.querySelectorAll('[data-threshold]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.threshold) === threshold)));
+    document.getElementById('candidates').innerHTML = rows.slice(0,limit).map(row => {
+      const age = row.latestBand || '库龄待核';
+      const forecast = row.forecastMargin === null ? '' : '<small>通知价模型 '+encode(pct(row.forecastMargin,2))+'</small>';
+      const flags = row.flags.length ? '<small>'+encode(row.flags.join(' · '))+'</small>' : '';
+      const sellout = row.days === null ? (row.upper === 0 ? '零动销，售罄待估' : '区间波动，售罄待估') : '按近30天速度约 '+int(row.days)+' 天';
+      return '<tr><td><a href="./details.html?view=query" data-sku="'+encode(row.sku)+'">'+encode(row.sku)+'</a><small>'+encode(row.category)+'</small></td>'
+        +'<td><b>'+int(row.available)+' 套</b><small>'+encode(age)+'</small></td><td>'+encode(quantity(row))+'<small>'+encode(sellout)+'</small></td>'
+        +'<td><b>'+encode(pct(row.margin,2))+'</b>'+forecast+'</td><td>'+int(row.samples)+' 单 · '+encode(row.sampleDate)
+        + '<small>'+int(row.samplePlatforms)+' 平台 / '+int(row.sampleStores)+' 店</small>'+ flags+'</td><td>'+encode(row.next)+'</td></tr>';
+    }).join('') || '<tr><td colspan="6">当前门槛暂无符合且依据齐全的SKU。</td></tr>';
+    document.getElementById('candidateCount').textContent = '显示 ' + Math.min(limit,rows.length) + ' / ' + rows.length + ' 款 · 按可用套数排序';
+    toggle.hidden = rows.length <= 8;
+    toggle.textContent = expanded ? '收起' : '展开全部 ' + rows.length + ' 款';
+    toggle.setAttribute('aria-expanded',String(expanded));
+  }
+  document.querySelectorAll('[data-threshold]').forEach(button => button.addEventListener('click', () => {threshold = Number(button.dataset.threshold);expanded = false;renderCandidates();}));
+  toggle.addEventListener('click', () => {expanded = !expanded;renderCandidates();});
+  document.getElementById('candidates').addEventListener('click', event => {
+    const link = event.target.closest('[data-sku]');
+    if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+      try {sessionStorage.setItem('bossPendingSku', link.dataset.sku);} catch (_) { /* Query remains available. */ }
+    }
+  });
+  document.getElementById('downloadRows').addEventListener('click', () => {
+    const header = ['SKU','分类','主表可用套数','YQN最高龄档','近30天净销量','历史运营利润率','通知价推算运营利润率','样本笔数','样本截止日','平台数','店铺数','依据提示','下一步','销量开始','销量截止','库存快照日'];
+    const records = filteredRows().map(row => [row.sku,row.category,row.available,row.latestBand,
+      quantity(row),pct(row.margin,2),pct(row.forecastMargin,2),row.samples,row.sampleDate,
+      row.samplePlatforms,row.sampleStores,row.flags.join(' · '),row.next,current.start,current.end,data.stockDate]);
+    const csv = [header,...records].map(row => row.map(value => '"' + String(value ?? '待核').replace(/"/g,'""') + '"').join(',')).join('\r\n');
+    const url = URL.createObjectURL(new Blob(['\uFEFF',csv],{type:'text/csv;charset=utf-8'}));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = '高运营利润低动销老品_' + (threshold * 100) + 'pct_' + current.end + '.csv';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url),5000);
+  });
+  renderCandidates();
+})();
+</script>
 </body>
 </html>

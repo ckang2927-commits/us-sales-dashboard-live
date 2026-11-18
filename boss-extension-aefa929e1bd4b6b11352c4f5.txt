@@ -1,0 +1,105 @@
+nst row of rwData.rows){const record=bySku.get(row.sku);applyYqn(row,record);row.warehouses=record?makeWarehouses(record):[];}
+  }
+  // 当前监控库龄同步；原降价策略依据单独保留，不据新库存重批降价或改执行量。
+  if(root.markdownFollowupModel?.rows){for(const row of root.markdownFollowupModel.rows){if(!row.strategyAgeText)row.strategyAgeText=row.ageText;row.strategyAgeDate=row.strategyAgeDate||'原11/16策略快照';const record=bySku.get(row.sku),stock={};applyYqn(stock,record);row.ageText=stock.age;row.ageDate=stock.ageDate;row.currentYqnEvidence=record||null;}root.markdownFollowupModel.meta.ageDate=dateLabel;}
+  if(typeof nmData!=='undefined')for(const row of nmData.rows||[]){const record=bySku.get(row.inventorySku||row.sku);row.currentYqnEvidence=record||null;row.currentAgeDate=dateLabel;row.currentAgeBands=record?.ageBands||{};}
+  function reasonText(reasons){return reasons.map(r=>'【'+certainty[r.certainty]+'】'+r.text).join('；');}
+  function chooseRows() {
+    const search=state.search.trim().toLowerCase();
+    return packet.rows.filter(r=>(state.scope==='all'||r.active)&&(!search||r.sku.toLowerCase().includes(search)))
+      .map(r=>comparison(r)).filter(v=>{
+        if(state.status==='difference'&&v.status==='matched')return false;
+        if(state.status==='positive'&&!(v.difference>0))return false;
+        if(state.status==='negative'&&!(v.difference<0))return false;
+        if(state.status==='missing_main'&&finite(v.main.available))return false;
+        if(state.status==='missing_yqn'&&finite(v.yqn.available))return false;
+        if(state.status==='api_async'&&(v.region||!(finite(v.record.apiInventoryAgeDifference)&&v.record.apiInventoryAgeDifference!==0)))return false;
+        if(['matched','explained','partly_explained','unresolved'].includes(state.status)&&v.status!==state.status)return false;
+        return !state.cause||v.reasons.some(r=>r.class===state.cause);
+      }).sort((a,b)=>(finite(b.difference)?Math.abs(b.difference):-1)-(finite(a.difference)?Math.abs(a.difference):-1)||a.record.sku.localeCompare(b.record.sku));
+  }
+  const options = (values, selected) => values.map(([key,label])=>'<option value="'+esc(key)+'" '+(key===selected?'selected':'')+'>'+esc(label)+'</option>').join('');
+  function renderRecon() {
+    const all=packet.rows.filter(r=>state.scope==='all'||r.active).map(r=>comparison(r)), rows=chooseRows(), page=Math.min(state.page,Math.max(0,Math.ceil(rows.length/50)-1));state.page=page;
+    return '<section id="freshYqnReconciliation" class="fy-section"><div class="fy-title"><h3>最新YQN与主表 · 逐SKU对账</h3><button type="button" data-fy-action="export">导出当前对账CSV</button></div>'
+      +'<p class="fy-note">YQN库存、库龄、批次于'+esc(date)+'重新读取全部分页；主表文件日期 '+esc(mainFor(packet.rows[0]).sourceDate)+'。差额＝主表可用－YQN可用，比较同一地区作用域。YQN物理包含预留，分仓不与主表相加。</p>'
+      +'<div class="fy-stats"><span>核对人口 <b>'+all.length+'</b></span><span>可用及预留一致 <b>'+all.filter(v=>v.status==='matched').length+'</b></span><span>差异或缺项 <b>'+all.filter(v=>v.status!=='matched').length+'</b></span><span>当前筛选 <b>'+rows.length+'</b></span></div>'
+      +'<div class="fy-controls"><label>范围<select data-fy-field="scope">'+options([['active','当前529款关注SKU'],['all','包含全部来源历史身份']],state.scope)+'</select></label><label>地区<select data-fy-field="region">'+options([['','全国'],['CA','美西 CA'],['GA','美东 GA'],['NJ','美东北 NJ']],state.region)+'</select></label><label>对账结果<select data-fy-field="status">'+options([['difference','差异及缺项'],['all','全部'],['matched','可用及预留一致'],['explained','可用差额已有依据'],['positive','主表可用较多'],['negative','YQN可用较多'],['missing_main','主表可用缺项'],['missing_yqn','YQN可用缺项'],['api_async','全国YQN库存/库龄API总量不同']].filter(([key])=>!state.region||key!=='api_async'),state.status)+'</select></label><label>原因<select data-fy-field="cause">'+options([['','全部原因'],['own_warehouse_scope','自有仓范围'],['package_residual','包件残箱'],['pack_component_missing','必要包件记录缺失'],['unsalable_scope','不可售库存'],['reserved_difference','预留待核'],['reservation_state_bridge','可用/预留数量桥接'],['reserved_shipped_order','预留订单已有出库'],['shipped_reservation_bridge','已出库预留数量桥接'],['master_parent_conflict','主表父SKU冲突'],['cutoff_difference','不同快照时点'],['api_snapshot_difference','YQN两API快照差异'],['unresolved_difference','尚未闭合差额']].filter(([key])=>!state.region||!['reserved_shipped_order','shipped_reservation_bridge','master_parent_conflict','api_snapshot_difference'].includes(key)),state.cause)+'</select></label><label>精确SKU<input data-fy-field="search" placeholder="搜索SKU，不合并相似型号" value="'+esc(state.search)+'"></label><button type="button" data-fy-action="reset">重置</button></div>'
+      +'<div class="fy-scroll"><table class="fy-table"><thead><tr><th>SKU / 结果</th><th>主表可用 / 预留</th><th>YQN可用 / 预留</th><th>YQN物理</th><th>可用 / 预留差额</th><th>原因与证据等级</th></tr></thead><tbody>'
+      +rows.slice(page*50,(page+1)*50).map(v=>'<tr><td><button class="fy-sku" type="button" data-fy-detail="'+esc(v.record.sku)+'">'+esc(v.record.sku)+'</button><small>'+esc(states[v.status])+'</small></td><td>'+qty(v.main.available)+' / '+qty(v.main.reserved)+'</td><td>'+qty(v.yqn.available)+' / '+qty(v.yqn.reserved)+'</td><td>'+qty(v.yqn.physical)+'</td><td>'+signed(v.difference)+' / '+signed(v.reservedDifference)+'</td><td>'+esc(reasonText(v.reasons))+'</td></tr>').join('')+'</tbody></table></div>'
+      +(!rows.length?'<p class="fy-note">当前筛选没有对应记录；未把缺来源当0。</p>':'')
+      +'<div class="fy-pages"><span>'+(page+1)+' / '+Math.max(1,Math.ceil(rows.length/50))+'页</span><button type="button" data-fy-page="-1" '+(!page?'disabled':'')+'>上一页</button><button type="button" data-fy-page="1" '+((page+1)*50>=rows.length?'disabled':'')+'>下一页</button></div>'
+      +'<details class="fy-definition"><summary>库龄边界、批次时间与差异原因怎么判断</summary><p>'+esc(packet.meta.ageBucketDefinition)+'</p><p>原始9档已保留；本次所有库龄行9档合计等于箱量。449个同数量包件与批次可比较，435个档位吻合；边界和更新时间不同的记录仍待核。不能把各龄段齐套下界强行补到全龄齐套。</p><p>'+esc(packet.meta.timezoneNote)+'</p><p>已核事实只说明已证实的范围/残箱/不可售等事实，不自动代表全部数量差已解释。可能因素和待核差额分列，源文件时间不同本身不能证明差额原因。</p></details></section>';
+  }
+  function detailHtml(sku, region = state.region) {
+    const record=bySku.get(sku);if(!record)return '<p>本次YQN快照没有此来源身份。</p>';
+    const v=comparison(record,region), gs=scopedGroups(record,region), scope=labels[region]||'全国';
+    const unsalable = gs.filter(group => group.inventory_type === 'Unsalable' && group.inventory_source_rows?.length);
+    const localUnsalable = unsalable.length && unsalable.every(group => finite(group.physical_complete_sets)) ? unsalable.reduce((total,group)=>total+group.physical_complete_sets,0) : null;
+    return '<p class="fy-note"><strong>当前对账地区 '+esc(scope)+'</strong> · 主表文件 '+esc(v.main.sourceDate)+' · YQN最新查询 '+esc(date)+'。</p>'
+      +cxTable(['来源/口径','可用','预留','物理/在途'],[['主表（权威）',qty(v.main.available),qty(v.main.reserved),'在途 '+qty(v.main.transit)],['YQN可售外仓',qty(v.yqn.available),qty(v.yqn.reserved),'物理 '+qty(v.yqn.physical)],['主表－YQN',signed(v.difference),signed(v.reservedDifference),'不可售物理 '+qty(region ? localUnsalable : record.unsalablePhysical)]])
+      +'<p>'+esc(reasonText(v.reasons))+'</p>'
+      +(region?'<details><summary>全国API、批次与订单旁证</summary><p class="fy-note">下列资料为该SKU全国记录，地区差额依据见上方。</p>':'')
+      +'<p class="fy-note">库存行更新时间最晚 '+esc(packet.meta.inventoryUpdatedMaxRaw)+'，库龄行最晚 '+esc(packet.meta.ageUpdatedMaxRaw)+'（均为服务端原文）。</p><h4>YQN两个API · 各自最新返回，不强行齐平</h4>'
+      +cxTable(['来源','全龄物理齐套','该SKU原最近更新时间'],[['库存API',qty(record.yqnPhysical),esc(record.apiSnapshotTimes?.inventory_update_max_raw?.maximum||'未取得')],['库龄API',qty(record.ageApiPhysicalSets),esc(record.apiSnapshotTimes?.age_update_max_raw?.maximum||'未取得')],['库存减库龄',signed(record.apiInventoryAgeDifference),'分桶齐套之和另为下界，不替代全龄配套']])
+      +'<p class="fy-note">两个接口均已完整读取；源更新时间或包件状态不同可能造成异步差额，未取得同时点出入库闭环前保留待核。</p><h4>入库时间 · 全历史与当前余量分开</h4>'
+      +cxTable(['项目','最早入库原时间','最近入库原时间'],[['YQN全部历史批次',esc(record.earliestInbound||'未取得'),esc(record.latestInbound||'未取得')],['YQN仍有余量批次',esc(record.currentBatchEarliestInbound||'未取得'),esc(record.currentBatchLatestInbound||'未取得')]])
+      +'<p class="fy-note">近30天更新窗口入库计划共26份已核全；仅按精确包件附上计划原预计到仓，不代表全部历史在途，也不加库存。已过期ETA不自动顺延。</p>'
+      +(record.inboundPlanEvidence?.length?'<details><summary>最新入库计划与预计到仓 · 精确包件 '+record.inboundPlanEvidence.length+'条</summary><div class="fy-scroll">'+cxTable(['计划 / 仓库','状态 / 原包件','计划 / 已收箱数','预计到仓原值','实际到仓 / 包件接收'],record.inboundPlanEvidence.map(p=>[esc(p.plan+' / '+p.warehouse),esc(p.status+' / '+p.barcode),qty(p.plannedCartons)+' / '+qty(p.receivedCartons),esc(p.estimateArriveTime?(p.estimateArriveTime+(p.estimateAlreadyPast?'（已逾期，尚无实际到仓）':'')):p.actualArriveTime?'已到仓，原预计 '+(p.sourceEstimateArriveTime||'未提供'):p.status==='已取消'?'已取消，不纳未来供给':'未提供'),esc((p.actualArriveTime||'未取得')+' / '+(p.receivedTime||'未取得'))]))+'</div></details>':'<p class="fy-note">上述26份计划未匹配此SKU；预计到仓仍按主表/船期原证另列，缺来源不填日期。</p>')
+      +(record.recentInventoryChanges?.length?'<details><summary>相关变更流水 · '+record.recentInventoryChanges.length+'条 · 含精确订单</summary><div class="fy-scroll">'+cxTable(['仓库/包件','操作/方向','数量','订单/来源单','原更新时间'],record.recentInventoryChanges.map(e=>[esc(e.warehouse+' / '+e.barcode),esc(e.operation+' / '+e.direction),qty(e.quantity),esc((e.orderNo||'未提供')+' / '+e.sourceNo),esc(e.updatedAt)]))+'</div></details>':'')
+      +(record.reservedOrderCrosscheck?.length?'<details><summary>主表预留与YQN销售出库逐订单核对 · '+record.reservedOrderCrosscheck.length+'条主表登记</summary><div class="fy-scroll">'+cxTable(['精确订单','主表仍记状态 / 源行','YQN同仓同版本齐套出库','包件出库原时间'],record.reservedOrderCrosscheck.map(link=>[esc(link.mainReserved.orderNo),esc(link.mainReserved.state+' / '+link.mainReserved.sourceSheet+'第'+link.mainReserved.sourceRow+'行'),esc(link.yqnShipments.map(g=>g.warehouse+' '+g.packVersion+' '+qty(g.completeShippedSets)+'套').join('；')),esc(link.yqnShipments.flatMap(g=>g.events.map(e=>e.updatedAt)).join('；'))]))+'</div></details>':'')
+      +(region?'</details>':'')
+      +'<h4>'+esc(scope)+' · 同仓同版本包件与库龄原量</h4><div class="fy-scroll">'+cxTable(['仓库/类型','包装/版本','可用/预留/物理','API库龄齐套下界','首次/最近入库','来源指针'],gs.filter(g=>(g.physical_observed_cartons||0)>0||(g.in_transit_observed_cartons||0)>0||(g.age_physical_complete_sets||0)>0).map(g=>[
+        esc(g.warehouse_code+'（'+(labels[regionOf(g.warehouse)]||'区域待核')+'） / '+g.inventory_type),esc(g.pack_parts+'包 / '+(g.pack_version||'原包装')),
+        qty(g.available_complete_sets)+' / '+qty(g.reserved_complete_sets)+' / '+qty(g.physical_complete_sets),esc(Object.entries(g.age_band_complete_sets||{}).filter(([,n])=>n>0).map(([b,n])=>(packet.meta.ageUiBandLabels?.[b]||b)+' '+qty(n)).join('；')||'缺包件/无正量'),
+        esc((g.earliestInbound||'未取得')+' / '+(g.latestInbound||'未取得')),esc('inventory_records.json行 '+g.inventory_source_rows.join(',')+'; age_records.json行 '+g.age_source_rows.join(','))
+      ]))+'</div><details><summary>库龄和费用模型日期说明</summary><p>'+esc(packet.meta.ageBucketDefinition)+'</p><p>当前YQN分仓与库龄已更新；含累计仓储利润仍沿用原费用模型快照（'+esc(root.ppProfitModel?.storageDate||'原来源日期')+'），未拿旧费用冒充最新仓储账单。纯利润样本及采购口径不改写。</p></details>';
+  }
+  function mount() {
+    const host=document.getElementById('cxStockBody');if(!host)return;
+    host.querySelector('#freshYqnReconciliation')?.remove();
+    const table=host.querySelector('.rw-table-card');
+    if(table)table.insertAdjacentHTML('beforebegin',renderRecon());else host.insertAdjacentHTML('beforeend',renderRecon());
+    const mainOption=host.querySelector('#rwBasis option[value="master"]');if(mainOption)mainOption.textContent='完整三区云主表 · '+mainFor(packet.rows[0]).sourceDate;
+    for(const n of host.querySelectorAll('.rw-region-title small'))n.textContent=rwState.basis==='master'?'主表 · '+mainFor(packet.rows[0]).sourceDate:'YQN API '+date+' · 自有仓日期另列';
+    const option=host.querySelector('#rwBasis option[value="warehouse"]');if(option)option.textContent='YQN最新分仓 · 自有仓日期另列';
+    const source=host.querySelector('.ici-source');if(source)source.textContent='主表文件 '+mainFor(packet.rows[0]).sourceDate+'；YQN库存/库龄/批次于'+date+'完整读取9仓。各行更新时间保留原文，源之间不相加。下方逐SKU对账可筛选差异与原因。';
+    const ageTitle=host.querySelector('.wl-age-chart h3');if(ageTitle&&!ageTitle.textContent.includes('下界'))ageTitle.textContent+=' · 分桶齐套下界';
+    for(const th of host.querySelectorAll('.rw-table th'))if(th.textContent.includes('全国库龄物理套'))th.textContent=th.textContent.replace('全国库龄物理套','全国库龄齐套下界');
+    const labelsNodes=host.querySelectorAll('.wl-age-chart [data-cx-stock-age]');for(const n of labelsNodes){const b=n.getAttribute('data-cx-stock-age');const first=n.querySelector('span');if(first&&packet.meta.ageUiBandLabels?.[b])first.textContent=packet.meta.ageUiBandLabels[b];}
+  }
+  if(typeof wlAgeChart==='function'){const before=wlAgeChart;wlAgeChart=function(){return before.apply(this,arguments).replaceAll('全国全龄段物理套','全国API库龄齐套下界').replaceAll('物理套','API库龄齐套下界套');};}
+  if(typeof wlAgeExplanation==='function'){const before=wlAgeExplanation;wlAgeExplanation=function(){return before.apply(this,arguments).replaceAll('物理套','API库龄齐套下界套');};}
+  if(typeof rwReconciliation==='function')rwReconciliation=function(rows){const a=rwMasterAggregate(rows),external=rows.flatMap(r=>r.warehouses||[]).filter(w=>w.type==='external'),sum=k=>external.reduce((n,w)=>n+(finite(w[k])?w[k]:0),0);return '<details class="cx-fold rw-reconcile"><summary>来源对账 · 云主表与最新YQN独立来源</summary><div class="cx-fold-body">'+cxTable(['来源及同批SKU','来源日期','数量','数量含义'],[['完整三区云主表',mainFor(packet.rows[0]).sourceDate,'可用 '+qty(a.available)+' / 预留 '+qty(a.reserved)+' / 在途 '+qty(a.transit),'权威主表，不与YQN相加；业务截止未声明'],['YQN库存API',dateLabel,'可用已知 '+qty(sum('available'))+' / 预留已知 '+qty(sum('reserved'))+' / 物理已知 '+qty(sum('physical')),'物理含预留，缺包件保留未知'],['YQN库龄API',dateLabel,'分桶齐套下界 '+qty(wlAgeTotal(rows,'')),'单桶内配套，跨桶不能补齐；与库存API可能异步']])+'<p class="cx-note">两API均为本次完整读取，原更新时间逐SKU保留；完整读取不等于同一快照。不同来源、预留、残箱、不可售及在途分别核对，未闭合差额不强平。逐SKU详见本页可筛选对账。</p></div></details>';};
+  if(typeof cxDownloadCsv==='function'){const before=cxDownloadCsv;cxDownloadCsv=function(filename,headers,rows){if(/^库存(?:与在途|分区分仓)_/.test(filename)){const index=headers.indexOf('未知处理');headers=headers.map(h=>h==='未知处理'?'来源与未知处理':h);rows=rows.map(r=>{const v=r.slice();if(index>=0)v[index]='云主表'+mainFor(packet.rows[0]).sourceDate+'；YQN库存/库龄/批次'+date+'完整查询；接口原更新时间另列，库龄为API分桶齐套下界；缺来源不计0、不与主表相加';return v;});}return before(filename,headers,rows);};}
+  const beforeRender=cxRenderStock;
+  function renderStock(){const result=beforeRender.apply(this,arguments);mount();return result;}
+  cxRenderStock=rwRender=wlRender=renderStock;
+  const beforeDetail=cxRenderSku;
+  cxRenderSku=function(){const result=beforeDetail.apply(this,arguments),sku=cxState.detail?.sku,body=document.getElementById('cxDetailBody');if(!sku||!body||!bySku.has(sku))return result;
+    if(!body.querySelector('.fy-sku-evidence'))body.insertAdjacentHTML('afterbegin','<details class="fy-sku-evidence" '+(['stock','inventory'].includes(cxState.detail?.tab)||typeof sqDetailTab!=='undefined'&&sqDetailTab==='stock'?'open':'')+'><summary>最新YQN分仓、库龄、入库日期与主表对账 · '+esc(date)+'</summary>'+detailHtml(sku)+'</details>');return result;};
+  const beforeView=setPageView;
+  setPageView=function(view){const result=beforeView.apply(this,arguments);if(view==='warehouses'){const subtitle=document.getElementById('subtitle');if(subtitle)subtitle.textContent='主表文件'+mainFor(packet.rows[0]).sourceDate+' · YQN库存/库龄/批次最新API '+date+' · 逐SKU比较，不重复相加';}return result;};
+  function exportCsv(){const rows=chooseRows();cxDownloadCsv('主表与YQN逐SKU对账_'+date.replaceAll('-','')+'.csv',
+    ['SKU','范围','地区','主表可用','主表预留','主表在途','YQN可用','YQN预留','YQN物理','可用差额_主表减YQN','预留差额_主表减YQN','对账状态','原因与证据等级','主表文件日期','YQN查询日期','YQN库存最近原更新时间','YQN库龄最近原更新时间','全国全部历史最早入库','全国全部历史最近入库','全国当前余量最早入库','全国当前余量最近入库','主表来源SHA256','YQN库存来源SHA256','YQN库龄来源SHA256'],
+    rows.map(v=>[v.record.sku,state.scope,state.region||'全国',v.main.available,v.main.reserved,v.main.transit,v.yqn.available,v.yqn.reserved,v.yqn.physical,v.difference,v.reservedDifference,states[v.status],reasonText(v.reasons),v.main.sourceDate,date,packet.meta.inventoryUpdatedMaxRaw,packet.meta.ageUpdatedMaxRaw,v.record.earliestInbound,v.record.latestInbound,v.record.currentBatchEarliestInbound,v.record.currentBatchLatestInbound,v.main.sourceHash,packet.meta.sourceFiles['inventory_records.json'].sha256,packet.meta.sourceFiles['age_records.json'].sha256]));}
+  let dialog=null;
+  function openDetail(sku,region=state.region){if(!dialog){dialog=document.createElement('dialog');dialog.className='fy-dialog';dialog.id='freshYqnDialog';document.body.appendChild(dialog);}dialog.innerHTML='<div class="fy-title"><h2>'+esc(sku)+' · '+esc(labels[region]||'全国')+'库存对账</h2><button type="button" data-fy-action="close">关闭 ×</button></div>'+detailHtml(sku,region);dialog.showModal();}
+  root.addEventListener('change',event=>{const field=event.target.closest('[data-fy-field]');if(!field||field.dataset.fyField==='search')return;state[field.dataset.fyField]=field.value;state.page=0;if(field.dataset.fyField==='region'){state.cause='';if(state.region&&state.status==='api_async')state.status='difference';}mount();},true);
+  root.addEventListener('keydown',event=>{const field=event.target.closest('[data-fy-field="search"]');if(field&&event.key==='Enter'){event.preventDefault();state.search=field.value;state.page=0;mount();}},true);
+  let searchTimer=null;
+  root.addEventListener('input',event=>{const field=event.target.closest('[data-fy-field="search"]');if(!field)return;state.search=field.value;state.page=0;clearTimeout(searchTimer);searchTimer=setTimeout(()=>{mount();const next=document.querySelector('#freshYqnReconciliation [data-fy-field="search"]');next?.focus();next?.setSelectionRange?.(state.search.length,state.search.length);},180);},true);
+  root.addEventListener('click',event=>{const button=event.target.closest('[data-fy-action],[data-fy-page],[data-fy-detail]');if(!button)return;event.preventDefault();event.stopImmediatePropagation();
+    if(button.hasAttribute('data-fy-detail')){openDetail(button.dataset.fyDetail);return;}
+    if(button.dataset.fyAction==='close'){dialog?.close();return;}if(button.dataset.fyAction==='export'){exportCsv();return;}
+    if(button.dataset.fyAction==='reset')Object.assign(state,{scope:'active',region:'',status:'difference',cause:'',search:'',page:0});
+    if(button.hasAttribute('data-fy-page'))state.page=Math.max(0,state.page+Number(button.dataset.fyPage));mount();},true);
+  function setMasterData(value){hasMasterOverride=true;masterOverride.clear();for(const row of value.allMasterRows||value.rows||[])masterOverride.set(row.sku,row);masterMeta=value.meta||null;if(cxState.view==='warehouses')mount();}
+  if(typeof sqSalesCache!=='undefined')sqSalesCache.clear();root.spQueryPeriodModel?.clearCaches?.();
+  root.freshYqnModel={ready:true,data:packet,bySku,state,comparison,mainFor,chooseRows,renderRecon,detailHtml,applyYqn,makeWarehouses,mount,exportCsv,openDetail,setMasterData};
+  if(cxState.view==='warehouses')renderStock();
+  const marker=document.createElement('span');marker.id='freshYqnReady';marker.hidden=true;document.body.appendChild(marker);
+})(window);
+
+</script>
+<script>(function(){if(!window.freshYqnModel?.ready||!window.salesScopeConsistencyModel?.ready||!window.costCompositionModel?.ready)throw Error("latest refresh not ready");window.freshYqnModel.setMasterData(window.inventoryConsistencyModel.data);var n=document.createElement("span");n.id="liveRefreshReady";n.hidden=true;document.body.appendChild(n);})();</script>

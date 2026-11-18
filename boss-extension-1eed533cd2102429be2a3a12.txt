@@ -1,0 +1,705 @@
+
+<script id="operatingDailySalesData" type="application/json">{"schema":"muku.operating-daily-sales.v1","meta":{"title":"经营日报金额","generatedDate":"2026-11-16","reportDate":"2026-11-12","timezone":"America/Los_Angeles","currency":"USD","coverage":{"start":"2026-11-01","end":"2026-11-12","complete":true,"stores":9,"storeDays":108},"sourceStatus":"9店108个店日已核，飞书云端逐格回读0差异","metricLabel":"日报销售口径（含各平台规定运费/税费），非商品行毛额","netLabel":"日报销售额＋按事件/结算日退款，不扣广告","platformBasis":{"Amazon":"日报剔深圳后的商品折后金额＋已证客户运费，含日报定义的Pending；不是HTML商品行原毛额。","Shopify":"日报事件日Analytics：gross_sales＋discounts＋shipping_charges＋duties＋additional_fees＋taxes；退款returns另列，不重复扣退款。","Wayfair":"日报PO日期的全部未取消订单，按精确店铺SKU剔深圳；并非只计已发货或已结算收入。"},"notes":["只按日期、平台、店铺查询；SKU、库存类型、利润/库龄等条件未提供拆分证据时不显示假联动合计。","本模块不分摊SKU、不扩库存人口，不延长原商品行或净销量统一覆盖。","11/13—11/16尚未接入已闭合的九店日报源，未覆盖不能填0。"],"sources":[{"file":"mtd_daily_sources.json","sha256":"dd9fbaee874e3b27ed303a1359558b03846bb9b7650e7267cc847f3fd134c302"},{"file":"feishu_sales_input_with_mtd.json","sha256":"2d508f6bc3ad40f356b06271abcbda013ac5c1f427195c3b9ed2f8bb90a4cdf3"},{"file":"source_validation.json","sha256":"9e079f87aa76fb03c7030c412da0db20b172858d6f49fa9928e39d5c5fd0de44"},{"file":"cloud_readback_month.json","sha256":"80baa7b83bead4583e98ca31dde5cbcaaa5fe2fb7257ee27ca2802e8ad66a018"},{"file":"month_M5_N15.tsv","sha256":"0508be01b592eebc18bec167dd3ce098716d6673162aabc065ec85a6e50288ff"}]},"stores":[{"platform":"Amazon","store":"genji furniture-US"},{"platform":"Amazon","store":"kaguyasu-US"},{"platform":"Amazon","store":"senyujp-US"},{"platform":"Amazon","store":"中诚-US"},{"platform":"Shopify","store":"AnzhapUS"},{"platform":"Shopify","store":"KaguyasuUS"},{"platform":"Shopify","store":"ZimasyaUS"},{"platform":"Shopify","store":"BizfurnizUS"},{"platform":"Wayfair","store":"way_linhe"}],"dailyRows":[{"date":"2026-11-01","platform":"Amazon","store":"genji furniture-US","sales":0.0,"refund":-45.31,"net":-45.31,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[0]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Amazon","store":"kaguyasu-US","sales":1999.97,"refund":0.0,"net":1999.97,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[1]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Amazon","store":"senyujp-US","sales":0.0,"refund":0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[2]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Amazon","store":"中诚-US","sales":0.0,"refund":0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[3]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Amazon","store":"genji furniture-US","sales":1879.98,"refund":0.0,"net":1879.98,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[4]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Amazon","store":"kaguyasu-US","sales":4388.45,"refund":0.0,"net":4388.45,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[5]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Amazon","store":"senyujp-US","sales":9524.41,"refund":0.0,"net":9524.41,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[6]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Amazon","store":"中诚-US","sales":1964.96,"refund":0.0,"net":1964.96,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[7]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Amazon","store":"genji furniture-US","sales":3182.48,"refund":0.0,"net":3182.48,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[8]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Amazon","store":"kaguyasu-US","sales":5348.52,"refund":0.0,"net":5348.52,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[9]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Amazon","store":"senyujp-US","sales":5096.93,"refund":-90.59,"net":5006.34,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[10]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Amazon","store":"中诚-US","sales":4792.93,"refund":-45.43,"net":4747.5,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[11]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Amazon","store":"genji furniture-US","sales":2521.95,"refund":0.0,"net":2521.95,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[12]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Amazon","store":"kaguyasu-US","sales":5928.96,"refund":-815.79,"net":5113.17,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[13]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Amazon","store":"senyujp-US","sales":7627.88,"refund":-426.8,"net":7201.08,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[14]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Amazon","store":"中诚-US","sales":1233.96,"refund":0.0,"net":1233.96,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[15]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Amazon","store":"genji furniture-US","sales":0.0,"refund":0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[16]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Amazon","store":"kaguyasu-US","sales":3447.47,"refund":0.0,"net":3447.47,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[17]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Amazon","store":"senyujp-US","sales":4378.95,"refund":-90.69,"net":4288.26,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[18]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Amazon","store":"中诚-US","sales":1214.98,"refund":0.0,"net":1214.98,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[19]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Amazon","store":"genji furniture-US","sales":0.0,"refund":0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[20]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Amazon","store":"kaguyasu-US","sales":3723.95,"refund":0.0,"net":3723.95,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[21]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Amazon","store":"senyujp-US","sales":6949.91,"refund":-1373.98,"net":5575.93,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[22]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Amazon","store":"中诚-US","sales":1764.97,"refund":0.0,"net":1764.97,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[23]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Amazon","store":"genji furniture-US","sales":150.0,"refund":0.0,"net":150.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[24]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Amazon","store":"kaguyasu-US","sales":911.99,"refund":0.0,"net":911.99,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[25]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Amazon","store":"senyujp-US","sales":1549.99,"refund":0.0,"net":1549.99,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[26]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Amazon","store":"中诚-US","sales":3159.96,"refund":0.0,"net":3159.96,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[27]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Amazon","store":"genji furniture-US","sales":3349.97,"refund":0.0,"net":3349.97,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[28]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Amazon","store":"kaguyasu-US","sales":0.0,"refund":0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[29]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Amazon","store":"senyujp-US","sales":4827.45,"refund":0.0,"net":4827.45,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[30]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Amazon","store":"中诚-US","sales":0.0,"refund":0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[31]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Amazon","store":"genji furniture-US","sales":3412.48,"refund":0.0,"net":3412.48,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[32]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Amazon","store":"kaguyasu-US","sales":2170.97,"refund":-72.94,"net":2098.03,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[33]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Amazon","store":"senyujp-US","sales":11490.19,"refund":0.0,"net":11490.19,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[34]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Amazon","store":"中诚-US","sales":1979.97,"refund":0.0,"net":1979.97,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[35]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Shopify","store":"AnzhapUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[36]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Shopify","store":"AnzhapUS","sales":12426.97,"refund":-0.0,"net":12426.97,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[37]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Shopify","store":"AnzhapUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[38]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Shopify","store":"AnzhapUS","sales":2595.49,"refund":-0.0,"net":2595.49,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[39]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Shopify","store":"AnzhapUS","sales":8079.72,"refund":-250.0,"net":7829.72,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[40]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Shopify","store":"AnzhapUS","sales":1915.25,"refund":-300.44,"net":1614.81,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[41]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Shopify","store":"AnzhapUS","sales":3063.92,"refund":-0.0,"net":3063.92,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[42]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Shopify","store":"AnzhapUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[43]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Shopify","store":"AnzhapUS","sales":4377.39,"refund":-0.0,"net":4377.39,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[44]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Shopify","store":"KaguyasuUS","sales":0.0,"refund":-50.0,"net":-50.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[45]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Shopify","store":"KaguyasuUS","sales":4475.76,"refund":-0.0,"net":4475.76,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[46]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Shopify","store":"KaguyasuUS","sales":4541.46,"refund":-0.0,"net":4541.46,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[47]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Shopify","store":"KaguyasuUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[48]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Shopify","store":"KaguyasuUS","sales":3424.32,"refund":-0.0,"net":3424.32,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[49]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Shopify","store":"KaguyasuUS","sales":4893.91,"refund":-0.0,"net":4893.91,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[50]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Shopify","store":"KaguyasuUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[51]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Shopify","store":"KaguyasuUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[52]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Shopify","store":"KaguyasuUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[53]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Shopify","store":"ZimasyaUS","sales":472.83,"refund":-0.0,"net":472.83,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[54]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Shopify","store":"ZimasyaUS","sales":7706.19,"refund":-0.0,"net":7706.19,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[55]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Shopify","store":"ZimasyaUS","sales":4422.45,"refund":-0.0,"net":4422.45,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[56]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Shopify","store":"ZimasyaUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[57]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Shopify","store":"ZimasyaUS","sales":730.73,"refund":-0.0,"net":730.73,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[58]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Shopify","store":"ZimasyaUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[59]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Shopify","store":"ZimasyaUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[60]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Shopify","store":"ZimasyaUS","sales":1744.66,"refund":-0.0,"net":1744.66,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[61]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Shopify","store":"ZimasyaUS","sales":2241.62,"refund":-459.14,"net":1782.48,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[62]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[63]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[64]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[65]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[66]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[67]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[68]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[69]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Shopify","store":"BizfurnizUS","sales":1350.27,"refund":-0.0,"net":1350.27,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[70]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Shopify","store":"BizfurnizUS","sales":483.37,"refund":-0.0,"net":483.37,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[71]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Amazon","store":"genji furniture-US","sales":1255.41,"refund":0.0,"net":1255.41,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[72]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Amazon","store":"kaguyasu-US","sales":6858.05,"refund":0.0,"net":6858.05,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[73]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Amazon","store":"senyujp-US","sales":9742.9,"refund":-1206.16,"net":8536.74,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[74]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Amazon","store":"中诚-US","sales":5569.91,"refund":0.0,"net":5569.91,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[75]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Shopify","store":"AnzhapUS","sales":2404.89,"refund":-0.0,"net":2404.89,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[76]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Shopify","store":"KaguyasuUS","sales":2514.34,"refund":-1713.03,"net":801.31,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[77]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Shopify","store":"ZimasyaUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[78]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[79]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Amazon","store":"genji furniture-US","sales":1794.98,"refund":0.0,"net":1794.98,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[80]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Amazon","store":"kaguyasu-US","sales":4272.46,"refund":0.0,"net":4272.46,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[81]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Amazon","store":"senyujp-US","sales":7299.42,"refund":0.0,"net":7299.42,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[82]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Amazon","store":"中诚-US","sales":2155.77,"refund":0.0,"net":2155.77,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[83]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Shopify","store":"AnzhapUS","sales":9155.27,"refund":-0.0,"net":9155.27,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[84]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Shopify","store":"KaguyasuUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[85]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Shopify","store":"ZimasyaUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[86]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[87]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Amazon","store":"genji furniture-US","sales":3371.47,"refund":0.0,"net":3371.47,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[88]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Amazon","store":"kaguyasu-US","sales":4028.35,"refund":0.0,"net":4028.35,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[89]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Amazon","store":"senyujp-US","sales":2656.94,"refund":0.0,"net":2656.94,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[90]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Amazon","store":"中诚-US","sales":1268.97,"refund":0.0,"net":1268.97,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[91]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Shopify","store":"AnzhapUS","sales":8430.57,"refund":-0.0,"net":8430.57,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[92]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Shopify","store":"KaguyasuUS","sales":2378.37,"refund":-0.0,"net":2378.37,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[93]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Shopify","store":"ZimasyaUS","sales":2142.34,"refund":-0.0,"net":2142.34,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[94]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Shopify","store":"BizfurnizUS","sales":0.0,"refund":-0.0,"net":0.0,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[95]","reportDate":"2026-11-12"}},{"date":"2026-11-01","platform":"Wayfair","store":"way_linhe","sales":6929.3,"refund":0.0,"net":6929.3,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[96]","reportDate":"2026-11-12"}},{"date":"2026-11-02","platform":"Wayfair","store":"way_linhe","sales":11946.85,"refund":-1425.83,"net":10521.02,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[97]","reportDate":"2026-11-12"}},{"date":"2026-11-03","platform":"Wayfair","store":"way_linhe","sales":6004.35,"refund":0.0,"net":6004.35,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[98]","reportDate":"2026-11-12"}},{"date":"2026-11-04","platform":"Wayfair","store":"way_linhe","sales":7941.3,"refund":0.0,"net":7941.3,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[99]","reportDate":"2026-11-12"}},{"date":"2026-11-05","platform":"Wayfair","store":"way_linhe","sales":10524.4,"refund":-201.8,"net":10322.6,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[100]","reportDate":"2026-11-12"}},{"date":"2026-11-06","platform":"Wayfair","store":"way_linhe","sales":5623.71,"refund":-1640.51,"net":3983.2,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[101]","reportDate":"2026-11-12"}},{"date":"2026-11-07","platform":"Wayfair","store":"way_linhe","sales":2359.5,"refund":0.0,"net":2359.5,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[102]","reportDate":"2026-11-12"}},{"date":"2026-11-08","platform":"Wayfair","store":"way_linhe","sales":3074.58,"refund":-559.3,"net":2515.28,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[103]","reportDate":"2026-11-12"}},{"date":"2026-11-09","platform":"Wayfair","store":"way_linhe","sales":5582.51,"refund":-126.95,"net":5455.56,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[104]","reportDate":"2026-11-12"}},{"date":"2026-11-10","platform":"Wayfair","store":"way_linhe","sales":5534.38,"refund":-217.14,"net":5317.24,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[105]","reportDate":"2026-11-12"}},{"date":"2026-11-11","platform":"Wayfair","store":"way_linhe","sales":9862.62,"refund":0.0,"net":9862.62,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[106]","reportDate":"2026-11-12"}},{"date":"2026-11-12","platform":"Wayfair","store":"way_linhe","sales":9208.8,"refund":-867.42,"net":8341.38,"source":{"file":"mtd_daily_sources.json","pointer":"daily_rows[107]","reportDate":"2026-11-12"}}],"summary":{"sales":340813.6,"refund":-11979.25,"net":328834.35,"storeDays":108}}</script>
+<style>
+.fa-refund-card { width:100%;text-align:left;cursor:pointer;border:1px solid #d8e1ed;background:#f8fafd;color:#344d72;font:inherit;border-radius:5px;padding:12px; }
+.fa-refund-card:hover,.fa-refund-card:focus-visible { background:#edf2fa;border-color:#617da8;outline:2px solid #adc0dd;outline-offset:2px; }
+.fa-refund-card em { display:block;font-style:normal;font-size:11px;margin-top:8px;color:#49668c; }
+.fa-refund-summary .ov-refund-card strong { margin:7px 0; }
+
+</style>
+<style>
+.od-panel{margin-top:18px;padding:18px;border:1px solid #bbcadc;border-left:4px solid #5479a6;border-radius:8px;background:#f6f9fd;color:#27384c}
+.od-heading,.od-period{display:flex;align-items:center;justify-content:space-between;gap:12px}.od-heading h3{margin:0;font-size:16px}.od-heading h3 span{display:inline-block;margin-left:12px;font-size:12px;font-weight:400;color:#64748b}.od-heading p,.od-period{font-size:12px;color:#5b6e87}.od-heading p{margin:7px 0}.od-period{margin:10px 0}.od-status{padding:6px 10px;border-radius:5px;font-size:12px;white-space:nowrap;background:#e6edf6;color:#385a82}.od-status.partial{background:#f8edda;color:#8b692b}
+.od-kpis{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:12px}.od-kpi{padding:14px 16px;background:white;border:1px solid #dbe4ef;border-radius:6px}.od-kpi span{font-size:12px;color:#596e88}.od-kpi strong{display:block;margin:9px 0;font-size:23px;font-weight:700;color:#375c88;letter-spacing:.2px}.od-kpi small{display:block;font-size:11px;line-height:1.6;color:#687d96}.od-warning{margin:12px 0 0;padding:9px 11px;border-radius:5px;background:#fff8eb;font-size:12px;line-height:1.7;color:#84632b}
+.od-comparison{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px;padding:12px;background:#edf3fa;border:1px solid #d7e3f1;border-radius:5px;font-size:12px}.od-comparison strong{flex-basis:100%;font-size:12px}.od-comparison small{display:block;flex-basis:100%;font-size:11px;color:#657890;line-height:1.6}
+.od-details{margin-top:12px;background:white;border:1px solid #dbe4ef;border-radius:5px}.od-details>summary{padding:12px;color:#3a5d87;cursor:pointer;font-size:12px;font-weight:600}.od-details>details{margin:10px 12px}.od-details>details>summary{padding:8px;cursor:pointer;color:#4e6683;font-size:12px}.od-table-scroll{overflow:auto;max-height:350px}.od-table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}.od-table th{background:#eaf0f7;text-align:left;padding:9px 12px;color:#4c6381;font-weight:600;position:sticky;top:0}.od-table td{padding:9px 12px;border-bottom:1px solid #e6edf5;text-align:left}.od-store{border:0;background:transparent;color:#3e648f;font-size:12px;text-align:left;cursor:pointer;padding:3px 0}.od-store:hover{text-decoration:underline}.od-basis{padding:0 13px 8px}.od-basis p,.od-foot{font-size:11px;line-height:1.7;color:#647890}.od-foot{margin:10px 0 0}
+@media(max-width:800px){.od-kpis{grid-template-columns:1fr}.od-heading{align-items:flex-start}.od-heading h3 span{display:block;margin:7px 0 0}.od-period{align-items:flex-start;flex-wrap:wrap}.od-panel{padding:12px}}
+
+</style>
+<style>
+.fa-trend-controls { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0 12px; }
+.fa-trend-controls button { border:1px solid #c8d5e7; border-radius:4px; background:#f8fafd; color:#4c6485; padding:5px 8px; font:inherit; font-size:11px; cursor:pointer; }
+button.fa-state-control[aria-pressed="true"] { background:#405d83 !important; border-color:#405d83 !important; color:#fff !important; box-shadow:0 0 0 1px #405d83; }
+button.fa-state-control[aria-pressed="true"] small,button.fa-state-control[aria-pressed="true"] strong { color:inherit; }
+button.fa-state-control[aria-pressed="false"] { border-color:#ccd7e6; }
+button.fa-state-mark[aria-pressed="true"]:not(.fa-state-control) { box-shadow:inset 0 0 0 1px #7990b0; }
+button.fa-state-control:focus-visible { outline:2px solid #8ca6ca; outline-offset:3px; }
+.sx-date-presets button[aria-pressed="true"],#sqQueryBody [data-sq-window][aria-pressed="true"],#sqQueryBody [data-sq-preset][aria-pressed="true"] { font-weight:650; }
+.fa-metric-note { font-size:11px; line-height:1.65; color:#667e9a; margin:10px 0 0; }
+.fa-coverage-badge { display:flex; flex-wrap:wrap; align-items:center; gap:7px 16px; padding:11px 13px; margin-bottom:14px; background:#edf3fb; border:1px solid #b7cbe6; border-radius:5px; color:#3e597b; font-size:12px; line-height:1.6; }
+.fa-coverage-badge b { padding:2px 7px; border-radius:3px; background:#405d83; color:#fff; }
+.fa-coverage-badge small { flex-basis:100%; font-size:11px; color:#667d98; }
+.fa-coverage-badge.is-partial { background:#f2f5fa; border:2px solid #839bbd; }
+.fa-coverage-badge.is-partial b { background:#526b8e; }
+
+</style>
+<script>
+/* 概览退款按退款发生日查询：完成登记与平台账单并列，不以订单日替代。 */
+(function(){
+ 'use strict';
+ if(window.faRefundModel?.ready)return;
+ const packet=JSON.parse(document.getElementById('refundAftersalesDetailData')?.textContent||'null');
+ if(!packet)return;
+ const num=v=>typeof v==='number'&&Number.isFinite(v),esc=v=>cxEsc(v==null?'':String(v));
+ const money=v=>num(v)?'$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):'待核';
+ const name=p=>p==='Shopify'?'独立站':p;
+ const ledgerRow=r=>!r.historicalNonAuthority&&(!r.disposition||r.disposition==='kept')&&r.includeInMetrics!==false;
+ const audit=window.createRefundAudit(packet.refundRows,packet.platformRows);
+ const currentWayfair=()=>packet.platformRows.filter(row=>row.platform==='Wayfair').map(row=>{
+  const rawSource=row.source||{};
+  return {...row,eventDate:row.date,source:{...rawSource,path:rawSource.file||''},classificationBasis:row.causeBasis};
+ });
+ const priorCoverage=rfCoverage;
+ function platformCoverage(platform,filters,options={}){
+  if(platform!=='Wayfair')return priorCoverage(platform,filters,options);
+  const entries=rfState.data.coverage.filter(row=>row.platform===platform&&rfContextMatches(row,filters,options));
+  const overlap=entries.filter(row=>filters.start<=row.until&&filters.end>=row.since);
+  const stores=[...new Set(entries.map(row=>rfStore(row.platform,row.store)))];
+  if(filters.start>filters.end||!overlap.length)return {status:'none',label:'未接入所选日期',start:null,end:null,stores:stores.length};
+  // 已完整月份单独判定，部分观察窗口不把10月完整期降格。
+  const full=stores.every(store=>overlap.some(row=>rfStore(row.platform,row.store)===store&&row.complete&&row.since<=filters.start&&row.until>=filters.end));
+  const start=overlap.reduce((value,row)=>row.since<value?row.since:value,overlap[0].since);
+  const end=overlap.reduce((value,row)=>row.until>value?row.until:value,overlap[0].until);
+  const partial=!full||filters.product;
+  return {status:partial?'partial':'full',label:partial?'部分凭证':'所选日期已核',
+   start:start>filters.start?start:filters.start,end:end<filters.end?end:filters.end,stores:stores.length,
+   productComplete:full&&overlap.every(row=>row.productComplete===true),cashComplete:false};
+ }
+ function installWayfairEvidence(){
+  if(!rfState.data?.events)return;
+  if(rfState.data.wayfairPacket===packet)return;
+  const wayfair=currentWayfair();
+  const coverage=(packet.meta.platformCoverage||[]).filter(row=>row.platform==='Wayfair');
+  if(!coverage.length)return;
+  rfState.data={...rfState.data,events:[...rfState.data.events.filter(row=>row.platform!=='Wayfair'),...wayfair],
+   coverage:[...rfState.data.coverage.filter(row=>row.platform!=='Wayfair'),...coverage],wayfairPacket:packet};
+  rfCoverage=platformCoverage;
+ }
+ installWayfairEvidence();
+ const previousRfInitialize=rfInitialize;
+ rfInitialize=function(){
+  const result=previousRfInitialize.apply(this,arguments);
+  installWayfairEvidence();
+  ovModel.setRefundSummaryProvider(provider);
+  return result;
+ };
+ const previousRfHtml=rfHtml;
+ rfHtml=function(context){
+  return previousRfHtml(context).replace('按退款事件日','按各平台凭证日期')
+   .replace('超出10月的日期尚未接入，部分覆盖只显示已核部分。','Wayfair 11月1–16日补入后台结算日观察凭证。其他月份按各渠道覆盖显示。');
+ };
+ const review=r=>r.isGoodReview===true||r.measureKind==='review_rebate'||/好评|评价返现/.test(r.typeLabel||'');
+ function matches(r,f){
+  if(!rfContextMatches(r,f))return false;
+  if(f.unsupported)return false;
+  if(!f.product)return true;
+  const skus=r.skus||[],query=f.search||'';
+  if(f.sku&&!skus.includes(f.sku))return false;
+  if(query&&![r.orderId,r.sourceSku,r.store,r.description,...skus].some(v=>String(v||'').toLowerCase().includes(query)))return false;
+  if(f.classification||['active','all','nonstock','pending'].includes(f.scope)||Object.values(typeof ldState==='undefined'?{}:ldState.filters).some(Boolean)){
+   return skus.some(sku=>rfProductMatches({canonicalSku:sku,sourceSku:r.sourceSku,platform:r.platform,store:r.store,orderId:r.orderId,orderDate:r.orderDate}, {...f,search:'',sku:''}));
+  }
+  return true;
+ }
+ function model(context=ovModel.context()){
+  const f=rfFilters(context),coverage=packet.meta.coverage.refunds;
+  const validDates=/^\d{4}-\d{2}-\d{2}$/.test(f.start||'')&&/^\d{4}-\d{2}-\d{2}$/.test(f.end||'')&&f.start<=f.end;
+  const dated=validDates?packet.refundRows.filter(r=>ledgerRow(r)&&r.refundCompletedDate&&r.refundCompletedDate>=f.start&&r.refundCompletedDate<=f.end&&matches(r,f)):[];
+  return {filters:f,platforms:['Amazon','Shopify','Wayfair'].filter(platform=>rfContextMatches({platform,store:f.store||f.leaderStore||''},f)).map(platform=>{
+   const rows=dated.filter(r=>r.platform===platform),refunds=rows.filter(r=>!review(r)&&num(r.actualRefundAmount)),reviews=rows.filter(review);
+   const duplicateRows=refunds.filter(row=>audit.groupInfo(row.id)?.independent===false).length;
+   const independentSameAmountRows=refunds.filter(row=>audit.groupInfo(row.id)?.independent===true).length;
+   const available=validDates&&!f.unsupported&&platform!=='Wayfair'&&f.start<=coverage.end&&f.end>=coverage.start;
+   return {platform,rows,refunds,reviews,duplicateRows,independentSameAmountRows,available,value:refunds.length?refunds.reduce((s,r)=>s+r.actualRefundAmount,0):null,reviewValue:reviews.reduce((s,r)=>s+(num(r.amount)?r.amount:0),0),partial:true,rangePartial:f.start<coverage.start||f.end>coverage.end,coverage};
+  })};
+ }
+ function wayfairSelection(context=ovModel.context()){
+  installWayfairEvidence();
+  const current=rfBuildModel(context);
+  return {filters:current.filters,item:current.platforms.find(row=>row.platform==='Wayfair')};
+ }
+ function provider(context){
+  const m=model(context);
+  return {cards:m.platforms.map(p=>{
+   if(p.platform==='Wayfair'){
+    const {item}=wayfairSelection(context);
+    const ready=item&&!item.unavailable;
+    return {platform:p.platform,label:'Wayfair · 已结算退货扣款',
+     value:!ready?(m.filters.unsupported?'此筛选无凭证归因':'未接入所选日期'):item.value===null?'未取得可计扣款':money(item.value),
+     tone:num(item?.value)?'negative':'muted',
+     detail:[m.filters.start+'—'+m.filters.end,ready?item.events+'条主要凭证':'',ready?rfCoverageText(item):'',
+      '按后台结算日 · 部分USD暂列 · 客户退款与完整工单待补'].filter(Boolean).join(' · ')};
+   }
+   const details=[m.filters.start+'—'+m.filters.end,p.available?p.refunds.length+'条已完成退款登记':'未能确认该窗完成日登记总额',
+    p.reviews.length?'好评返现另列 '+money(p.reviewValue):'',
+    p.duplicateRows?'同单同额 '+p.duplicateRows+' 行待排重':'',
+    p.independentSameAmountRows?'同额 '+p.independentSameAmountRows+' 行已核独立商品分录':'',
+    '源内登记日期 '+p.coverage.start+'—'+p.coverage.end+'，连续覆盖待核',
+    m.filters.product?'关联订单金额 · 未分摊SKU':''].filter(Boolean).join(' · ');
+   return {platform:p.platform,label:name(p.platform)+' · 退款完成日登记小计',
+    value:m.filters.unsupported?'此筛选无退款归因':!p.available?'待补完成日来源':p.value===null?'未见已完成登记':money(p.value),
+    tone:p.value===null?'muted':'negative',detail:details};
+  }),note:'Amazon与独立站按台账退款完成日统计。Wayfair按后台结算日展示供应商扣款，11月观察范围为1日至16日。登记金额、现金交易和扣款各按其口径查阅。'};
+ }
+ function openWayfair(context=ovModel.context()){
+  const {filters,item}=wayfairSelection(context);
+  const api=window.raDashboard;
+  if(!api)return;
+  api.open({tab:'platform',platform:'Wayfair',start:filters.start,end:filters.end,store:filters.store||filters.leaderStore||'',
+   evidenceIds:filters.product||filters.unsupported?(item?.rows||[]).map(row=>row.id):null,
+   evidenceLabel:filters.product||filters.unsupported?'销售页精确凭证范围 · '+(filters.sku||filters.search||'当前商品条件'):''});
+ }
+ ovRefundSummary=function(context){
+  const summary=provider(context),f=model(context).filters;
+  return '<div class="ov-refund-summary fa-refund-summary"><div class="ov-refund-cards">'+summary.cards.map(c=>'<button class="ov-refund-card '+c.tone+' fa-refund-card" data-fa-refund="'+esc(c.platform)+'" data-fa-start="'+esc(f.start)+'" data-fa-end="'+esc(f.end)+'" data-fa-store="'+esc(f.store||f.leaderStore||'')+'" data-fa-search="'+esc(f.sku||f.search||'')+'" data-fa-exact="'+String(f.product||f.unsupported)+'"><span>'+esc(c.label)+'</span><strong>'+esc(c.value)+'</strong><small>'+esc(c.detail)+'</small><em>查看退款明细与归因 →</em></button>').join('')+'</div><p class="ov-refund-note">'+esc(summary.note)+'</p></div>';
+ };
+ let drill=null,drillRows=[],drillFocus=null;
+ function closeDrill(){if(drill)drill.hidden=true;drillFocus?.focus?.();}
+ function openDrill(platform){
+  if(platform==='Wayfair'){openWayfair();return;}
+  const result=model(),part=result.platforms.find(p=>p.platform===platform);
+  drillRows=part?.rows||[];
+  if(!drill){drill=document.createElement('div');drill.id='faRefundDrill';drill.className='ra-modal';drill.hidden=true;document.body.append(drill);}
+  const f=result.filters;
+  drill.innerHTML='<section class="ra-modal-box" role="dialog" aria-modal="true" aria-labelledby="faRefundDrillTitle"><div class="ra-modal-head"><div><h2 id="faRefundDrillTitle">'+esc(name(platform))+' · 当前筛选退款登记</h2><p>'+esc(f.start+'—'+f.end)+(f.sku?' · '+esc(f.sku):'')+'</p></div><button class="ra-btn" data-fa-drill-close>关闭 ×</button></div><div class="ra-modal-body"><p class="cx-note">本表直接使用上方卡片命中的原始登记行，未改用关键词扩大范围。金额为关联订单登记，未分摊到SKU；好评返现另列，疑似重复登记保留。'+(f.unsupported?'当前维度没有可证退款归因，未列金额。':'')+'</p><button class="ra-btn" data-fa-drill-export '+(!drillRows.length?'disabled':'')+'>导出当前精确登记</button><div class="ra-table-scroll"><table class="ra-table"><thead><tr>'+['退款发生日','平台 / 店铺','订单 / SKU','处理类型','已完成退款USD','好评返现USD','问题原因','核对标记','原始来源'].map(s=>'<th>'+s+'</th>').join('')+'</tr></thead><tbody>'+drillRows.map(r=>'<tr><td>'+esc(r.refundCompletedDate)+'</td><td>'+esc(name(r.platform)+' / '+rfStore(r.platform,r.store))+'</td><td><button class="ra-link" data-fa-drill-order="'+esc(r.id)+'">'+esc(r.orderId)+'</button><small>'+esc((r.skus||[]).join(' / '))+'</small></td><td>'+esc(r.typeLabel)+'</td><td>'+esc(review(r)?'—':money(r.actualRefundAmount))+'</td><td>'+esc(review(r)?money(r.amount):'—')+'</td><td>'+esc(r.causeLabel)+'</td><td>'+esc(audit.flags(r).join(' / '))+'</td><td>'+esc([r.source?.file,r.source?.sheet,'行 '+r.source?.row].filter(Boolean).join(' · '))+'</td></tr>').join('')+'</tbody></table></div>'+(!drillRows.length?'<p class="ra-empty">当前精确筛选未见已接入登记，不代表已证零退款。</p>':'')+'</div></section>';
+  drillFocus=document.activeElement;drill.hidden=false;drill.querySelector?.('[data-fa-drill-close]')?.focus?.();
+ }
+ function exportDrill(){
+  if(!drillRows.length)return;
+  cxDownloadCsv('退款发生日_当前精确筛选.csv',['记录ID','退款发生日','平台','店铺','订单号','SKU','处理类型','已完成退款USD','好评返现USD','问题原因','来源文件','来源表','来源行','核对标记'],drillRows.map(r=>[r.id,r.refundCompletedDate,r.platform,rfStore(r.platform,r.store),r.orderId,(r.skus||[]).join(' / '),r.typeLabel,review(r)?null:r.actualRefundAmount,review(r)?r.amount:null,r.causeLabel,r.source?.file,r.source?.sheet,r.source?.row,audit.flags(r).join(' / ')]));
+ }
+ window.addEventListener('click',event=>{
+  const action=event.target.closest('[data-fa-drill-close],[data-fa-drill-export],[data-fa-drill-order]');
+  if(action){event.preventDefault();event.stopImmediatePropagation();if(action.hasAttribute('data-fa-drill-close'))closeDrill();else if(action.hasAttribute('data-fa-drill-export'))exportDrill();else{closeDrill();window.raDashboard?.openDetail(action.dataset.faDrillOrder);}return;}
+  if(drill&&event.target===drill){closeDrill();return;}
+  const b=event.target.closest('[data-fa-refund]');if(!b)return;
+  event.preventDefault();event.stopImmediatePropagation();
+  if(b.dataset.faRefund==='Wayfair'){openWayfair();return;}
+  if(b.dataset.faExact==='true'){openDrill(b.dataset.faRefund);return;}
+  const api=window.raDashboard;if(!api)return;
+  api.open({tab:'refunds',platform:b.dataset.faRefund,start:b.dataset.faStart,end:b.dataset.faEnd,store:b.dataset.faStore});
+  api.state.search=b.dataset.faSearch||'';
+  api.state.metric='actual';api.state.currency='USD';
+  api.render();
+ },true);
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&drill&&!drill.hidden){event.preventDefault();closeDrill();}});
+ const oldRender=rfRender;
+ rfRender=function(){oldRender();const module=document.getElementById('rfModule');if(!module)return;const s=module.querySelector('summary');if(s)s.innerHTML='平台退款凭证核对 <span>10月完整凭证 · Wayfair 11月部分凭证</span>';};
+ ovModel.setRefundSummaryProvider(provider);
+ window.faRefundModel={ready:true,data:packet,coverage:packet.meta.coverage,model,provider,openDrill,exportDrill,wayfairSelection,openWayfair,audit};
+ const marker=document.createElement('span');marker.id='refundBossRepairReady';marker.hidden=true;document.body.append(marker);
+})();
+
+</script>
+<script>
+/* 经营日报金额与商品行分析分口径并排；只接入已核店日，不伪造SKU拆分。 */
+(function () {
+ 'use strict';
+ const node=document.getElementById('operatingDailySalesData');
+ if(!node||window.operatingDailyModel?.ready)return;
+ const data=JSON.parse(node.textContent),state={open:false,daysOpen:false},finite=value=>typeof value==='number'&&Number.isFinite(value),esc=value=>cxEsc(value==null?'':String(value)),usd=value=>finite(value)?cxMoney(value):'不适用',sum=(rows,key)=>rows.length?rows.reduce((total,row)=>total+Math.round(row[key]*100),0)/100:null;
+ const platformLabel=platform=>platform==='Shopify'?'独立站':platform;
+ function storeName(platform,value){if(typeof rfStore==='function')return rfStore(platform,value);return platform==='Amazon'&&['zhongcheng','中诚-US'].includes(value)?'中诚-US':platform==='Wayfair'?'way_linhe':value==='biz'?'BizfurnizUS':value;}
+ function addDay(date,offset){const value=new Date(date+'T12:00:00Z');value.setUTCDate(value.getUTCDate()+offset);return value.toISOString().slice(0,10);}
+ function filters(context){
+  const sales=typeof cxState!=='undefined'?cxState.sales:{},sx=typeof sxState!=='undefined'?sxState:{},lead=typeof ldState!=='undefined'?ldState.filters:{},bucket=context.selectedBucketBounds;
+  let start=context.requestedStart||sx.start,end=context.requestedEnd||sx.end;
+  if(bucket){if(bucket.start>start)start=bucket.start;if(bucket.end<end)end=bucket.end;}
+  const leader=String(context.leaderStore||lead.store||''),parts=leader.split('|'),unsupported=[];
+  if(sales.sku)unsupported.push('SKU点选');if(String(sales.search||'').trim())unsupported.push('商品/订单搜索');
+  if((context.scope||sales.stockScope||'business')!=='business')unsupported.push('库存/采购业务范围');
+  if(sx.stockClass)unsupported.push('库存采购类型');
+  for(const key of ['type','stock','age','profit','amount','saleAge'])if(lead[key])unsupported.push({type:'商品类型',stock:'库存层级',age:'库龄',profit:'利润',amount:'订单金额层级',saleAge:'销售时库龄'}[key]);
+  if(typeof bxState!=='undefined'&&bxState.history)unsupported.push('降价历史分组');
+  return {start,end,platform:context.platform||sales.platform||'',chartPlatform:context.chartPlatform||sx.chartPlatform||'',store:context.store||sx.store||'',leaderPlatform:leader?parts[0]:'',leaderStore:leader?parts.slice(1).join('|'):'',unsupported};
+ }
+ function model(context=ovModel.context()){
+  const f=filters(context),coverage=data.meta.coverage,valid=/^\d{4}-\d{2}-\d{2}$/.test(f.start||'')&&/^\d{4}-\d{2}-\d{2}$/.test(f.end||'')&&f.start<=f.end;
+  const storeMatches=row=>(!f.platform||row.platform===f.platform)&&(!f.chartPlatform||row.platform===f.chartPlatform)&&(!f.leaderPlatform||row.platform===f.leaderPlatform)&&(!f.store||row.store===storeName(row.platform,f.store))&&(!f.leaderStore||row.store===storeName(row.platform,f.leaderStore));
+  const stores=data.stores.filter(storeMatches),start=valid?(f.start>coverage.start?f.start:coverage.start):'',end=valid?(f.end<coverage.end?f.end:coverage.end):'',overlap=valid&&start<=end&&stores.length>0;
+  const matched=overlap?data.dailyRows.filter(row=>row.date>=start&&row.date<=end&&storeMatches(row)):[],supported=!f.unsupported.length,rows=supported?matched:[],available=supported&&overlap&&rows.length>0;
+  const missing=[];if(valid&&f.start<coverage.start)missing.push(f.start+'—'+(f.end<coverage.start?f.end:addDay(coverage.start,-1)));if(valid&&f.end>coverage.end)missing.push((f.start>coverage.end?f.start:addDay(coverage.end,1))+'—'+f.end);
+  const full=available&&f.start>=coverage.start&&f.end<=coverage.end;
+  const totals=available?{sales:sum(rows,'sales'),refund:sum(rows,'refund'),net:sum(rows,'net')}:{sales:null,refund:null,net:null};
+  const byStore=available?stores.map(store=>{const values=rows.filter(row=>row.platform===store.platform&&row.store===store.store),sales=sum(values,'sales');return {...store,rows:values,sales,refund:sum(values,'refund'),net:sum(values,'net'),share:totals.sales?sales/totals.sales:null};}).sort((a,b)=>b.sales-a.sales):[];
+  let comparison=null;
+  const period=context.period||{},commonStart=available&&period.start?(start>period.start?start:period.start):'',commonEnd=available&&period.end?(end<period.end?end:period.end):'';
+  if(available&&!period.empty&&commonStart&&commonEnd&&commonStart<=commonEnd){
+   const commonDaily=rows.filter(row=>row.date>=commonStart&&row.date<=commonEnd),goods=(context.orders||[]).filter(order=>order.date>=commonStart&&order.date<=commonEnd),eligible=goods.filter(order=>typeof cxAmountEligible==='function'?cxAmountEligible(order):finite(order.amount)&&order.amountChartEligible===true),goodsGross=eligible.reduce((total,order)=>total+Math.round(order.amount*100),0)/100,dailySales=sum(commonDaily,'sales');
+   comparison={start:commonStart,end:commonEnd,dailySales,goodsGross,basisDifference:Math.round((dailySales-goodsGross)*100)/100,knownOutsideCommon:Math.round((totals.sales-dailySales)*100)/100,goodsRows:goods.length,goodsMissingAmount:goods.filter(order=>order.amountChartEligible===true&&!finite(order.amount)).length};
+  }
+  return {filters:f,valid,stores,rows,matchedRows:matched,available,supported,full,coverageStart:overlap?start:null,coverageEnd:overlap?end:null,missing,totals,byStore,comparison};
+ }
+ function table(headers,rows){return '<div class="od-table-scroll"><table class="od-table"><thead><tr>'+headers.map(value=>'<th>'+esc(value)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(value=>'<td>'+value+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';}
+ function html(context){
+  const value=model(context),f=value.filters,label=value.full?'所选日期已核店日':value.available?'已核日期部分':'暂无适用已核金额',period=value.coverageStart?value.coverageStart+'—'+value.coverageEnd:'无已接入交集';
+  const filterText=[f.platform&&platformLabel(f.platform),f.chartPlatform&&platformLabel(f.chartPlatform),f.leaderPlatform&&platformLabel(f.leaderPlatform),f.store,f.leaderStore].filter(Boolean).join(' / ')||'全部平台与店铺';
+  let status=!value.valid?'日期范围无效。':!value.supported?'当前含'+f.unsupported.join('、')+'；日报仅有店日汇总，不提供该维度拆分，已暂停金额与导出。日期、平台、店铺条件仍保留。':!value.stores.length?'当前平台/店铺条件没有交集。':!value.available?'所选日期尚无已接入的完整九店日报，不作0。':value.missing.length?'未覆盖：'+value.missing.join('；')+'，这些日期未补0。':'所选日期的店日齐全。';
+  const card=(title,amount,note)=>'<div class="od-kpi"><span>'+esc(title)+'</span><strong>'+esc(usd(amount))+'</strong><small>'+esc(note)+'</small></div>';
+  const cards=card('经营日报销售额',value.totals.sales,'日报销售口径，含各平台规定运费/税费')+card('经营日报净销售额',value.totals.net,'销售额＋按事件/结算日退款，不扣广告')+card('日报退款 / 扣款',value.totals.refund,'按日报财务/Analytics/结算口径，非内部退款登记总额');
+  const c=value.comparison,comparison=c?'<div class="od-comparison"><strong>同日期对照 '+esc(c.start+'—'+c.end)+'</strong><span>日报销售额 '+esc(usd(c.dailySales))+'</span><span>商品行毛额 '+esc(usd(c.goodsGross))+'</span><span>口径差 '+esc(usd(c.basisDifference))+'</span>'+(c.knownOutsideCommon?'<small>共同日期之外的已接日报额 '+esc(usd(c.knownOutsideCommon))+'，另属日期覆盖差；不摊入SKU。</small>':'')+'<small>两者含税、运费、折扣、订单状态及事件日期规则不同。差额不等于遗漏商品或净利润。</small></div>':'';
+  const stores=value.byStore.map(row=>['<button type="button" class="od-store" data-ov-store="'+esc(row.platform+'|'+row.store)+'" title="点选店铺联动日期/平台/店铺，再点取消">'+esc(platformLabel(row.platform))+' · '+esc(row.store)+'</button>',esc(usd(row.sales)),esc(usd(row.refund)),esc(usd(row.net)),row.share==null?'—':esc((row.share*100).toFixed(1)+'%'),esc(row.rows.length+'天')]);
+  const detail=value.available?'<details class="od-details" data-od-details '+(state.open?'open':'')+'><summary>按店铺查看日报 · '+value.byStore.length+'店 / '+value.rows.length+'个店日 · 同一日期与金额分母</summary>'+table(['平台 / 店铺','日报销售额USD','事件日退款 / 扣款USD','日报净额USD','占所选日报销售额','已核天数'],stores)+'<details data-od-days '+(state.daysOpen?'open':'')+'><summary>逐日金额与来源 · '+value.rows.length+'条（非SKU商品行）</summary>'+table(['美西日期','平台 / 店铺','日报销售额USD','退款 / 扣款USD','日报净额USD','来源'],value.rows.map(row=>[esc(row.date),esc(platformLabel(row.platform)+' / '+row.store),esc(usd(row.sales)),esc(usd(row.refund)),esc(usd(row.net)),esc(row.source.file+' · '+row.source.pointer)]))+'</details><div class="od-basis">'+Object.entries(data.meta.platformBasis).filter(([platform])=>value.stores.some(row=>row.platform===platform)).map(([platform,basis])=>'<p><b>'+esc(platformLabel(platform))+'：</b>'+esc(basis)+'</p>').join('')+'</div></details>':'';
+  return '<section class="od-panel" id="operatingDailyPanel" aria-label="经营日报金额独立口径"><div class="od-heading"><div><h3>经营日报金额 <span>独立日报口径，与上方商品行毛额并排核对</span></h3><p>请求 '+esc(f.start+'—'+f.end)+' · '+esc(filterText)+'</p></div><span class="od-status '+(value.full?'complete':'partial')+'">'+esc(label)+'</span></div><div class="od-period">实际已核 '+esc(period)+' · '+(value.available?value.rows.length+'个店日':'金额未列')+'<button type="button" class="btn" data-od-export '+(!value.available?'disabled':'')+'>导出当前日报店日</button></div><div class="od-kpis">'+cards+'</div><p class="od-warning">'+esc(status)+'</p>'+comparison+detail+'<p class="od-foot">日报金额不分摊SKU、不扩大库存人口，也不延长商品行/净销量来源覆盖。原11/12报表9店108个店日已核，云端回读0差异。</p></section>';
+ }
+ function exportRows(context=ovModel.context()){
+  const value=model(context);if(!value.available)return false;
+  const headers=['美西日期','平台','店铺','经营日报销售额USD','事件日退款/扣款USD','经营日报净额USD','统计口径','来源文件','来源定位','日报源截止'];
+  const rows=value.rows.map(row=>[row.date,row.platform,row.store,row.sales,row.refund,row.net,data.meta.platformBasis[row.platform],row.source.file,row.source.pointer,data.meta.reportDate]);
+  if(typeof cxDownloadCsv==='function')cxDownloadCsv('经营日报金额_'+value.filters.start+'_'+value.filters.end+'_已核至'+data.meta.reportDate+'.csv',headers,rows);
+  return {headers,rows};
+ }
+ const priorOverview=ovOverviewHtml;
+ ovOverviewHtml=function(context){const base=priorOverview(context),panel=html(context);return /<\/section>\s*$/.test(base)?base.replace(/<\/section>\s*$/,panel+'</section>'):base+panel;};
+ document.addEventListener('toggle',event=>{if(event.target.matches?.('[data-od-details]'))state.open=event.target.open;if(event.target.matches?.('[data-od-days]'))state.daysOpen=event.target.open;},true);
+ document.addEventListener('click',event=>{if(!event.target.closest('[data-od-export]'))return;event.preventDefault();exportRows();});
+ window.operatingDailyModel={ready:true,data,state,model,html,exportRows};
+ window.faDailyModel=window.operatingDailyModel;
+ if(typeof cxState!=='undefined'&&cxState.view==='sales')ovRenderOverview();
+}());
+
+</script>
+<script>
+/* 经营看板UI审查：趋势指标独立切换，日期/导航状态按真实状态推导。 */
+(function (root) {
+  'use strict';
+  if (root.faUiModel?.ready) return;
+  const state = { measure: 'amount', detailMeasure: 'amount' };
+  const measures = { units: '销量', amount: '商品销售额（USD）', share: '商品销售额占比（%）' };
+  const beforeTrend = sxTrendHtml, beforeSales = cxRenderSales, beforeDetail = cxRenderSku;
+  const beforeOpen = cxOpenSku, beforeDateDialog = sxDateDialog;
+  const beforeDateHint = typeof sxDateHint === 'function' ? sxDateHint : null;
+  const beforeView = typeof setPageView === 'function' ? setPageView : null;
+  const beforeQuery = typeof sqRenderQuery === 'function' ? sqRenderQuery : null;
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const esc = value => cxEsc(value);
+  const attr = (attributes, key) => new RegExp('(?:^|\\s)' + key + '="([^"]*)"').exec(attributes)?.[1] || '';
+  const hasClass = (attributes, key) => attr(attributes, 'class').split(/\s+/).includes(key);
+  const bucketKey = (date, grain) => grain === 'month' ? date.slice(0, 7) : grain === 'week'
+    ? sxAdd(date, -new Date(date + 'T00:00:00Z').getUTCDay()) : date;
+
+  function amountValue(order) {
+    return finite(order.amount) && cxAmountEligible(order) ? order.amount : 0;
+  }
+  function missingAmount(order) {
+    return !order.cancelled && !order.technicalTest && !order.businessTest && (cxNet(order) > 0 || order.quantity > 0 || order.srOriginalQuantity > 0)
+      && (!finite(order.amount) || !cxAmountEligible(order));
+  }
+  function metricModel(orders, options, measure) {
+    const grain = options.grain || 'month', groups = options.groups || sxPlatforms;
+    const buckets = sxTrendBuckets(orders, { ...options, valueFn: amountValue });
+    const map = new Map(buckets.map(bucket => [bucket.key, { ...bucket, known: 0, missing: 0, missingSource: 0, deferred: 0, negative: false, bySeries: new Map() }]));
+    const excludedOrders = new Set();
+    let missingSource = 0, deferred = 0, deferredSourceAmount = 0;
+    for (const order of orders) {
+      const bucket = map.get(bucketKey(order.date, grain));
+      if (!bucket?.covered || order.date < bucket.coveredStart || order.date > bucket.coveredEnd) continue;
+      const series = String(order.platform || '');
+      if (!bucket.bySeries.has(series)) bucket.bySeries.set(series, { known: 0, missing: 0 });
+      const cell = bucket.bySeries.get(series);
+      if (missingAmount(order)) {
+        cell.missing++;
+        bucket.missing++;
+        if (finite(order.amount)) {
+          deferred++; bucket.deferred++; deferredSourceAmount += order.amount;
+          excludedOrders.add(sxOrderId(order));
+        } else {
+          missingSource++; bucket.missingSource++;
+        }
+      }
+      else if (finite(order.amount) && cxAmountEligible(order)) { cell.known++; bucket.known++; if (order.amount < 0) bucket.negative = true; }
+    }
+    const hidden = new Set(), hiddenTotals = new Set();
+    for (const bucket of map.values()) {
+      if (!bucket.covered) continue;
+      const shareMissing = measure === 'share' && (bucket.missing > 0 || bucket.negative || !(bucket.total > 0));
+      if (shareMissing || measure === 'amount' && bucket.missing > 0 && bucket.known === 0) hiddenTotals.add(bucket.key);
+      for (const group of groups) {
+        const cell = bucket.bySeries.get(group.key);
+        if (shareMissing || measure === 'amount' && cell?.missing > 0 && cell.known === 0) hidden.add(bucket.key + '|' + group.key);
+      }
+    }
+    return { buckets, map, hidden, hiddenTotals, missing: missingSource + deferred, missingSource, deferred, deferredSourceAmount, deferredOrders: excludedOrders.size,
+      valueFn: measure === 'share' ? order => {
+        const bucket = map.get(bucketKey(order.date, grain));
+        return bucket && !hiddenTotals.has(bucket.key) && bucket.total > 0 ? amountValue(order) / bucket.total * 100 : 0;
+      } : amountValue };
+  }
+
+  function formatNumber(value, measure, compact = false) {
+    const number = Number(String(value).replace(/,/g, ''));
+    if (!Number.isFinite(number)) return value;
+    if (measure === 'share') return number.toLocaleString('zh-CN', { maximumFractionDigits: 2 }) + '%';
+    const magnitude = Math.abs(number), formatted = compact && magnitude >= 1000000 ? (number / 1000000).toLocaleString('en-US', { maximumFractionDigits: 1 }) + 'M'
+      : compact && magnitude >= 1000 ? (number / 1000).toLocaleString('en-US', { maximumFractionDigits: 1 }) + 'k'
+        : number.toLocaleString('en-US', { maximumFractionDigits: 2 });
+    return '$' + formatted;
+  }
+
+  function shareAxisHtml(html) {
+    const gridPattern = /<g class="sx-trend-grid[^"]*"[^>]*>[\s\S]*?<\/g>/g;
+    const grids = [...html.matchAll(gridPattern)].map(match => {
+      const line = match[0].match(/<line\b([^>]*)>/), text = match[0].match(/<text\b([^>]*)>([^<]*)<\/text>/);
+      return line && text ? { markup: match[0], line: line[1], text: text[1], value: Number(text[2].replace(/,/g, '')), y: Number(attr(line[1], 'y1')) } : null;
+    }).filter(Boolean);
+    const zero = grids.find(grid => grid.value === 0), maximum = grids.reduce((best, grid) => !best || grid.value > best.value ? grid : best, null);
+    if (!zero || !maximum || !(maximum.value > 0)) return html;
+    const bottom = zero.y, top = maximum.y, scale = maximum.value / 100;
+    const y = value => bottom - (bottom - Number(value)) * scale;
+    const labelPositions = new Map();
+    html.replace(/<text\b([^>]*)>[\s\S]*?<\/text>/g, (tag, attributes) => {
+      if (hasClass(attributes, 'sx-trend-point-label')) labelPositions.set(attr(attributes, 'data-sx-bucket') + '|' + attr(attributes, 'data-sx-detail-bucket') + '|' + attr(attributes, 'data-sx-series'),
+        Math.max(top + 7, Math.min(bottom - 7, y(attr(attributes, 'y')))));
+      return tag;
+    });
+    // 百分比固定0—100：同时变换所有数据几何，不能只把150刻度的文字换成100。
+    html = html.replace(/<(circle|line|rect|text|polyline|animateMotion)\b([^>]*)>/g, (tag, name, attributes) => {
+      if (name === 'polyline' && hasClass(attributes, 'sx-trend-line')) return tag.replace(/points="([^"]*)"/, (whole, points) =>
+        'points="' + points.trim().split(/\s+/).map(point => { const [x, oldY] = point.split(','); return x + ',' + y(oldY).toFixed(2); }).join(' ') + '"');
+      if (name === 'animateMotion' && hasClass(attributes, 'sx-trend-tracer-motion')) return tag.replace(/path="([^"]*)"/, (whole, motion) =>
+        'path="' + motion.replace(/(-?[\d.]+),(-?[\d.]+)/g, (pair, x, oldY) => x + ',' + y(oldY).toFixed(2)) + '"');
+      const data = ['sx-trend-point', 'sx-trend-line-hit', 'sx-trend-point-guide', 'sx-trend-empty-bar', 'sx-trend-bar', 'sx-trend-point-label', 'sx-trend-segment-label', 'sx-trend-total-label']
+        .some(key => hasClass(attributes, key));
+      if (!data) return tag;
+      const pointLabel = hasClass(attributes, 'sx-trend-point-label'), totalLabel = hasClass(attributes, 'sx-trend-total-label'), segmentLabel = hasClass(attributes, 'sx-trend-segment-label');
+      tag = tag.replace(/(\s(?:cy|y|y1|y2)=")(-?[\d.]+)(")/g, (whole, prefix, value, suffix) => {
+        let result = y(value);
+        if (pointLabel) result = Math.max(top + 7, Math.min(bottom - 7, result));
+        else if (totalLabel) result = Math.max(18, y(Number(value) + 7) - 7);
+        else if (segmentLabel) result = y(Number(value) - 4) + 4;
+        else if (prefix.includes('y2') && hasClass(attributes, 'sx-trend-point-guide')) {
+          const labelY = labelPositions.get(attr(attributes, 'data-sx-bucket') + '|' + attr(attributes, 'data-sx-detail-bucket') + '|' + attr(attributes, 'data-sx-series'));
+          if (finite(labelY)) result = labelY + (labelY < y(attr(attributes, 'y1')) ? 6 : -6);
+        }
+        return prefix + result.toFixed(2) + suffix;
+      });
+      if (hasClass(attributes, 'sx-trend-bar')) tag = tag.replace(/(\sheight=")([\d.]+)(")/, (whole, prefix, value, suffix) => prefix + (Number(value) * scale).toFixed(2) + suffix);
+      return tag;
+    });
+    const fixed = [0, 25, 50, 75, 100].map(value => {
+      const position = bottom - value / 100 * (bottom - top);
+      return '<g class="sx-trend-grid' + (value === 0 ? ' sx-trend-zero' : '') + '"><line x1="' + attr(zero.line, 'x1') + '" x2="' + attr(zero.line, 'x2')
+        + '" y1="' + position.toFixed(2) + '" y2="' + position.toFixed(2) + '"></line><text x="' + attr(zero.text, 'x') + '" y="' + (position + 4).toFixed(2) + '" text-anchor="end">' + value + '</text></g>';
+    }).join('');
+    let inserted = false;
+    return html.replace(gridPattern, () => { if (inserted) return ''; inserted = true; return fixed; });
+  }
+
+  function metricHtml(html, options, measure, model) {
+    if (measure === 'share') html = shareAxisHtml(html);
+    const action = options.actionAttribute || 'data-sx-bucket', centers = new Map();
+    html.replace(/<g\b([^>]*class="sx-trend-bucket[^>]*>)([\s\S]*?)<\/g>/g, (tag, attributes, content) => {
+      const hit = content.match(/<rect\b([^>]*class="sx-trend-hit"[^>]*)>/);
+      if (hit) centers.set(Math.round((Number(attr(hit[1], 'x')) + Number(attr(hit[1], 'width')) / 2) * 10), attr(attributes, action));
+      return tag;
+    });
+    const keyForX = x => centers.get(Math.round(Number(x) * 10));
+    const splitPoints = (points, series) => {
+      const segments = []; let current = [];
+      for (const point of points) {
+        if (model.hidden.has(keyForX(point.split(',')[0]) + '|' + series)) { if (current.length > 1) segments.push(current); current = []; }
+        else current.push(point);
+      }
+      if (current.length > 1) segments.push(current);
+      return segments;
+    };
+    // 金额缺失不能画成0；占比分母不完整时整桶不计算。原日期命中区仍可点击。
+    html = html.replace(/<(circle|text|line|rect)\b([^>]*)>[\s\S]*?<\/\1>/g, (tag, name, attributes) => {
+      const key = attr(attributes, action), series = attr(attributes, 'data-sx-series');
+      if (model.hidden.has(key + '|' + series) && ['sx-trend-point', 'sx-trend-point-label', 'sx-trend-point-guide', 'sx-trend-bar', 'sx-trend-segment-label'].some(value => hasClass(attributes, value))) return '';
+      if (model.hiddenTotals.has(key) && hasClass(attributes, 'sx-trend-total-label')) return '';
+      if (hasClass(attributes, 'sx-trend-line-hit') && (model.hidden.has(key + '|' + series) || model.hidden.has(keyForX(attr(attributes, 'x1')) + '|' + series))) return '';
+      return tag;
+    });
+    html = html.replace(/<polyline\b([^>]*)>[\s\S]*?<\/polyline>/g, (tag, attributes) => {
+      if (!hasClass(attributes, 'sx-trend-line')) return tag;
+      return splitPoints(attr(attributes, 'points').trim().split(/\s+/), attr(attributes, 'data-sx-series'))
+        .map(points => tag.replace(/points="[^"]*"/, 'points="' + points.join(' ') + '"')).join('');
+    });
+    html = html.replace(/<g\b([^>]*)>([\s\S]*?)<\/g>/g, (tag, attributes, content) => {
+      if (!hasClass(attributes, 'sx-trend-tracer')) return tag;
+      const motion = content.match(/<animateMotion\b[^>]*path="([^"]*)"/);
+      if (!motion) return tag;
+      return splitPoints(motion[1].replace(/^M/, '').split(/\s+L/), attr(attributes, 'data-sx-series'))
+        .map(points => tag.replace(/path="[^"]*"/, 'path="M' + points.join(' L') + '"')).join('');
+    });
+    html = html.replace(/(<g class="sx-trend-grid[^"]*"[^>]*>[\s\S]*?<text\b[^>]*>)([^<]*)(<\/text>)/g,
+      (tag, start, value, end) => start + esc(formatNumber(value, measure, true)) + end);
+    html = html.replace(/<text\b([^>]*)>([\s\S]*?)<\/text>/g, (tag, attributes, content) => {
+      if (hasClass(attributes, 'sx-trend-unit')) return '<text' + attributes + '>' + measures[measure] + '</text>';
+      if (!['sx-trend-point-label', 'sx-trend-segment-label', 'sx-trend-total-label'].some(value => hasClass(attributes, value))) return tag;
+      const formatted = content.replace(/(-?[\d,]+(?:\.\d+)?)$/, value => esc(formatNumber(value, measure, measure === 'amount')));
+      return '<text' + attributes + '>' + (measure === 'share' && hasClass(attributes, 'sx-trend-total-label')
+        ? '<title>平台商品销售额占比合计；单位百分比</title>' : '') + formatted + '</text>';
+    });
+    const metricText = content => {
+      for (const group of options.groups || sxPlatforms) {
+        const label = String(group.label || group.key).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        content = content.replace(new RegExp('(' + label + ') (-?[\\d,]+(?:\\.\\d+)?)(?:套|件)?(?![\\d.%])', 'g'),
+          (match, name, value) => name + ' ' + formatNumber(value, measure));
+      }
+      content = content.replace(/合计 (-?[\d,]+(?:\.\d+)?)(?:套|件)?(?![\d.%])/g, (match, value) =>
+        (measure === 'share' ? '平台占比合计 ' : '商品额合计 ') + formatNumber(value, measure));
+      content = content.replace(/(?:已核净数量（下界）|历史订单参考数量|销量（原订单数量）)/g, measures[measure]);
+      return content + ' · ' + measures[measure];
+    };
+    html = html.replace(/<title>([\s\S]*?)<\/title>/g, (tag, content) => '<title>' + metricText(content) + '</title>');
+    html = html.replace(/aria-label="([^"]*)"/g, (tag, content) => 'aria-label="' + metricText(content) + '"');
+    html = html.replace(/<g\b([^>]*class="sx-trend-bucket[^>]*>)([\s\S]*?)<\/g>/g, (tag, attributes, content) => {
+      const bucket = model.map.get(attr(attributes, action));
+      if (!bucket || !model.hiddenTotals.has(bucket.key)) return tag;
+      const pending = [bucket.deferred ? bucket.deferred + '行有源金额、纳入资格待核' : '', bucket.missingSource ? bucket.missingSource + '行源金额缺失' : ''].filter(Boolean);
+      const note = bucket.label + '；' + (pending.length ? pending.join('；') : bucket.negative ? '含负金额，不计算普通占比' : '无正销售额，不计算占比');
+      return '<g' + attributes.replace(/aria-label="[^"]*"/, 'aria-label="' + esc(note) + '"') + content.replace(/<title>[\s\S]*?<\/title>/, '<title>' + esc(note) + '</title>')
+        .replace(/<line class="sx-trend-empty-bar"[^>]*>[\s\S]*?<\/line>/g, '') + '</g>';
+    });
+    html = html.replace(/未覆盖，不能判断销量/g, '未覆盖，不能判断' + (measure === 'share' ? '销售额占比' : '商品销售额'));
+    return html;
+  }
+
+  function controls(measure, detail) {
+    return '<div class="fa-trend-controls" role="group" aria-label="趋势指标">' + Object.entries(measures).map(([key, label]) =>
+      '<button type="button" class="fa-state-control" data-fa-measure="' + key + '" data-fa-context="' + (detail ? 'detail' : 'main')
+      + '" aria-pressed="' + (measure === key) + '">' + label + '</button>').join('') + '</div>';
+  }
+  sxTrendHtml = function (orders, options = {}) {
+    const action = options.actionAttribute || 'data-sx-bucket';
+    if (!/^data-sx-(?:detail-)?bucket$/.test(action)) return beforeTrend(orders, options);
+    const detail = action === 'data-sx-detail-bucket', measure = detail ? state.detailMeasure : state.measure;
+    const model = measure === 'units' ? null : metricModel(orders, options, measure);
+    const configured = model ? { ...options, valueFn: model.valueFn, title: '三平台' + (measure === 'amount' ? '商品销售额' : '商品销售额占比')
+      + (sxAnnual() ? ' · 历史订单参考' : ' · 商品行毛额') } : options;
+    let html = beforeTrend(orders, configured);
+    if (model) html = metricHtml(html, configured, measure, model);
+    if (model) html = html.replace(/(<div class="sx-trend-heading"><h4>)[\s\S]*?(<\/h4>)/,
+      '$1三平台' + measures[measure] + (sxAnnual() ? ' · 历史订单参考' : ' · 商品行毛额') + '$2');
+    html = html.replace(/(<section\b[^>]*class="sx-trend[^"]*"[^>]*)(>)/, '$1 data-fa-trend-context="' + (detail ? 'detail' : 'main') + '"$2');
+    html = html.replace(/(<div class="sx-trend-heading">[\s\S]*?<\/div>)/, '$1' + controls(measure, detail));
+    if (model) html += '<p class="fa-metric-note">' + (measure === 'share' ? '占比＝该日期桶平台商品额 ÷ 同桶三平台商品额；分母为0、商品行纳入资格或源金额待核、或金额为负时不计算。' : 'Amazon商品额不含单列运费，独立站按折扣前商品行毛额，Wayfair按供货额；各平台均保留源口径，未扣后续退款。')
+      + (model.deferred ? ' 趋势范围有' + model.deferred + '行（' + model.deferredOrders + '笔订单）已有源金额 ' + cxMoney(model.deferredSourceAmount) + '；交易资格待核，暂未计入合格商品额。与有效订单金额完整度分列。' : '')
+      + (model.missingSource ? ' 另有' + model.missingSource + '行缺源金额，待取得金额后核对。' : '') + '</p>';
+    return html;
+  };
+
+  function setMeasure(measure, redraw = true, detail = false) {
+    if (!Object.hasOwn(measures, measure)) return false;
+    state[detail ? 'detailMeasure' : 'measure'] = measure;
+    if (redraw) (detail ? cxRenderSku : cxRenderSales)();
+    return true;
+  }
+  cxOpenSku = function (sku) { state.detailMeasure = state.measure; return beforeOpen(sku); };
+
+  function presetSelected(value, start, end, dataset) {
+    const source = sxCoverage(dataset);
+    if (value === 'year') { const year = String(sxCoverage('annual').start).slice(0, 4); return dataset === 'annual' && start === year + '-01-01' && end === year + '-12-31'; }
+    return end === source.end && start === sxAdd(source.end, 1 - Number(value));
+  }
+  function annotateDatePresets(html, start, end, dataset) {
+    return html.replace(/<button\b([^>]*data-sx-preset="([^"]+)"[^>]*)>/g, (tag, attributes, value) => {
+      const classes = attr(attributes, 'class');
+      attributes = attributes.replace(/\saria-pressed="[^"]*"/g, '').replace(/\sclass="[^"]*"/g, '');
+      return '<button' + attributes + ' aria-pressed="' + presetSelected(value, start, end, dataset) + '" class="' + (classes + ' fa-state-control').trim() + '">';
+    }).replace(/(<button\b[^>]*data-sx-preset="year"[^>]*>)[\s\S]*?(<\/button>)/, '$1' + String(sxCoverage('annual').start).slice(0, 4) + '全年 · 历史订单参考$2');
+  }
+  if (beforeDateHint) sxDateHint = function () {
+    const result = beforeDateHint(), hint = cxEl('sxDateCoverageHint');
+    if (hint && typeof hint.textContent === 'string') hint.textContent = hint.textContent.replace(/已发货参考/g, '历史订单参考');
+    return result;
+  };
+  sxDateDialog = function () {
+    const result = beforeDateDialog(), dialog = cxEl('sxDateDialog');
+    if (dialog) {
+      dialog.innerHTML = annotateDatePresets(dialog.innerHTML, sxState.start, sxState.end, sxState.dataset)
+        .replace(/(<option value="native"[^>]*>)[^<]*/, '$1已核净销量 · ' + sxCoverage('native').start + '—' + sxCoverage('native').end)
+        .replace(/(<option value="annual"[^>]*>)[^<]*/, '$1历史订单参考 · ' + sxCoverage('annual').start + '—' + sxCoverage('annual').end);
+      if (cxEl('sxDateDataset')) cxEl('sxDateDataset').value = sxState.dataset;
+      if (typeof sxDateHint === 'function') sxDateHint();
+    }
+    syncStates(); return result;
+  };
+
+  function setPressed(button, pressed, control = true) {
+    if (button.getAttribute('aria-pressed') !== String(pressed)) button.setAttribute('aria-pressed', String(pressed));
+    if (!button.classList.contains(control ? 'fa-state-control' : 'fa-state-mark')) button.classList.add(control ? 'fa-state-control' : 'fa-state-mark');
+  }
+  function syncNavigation() {
+    const ids = { plans: 'showPlans', warehouses: 'showWarehouses', audit: 'showAudit', pieces: 'showPieces', sales: 'cxShowSales',
+      replenishment: 'cxShowPlans', newproducts: 'cxShowNews', query: 'sqShowQuery', refunds: 'raShowRefunds' };
+    for (const button of document.querySelectorAll('.page-nav button')) {
+      if (button.id === 'goSources') { if (button.hasAttribute('aria-pressed')) button.removeAttribute('aria-pressed'); continue; }
+      const pressed = button.id === ids[cxState.view];
+      if (button.classList.contains('active') !== pressed) button.classList.toggle('active', pressed);
+      setPressed(button, pressed);
+    }
+  }
+  const classStateSelector = ['#metrics button', '[data-panel]', '[data-leader-tab]', '[data-cx-detail-tab]', '[data-sq-detail-tab]', '[data-nm-tab]', '[data-nm-mode]', '[data-nm-window]',
+    '[data-sq-sort]', '[data-np-sort]', '[data-sr-sort]', '[data-rw-sort]', '[data-nm-filter]',
+    '[data-sx-grain]', '[data-sx-detail-grain]', '.ra-tabs [data-ra-tab]', '.cx-cat-chip', '.plan-module', '.warehouse-card', '[data-np-action="order-window"]'].join(',');
+  const controlSelector = [classStateSelector, '[role="tab"]',
+    '[data-profit-basis]', '[data-profit-scenario]', '[data-storage-mode]', '[data-layout]', '[data-reason]', '[data-sx-grain]', '[data-sx-detail-grain]',
+    '[data-sx-pulse-toggle]', '[data-fa-measure]', '.ra-tabs [data-ra-tab]', '.cx-cat-chip', '.plan-module', '.warehouse-card', '[data-np-action="order-window"]'].join(',');
+  function syncTrendHeadings() {
+    for (const section of document.querySelectorAll('.sx-trend[data-fa-trend-context]')) {
+      const heading = section.querySelector('.sx-trend-heading h4'), measure = section.dataset.faTrendContext === 'detail' ? state.detailMeasure : state.measure;
+      const title = measure === 'units' ? sxAnnual() ? '三平台历史订单数量参考' : '三平台净销量 · 已核下界'
+        : '三平台' + measures[measure] + (sxAnnual() ? ' · 历史订单参考' : ' · 商品行毛额');
+      if (heading && heading.textContent !== title) heading.textContent = title;
+    }
+  }
+  function syncStates() {
+    syncNavigation();
+    syncTrendHeadings();
+    for (const button of document.querySelectorAll('button[aria-pressed]')) {
+      if (!button.classList.contains('fa-state-mark')) button.classList.add('fa-state-mark');
+    }
+    for (const button of document.querySelectorAll(controlSelector)) {
+      const active = ['active', 'is-active', 'selected', 'is-selected'].some(key => button.classList.contains(key));
+      setPressed(button, button.getAttribute('role') === 'tab' && button.hasAttribute('aria-selected') ? button.getAttribute('aria-selected') === 'true'
+        : button.matches(classStateSelector) ? active : button.getAttribute('aria-pressed') === 'true');
+    }
+    const dialog = cxEl('sxDateDialog'), start = cxEl('sxDateStart')?.value, end = cxEl('sxDateEnd')?.value, dataset = cxEl('sxDateDataset')?.value;
+    if (dialog && start && end && dataset) for (const button of dialog.querySelectorAll('[data-sx-preset]')) setPressed(button, presetSelected(button.dataset.sxPreset, start, end, dataset));
+    if (typeof sqUiState !== 'undefined') {
+      const draft = sqUiState.draft;
+      for (const button of document.querySelectorAll('#sqQueryBody [data-sq-window]')) {
+        const range = sqUiRecentRange(Number(button.dataset.sqWindow)); setPressed(button, draft.start === range.start && draft.end === range.end);
+      }
+      for (const button of document.querySelectorAll('#sqQueryBody [data-sq-preset]')) {
+        const key = button.dataset.sqPreset, range = sqUiRecentRange(30);
+        const pressed = key === 'missing' ? draft.evidenceMode === 'missing' : draft.scope === 'active' && draft.productType === 'regular'
+          && Number(draft.salesMin) === 0 && Number(draft.salesMax) === 5 && Number(draft.availableMin) >= 1
+          && draft.marginBasis === 'operating' && Number(draft.marginMin) === (key === 'margin20' ? 20 : 15) && draft.start === range.start && draft.end === range.end;
+        setPressed(button, pressed);
+      }
+    }
+    if (typeof nmState !== 'undefined') for (const button of document.querySelectorAll('[data-nm-sort]')) setPressed(button, nmState.sort === button.dataset.nmSort);
+    if (root.raDashboard?.state) {
+      const current = root.raDashboard.state, undated = cxEl('raUndated');
+      if (undated) setPressed(undated, Boolean(current.undatedOnly));
+      const bounds = root.faRefundModel?.coverage?.[current.tab];
+      if (bounds?.start && bounds?.end) {
+        for (const button of document.querySelectorAll('#raPane [data-ra-full-period]')) setPressed(button, !current.undatedOnly && current.start === bounds.start && current.end === bounds.end);
+        for (const button of document.querySelectorAll('#raPane [data-ra-latest]')) {
+          const start = current.tab === 'platform' ? bounds.start : sxAdd(bounds.end, -29);
+          setPressed(button, !current.undatedOnly && current.start === start && current.end === bounds.end);
+          const label = current.tab === 'platform' ? '源内凭证期间' : '源内最新30天';
+          if (button.textContent !== label) button.textContent = label;
+        }
+      }
+    }
+  }
+
+  function coverageStatus() {
+    const period = sxPeriod(), requested = { start: sxState.start, end: sxState.end };
+    const annualCoverage = root.bossSalesRepairModel?.currentAnnualCoverage();
+    if (annualCoverage) return {
+      requested: { start: annualCoverage.requestedStart, end: annualCoverage.requestedEnd },
+      start: annualCoverage.historicalRecordStart || annualCoverage.actualStart, end: annualCoverage.historicalRecordEnd || annualCoverage.actualEnd,
+      partial: !annualCoverage.periodComplete, note: annualCoverage.note,
+      kind: annualCoverage.historicalRecordStart ? '所见商品日期' : '已验参考日期',
+      badge: annualCoverage.periodComplete ? '期间已覆盖' : annualCoverage.hasOverlap ? '按来源小计' : '期间无来源记录'
+    };
+    const partial = period.empty || period.start > requested.start || period.end < requested.end;
+    return { requested, start: period.empty ? null : period.start, end: period.empty ? null : period.end, partial,
+      note: period.empty ? '请求期间未覆盖，不能判断为0' : partial ? '仅展示实际已覆盖数据；其余请求日期未覆盖，不能作为0'
+        : '请求期间已覆盖；历史参考与已核净量按当前口径分别查看' };
+  }
+  function coverageBadge() {
+    const host = cxEl('cxSalesBody'), overview = host?.querySelector('.ov-overview');
+    if (!overview) return;
+    const status = coverageStatus();
+    let badge = overview.querySelector('.fa-coverage-badge');
+    if (!badge) { overview.insertAdjacentHTML('afterbegin', '<div class="fa-coverage-badge" role="status"></div>'); badge = overview.querySelector('.fa-coverage-badge'); }
+    if (!badge) return;
+    const html = '<span>请求：<strong>' + esc(status.requested.start + '—' + status.requested.end) + '</strong></span><span>' + (status.kind || '实际商品数据') + '：<strong>'
+      + esc(status.start ? status.start + '—' + status.end : '未覆盖') + '</strong></span><b>' + (status.badge || (status.partial ? '部分覆盖／待补' : '期间已覆盖')) + '</b><small>' + esc(status.note) + '</small>';
+    if (badge.innerHTML !== html) badge.innerHTML = html;
+    if (badge.classList.contains('is-partial') !== status.partial) badge.classList.toggle('is-partial', status.partial);
+  }
+  cxRenderSales = function () { const result = beforeSales(); coverageBadge(); syncStates(); return result; };
+  cxRenderSku = function () { const result = beforeDetail(); syncStates(); return result; };
+  if (beforeView) setPageView = function (view) { const result = beforeView(view); syncStates(); return result; };
+  if (beforeQuery) sqRenderQuery = function () { const result = beforeQuery(); syncStates(); return result; };
+
+  let pending = false;
+  function scheduleSync() { if (pending) return; pending = true; Promise.resolve().then(() => { pending = false; syncStates(); if (cxState.view === 'sales') coverageBadge(); }); }
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-fa-measure]');
+    if (button) { event.preventDefault(); event.stopImmediatePropagation(); setMeasure(button.dataset.faMeasure, true, button.dataset.faContext === 'detail'); }
+    else scheduleSync();
+  }, true);
+  document.addEventListener('change', scheduleSync, true);
+  document.addEventListener('input', scheduleSync, true);
+  if (typeof MutationObserver === 'function' && document.body) new MutationObserver(scheduleSync).observe(document.body, { childList: true, subtree: true,
+    attributes: true, attributeFilter: ['class', 'aria-pressed', 'aria-selected'] });
+  root.faUiModel = { ready: false, state, setMeasure, metricModel, metricHtml, shareAxisHtml, presetSelected, annotateDatePresets, syncStates, syncNavigation, syncTrendHeadings, coverageStatus, coverageBadge };
+  root.fullAuditUiModel = root.faUiModel;
+  if (cxState.view === 'sales') cxRenderSales(); else syncStates();
+  root.faUiModel.ready = true;
+})(window);
+
+</script>
+<script>
+/* 出单监控采用最新已核主表数量；原新品销量、入库证据及补货测算快照分别保留。 */
+(function (root) {
+  'use strict';
+  if (root.faNewInventoryModel?.ready) return;
+  if (!root.spInventoryModel?.ready || typeof nmData === 'undefined' || typeof nmFiltered !== 'function') return;
+  const source = root.spInventoryModel, currentFields = new Set(['available', 'reserved', 'transit']);
+  const meta = () => root.inventoryConsistencyModel?.data.meta || source.data.meta;
+  const snapshot = () => meta().sourceSnapshotLabel;
+  const stockRecord = row => source.get(row.inventorySku || row.sku);
+  const originalBySku = new Map(nmData.rows.map(row => [row.sku, row]));
+  function projected(row) {
+    if (!row) return row;
+    const current = stockRecord(row);
+    if (!current) return row;
+    const original = originalBySku.get(row.sku) || row;
+    return { ...row, available: current.available, reserved: current.reserved, transit: current.transit,
+      stockDate: snapshot() + '（业务截止未单独声明）', currentInventoryStatus: current.statusLabel,
+      currentInventoryReason: current.reason, currentInventorySource: 'primary_master',
+      originalMonitorInventory: { available: original.available, reserved: original.reserved, transit: original.transit, stockDate: original.stockDate } };
+  }
+  const priorSortValue = nmSortValue;
+  nmSortValue = function (row, key) { return currentFields.has(key) ? projected(row)[key] : priorSortValue(row, key); };
+  const priorFiltered = nmFiltered;
+  nmFiltered = function () { return priorFiltered.apply(this, arguments).map(projected); };
+  for (const [sku, row] of originalBySku) nmBySku.set(sku, projected(row));
+  function caption() {
+    return '可用、预留、在途采用' + snapshot() + '的库存快照。销量参考截至美西 '
+      + nmData.meta.salesCutoff + '；到仓和开发资料沿原证据。拟定补货沿原方案库存和销量。';
+  }
+  function addCaption(host) {
+    if (host && !host.querySelector('.fa-nm-inventory-source')) host.insertAdjacentHTML('afterbegin',
+      '<p class="cx-caption fa-nm-inventory-source">' + cxEsc(caption()) + '</p>');
+  }
+  const priorRender = nmRender;
+  nmRender = function () { const result = priorRender.apply(this, arguments); addCaption(cxEl('cxNewsBody')); return result; };
+  const priorDetail = nmRenderSku;
+  nmRenderSku = function () { const result = priorDetail.apply(this, arguments); addCaption(cxEl('cxDetailBody')); return result; };
+  const priorHeader = nmHeader;
+  nmHeader = function () {
+    const result = priorHeader.apply(this, arguments);
+    if (cxState.view === 'newproducts' && nmState.mode === 'monitor') {
+      const subtitle = cxEl('subtitle'); if (subtitle) subtitle.textContent += ' · 当前库存主表文件 '+meta().sourceSnapshotDate;
+    }
+    return result;
+  };
+  const priorCsv = cxDownloadCsv;
+  cxDownloadCsv = function (filename, headers, rows) {
+    if (!String(filename).startsWith('新品出单监控_')) return priorCsv.apply(this, arguments);
+    return priorCsv(filename, [...headers, '当前库存来源', '当前库存核查状态'], rows.map(row => {
+      const sourceRow = nmBySku.get(row[0]);
+      const current = sourceRow ? stockRecord(sourceRow) : null;
+      return [...row, current ? snapshot() + '（业务截止未单独声明）' : snapshot() + ' · 未匹配当前主表SKU，待核', current?.statusLabel || '待核'];
+    }));
+  };
+  root.faNewInventoryModel = { ready: true, get sourceSnapshot() { return snapshot(); }, projected, originalBySku,
+    changedSkus: nmData.rows.filter(row => { const next = projected(row); return [...currentFields].some(key => next[key] !== row[key]); }).map(row => row.sku) };
+  root.faOtherModel = root.faNewInventoryModel;
+})(window);
+
+</script>
+<script>
+(function(){if(!window.faRefundModel?.ready||!window.faUiModel?.ready||!window.faDailyModel?.ready||!window.faOtherModel?.ready)throw new Error("全模块核验尚未初始化");var node=document.createElement("span");node.id="faPatchReady";node.hidden=true;document.body.appendChild(node);})();
+</script>

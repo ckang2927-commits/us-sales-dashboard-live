@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.18-age-refunds-e5f10b9a9345",
-  "generatedAt": "2026-11-18T05:58:09.662480+00:00",
+  "version": "2026.11.18-boss-repair-ad6b80ada034",
+  "generatedAt": "2026-11-18T06:47:51.757132+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -39,7 +39,7 @@
     "#cxSalesBody .ov-overview",
     "#rfModule"
   ],
-  "integrity": "每片SHA-256；单gzip流CRC及原文长度；本地完整原文SHA-256回读",
+  "integrity": "分片与补丁边界逐项校验；完整HTML发布后回读核验",
   "extension": {
     "parts": [
       {
@@ -118,9 +118,9 @@
         "sha256": "7d50a4be16770ef5761689b23cc6ebe105e47f1535bbd9233cfa242984f2da3f"
       },
       {
-        "url": "age-refunds-data-a3332c0809ec27a06ac2.txt",
-        "bytes": 219797,
-        "sha256": "a3332c0809ec27a06ac2b684111ce97a2dd83e87f66624178875d7289fd8b750"
+        "url": "boss-extension-fbaca274ce1e86576222625f.txt",
+        "bytes": 228259,
+        "sha256": "fbaca274ce1e86576222625f04d4af2399dfefe12f9705bdbde44396174c9b75"
       },
       {
         "url": "sales-inventory-addon-3b6f6ec7f410efd1.txt",
@@ -133,9 +133,9 @@
         "sha256": "9448b3a836139dbe9a45a415e68bcc304b565cab5925ae175e8b051077905c90"
       },
       {
-        "url": "full-audit-de9301000efdcb35.txt",
-        "bytes": 81074,
-        "sha256": "de9301000efdcb3528edbceac4e6187a5eddeec046e64ec7ab0793878ec91347"
+        "url": "boss-extension-1eed533cd2102429be2a3a12.txt",
+        "bytes": 87346,
+        "sha256": "1eed533cd2102429be2a3a128ee041e6b14d6b0c49d0b2d0656dac41d5b97a36"
       },
       {
         "url": "quantity-labels-44c269da053db6a4.txt",
@@ -253,9 +253,9 @@
         "sha256": "e1c98b2bfcd4da764759ace823edb59ece9df06c534357d63f91cbab3227448e"
       },
       {
-        "url": "live-refresh-monthTodaySalesDelta-businessScope-16-b6cc59360b0f1197.txt",
-        "bytes": 140629,
-        "sha256": "b6cc59360b0f119775a60188388642a2b340f5e1c8150100f59370f512064254"
+        "url": "boss-extension-1fb2c3ffcceb8c852ab73849.txt",
+        "bytes": 146590,
+        "sha256": "1fb2c3ffcceb8c852ab73849617f4b324aa6cc5c2aa12f89cf00dcdba10b654b"
       },
       {
         "url": "profit-price-01-db37a4f9ffb43f39.txt",
@@ -298,9 +298,9 @@
         "sha256": "df046b6cb09c1d092ff20c729574679c4ec1bbf93b14f4bac80fd34df6bbf988"
       },
       {
-        "url": "btz-date-01-119e99d6132c7775.txt",
-        "bytes": 49598,
-        "sha256": "119e99d6132c77753feea6487a6bf0a29124f2676acf1ad90961b29440656f86"
+        "url": "boss-extension-4f9257a29d808eb1df3ff931.txt",
+        "bytes": 49609,
+        "sha256": "4f9257a29d808eb1df3ff9316739734da0b749b687a4bc2e3ac13daea25e6342"
       },
       {
         "url": "own-profit-01-c6a260f15b29e25f.txt",
@@ -363,9 +363,14 @@
         "sha256": "db00fde44d431cd5752dc3603e6c429106572dc2fbdd63cfe1c44f70bf357509"
       },
       {
-        "url": "markdown-review-01-9adfd813bf180d2f.txt",
-        "bytes": 635618,
-        "sha256": "9adfd813bf180d2f6bc3e64699d94110f0697d4fd6c61946211d538f35e97431"
+        "url": "boss-extension-e72f2842acfdd5da41edf6cb.txt",
+        "bytes": 524288,
+        "sha256": "e72f2842acfdd5da41edf6cbca5e098416b821f84f40b4c3d02d7184a3552400"
+      },
+      {
+        "url": "boss-extension-8757902a2915888a6077f25e.txt",
+        "bytes": 114895,
+        "sha256": "8757902a2915888a6077f25e09ee744733d46cb3b0bdd55a40fb87c31a66115b"
       },
       {
         "url": "live-refresh-inventoryConsistencyData-salesScope-01-ebd93aa341e2cb41.txt",
@@ -383,9 +388,9 @@
         "sha256": "f82d01e4a1a85415b71a626e2fe3666f6e4616e2d63e5ce00cac9a052a65b54b"
       },
       {
-        "url": "live-refresh-inventoryConsistencyData-salesScope-04-7ac6b89ceb1ad49a.txt",
-        "bytes": 471744,
-        "sha256": "7ac6b89ceb1ad49aa1727168c11ec8ca2c23c8b44af3879dacfffd7bc162e31c"
+        "url": "boss-extension-16b58d97b2cfa6478bb50db0.txt",
+        "bytes": 471802,
+        "sha256": "16b58d97b2cfa6478bb50db0fbf9da7a993eea8a5f8a0cd5361729ce6c3646dd"
       },
       {
         "url": "live-refresh-yqn-01-31b1d0f085af3494.txt",
@@ -473,23 +478,28 @@
         "sha256": "ee816b7a6a443f757125ba8a7b381aab418c9a23ffb66ca76d0348c00a2b3d3c"
       },
       {
-        "url": "live-refresh-yqn-18-88f6f21c7a4795dd.txt",
+        "url": "boss-extension-0257a9a1b39a1a7f05687f5e.txt",
         "bytes": 524288,
-        "sha256": "88f6f21c7a4795ddaff8a67d262dc2cd13b26471971c72929b358cb08f74f6aa"
+        "sha256": "0257a9a1b39a1a7f05687f5edb6ae0066c8404039f845fc702ac82c6b7edaeb5"
       },
       {
-        "url": "live-refresh-yqn-19-6d077937b6acdd62.txt",
-        "bytes": 19903,
-        "sha256": "6d077937b6acdd6272a11fc596f27b681d384dfb16271a759dc78fb4a8f83447"
+        "url": "boss-extension-aefa929e1bd4b6b11352c4f5.txt",
+        "bytes": 22935,
+        "sha256": "aefa929e1bd4b6b11352c4f5c34e4daba07e2f94d937e59d7452484510a7c53a"
       },
       {
         "url": "age-refunds-ui-00a53b558837d865435c.txt",
         "bytes": 14831,
         "sha256": "00a53b558837d865435c06ba74e94596397f4e293a3d0ae9029f0fcbb07b2118"
+      },
+      {
+        "url": "boss-extension-7d0620ad0f68a37485485b24.txt",
+        "bytes": 19983,
+        "sha256": "7d0620ad0f68a37485485b24a7d643bdb8a92ee4eb84add9753c860c2bde0eb4"
       }
     ],
-    "bytes": 88354925,
-    "sha256": "9779cc968f3f6bc469ac72d0d6822dba8b418e9aeaba6d2fdff9ea3e47df4157",
+    "bytes": 88402269,
+    "sha256": "76b60ee629170e6d3d7296d1bbc523ff81ed014c7b42ccdcb88136f96cc54970",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -509,9 +519,105 @@
       "#freshYqnReady",
       "#liveRefreshReady",
       "#yqnAgeScopeReady",
-      "#aftersalesSourceReady"
+      "#aftersalesSourceReady",
+      "#bossOperationsReady",
+      "#bossSalesRepairReady",
+      "#refundBossRepairReady",
+      "#bossDetailReady"
     ]
   },
-  "renderedHtmlBytes": 287037779,
-  "renderedHtmlSha256": "e5f10b9a934587865e48c702abd34ecf43a8772992dd3cb958e32f66bd4dd316"
+  "renderedHtmlBytes": 287086080,
+  "renderedHtmlSha256": "ad6b80ada034d4604aed9748c8066c0fe100dc5be4b7c453578798a6f6896903",
+  "baseEdits": [
+    {
+      "start": 198354983,
+      "end": 198355040,
+      "originalSha256": "d32541da1ae8c9db98398910d4950511c7b1035e8979b972b902c8a96111282a",
+      "replacement": "function npAgeSortValues(sku){\n const stock=npFrozenStock.get(sku);"
+    },
+    {
+      "start": 198360049,
+      "end": 198360172,
+      "originalSha256": "7b8fa38c6be5046551cccd1e5731b1e981530ec844501d443b03c45253e7005d",
+      "replacement": "// 原补货方案及11/8净量来自首个原始快照，后续刷新只更新当前数据。\nconst npFrozenStock = new Map(npData.rows.map(({sku}) => {\n const row = cxStock(sku) || {};\n return [sku, {net30_lower:row.net30_lower, net30_upper:row.net30_upper,\n  net60_lower:row.net60_lower, net60_upper:row.net60_upper,\n  age:row.age, ageDate:row.ageDate, ageBands:{...row.ageBands},\n  known:{yqn_age_row_present:row.known?.yqn_age_row_present}}];\n}));\nconst npOldNet = (sku, days) => {\n const row = npFrozenStock.get(sku) || {};\n const lower = row['net'+days+'_lower'], upper = row['net'+days+'_upper'];\n return cxNum(lower) || cxNum(upper) ? npRange(lower, upper) : '待核';\n};"
+    },
+    {
+      "start": 198365199,
+      "end": 198365251,
+      "originalSha256": "4c600845896ca606cbf32860fa1f7512c7915f7cf92fbf102b023d86b2e13d23",
+      "replacement": "function npAgeHtml(sku){const stock=npFrozenStock.get(sku)||{}"
+    },
+    {
+      "start": 198365836,
+      "end": 198369171,
+      "originalSha256": "6e271046d479c51baa3134e8e5240e1e725e18ac5a433314cb365379697bbb66",
+      "replacement": "function npRenderNews(){const host=cxEl('cxNewsBody');if(!host)return;const previous=typeof biCaptureMotion==='function'?biCaptureMotion(host):null;const all=npMergedRows(),n=cxState.news,rows=npFilteredRows(),counts={},stages={};for(const row of all){counts[row.coverage]=(counts[row.coverage]||0)+1;const stage=row.developmentStatus||'待核';stages[stage]=(stages[stage]||0)+1;}const stageNames=Object.keys(stages).sort((a,b)=>stages[b]-stages[a]),max=Math.max(1,...Object.values(stages));const positive=all.filter(row=>npIsPositive(row.np)).length,pending=all.filter(row=>row.np.status==='待核').length,held=all.filter(row=>row.np.status==='暂缓复购').length;let html='<section class=\"cx-cat np-newproducts\" aria-label=\"新品拟定补货历史快照\"><p class=\"cx-cat-note\">新品／改款候选 '+all.length+' 项。历史方案参考销量至美西 '+npEsc(npData.meta.salesCutoff)+'；方案库存主表读取 '+npEsc(npData.meta.stockReadDate)+'；开发状态沿11/11原快照。</p><div class=\"np-summary-bar\">'+npChip('拟定补货','positive',positive,npState.status==='positive','status')+npChip('数量待核','pending',pending,npState.status==='pending','status')+npChip('暂缓复购','held',held,npState.status==='held','status')+'<span>7个月：'+npEsc(npData.meta.start)+'—'+npEsc(npData.meta.end)+' · '+npQty(npData.meta.days)+'天</span></div><div class=\"cx-cat-coverage\" aria-label=\"原计划覆盖，点击筛选再点取消\">'+npCoverageOrder.map(key=>npChip(npCoverageLabels[key],key,counts[key]||0,n.coverage===key,'coverage')).join('')+'</div><div class=\"cx-cat-stage-heading\">开发状态 · '+all.length+' 项<span>点横条常亮筛选，再点取消</span></div><div class=\"cx-cat-stage-chart np-stage-chart '+(n.stage?'has-selection':'')+'\" aria-label=\"原开发状态分布\">'+stageNames.map(stage=>'<button class=\"cx-cat-stage '+(n.stage===stage?'is-active':n.stage?'is-muted':'')+'\" data-cxcat-action=\"stage\" data-np-action=\"stage\" data-value=\"'+npEsc(stage)+'\" aria-pressed=\"'+(n.stage===stage)+'\"><span>'+npEsc(stage)+'</span><span class=\"cx-cat-stage-track\"><span class=\"cx-bar-fill\" style=\"width:'+(100*stages[stage]/max).toFixed(2)+'%\"></span></span><strong>'+stages[stage]+'</strong></button>').join('')+'</div><div class=\"cx-cat-toolbar\"><label>搜索SKU／产品<input type=\"search\" data-cxcat-field=\"news.search\" data-np-field=\"search\" value=\"'+npEsc(n.search)+'\" placeholder=\"输入SKU、产品或工厂\"></label><label>开发状态<select data-cxcat-field=\"news.stage\" data-np-field=\"stage\"><option value=\"\">全部开发状态</option>'+Object.keys(stages).sort().map(stage=>'<option value=\"'+npEsc(stage)+'\" '+(stage===n.stage?'selected':'')+'>'+npEsc(stage)+'</option>').join('')+'</select></label>'+npSortControls()+'<button class=\"cx-cat-clear\" data-cxcat-action=\"clear-news\" data-np-action=\"clear\">清除筛选</button><button class=\"cx-cat-export\" data-cxcat-action=\"export-news\" data-np-action=\"export\">导出当前清单</button></div><div class=\"cx-cat-result\">当前 '+rows.length+' / '+all.length+' 项<span>状态保留销量参考；原11/8已核净量单独在SKU详情保留</span></div><p class=\"np-sort-note\">表头可排序，组合列点⌄选择单项；区间按上界，待核始终置后。YQN排序采用原库龄快照，与11/12可用库存分开。</p>';"
+    },
+    {
+      "start": 198369221,
+      "end": 198369338,
+      "originalSha256": "a9ad5ae7dd60657121f09d0c8aefd21ed40c4ee986858cb29f93abea8ce9241f",
+      "replacement": "'方案可用／预留／在途','YQN历史库龄','方案近30天保留参考','方案近60天保留参考','原年底计划／落实'"
+    },
+    {
+      "start": 198371057,
+      "end": 198371178,
+      "originalSha256": "6c2b17797caa8c61fdee87e85f3d57c484a7edbaea358e831255d9e24a1316fd",
+      "replacement": "本页保留历史测算口径。当前库存和最新销量请在「出单监控」或「SKU数据查询」查看。"
+    },
+    {
+      "start": 198375842,
+      "end": 198379364,
+      "originalSha256": "7c49da0dfc858784dacc97d003315e9f91baf164736e38fa10741fa7cb4d86a4",
+      "replacement": "function npLatestDetail(row){const original=npOriginalMap.get(row.sku)||{};return '<section class=\"np-latest-detail\"><h3>历史拟定补货方案</h3><p class=\"cx-caption\">参考销量至美西 '+npEsc(npData.meta.salesCutoff)+'；方案库存读取 '+npEsc(npData.meta.stockReadDate)+'。覆盖 '+npEsc(npData.meta.start)+'—'+npEsc(npData.meta.end)+'，'+npQty(npData.meta.days)+'天。</p>'+cxTable(['项目','当前采用值','说明'],[['方案近30天保留销量',npRange(row.sales30Lower,row.sales30Upper),'10/12—11/10，含待核上下界'],['方案近60天保留销量',npRange(row.sales60Lower,row.sales60Upper),'9/12—11/10，含待核上下界'],['采用销速窗口',npQty(row.adoptedWindow)+'天','30天有保留销量优先30天；未完成断货日还原'],['采用日销',npRange(row.dailyLower,row.dailyUpper),'状态保留参考套／日'],['7个月需求',npRange(row.demand7Lower,row.demand7Upper),'沿本次模型的212天测算'],['方案快照可用库存',npQty(row.available),'预留不作为额外可用；已到仓不在未来供给重复计入'],['去重未来供给',npRange(row.futureLower,row.futureUpper),'原计划、登记和在途按同源抵扣'],['拟定滚动补货', '<strong>'+npRange(row.proposedLower,row.proposedUpper)+'</strong>',npEsc(row.status)+(row.restriction?'；'+npEsc(row.restriction):'')],['旧滚动参考',npQty(row.oldRollingReference),'旧建议只供对照，不作本轮未来供给'],['原公司计划参考',npQty(original.companyPlanQuantity),'原版本独立保存，不与原年底P重复抵扣']])+'<p class=\"np-warning\">'+npEsc(row.restriction||npData.meta.quantityMeaning)+'</p>'+(row.notes?.length?'<p class=\"cx-caption\">'+npEsc(row.notes.join('；'))+'</p>':'')+'<details class=\"cx-fold\"><summary>未来供给与到仓证据</summary><div class=\"cx-fold-body\">'+npSupplyDetail(row)+'<details class=\"np-evidence\"><summary>展开采购原行</summary>'+cxTable(['来源','原SKU','数量','下单日期','预计出货','供应商／合同'],(row.futureEvidence||[]).map(e=>{const fields=e.fields||{};return [npSourceEvidence(e),npEsc(e.sku||row.sku),npQty(fields['数量']),npEsc(fields['下单日期']||'未填'),npEsc(fields['预计出货时间']||'未填'),npEsc(fields['供应商/商铺名\\n']||fields['供应商/商铺名']||fields['合同抬头']||'未填')];}))+'</details></div></details><details class=\"cx-fold\"><summary>原方案订单依据 · 至11/10</summary><div class=\"cx-fold-body np-orders-slot\" data-np-orders=\"'+npEsc(row.sku)+'\">'+npOrdersDetail(row.sku)+'</div></details><details class=\"cx-fold\"><summary>旧看板已核净销量与原日期</summary><div class=\"cx-fold-body\">'+cxTable(['项目','旧快照值','日期'],[['近30天已核净套',npOldNet(row.sku,30),'美西截至11/8'],['近60天已核净套',npOldNet(row.sku,60),'美西截至11/8'],['YQN库龄',npEsc(npFrozenStock.get(row.sku)?.age||'待核'),npEsc(npFrozenStock.get(row.sku)?.ageDate||'原快照日期待核')],['原首次实际到仓',npEsc(original.firstDate||'待核'),npEsc(original.firstDateKind||'不等于正式首次可售')]])+'<p class=\"cx-caption\">新参考销量与旧已核净量是两个来源，不能直接把窗口差额当成新增订单。</p></div></details><details class=\"np-evidence\"><summary>本次库存与销量来源</summary><p>'+npSourceEvidence(row.inventoryEvidence)+'</p><p>'+npSourceEvidence(row.salesEvidence)+'；原行 '+npEsc((row.salesEvidence?.exactSourceRows||[]).join('、'))+'</p><p>'+npEsc(row.stockDateBasis||'')+'</p></details></section>';}"
+    },
+    {
+      "start": 198380520,
+      "end": 198382126,
+      "originalSha256": "cbbe8d301d6889cd652952dcbbf7438ebbb4ba5063909b4bf19948c87c2f55b6",
+      "replacement": "function npExport(){const rows=npFilteredRows();cxDownloadCsv('新品_拟定补货历史快照_20261112.csv',['SKU','产品类别','开发状态','开发读取日','原覆盖','方案快照可用','方案快照预留','方案快照在途','方案库存读取日','YQN历史库龄原值','YQN历史库龄源日期','方案参考销量截止','30天状态保留下界','30天状态保留上界','60天状态保留下界','60天状态保留上界','采用窗口天','日销下界','日销上界','目标开始','目标结束','目标天数','原年底计划P','同源已登记未履约E','原计划尚未落实余量','其他去重未来供给','未闭环采购余额','未来供给下界','未来供给上界','7个月需求下界','7个月需求上界','拟定滚动补货下界','拟定滚动补货上界','测算状态','限制','原滚动参考','原公司计划参考','ETA说明','备注'],rows.map(original=>{const r=original.np;return [r.sku,original.category,original.developmentStatus,original.developmentDate,npCoverageLabels[original.coverage],r.available,r.reserved,r.transit,npData.meta.stockReadDate,npFrozenStock.get(r.sku)?.age,npFrozenStock.get(r.sku)?.ageDate,npData.meta.salesCutoff,r.sales30Lower,r.sales30Upper,r.sales60Lower,r.sales60Upper,r.adoptedWindow,r.dailyLower,r.dailyUpper,npData.meta.start,npData.meta.end,npData.meta.days,r.yearendPlan,r.yearendExecutedOutstanding,r.yearendUnexecuted,r.otherFuture,r.unclosedProcurement,r.futureLower,r.futureUpper,r.demand7Lower,r.demand7Upper,r.proposedLower,r.proposedUpper,r.status,r.restriction,r.oldRollingReference,original.companyPlanQuantity,npEtaSummary(r),(r.notes||[]).join('；')];}));}"
+    },
+    {
+      "start": 198382973,
+      "end": 198383063,
+      "originalSha256": "bbf522a0f1aa6a48625cedc695d79fe83e35ca436c5d7835491478f232866f4a",
+      "replacement": "<label>方案近30天保留参考</label><strong>'+npRange(row.sales30Lower,row.sales30Upper)"
+    },
+    {
+      "start": 198484840,
+      "end": 198484883,
+      "originalSha256": "d9f2287e421aa400693a357a5f9a49f4dc2d272a66c71fcbb76f5758de188bc7",
+      "replacement": "' · 库存主表'+nmEsc(nmData.meta.stockReadDate||'日期待核')+' · 原到仓与开发资料复核 '+nmEsc(nmData.meta.reviewDate)"
+    },
+    {
+      "start": 198491952,
+      "end": 198493727,
+      "originalSha256": "cba4359d805071cfb41bdff2bd04269cf86e6ea2b6a6301bfb1b529c8ac6c817",
+      "replacement": "function nmDetailOrders(row){const records=nmDetailRecords(row),size=25,page=Math.min(nmState.orderPage,Math.max(0,Math.ceil(records.length/size)-1));nmState.orderPage=page;return '<div class=\"nm-detail-tools\"><span>查看订单窗口</span>'+[['arrival','到仓日后已见'],['30','近30天'],['60','近60天']].map(([key,label])=>'<button class=\"btn '+(nmState.detailWindow===key?'active':'')+'\" data-nm-window=\"'+key+'\">'+label+'</button>').join('')+'</div>'+nmDetailTrend(row)+cxTable(['日期','平台／店铺','订单','原数量／保留参考','原状态／处理','原SKU／源行'],records.slice(page*size,(page+1)*size).map((order,index)=>[nmEsc(order.date),nmEsc(order.platform)+cxSmall(order.store),'<button class=\"cx-order-link\" data-nm-order-index=\"'+(page*size+index)+'\">'+nmEsc(order.orderId)+'</button>',nmQty(order.quantity)+' / '+(order.excluded?'已剔除':nmRange(order.netReferenceLower,order.netReferenceUpper)),nmEsc(order.status||'空白待核')+cxSmall(order.excluded?(order.exclusionReasons||[]).join('；'):order.fullRefundOrReturned?'全退／退货':order.identityPending?'身份待核':order.statusUnknown?'状态待核':''),nmEsc(order.sourceInventorySku||order.shopSku)+cxSmall(order.sourceSheet+' '+order.sourceRow)]))+'<div class=\"cx-page-controls\"><span>'+records.length+'条源行 · '+(page+1)+' / '+Math.max(1,Math.ceil(records.length/size))+'</span><button class=\"btn\" data-nm-order-page=\"-1\" '+(!page?'disabled':'')+'>上一页</button><button class=\"btn\" data-nm-order-page=\"1\" '+((page+1)*size>=records.length?'disabled':'')+'>下一页</button></div>'+(row.firstKnownArrival?'':'<p class=\"nm-muted\">到仓日待核，当前“到仓日后”窗口实际展示全部源内已见记录，不作为到仓以来累计。</p>');}"
+    },
+    {
+      "start": 198496102,
+      "end": 198496140,
+      "originalSha256": "679dd9ce8eefea689f0d24535b147d3f2f14d857b3aca1af5e2cdee4e73ad200",
+      "replacement": "'新品出单监控 · 销量参考至'+nmData.meta.salesCutoff"
+    },
+    {
+      "start": 198497718,
+      "end": 198497798,
+      "originalSha256": "77fafedbe49b46c68e113c76ef497768c315e3af01e85cd9b863c910f3eb9321",
+      "replacement": "cxTable(['当前YQN库龄','来源日期'],[[nmEsc(cxStock(row.sku)?.age||'待核')"
+    },
+    {
+      "start": 198500663,
+      "end": 198500722,
+      "originalSha256": "b7f9686276de69fd2b9b137e6e537c21cbf5c31679597c5c98630fe7d4e9ae0c",
+      "replacement": "[data-nm-mode],[data-nm-sku],[data-nm-order-index],[data-nm-tab],[data-nm-window]"
+    },
+    {
+      "start": 198501103,
+      "end": 198501178,
+      "originalSha256": "618a74a2695fd8762fe500fd863c3e143eee9707bdbb6f47edc7b99cf315c464",
+      "replacement": "else if(target.hasAttribute('data-nm-sku'))nmOpenSku(target.dataset.nmSku);\n  else if(target.hasAttribute('data-nm-order-index'))window.bossOperations?.openMonitorOrder(Number(target.dataset.nmOrderIndex));"
+    }
+  ]
 }

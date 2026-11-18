@@ -1,0 +1,1115 @@
+"orderTotal":2094.7,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2653","lineId":"50914912141597","date":"2026-11-12","sourcePath":"shopify_products_20261116.json","sourceRow":16,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":71.68,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2653|50914912141597","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S069","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2858.17,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2651","lineId":"50910951145757","date":"2026-11-11","sourcePath":"shopify_products_20261116.json","sourceRow":19,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":202.0,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2651|50910951145757","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S086","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":26.26,"orderTotal":9155.27,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2651","lineId":"50910951211293","date":"2026-11-11","sourcePath":"shopify_products_20261116.json","sourceRow":21,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":399.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"未填SKU@Shopify|AnzhapUS|AN2651|21","sourceSku":"","shopSku":"","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2651|50910951211293","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 200''","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":52.0,"orderTotal":9155.27,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2651","lineId":"50910951276829","date":"2026-11-11","sourcePath":"shopify_products_20261116.json","sourceRow":23,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":399.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"未填SKU@Shopify|AnzhapUS|AN2651|23","sourceSku":"","shopSku":"","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2651|50910951276829","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 200''","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":52.0,"orderTotal":9155.27,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2651","lineId":"50910951342365","date":"2026-11-11","sourcePath":"shopify_products_20261116.json","sourceRow":25,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":299.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"未填SKU@Shopify|AnzhapUS|AN2651|25","sourceSku":"","shopSku":"","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2651|50910951342365","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 120''","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":38.99,"orderTotal":9155.27,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2639","lineId":"50906187792669","date":"2026-11-10","sourcePath":"shopify_products_20261116.json","sourceRow":37,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":17.98,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2639|50906187792669","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S047","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":779.36,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2635","lineId":"50902005350685","date":"2026-11-09","sourcePath":"shopify_products_20261116.json","sourceRow":42,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":16.48,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2635|50902005350685","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S045","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":636.41,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2634","lineId":"50894779253021","date":"2026-11-07","sourcePath":"shopify_products_20261116.json","sourceRow":44,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":66.13,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2634|50894779253021","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S068","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":3063.92,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2634","lineId":"50894779318557","date":"2026-11-07","sourcePath":"shopify_products_20261116.json","sourceRow":46,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":399.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"未填SKU@Shopify|AnzhapUS|AN2634|46","sourceSku":"","shopSku":"","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2634|50894779318557","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 200''","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":3063.92,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2630","lineId":"50888676606237","date":"2026-11-05","sourcePath":"shopify_products_20261116.json","sourceRow":50,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":41.83,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2630|50888676606237","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S062","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1760.99,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2629","lineId":"50887549157661","date":"2026-11-05","sourcePath":"shopify_products_20261116.json","sourceRow":52,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":13.48,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2629|50887549157661","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S041","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":1.35,"orderTotal":752.92,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2625","lineId":"50882287370525","date":"2026-11-04","sourcePath":"shopify_products_20261116.json","sourceRow":57,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":66.13,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2625|50882287370525","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S068","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2595.49,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2625","lineId":"50885515477277","date":"2026-11-04","sourcePath":"shopify_products_20261116.json","sourceRow":59,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":100.0,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"未填SKU@Shopify|AnzhapUS|AN2625|59","sourceSku":"","shopSku":"","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2625|50885515477277","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"shippingService","srProductName":"Additional shipping cost","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2595.49,"currentQuantity":0,"refundLineItems":[{"refundId":"1115474362653","date":"2026-11-05","quantity":1,"restockType":"no_restock"}],"fulfillmentStatus":null},{"platform":"Shopify","store":"AnzhapUS","orderId":"AN2624","lineId":"50876737552669","date":"2026-11-02","sourcePath":"shopify_products_20261116.json","sourceRow":61,"sourceSheet":"AnzhapUS/orders/line_items","status":"paid","amount":299.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"未填SKU@Shopify|AnzhapUS|AN2624|61","sourceSku":"","shopSku":"","sourceStore":"AnzhapUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|AnzhapUS|AN2624|50876737552669","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 120''","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":23.99,"orderTotal":2427.32,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2522","lineId":"50963331645759","date":"2026-11-14","sourcePath":"shopify_products_20261116.json","sourceRow":67,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":9.29,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2522|50963331645759","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD9.29 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":665.12,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2520","lineId":"50945137180991","date":"2026-11-12","sourcePath":"shopify_products_20261116.json","sourceRow":71,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":17.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2520|50945137180991","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD17.99 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1143.85,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2517","lineId":"50916689281343","date":"2026-11-06","sourcePath":"shopify_products_20261116.json","sourceRow":75,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":49.19,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2517|50916689281343","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD49.19 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2865.91,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2516","lineId":"50914828419391","date":"2026-11-05","sourcePath":"shopify_products_20261116.json","sourceRow":77,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":59.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2516|50914828419391","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD59.99 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":3424.32,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2511","lineId":"50906487128383","date":"2026-11-03","sourcePath":"shopify_products_20261116.json","sourceRow":85,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":16.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2511|50906487128383","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD16.99 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1022.29,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2510","lineId":"50904491950399","date":"2026-11-03","sourcePath":"shopify_products_20261116.json","sourceRow":87,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":30.79,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2510|50904491950399","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD30.79 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":3519.17,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2501","lineId":"50900102775103","date":"2026-11-02","sourcePath":"shopify_products_20261116.json","sourceRow":97,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":51.29,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2501|50900102775103","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD51.29 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2995.12,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"KaguyasuUS","orderId":"KA2500","lineId":"50899343835455","date":"2026-11-02","sourcePath":"shopify_products_20261116.json","sourceRow":99,"sourceSheet":"KaguyasuUS/orders/line_items","status":"paid","amount":24.19,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"KaguyasuUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|KaguyasuUS|KA2500|50899343835455","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD24.19 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1480.64,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2258","lineId":"21414625214750","date":"2026-11-14","sourcePath":"shopify_products_20261116.json","sourceRow":101,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":36.59,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2258|21414625214750","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD36.59 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2305.59,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2257","lineId":"21414573146398","date":"2026-11-14","sourcePath":"shopify_products_20261116.json","sourceRow":103,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":30.79,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2257|21414573146398","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD30.79 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2036.8,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2254","lineId":"21375347884318","date":"2026-11-09","sourcePath":"shopify_products_20261116.json","sourceRow":107,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":34.69,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2254|21375347884318","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD34.69 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2241.62,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2253","lineId":"21369781584158","date":"2026-11-08","sourcePath":"shopify_products_20261116.json","sourceRow":109,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":30.79,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2253|21369781584158","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD30.79 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1744.66,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2253","lineId":"21369781649694","date":"2026-11-08","sourcePath":"shopify_products_20261116.json","sourceRow":111,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":299.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"AZF-NEW-2","sourceSku":"AZF-NEW-2","shopSku":"AZF-NEW-2","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2253|21369781649694","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 120'', $299.99","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1744.66,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2251","lineId":"21339662647582","date":"2026-11-03","sourcePath":"shopify_products_20261116.json","sourceRow":113,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":42.89,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2251|21339662647582","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD42.89 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":2581.44,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2251","lineId":"21339662713118","date":"2026-11-03","sourcePath":"shopify_products_20261116.json","sourceRow":115,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":399.99,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"AZF-NEW-3","sourceSku":"AZF-NEW-3","shopSku":"AZF-NEW-3","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2251|21339662713118","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Total Dimension（L+W+H）under 200'', $399.99","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":47.99,"orderTotal":2581.44,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2250","lineId":"21339262157086","date":"2026-11-03","sourcePath":"shopify_products_20261116.json","sourceRow":116,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":34.69,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2250|21339262157086","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD34.69 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":3.47,"orderTotal":1841.01,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2241","lineId":"21330793922846","date":"2026-11-02","sourcePath":"shopify_products_20261116.json","sourceRow":127,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":999.98,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"AZF-NEW-4","sourceSku":"AZF-NEW-4","shopSku":"AZF-NEW-4","sourceStore":"ZimasyaUS","country":"US","quantity":2.0,"srOriginalQuantity":2.0,"valid":2.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2241|21330793922846","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"assemblyService","srProductName":"Other Assembly, $499.99","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":119.99,"orderTotal":7706.19,"currentQuantity":2,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2240","lineId":"21328425845022","date":"2026-11-01","sourcePath":"shopify_products_20261116.json","sourceRow":128,"sourceSheet":"ZimasyaUS/orders/line_items","status":"paid","amount":8.39,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","sourceStore":"ZimasyaUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|ZimasyaUS|ZI2240|21328425845022","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Worry-Free Purchase - USD8.39 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0.84,"orderTotal":472.83,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"BizfurnizUS","orderId":"BF1086","lineId":"46553582108753","date":"2026-11-14","sourcePath":"shopify_products_20261116.json","sourceRow":132,"sourceSheet":"BizfurnizUS/orders/line_items","status":"paid","amount":60.58,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"BizfurnizUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|BizfurnizUS|BF1086|46553582108753","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S067","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":4.85,"orderTotal":2300.16,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":null},{"platform":"Shopify","store":"BizfurnizUS","orderId":"BF1080","lineId":"46522459488337","date":"2026-11-09","sourcePath":"shopify_products_20261116.json","sourceRow":139,"sourceSheet":"BizfurnizUS/orders/line_items","status":"paid","amount":10.45,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"BizfurnizUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|BizfurnizUS|BF1080|46522459488337","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S033","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":483.37,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":"fulfilled"},{"platform":"Shopify","store":"BizfurnizUS","orderId":"BF1079","lineId":"46520274649169","date":"2026-11-08","sourcePath":"shopify_products_20261116.json","sourceRow":141,"sourceSheet":"BizfurnizUS/orders/line_items","status":"paid","amount":34.18,"amountBasis":"本次Shopify真实LineItem价格×原订购量毛额参考，未扣折扣退款，不含另列运税；取消/已证测试不计金额","cancelled":false,"technicalTest":false,"businessTest":false,"sku":"XMHPACELSKU","sourceSku":"XMHPACELSKU","shopSku":"XMHPACELSKU","sourceStore":"BizfurnizUS","country":"US","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"amountChartEligible":false,"pcDataset":"annualOrders","pcOriginalKey":"current-month-20261116|Shopify|BizfurnizUS|BF1079|46520274649169","pcDecision":{"status":"pending"},"srClass":{"stockClass":"pending"},"srKind":"insurance","srProductName":"Shipping Protection - S059","srReferenceOnly":true,"quantityBasis":"原订购参考（含有有效订单证据的未发货）；非已发货或净留存量","pending":false,"paymentPending":false,"freePurposePending":false,"fullRefundStatus":false,"partialRefundPending":false,"referenceEvidenceType":"本次只读GET真实Order ID/LineItem ID；完整created_at全分页1–15","businessTestEvidence":{"type":"未见明确测试用途","markers":[]},"lineDiscount":0,"orderTotal":1350.27,"currentQuantity":1,"refundLineItems":[],"fulfillmentStatus":"fulfilled"},{"sku":"1H-C7QZ-798V","sourceSku":"1H-C7QZ-798V","shopSku":"1H-C7QZ-798V","platform":"Amazon","store":"genji furniture-US","sourceStore":"genji furniture-US","orderId":"113-3738077-1837800","lineId":"销量表行:2156","date":"2026-04-24","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"status":"Shipped","cancelled":false,"technicalTest":false,"businessTest":false,"fullRefundStatus":false,"partialRefundPending":false,"amount":285.0,"amountChartEligible":false,"amountBasis":"新版清洗源毛额：Amazon含客户运费、不含税","sourcePath":"产品销量.xlsx","sourceRow":2156,"sourceSheet":"产品销量","pcDataset":"annualOrders","pcOriginalKey":"refresh-ref20261116|2156","pcDecision":{"status":"stock"},"srKind":"assemblyService","srClass":{"stockClass":"stock"},"srProductName":"Huariifowm Extra Installation Services","srReferenceOnly":true,"country":"US","serviceClassificationEvidence":"原清洗源同店精确MSKU及商品名称明确安装服务；保留原来源与数量金额，移出商品销量"},{"platform":"Amazon","store":"genji furniture-US","orderId":"113-9022854-5037031","lineId":"175565347265881","shopSku":"1H-C7QZ-798V","sourceSku":"1H-C7QZ-798V","sku":"1H-C7QZ-798V","date":"2026-11-16","orderedAt":"2026-11-16 13:41:49","sourcePath":"sc订单导出-2122903127092047873.xlsx","sourceSheet":"sheet1","sourceRow":13,"status":"Unshipped","quantity":1.0,"sourceQuantity":1.0,"valid":1.0,"net":1.0,"netLower":1.0,"netUpper":1.0,"pending":false,"pendingReason":"","netResolutionNote":"","netResolutionKind":"normalValidOrder","amount":150.0,"amountBasis":"SC销售额(Item Price)原商品行金额，未扣退款，不含另列客户运费","sourceSalesGrossIncludingShipping":150.0,"amountChartEligible":false,"cancelled":false,"technicalTest":false,"businessTest":false,"paymentPending":false,"freePurposePending":false,"scRefunded":"否","scReturned":"否","scReplaced":"否","replacementOrder":false,"mappingBasis":"原商品码保留，库存身份待核","pcDataset":"annualOrders","pcDecision":{"status":"pending"},"country":"US","srReferenceOnly":true,"srKind":"assemblyService","evidenceRefs":[],"pcOriginalKey":"fresh20261118-service|Amazon|genji furniture-US|113-9022854-5037031|175565347265881","refunds":[{"type":"逐行净量核定","resolution":"normalValidOrder","netLower":1.0,"netUpper":1.0,"note":"有效未取消订单原量，无退款/退货例外证据","internalHandling":[],"evidenceRefs":[]}],"confirmedRefundUnits":0,"fulfillments":[],"actualShippedQuantity":null,"shipmentStatusQuantityReference":null,"testState":"未标测试；有效订单净量口径，不等实际发货量","raw":{"sourceFile":"sc订单导出-2122903127092047873.xlsx","sheet":"sheet1","row":13,"orderItemId":"175565347265881","asOfDateLA":"2026-11-17"},"serviceEvidence":{"asin":"B0F1TNQ31D","title":"Huariifowm Extra Installation Services","basis":"同店原MSKU、ASIN及原商品标题精确确认安装服务；不计商品销量"}},{"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","platform":"Shopify","store":"KaguyasuUS","orderId":"KA2525","lineId":"50972674916671","date":"2026-11-16","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"net":null,"netLower":1.0,"netUpper":1.0,"pending":false,"pendingReason":"","status":"paid","financialStatus":"paid","currentQuantity":1.0,"cancelled":false,"technicalTest":false,"businessTest":false,"testEvidence":{"technicalField":false,"confirmedPurposeKeywords":[],"priorSameLineTest":false},"amount":3.79,"amountChartEligible":false,"amountBasis":"真实LineItem原价格×订购量，未扣折扣退款且运税另列；此金额不等于净销售额","sourcePath":"KaguyasuUS_merged.json","sourceRow":"orders/0/line_items/0","sourceSheet":"orders/line_items","source":{"file":"KaguyasuUS_merged.json","pointer":"orders/0/line_items/0","sha256":"a68bf29c608043c380532c27643b15f621e2ae203f9fe1902fcc085be5da7748"},"country":"US","countryBasis":"当前API配送国家代码","pcDataset":"annualOrders","pcOriginalKey":"fresh20261118-reference|Shopify|KaguyasuUS|KA2525|50972674916671","pcDecision":{"status":"pending"},"srKind":"insurance","srClass":{"stockClass":"pending"},"srProductName":"Worry-Free Purchase - USD3.79 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"closureClass":"normal_retained","quantityBasis":"原单创建日期范围；商品净留存按本次源快照取消/退回/全额商品退款核减，金额补偿另列","confirmedCancellationUnits":0,"confirmedReturnUnits":0,"confirmedFinancialReversalUnits":0,"confirmedRefundUnits":0,"rawRefundUnits":0,"refunds":[],"fulfillments":[],"returns":[],"linkedLedgerIds":[],"closureEvidence":["本次完整订单、退款、履约与returns源无商品撤销/退回记录"],"asOf":"2026-11-18T03:58:22.714547+00:00","netBasis":"原单创建日期范围；商品净留存按本次源快照取消/退回/全额商品退款核减，金额补偿另列","netResolutionNote":"本次完整订单、退款、履约与returns源无商品撤销/退回记录","evidenceRefs":[{"type":"platform_order_line","file":"KaguyasuUS_merged.json","pointer":"orders/0/line_items/0","sha256":"a68bf29c608043c380532c27643b15f621e2ae203f9fe1902fcc085be5da7748"},{"type":"returns_complete_query","file":"KaguyasuUS_returns.json","orderId":"19021479149887"}],"referenceBasis":"原单有效订购量参考，取消/测试为0，未付款/免费用途未核保留未知；不等于已发货或已核净量"},{"sku":"SEEL-WFP","sourceSku":"SEEL-WFP","shopSku":"SEEL-WFP","platform":"Shopify","store":"KaguyasuUS","orderId":"KA2524","lineId":"50971852112191","date":"2026-11-16","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"net":null,"netLower":1.0,"netUpper":1.0,"pending":false,"pendingReason":"","status":"paid","financialStatus":"paid","currentQuantity":1.0,"cancelled":false,"technicalTest":false,"businessTest":false,"testEvidence":{"technicalField":false,"confirmedPurposeKeywords":[],"priorSameLineTest":false},"amount":14.89,"amountChartEligible":false,"amountBasis":"真实LineItem原价格×订购量，未扣折扣退款且运税另列；此金额不等于净销售额","sourcePath":"KaguyasuUS_merged.json","sourceRow":"orders/1/line_items/0","sourceSheet":"orders/line_items","source":{"file":"KaguyasuUS_merged.json","pointer":"orders/1/line_items/0","sha256":"a68bf29c608043c380532c27643b15f621e2ae203f9fe1902fcc085be5da7748"},"country":"US","countryBasis":"当前API配送国家代码","pcDataset":"annualOrders","pcOriginalKey":"fresh20261118-reference|Shopify|KaguyasuUS|KA2524|50971852112191","pcDecision":{"status":"pending"},"srKind":"insurance","srClass":{"stockClass":"pending"},"srProductName":"Worry-Free Purchase - USD14.89 / This purchase is backed by Seel’s worry-free protection.","srReferenceOnly":true,"closureClass":"normal_retained","quantityBasis":"原单创建日期范围；商品净留存按本次源快照取消/退回/全额商品退款核减，金额补偿另列","confirmedCancellationUnits":0,"confirmedReturnUnits":0,"confirmedFinancialReversalUnits":0,"confirmedRefundUnits":0,"rawRefundUnits":0,"refunds":[],"fulfillments":[],"returns":[],"linkedLedgerIds":[],"closureEvidence":["本次完整订单、退款、履约与returns源无商品撤销/退回记录"],"asOf":"2026-11-18T03:58:22.714547+00:00","netBasis":"原单创建日期范围；商品净留存按本次源快照取消/退回/全额商品退款核减，金额补偿另列","netResolutionNote":"本次完整订单、退款、履约与returns源无商品撤销/退回记录","evidenceRefs":[{"type":"platform_order_line","file":"KaguyasuUS_merged.json","pointer":"orders/1/line_items/0","sha256":"a68bf29c608043c380532c27643b15f621e2ae203f9fe1902fcc085be5da7748"},{"type":"returns_complete_query","file":"KaguyasuUS_returns.json","orderId":"19021118669119"}],"referenceBasis":"原单有效订购量参考，取消/测试为0，未付款/免费用途未核保留未知；不等于已发货或已核净量"},{"sku":"AZF-NEW-3","sourceSku":"AZF-NEW-3","shopSku":"AZF-NEW-3","platform":"Shopify","store":"ZimasyaUS","orderId":"ZI2260","lineId":"21424039919902","date":"2026-11-16","quantity":1.0,"srOriginalQuantity":1.0,"valid":1.0,"net":null,"netLower":1.0,"netUpper":1.0,"pending":false,"pendingReason":"","status":"paid","financialStatus":"paid","currentQuantity":1.0,"cancelled":false,"technicalTest":false,"businessTest":false,"testEvidence":{"technicalField":false,"confirmedPurposeKeywords":[],"priorSameLineTest":false},"amount":399.99,"amountChartEligible":false,"amountBasis":"真实LineItem原价格×订购量，未扣折扣退款且运税另列；此金额不等于净销售额","sourcePath":"ZimasyaUS_merged.json","sourceRow":"orders/0/line_items/0","sourceSheet":"orders/line_items","source":{"file":"ZimasyaUS_merged.json","pointer":"orders/0/line_items/0","sha256":"f6e8fe9e060a029e86354e5e508d9303c3e2f51137ccce5a07234ebd29e76c30"},"country":"US","countryBasis":"当前API配送国家代码","pcDataset":"annualOrders","pcOriginalKey":"fresh20261118-reference|Shopify|ZimasyaUS|ZI2260|21424039919902","pcDecision":{"status":"pending"},"srKind":"assemblyService","srClass":{"stockClass":"pending"},"srProductName":"Total Dimension（L+W+H）under 200'', $399.99","srReferenceOnly":true,"closureClass":"normal_retained","quantityBasis":"原单创建日期范围；商品净留存按本次源快照取消/退回/全额商品退款核减，金额补偿另列","confirmedCancellationUnits":0,"confirmedReturnUnits":0,"confirmedFinancialReversalUnits":0,"confirmedRefundUnits":0,"rawRefundUnits":0,"refunds":[],"fulfillments":[],"returns":[],"linkedLedgerIds":[],"closureEvidence":["本次完整订单、退款、履约与returns源无商品撤销/退回记录"],"asOf":"2026-11-18T03:58:22.714547+00:00","netBasis":"原单创建日期范围；商品净留存按本次源快照取消/退回/全额商品退款核减，金额补偿另列","netResolutionNote":"本次完整订单、退款、履约与returns源无商品撤销/退回记录","evidenceRefs":[{"type":"platform_order_line","file":"ZimasyaUS_merged.json","pointer":"orders/0/line_items/0","sha256":"f6e8fe9e060a029e86354e5e508d9303c3e2f51137ccce5a07234ebd29e76c30"},{"type":"returns_complete_query","file":"ZimasyaUS_returns.json","orderId":"9074373755166"}],"referenceBasis":"原单有效订购量参考，取消/测试为0，未付款/免费用途未核保留未知；不等于已发货或已核净量"}]}]}}</script>
+<script>
+/* 在原销量模型首次初始化前恢复本次真取数的新快照；旧来源资产留作审计。 */
+(function (root) {
+  'use strict';
+  const element = document.getElementById('monthTodaySalesDelta');
+  if (!element) throw Error('缺少本次销量增量');
+  const delta = JSON.parse(element.textContent);
+  if (delta.schema !== 'muku.sales-sequence-delta.v1') throw Error('销量增量格式不支持');
+  root.monthTodaySalesPacketProvider = function (text) {
+    const original = JSON.parse(text), output = { ...delta.values }, copied = {}, inserted = {};
+    for (const [key, operations] of Object.entries(delta.arrays)) {
+      const previous = original[key];
+      if (!Array.isArray(previous) || previous.length !== delta.baseCounts[key]) throw Error('旧来源数量不符：' + key);
+      const rows = []; copied[key] = 0; inserted[key] = 0;
+      for (const operation of operations) {
+        if (operation.copy) {
+          const [start, length] = operation.copy;
+          if (!Number.isInteger(start) || !Number.isInteger(length) || start < 0 || length < 1 || start + length > previous.length) throw Error('销量复制范围不符：' + key);
+          rows.push(...previous.slice(start, start + length)); copied[key] += length;
+        } else if (Array.isArray(operation.items)) {
+          rows.push(...operation.items); inserted[key] += operation.items.length;
+        } else throw Error('销量增量操作不支持：' + key);
+      }
+      if (rows.length !== delta.targetCounts[key]) throw Error('新来源数量不符：' + key);
+      output[key] = rows;
+    }
+    const expected = [...delta.targetKeys].sort().join('|');
+    if (Object.keys(output).sort().join('|') !== expected) throw Error('新来源字段不符');
+    root.monthTodaySourceModel = { ready: true, baseSha256: delta.baseSha256, targetSha256: delta.targetSha256, copied, inserted, meta: output.meta };
+    return output;
+  };
+})(window);
+
+/* 本公司已证商品交易可纳业务销量；未知库存身份不扩入当前库存人口。 */
+(function (root) {
+  'use strict';
+  const nativeAudit = row => typeof row.netAuditVersion === 'string'
+    && /^\d{4}-\d{2}-\d{2}-order-refund-aftersales$/.test(row.netAuditVersion);
+  const referenceAudit = row => row.platform === 'Amazon' && row.pcDataset === 'annualOrders'
+    && row.srReferenceOnly === true && row.referenceBusinessOwned === true
+    && /^\d{4}-\d{2}-\d{2}$/.test(row.referenceAuditAsOf || '')
+    && Boolean(row.lineId) && String(row.raw?.orderItemId) === String(row.lineId);
+  const certified = row => row?.netBusinessOwned === true && row.country === 'US' && row.srKind === 'product'
+    && (nativeAudit(row) || referenceAudit(row));
+  const beforeScope = srOrderInScope, beforeIncluded = pcOrderIncluded;
+  srOrderInScope = function (row, scope = 'active') {
+    return scope === 'business' && certified(row) ? true : beforeScope(row, scope);
+  };
+  pcOrderIncluded = function (row, scope = 'active') {
+    return scope === 'business' && certified(row) ? true : beforeIncluded(row, scope);
+  };
+  root.netAuditIsBusinessProduct = row => certified(row) || srIsProduct(row);
+  root.netBusinessScopeModel = { ready: true, certified };
+})(window);
+
+</script>
+<script>
+/* 最新订单参考与原已核净量分源接入；不改已审批计划、库存和原补货测算。 */
+(function (root) {
+  'use strict';
+  if (root.salesRefreshModel?.ready || root.salesRefreshModel?.runtimeReady) return;
+  const node = document.getElementById('salesRefreshData');
+  if (!node) throw Error('缺少最新销量数据包 salesRefreshData');
+  const data = root.monthTodaySalesPacketProvider(node.textContent), meta = data.meta || {};
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const priorKey = cxOrderKey;
+  const coverage = {
+    native: { start: meta.nativeStart, end: meta.nativeReconciledThrough || meta.nativeStart, observedEnd: meta.nativeEnd },
+    annual: { start: meta.annualStart, end: meta.annualEnd }
+  };
+  for (const period of Object.values(coverage)) if (!Number.isFinite(sqDateNumber(period.start)) || !Number.isFinite(sqDateNumber(period.end)) || period.start > period.end) throw Error('销量覆盖日期无效');
+  const version = meta.version || [meta.asOf, coverage.annual.end, (data.annualRows || []).length, (meta.sources || []).map(source => source.sha256).join(',')].join('|');
+  const rejected = [], mergeAudit = {};
+  const sourceLabel = meta.amountLabel || '源销售额参考；Amazon含客户运费，非统一实收';
+  const storeName = (platform, value) => sqStoreName(platform, value);
+  const channelMatch = (row, filters = {}) => sqOrderScope(row, filters);
+  function inScope(row, scope = 'business') {
+    if (row.salesRefreshDataset === 'historical' && ['all', 'active'].includes(scope)) return srIsProduct(row) && pcIsIncluded(row.sku, scope);
+    return srOrderInScope(row, scope);
+  }
+  function validRow(row, dataset) {
+    const until = dataset === 'orders' ? meta.nativeEnd : dataset === 'historical' ? '2025-12-31' : coverage.annual.end;
+    return row && row.sku && row.platform && row.store && row.orderId && Number.isFinite(sqDateNumber(row.date)) && row.date <= until;
+  }
+  function admitted(rows, dataset) {
+    return (rows || []).filter(row => {
+      if (validRow(row, dataset)) return true;
+      rejected.push({ dataset, key: row?.pcOriginalKey || row?.orderId || '', date: row?.date || '', reason: '字段或截止日期不符，未接入' });
+      return false;
+    }).map(row => ({ ...row, pcDataset: dataset === 'historical' ? 'annualOrders' : dataset, salesRefreshDataset: dataset, salesRefreshVersion: version }));
+  }
+  function merge(previous, incoming, rule, dataset) {
+    const start = rule?.start, end = rule?.end;
+    if (rule?.mode !== 'replace_window' || !start || !end) throw Error(dataset + '缺少明确替换窗口');
+    const kept = previous.filter(row => !(row.date >= start && row.date <= end));
+    const map = new Map();
+    for (const row of kept) map.set(row.dedupeKey || priorKey(row), row);
+    for (const row of incoming) {
+      if (row.date < start || row.date > end) { rejected.push({ dataset, key: priorKey(row), date: row.date, reason: '超出声明替换窗口' }); continue; }
+      const key = row.dedupeKey || priorKey(row);
+      if (map.has(key)) throw Error(dataset + '出现未闭合的重复商品行：' + key);
+      map.set(key, row);
+    }
+    const result = [...map.values()].filter(row => dataset !== 'annualOrders' || row.date >= coverage.annual.start && row.date <= coverage.annual.end);
+    mergeAudit[dataset] = { previous: previous.length, removed: previous.length - kept.length, incoming: incoming.length, result: result.length, start, end };
+    return result;
+  }
+  const native = admitted(data.nativeRows, 'orders'), annual = admitted(data.annualRows, 'annualOrders');
+  const historical = admitted(data.historicalOrders || [], 'historical');
+  pcRuntime.orders = merge(pcRuntime.orders, native, data.replacements?.native, 'orders');
+  pcRuntime.annualOrders = merge(pcRuntime.annualOrders, annual, data.replacements?.annual, 'annualOrders');
+  cxData.support.orders = pcRuntime.orders; cxData.support.annualOrders = pcRuntime.annualOrders;
+  cxOrderKey = row => row.salesRefreshDataset ? priorKey(row) + '|refresh:' + row.salesRefreshDataset : priorKey(row);
+  for (const row of [...pcRuntime.orders, ...pcRuntime.annualOrders, ...historical]) {
+    cxAllOrderMap.set(cxOrderKey(row), row);
+    if (row.pcDecision) pcDecisionMap.set((row.pcDataset || 'annualOrders') + '|' + (row.pcOriginalKey || priorKey(row)), row.pcDecision);
+    if (row.pcDataset === 'orders' && row.salesRefreshVersion) {
+      const valid = typeof row.validOrder === 'boolean' ? row.validOrder : finite(row.valid) ? row.valid > 0 : false;
+      sxData.orderValidity.entries[cxOrderKey(row)] = { validOrder: valid };
+    }
+    if (!sqChannelIdentities.has(row.sku)) sqChannelIdentities.set(row.sku, []);
+    const identities = sqChannelIdentities.get(row.sku);
+    if (!identities.some(identity => identity.platform === row.platform && sqStoreMatches(row.platform, identity.store, row.store))) identities.push({ platform: row.platform, store: row.store, key: row.platform + '|' + storeName(row.platform, row.store) });
+    if (row.srProductName && !cxData.products[row.sku]) cxData.products[row.sku] = { sku: row.sku, productName: row.srProductName, sourceLabel: '最新来源精确SKU商品名' };
+  }
+  const business = new Set();
+  for (const set of Object.values(srSets)) set.clear();
+  srBySku.clear();
+  for (const row of [...pcRuntime.orders, ...pcRuntime.annualOrders]) {
+    if (root.netAuditIsBusinessProduct(row)) { srSets.business.add(row.sku); business.add(row.sku); if (srClass(row) === 'nonstock') srSets.nonstock.add(row.sku); }
+    if (row.srKind === 'unidentified') srSets.pending.add(row.sku);
+    if (!srBySku.has(row.sku)) srBySku.set(row.sku, []);
+    srBySku.get(row.sku).push(row);
+  }
+  for (const row of historical) if (srIsProduct(row)) business.add(row.sku);
+  for (const [dataset, prefix] of [['orders', 'native'], ['annualOrders', 'annual']]) {
+    srData[prefix + 'Products'] = pcRuntime[dataset].filter(row => row.platform === 'Shopify' && row.srKind === 'product');
+    srData[prefix + 'Unidentified'] = pcRuntime[dataset].filter(row => row.platform === 'Shopify' && row.srKind === 'unidentified');
+  }
+  Object.assign(srData.meta, { commonNativeStart: coverage.native.start, commonNativeEnd: coverage.native.end, nativeObservedThrough: meta.nativeEnd, annualEnd: coverage.annual.end });
+  sqSkuList.splice(0, sqSkuList.length, ...new Set([...sqSkuList.filter(sku => pcIsIncluded(sku, 'all')), ...business])); sqSkuList.sort();
+  sqFacets.stores.splice(0, sqFacets.stores.length, ...sqFacet([...sqChannelIdentities.values()].flat().map(row => storeName(row.platform, row.store))));
+
+  function getCoverage(dataset = sxState.dataset) { return coverage[dataset === 'annual' || dataset === 'annualOrders' ? 'annual' : 'native']; }
+  function currentPeriod() {
+    const source = getCoverage(), start = sxState.start > source.start ? sxState.start : source.start, end = sxState.end < source.end ? sxState.end : source.end;
+    return { start, end, empty: start > end, partial: start !== sxState.start || end !== sxState.end, requestedStart: sxState.start, requestedEnd: sxState.end };
+  }
+  sxPeriod = currentPeriod; cxPeriod = currentPeriod;
+  cxPeriodOrders = function () { const period = currentPeriod(); return period.empty ? [] : pcRuntime[sxDataset()].filter(row => row.date >= period.start && row.date <= period.end && pcOrderIncluded(row, cxState.sales.stockScope)); };
+  sxCoverageNote = function () {
+    const source = getCoverage(), period = currentPeriod();
+    return (period.empty ? '请求期间未覆盖，不作0。' : period.partial ? '请求 ' + sxState.start + '—' + sxState.end + '；实际 ' + period.start + '—' + period.end + '，其余待核。' : period.start + '—' + period.end + ' · 美西业务日期。')
+      + (sxAnnual() ? ' 历史订单数量参考；' + sourceLabel : ' 净量已核至' + source.end + '；' + source.observedEnd + '前新增订单另有参考，未核部分不作0。');
+  };
+  function windowRange(days, dataset = 'native') { const source = getCoverage(dataset); return { start: sxAdd(source.end, 1 - days), end: source.end }; }
+  function sourceRows(mode) { return mode === 'annual' ? [...pcRuntime.annualOrders, ...historical] : pcRuntime.orders; }
+  function aggregateRows(rows, mode) {
+    let lower = 0, upper = 0, known = 0, upperKnown = true, amount = 0, amountKnown = 0; const orders = new Set();
+    for (const row of rows) {
+      const low = mode === 'annual' ? row.quantity : finite(row.netLower) ? row.netLower : row.net;
+      const high = mode === 'annual' ? row.quantity : row.netUpper;
+      if (finite(low)) { lower += low; known++; }
+      if (finite(high)) upper += high; else upperKnown = false;
+      const moneyEligible = finite(row.amount) && !row.cancelled && !row.technicalTest && !row.businessTest && (row.amountChartEligible === true || mode === 'annual' && row.amountChartEligible !== false);
+      if (moneyEligible) { amount += row.amount; amountKnown++; }
+      const valid = mode === 'annual' ? row.quantity > 0 && !row.cancelled && !row.technicalTest && !row.businessTest
+        : !row.cancelled && !row.technicalTest && !row.businessTest && (finite(row.valid) ? row.valid > 0 : sxData.orderValidity.entries[cxOrderKey(row)]?.validOrder === true);
+      if (valid) orders.add([row.platform, storeName(row.platform, row.store), String(row.orderId).replace(/^#/, '')].join('|'));
+    }
+    return { lower: known ? lower : null, upper: known && upperKnown ? upper : null, amount: amountKnown ? amount : null, known, rows: rows.length, orderCount: orders.size };
+  }
+  const windowCache = new Map();
+  function skuWindow(sku, days, mode = 'annual', filters = {}) {
+    const key = JSON.stringify([version, sku, days, mode, filters]); if (windowCache.has(key)) return windowCache.get(key);
+    const range = windowRange(days, mode), rows = sourceRows(mode).filter(row => row.sku === sku && row.date >= range.start && row.date <= range.end && channelMatch(row, filters) && inScope(row, filters.scope || 'business'));
+    const result = { ...aggregateRows(rows, mode), ...range, sourceRows: rows }; windowCache.set(key, result); return result;
+  }
+  function motionWindow() {
+    const source = getCoverage(), selected = srSelectedPeriod(), end = selected.end < source.end ? selected.end : source.end, requestedStart = sxAdd(end, -29), start = requestedStart > source.start ? requestedStart : source.start;
+    if (selected.empty || start > end) return { start, end, empty: true, partial: true, rows: [], count: null };
+    const s = cxState.sales, q = s.search.trim().toLowerCase();
+    let rows = pcRuntime[sxDataset()].filter(row => row.date >= start && row.date <= end && pcOrderIncluded(row, s.stockScope)
+      && (!s.platform || row.platform === s.platform) && (!sxState.chartPlatform || row.platform === sxState.chartPlatform) && (!sxState.store || row.store === sxState.store)
+      && (!s.sku || row.sku === s.sku) && (!sxState.stockClass || sxClass(row)?.stockClass === sxState.stockClass)
+      && (!bxState.history || bxHistoryClass(row) === bxState.history)
+      && (!q || [row.sku, row.shopSku, row.store, row.orderId, row.srProductName, cxGetProduct(row.sku)?.productName].some(value => String(value || '').toLowerCase().includes(q))));
+    rows = ldApply(rows);
+    const quantities = new Map(); for (const row of rows) if (sxValidOrder(row)) quantities.set(row.sku, (quantities.get(row.sku) || 0) + cxNet(row));
+    return { start, end, requestedStart, empty: false, partial: start !== requestedStart, rows, count: [...quantities.values()].filter(value => value > 0).length };
+  }
+  if (root.spKpiModel) root.spKpiModel.window30 = motionWindow;
+  const priorOverview = ovOverviewHtml;
+  ovOverviewHtml = function (context) {
+    const motion = motionWindow(), basis = sxAnnual() ? '历史订单数量参考' : '已核净数量下界', period = motion.empty ? '未覆盖' : motion.start + '—' + motion.end;
+    let html = priorOverview(context).replace(/<div class="ov-kpi [^"]*" data-ov-kpi="codes"[\s\S]*?<\/div>/,
+      ovKpi('codes', '近30天有动销SKU数量', motion.empty ? '未覆盖' : cxQty(motion.count), period + ' · ' + basis));
+    html = html.replace(/<summary>近30天动销SKU怎么统计？[\s\S]*?<\/summary><p>[\s\S]*?<\/p>/,
+      '<summary>近30天动销SKU怎么统计？<span>' + ovEsc(period + (motion.partial ? ' · 覆盖不足30天' : '')) + '</span></summary><p>按所选统计末日回溯30个自然日，保留当前平台、店铺、SKU和业务范围等筛选；' + ovEsc(basis) + '大于0的归并SKU去重计数。所选起始日期不截短此30天窗口；不足30天覆盖时仅显示已覆盖记录。库存与非库存SKU均按所选业务范围计入，不代表当前有货款数。</p>');
+    if (sxAnnual()) html = html.replace(/商品销售额/g, '源销售额参考').replace(/商品行毛额 · 不含税运费/g, '源表金额 · Amazon含客户运费')
+      .replace(/商品行毛额/g, '源表销售额').replace(/单均纳入商品毛额/g, '单均纳入源销售额参考');
+    return html;
+  };
+
+  function selectDataset(value) {
+    sxState.dataset = value === 'annual' ? 'annual' : 'native'; cxState.sales.period = sxAnnual() ? 'annualShipped2026' : 'near30';
+    Object.assign(sxState, { chartPlatform: '', store: '', stockClass: '', bucket: '' }); cxState.sales.platform = '';
+    const range = sxAnnual() ? getCoverage('annual') : windowRange(30, 'native');
+    sxSetRange(range.start, range.end, sxAnnual() ? 'month' : 'week');
+  }
+  function updateDatePresets() {
+    const dialog = cxEl('sxDateDialog'), select = cxEl('sxDateDataset'); if (!dialog || !select) return;
+    const start = cxEl('sxDateStart')?.value, end = cxEl('sxDateEnd')?.value, source = getCoverage(select.value);
+    for (const button of dialog.querySelectorAll('[data-srf-preset]')) {
+      const value = button.dataset.srfPreset, selected = value === 'year' ? select.value === 'annual' && start === coverage.annual.start.slice(0, 4) + '-01-01' && end === coverage.annual.end.slice(0, 4) + '-12-31'
+        : end === source.end && start === sxAdd(source.end, 1 - Number(value));
+      button.setAttribute('aria-pressed', String(selected));
+    }
+  }
+  sxDateHint = function () {
+    const select = cxEl('sxDateDataset'), hint = cxEl('sxDateCoverageHint'); if (!select || !hint) return;
+    const source = getCoverage(select.value);
+    hint.textContent = (select.value === 'annual' ? '历史订单参考' : '已核净量') + '覆盖 ' + source.start + '—' + source.end + '；覆盖外待核，不补0。';
+  };
+  const priorDialog = sxDateDialog;
+  sxDateDialog = function () {
+    const result = priorDialog(), dialog = cxEl('sxDateDialog'); if (!dialog) return result;
+    for (const button of dialog.querySelectorAll('[data-sx-preset]')) { button.dataset.srfPreset = button.dataset.sxPreset; button.removeAttribute('data-sx-preset'); }
+    for (const [dataset, label] of [['native', '已核净量'], ['annual', '历史订单参考']]) {
+      const option = dialog.querySelector('#sxDateDataset option[value="' + dataset + '"]'), source = getCoverage(dataset);
+      if (option) option.textContent = label + ' · ' + source.start + '—' + source.end;
+    }
+    sxDateHint(); updateDatePresets(); return result;
+  };
+  root.addEventListener('change', event => { if (event.target.id !== 'sxDataset') return; event.preventDefault(); event.stopImmediatePropagation(); selectDataset(event.target.value); }, true);
+  root.addEventListener('click', event => {
+    const button = event.target.closest('[data-srf-preset]'); if (!button) return; event.preventDefault(); event.stopImmediatePropagation();
+    const select = cxEl('sxDateDataset'), value = button.dataset.srfPreset;
+    if (value === 'year') select.value = 'annual';
+    const source = getCoverage(select.value);
+    cxEl('sxDateStart').value = value === 'year' ? coverage.annual.start.slice(0, 4) + '-01-01' : sxAdd(source.end, 1 - Number(value));
+    cxEl('sxDateEnd').value = value === 'year' ? coverage.annual.end.slice(0, 4) + '-12-31' : source.end;
+    sxDateHint(); updateDatePresets();
+  }, true);
+  document.addEventListener('input', updateDatePresets, true); document.addEventListener('change', () => Promise.resolve().then(updateDatePresets), true);
+
+  const priorTrend = sxTrendHtml;
+  sxTrendHtml = function (rows, options = {}) {
+    let html = priorTrend(rows, options);
+    const action = options.actionAttribute || 'data-sx-bucket';
+    if (!/^data-sx-(?:detail-)?bucket$/.test(action)) return html;
+    html = html.replace(/(data-fa-measure="amount"[^>]*>)[\s\S]*?(<\/button>)/g, '$1销售额（USD）$2');
+    if (sxAnnual()) html = html.replace(/data-fa-trend-context=/g, 'data-srf-trend-context=')
+      .replace(/商品销售额/g, '源销售额参考').replace(/商品行毛额/g, '源表金额')
+      .replace(/金额为已知源表金额，未扣退款；Wayfair为供货额。/g, sourceLabel + '。');
+    return html;
+  };
+  function decorateSales() {
+    if (cxState.view !== 'sales') return;
+    const host = cxEl('cxSalesBody'), subtitle = cxEl('subtitle');
+    if (subtitle) subtitle.textContent = '销售参考至' + coverage.annual.end + ' · 净量已核至' + coverage.native.end + ' · 库存、利润及原方案沿各自日期';
+    const option = cxEl('sxDataset')?.querySelector('option[value="annual"]'); if (option) option.textContent = '历史订单参考 · 至' + coverage.annual.end;
+    const note = host?.querySelector('.sx-trend')?.closest('.cx-chart')?.querySelector('.cx-note');
+    if (note && sxAnnual()) note.textContent = note.textContent.replace(/不含原生税运费/g, 'Amazon含客户运费，其他按各平台源定义');
+    if (sxAnnual()) {
+      for (const section of host?.querySelectorAll('.sx-trend[data-srf-trend-context]') || []) {
+        const heading = section.querySelector('.sx-trend-heading h4'), measure = section.dataset.srfTrendContext === 'detail' ? root.faUiModel.state.detailMeasure : root.faUiModel.state.measure;
+        if (heading) heading.textContent = measure === 'amount' ? '三平台源销售额参考（USD） · Amazon含客户运费' : '三平台历史订单数量参考';
+      }
+      const pieNote = host?.querySelector('.sx-pies .cx-note');
+      if (pieNote) pieNote.textContent = pieNote.textContent.replace('销售额为商品行毛额，不含原生税运费、未扣退款', '源销售额按各平台原表定义；Amazon含客户运费、未扣退款');
+      for (const heading of host?.querySelectorAll('th') || []) if (/商品.*销售额USD/.test(heading.textContent)) heading.textContent = heading.textContent.replace(/商品.*销售额USD/, '源销售额参考USD');
+    }
+    const overview = host?.querySelector('.ov-overview');
+    if (overview && !overview.querySelector('.srf-source-note')) overview.insertAdjacentHTML('afterbegin', '<p class="cx-caption srf-source-note">最新订单参考至' + cxEsc(coverage.annual.end) + '；净量已核至' + cxEsc(coverage.native.end) + '。' + (sxAnnual() ? cxEsc(sourceLabel) : '新增未核日期不作0销量。') + '</p>');
+    for (const heading of host?.querySelectorAll('th') || []) if (heading.textContent === '近30／60净套') heading.textContent = '近30／60净量 · 至' + coverage.native.end;
+  }
+  const priorSales = cxRenderSales; cxRenderSales = function () { const result = priorSales(); decorateSales(); return result; };
+  const priorView = setPageView; setPageView = function (view) { const result = priorView(view); decorateSales(); return result; };
+  const priorOverviewRender = ovRenderOverview; ovRenderOverview = function () { const result = priorOverviewRender(); decorateSales(); return result; };
+  const priorOrderTable = cxOrderTable;
+  cxOrderTable = function () { const html = priorOrderTable.apply(this, arguments); return sxAnnual() ? html.replace(/商品总销售额USD/g, '源销售额参考USD（Amazon含客户运费）') : html; };
+  const priorDownload = cxDownloadCsv;
+  cxDownloadCsv = function (filename, headers, rows) {
+    const queryAnnual = String(filename).startsWith('SKU数据查询_') && root.salesRefreshModel?.query?.resolveMode(sqUiState.filters) === 'annual';
+    const salesAnnual = /(?:商品业务|SKU销量)/.test(String(filename)) && sxAnnual();
+    if (queryAnnual || salesAnnual) headers = headers.map(label => /商品.*销售额|商品金额/.test(label) ? '源销售额参考USD（Amazon含客户运费）' : label);
+    return priorDownload(filename, headers, rows);
+  };
+  if (typeof srRefreshStockSales === 'function') srRefreshStockSales();
+  if (typeof sqSalesCache !== 'undefined') sqSalesCache.clear();
+  if (typeof cfAgeCache !== 'undefined') cfAgeCache.clear();
+  const model = { ready: false, runtimeReady: true, data, meta, version, coverage, historical, business, mergeAudit, rejected,
+    getCoverage, currentPeriod, windowRange, sourceRows, channelMatch, inScope, aggregateRows, skuWindow, motionWindow, storeName, decorateSales, sourceLabel };
+  model.finish = function () {
+    const dataset = coverage.native.end >= coverage.annual.end ? 'native' : 'annual', range = windowRange(30, dataset);
+    sxState.dataset = dataset; cxState.sales.period = dataset === 'annual' ? 'annualShipped2026' : 'near30';
+    Object.assign(sxState, { start: range.start, end: range.end, bucket: '', grain: 'week', chartPlatform: '', store: '' });
+    if (cxState.view === 'sales') cxRenderSales(); model.ready = true;
+  };
+  root.salesRefreshModel = model;
+})(window);
+
+</script>
+<script>
+/* 查询使用本轮独立版本cache，旧查询闭包只保留价格、利润和库存构建。 */
+(function (root) {
+  'use strict';
+  const core = root.salesRefreshModel;
+  if (!core?.runtimeReady) throw Error('销量运行时未初始化');
+  const previous = root.spQueryPeriodModel, priorBuild = sqBuildRow;
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const aggregateCache = new Map(), periodCache = new Map();
+  const labels = { native: '已核净销量（下界）', annual: '历史订单数量参考' };
+  const names = new Map();
+  for (const row of [...pcRuntime.orders, ...pcRuntime.annualOrders, ...core.historical]) if (row.srProductName) {
+    const old = names.get(row.sku); if (!old || old.date < row.date) names.set(row.sku, { date: row.date, name: row.srProductName });
+  }
+  // 原UI闭包也持有此对象，修改对象字段可同步其说明；业务聚合完全走新cache。
+  if (previous?.coverage) for (const key of ['native', 'annual']) Object.assign(previous.coverage[key], core.coverage[key]);
+  function defaults() { return { ...previous.defaults(), ...core.windowRange(30, 'native'), salesMode: 'auto', scope: 'business' }; }
+  function resolveMode(filters) { return ['native', 'annual'].includes(filters.salesMode) ? filters.salesMode
+    : filters.start >= core.coverage.native.start && (filters.end <= core.coverage.native.end || core.coverage.native.end >= core.coverage.annual.end) ? 'native' : 'annual'; }
+  function cacheKey(filters) { return JSON.stringify([core.version, resolveMode(filters), filters.start, filters.end, filters.platform || '', filters.store || '', filters.scope || 'business']); }
+  // 店铺的所见日期、接入证明和请求日期分别处理。最后有单日不是完整覆盖截止。
+  const audit = core.meta.netAudit || {}, refreshed = audit.annualRefresh20261118 || {};
+  const currentDay = audit.completeOrderThrough;
+  const annualChannels = [
+    ['Amazon', 'genji furniture-US'], ['Amazon', 'kaguyasu-US'], ['Amazon', 'senyujp-US'], ['Amazon', '中诚-US'],
+    ['Shopify', 'AnzhapUS'], ['Shopify', 'BizfurnizUS'], ['Shopify', 'KaguyasuUS'], ['Shopify', 'ZimasyaUS'],
+    ['Wayfair', 'way_linhe']
+  ];
+  const knownChannels = new Map();
+  function channelKey(platform, store) { return platform + '|' + core.storeName(platform, store).toLowerCase(); }
+  function registerChannel(platform, store) {
+    const key = channelKey(platform, store);
+    if (!knownChannels.has(key)) knownChannels.set(key, { platform, store: core.storeName(platform, store), observed: new Set(), verified: null });
+    return knownChannels.get(key);
+  }
+  for (const [platform, store] of annualChannels) {
+    const channel = registerChannel(platform, store);
+    if (platform === 'Amazon' && refreshed.Amazon?.mode === 'replace_window'
+        && audit.platforms?.Amazon?.fullWindowFilterReadbackConfirmed === true
+        && refreshed.Amazon?.end === currentDay && refreshed.Amazon?.start === audit.platforms.Amazon.completeStart) {
+      channel.verified = { start: refreshed.Amazon.start, end: currentDay, basis: '四店领星订单商品行整窗替换及取数回读' };
+    }
+    if (currentDay === core.coverage.annual.end && Number.isFinite(sqDateNumber(currentDay))) {
+      if (platform === 'Shopify' && refreshed.Shopify?.rows > 0 && audit.platforms?.Shopify?.returnsCoverage?.allReadComplete === true)
+        channel.verified = { start: currentDay, end: currentDay, basis: '四店完整API核对及年度参考新日接入' };
+      if (platform === 'Wayfair' && refreshed.Wayfair?.rows > 0 && audit.platforms?.Wayfair?.storeCoverage?.way_linhe?.completeThrough === currentDay)
+        channel.verified = { start: currentDay, end: currentDay, basis: '林和后台订单统计组核对及年度参考新日接入' };
+    }
+  }
+  for (const row of core.sourceRows('annual')) if (row.country === 'US' && core.inScope(row, 'business')) {
+    registerChannel(row.platform, row.store).observed.add(row.date);
+  }
+
+  function annualPeriodCoverage(filters, source, start, end, valid) {
+    const channels = [...knownChannels.values()].filter(channel => core.channelMatch(channel, filters));
+    const byStore = channels.map((channel) => {
+      const dates = [...channel.observed].filter(date => valid && date >= start && date <= end).sort();
+      const evidence = channel.verified;
+      const verifiedStart = valid && evidence ? (start > evidence.start ? start : evidence.start) : null;
+      const verifiedEnd = valid && evidence ? (end < evidence.end ? end : evidence.end) : null;
+      const overlap = verifiedStart && verifiedEnd && verifiedStart <= verifiedEnd;
+      return {
+        platform: channel.platform, store: channel.store, observedStart: dates[0] || null, observedEnd: dates.at(-1) || null,
+        verifiedStart: overlap ? verifiedStart : null, verifiedEnd: overlap ? verifiedEnd : null, evidence,
+        periodComplete: Boolean(overlap && verifiedStart === start && verifiedEnd === end)
+      };
+    });
+    const observedStarts = byStore.map(channel => channel.observedStart).filter(Boolean).sort();
+    const observedEnds = byStore.map(channel => channel.observedEnd).filter(Boolean).sort();
+    const historicalRecordStart = observedStarts[0] || null, historicalRecordEnd = observedEnds.at(-1) || null;
+    const allHaveOverlap = byStore.length > 0 && byStore.every(channel => channel.verifiedStart);
+    const commonStart = allHaveOverlap ? byStore.map(channel => channel.verifiedStart).sort().at(-1) : null;
+    const commonEnd = allHaveOverlap ? byStore.map(channel => channel.verifiedEnd).sort()[0] : null;
+    const common = Boolean(commonStart && commonEnd && commonStart <= commonEnd);
+    const complete = Boolean(valid && byStore.length > 0 && byStore.every(channel => channel.periodComplete));
+    const hasOverlap = Boolean(historicalRecordStart || byStore.some(channel => channel.verifiedStart));
+    const noProofStores = byStore.filter(channel => !channel.evidence).map(channel => channel.store);
+    let note = !hasOverlap ? '所选期间未见该渠道的来源记录，销量保留待核'
+      : complete ? '请求 ' + start + '—' + end + '；所选店铺参考来源已验覆盖'
+      : '逐店覆盖证据未闭合；所见记录仅按来源汇总，完整期间上界待核';
+    if (historicalRecordStart && !complete) note += '；所见记录 ' + historicalRecordStart + '—' + historicalRecordEnd;
+    if (common) note += '；所选店铺共同已验参考日期 ' + commonStart + '—' + commonEnd;
+    if (noProofStores.length) note += '；' + noProofStores.join('、') + '无连续年度覆盖依据';
+    note += '；' + core.sourceLabel;
+    return { mode: 'annual', label: labels.annual, requestedStart: start, requestedEnd: end, sourceStart: source.start, sourceEnd: source.end,
+      actualStart: common ? commonStart : null, actualEnd: common ? commonEnd : null, periodComplete: complete, hasOverlap,
+      historicalRecordStart, historicalRecordEnd, coverageByStore: byStore, note };
+  }
+  function periodCoverage(filters) {
+    const key = cacheKey(filters); if (periodCache.has(key)) return periodCache.get(key);
+    const mode = resolveMode(filters), source = core.coverage[mode], start = filters.start, end = filters.end;
+    const valid = Number.isFinite(sqDateNumber(start)) && Number.isFinite(sqDateNumber(end)) && start <= end;
+    if (mode === 'annual') {
+      const period = annualPeriodCoverage(filters, source, start, end, valid);
+      periodCache.set(key, period); return period;
+    }
+    const actualStart = valid ? start > source.start ? start : source.start : null;
+    const actualEnd = valid ? end < source.end ? end : source.end : null;
+    const overlap = valid && actualStart <= actualEnd;
+    const complete = Boolean(valid && start >= source.start && end <= source.end);
+    const note = (!overlap ? '请求期间未覆盖，不作0销量' : complete ? '请求 ' + start + '—' + end + '；' + labels[mode] + '，来源日期完整覆盖'
+      : '已覆盖部分：' + actualStart + '—' + actualEnd + '；完整请求期间上界待核')
+      + '；净量已核至' + source.end + '，新增订单参考至' + core.coverage.annual.end + '，未核日期不补0';
+    const result = { mode, label: labels[mode], requestedStart: start, requestedEnd: end, sourceStart: source.start, sourceEnd: source.end,
+      actualStart: overlap ? actualStart : null, actualEnd: overlap ? actualEnd : null, periodComplete: complete, hasOverlap: overlap,
+      historicalRecordStart: null, historicalRecordEnd: null, note };
+    periodCache.set(key, result); return result;
+  }
+  function salesMap(filters) {
+    const key = cacheKey(filters); if (aggregateCache.has(key)) return aggregateCache.get(key);
+    const mode = resolveMode(filters), period = periodCoverage(filters), groups = new Map();
+    for (const row of core.sourceRows(mode)) {
+      if (row.date < filters.start || row.date > filters.end || !core.channelMatch(row, filters) || !core.inScope(row, filters.scope)) continue;
+      if (mode === 'native' && (row.date < core.coverage.native.start || row.date > core.coverage.native.end)) continue;
+      if (!groups.has(row.sku)) groups.set(row.sku, []); groups.get(row.sku).push(row);
+    }
+    const values = new Map([...groups].map(([sku, rows]) => [sku, { ...core.aggregateRows(rows, mode), sourceRows: rows }]));
+    aggregateCache.set(key, values); return values;
+  }
+  function salesFor(sku, filters) {
+    const period = periodCoverage(filters), value = salesMap(filters).get(sku);
+    const zero = period.mode === 'native' && period.periodComplete && !value && sqStockBySku.get(sku)?.salesCoverage?.coverage60 === true;
+    const known = value?.known > 0 || zero, units = period.hasOverlap && known ? value?.lower ?? 0 : null;
+    const excludedZero = value?.lower === 0 && value.sourceRows.every(row => row.cancelled || row.technicalTest || row.businessTest);
+    return { units, unitsUpper: period.periodComplete && known ? value?.upper ?? (zero ? 0 : null) : null,
+      orders: period.hasOverlap && known ? value?.orderCount ?? 0 : null,
+      salesAmount: period.hasOverlap ? value?.amount ?? (zero || excludedZero ? 0 : null) : null,
+      salesKnown: period.periodComplete && known, rows: value?.sourceRows || [], period,
+      note: period.note + (!value && !zero ? '；此SKU未见该期间计量证据，保留待核' : '') };
+  }
+  sqSalesMap = function (filters, start = filters.start, end = filters.end) { return salesMap({ ...filters, start, end }); };
+  sqSalesValue = function (sku, filters, start = filters.start, end = filters.end) { return salesFor(sku, { ...filters, start, end,
+    salesMode: arguments.length > 2 ? 'native' : filters.salesMode || 'auto' }); };
+  sqBuildRow = function (sku, filters) {
+    // 以库存历史作用域取原价格/利润，避免旧销量cache对新采购属性作错误清空；下方再按当前属性置不适用。
+    const row = priorBuild(sku, { ...filters, scope: 'all' }), sales = salesFor(sku, filters), period = sales.period;
+    const recent = days => salesFor(sku, { ...filters, ...core.windowRange(days, 'native'), salesMode: 'native' });
+    const near30 = recent(30), near60 = recent(60), classes = [...new Set(sales.rows.map(srClass))];
+    const nonstock = filters.scope === 'nonstock' || classes.length > 0 && classes.every(key => key === 'nonstock');
+    return { ...row, name: row.name || names.get(sku)?.name || '', units: sales.units, unitsUpper: sales.unitsUpper, orders: sales.orders, salesAmount: sales.salesAmount,
+      salesKnown: sales.salesKnown, salesMode: period.mode, salesBasis: period.label, periodStart: filters.start, periodEnd: filters.end,
+      actualCoverageStart: period.actualStart, actualCoverageEnd: period.actualEnd, historicalRecordStart: period.historicalRecordStart, historicalRecordEnd: period.historicalRecordEnd,
+      periodComplete: period.periodComplete, coverageNote: sales.note, _salesRows: sales.rows, _period: period, businessClasses: classes,
+      net30: near30.units, net30Upper: near30.unitsUpper, net60: near60.units, net60Upper: near60.unitsUpper,
+      nearSalesEnd: core.coverage.native.end, nearSalesBasis: labels.native, active: pcIsIncluded(sku, 'active'),
+      ...(nonstock ? { available: null, reserved: null, transit: null, stockWarehouses: [], stockDate: '非库存业务，不套库存余额', ageText: '不适用：非库存业务', ageSort: null, ageSets: null,
+        displayPrice: null, priceItem: null, shipping: null, priceTotal: null, operatingMargin: null, realMargin: null, _reference: null, referenceKey: '', profitBasis: 'missing',
+        profitStatus: '非库存业务，不借库存利润参考', sourceNote: '按本期已证订单采购属性，不套库存利润' } : {}) };
+  };
+  sqMatches = function (row, filters) {
+    const scope = filters.scope || 'business';
+    if (scope === 'nonstock' ? !salesMap(filters).has(row.sku) : scope === 'business' ? !(pcIsIncluded(row.sku, 'all') || core.business.has(row.sku)) : !pcIsIncluded(row.sku, scope)) return false;
+    const q = String(filters.search || '').trim().toLowerCase();
+    if (q && ![row.sku, row.name, row.platform, row.store, row.warehouse].some(value => String(value || '').toLowerCase().includes(q))) return false;
+    if (filters.productType && filters.productType !== row.productType) return false;
+    if ((sqValues(filters.platform).length || sqValues(filters.store).length) && !(sqChannelIdentities.get(row.sku) || []).some(identity => core.channelMatch(identity, filters))) return false;
+    if (sqValues(filters.warehouse).length && !sqValues(filters.warehouse).map(sqWarehouseCode).some(value => row.stockWarehouses.includes(value))) return false;
+    if (filters.ageBand && !(sqStockBySku.get(row.sku)?.ageBands?.[filters.ageBand] > 0)) return false;
+    if (sqLimit(filters.salesMin) != null && (!finite(row.units) || row.units < Number(filters.salesMin))) return false;
+    if (sqLimit(filters.salesMax) != null && (!row.periodComplete || !finite(row.unitsUpper) || row.unitsUpper > Number(filters.salesMax))) return false;
+    const margin = filters.marginBasis === 'real' ? row.realMargin : row.operatingMargin;
+    if (filters.evidenceMode === 'missing' && finite(margin)) return false;
+    return sqInRange(margin, sqLimit(filters.marginMin) == null ? null : Number(filters.marginMin) / 100, sqLimit(filters.marginMax) == null ? null : Number(filters.marginMax) / 100)
+      && sqInRange(row.available, filters.availableMin, filters.availableMax) && sqInRange(row.displayPrice, filters.priceMin, filters.priceMax);
+  };
+  function getRows(filters = {}, sort = { key: 'units', direction: 'desc' }) {
+    const f = { ...defaults(), ...filters }; if (!Number.isFinite(sqDateNumber(f.start)) || !Number.isFinite(sqDateNumber(f.end)) || f.start > f.end) return [];
+    // 无搜索只列当前库存人口和本期有据业务商品码；显式搜索可查完整历史身份。
+    const searched = Boolean(String(f.search || '').trim()), scope = f.scope || 'business';
+    const candidates = !searched && scope === 'business' ? new Set([...sqSkuList.filter(sku => pcIsIncluded(sku, 'active')), ...salesMap(f).keys()])
+      : scope === 'nonstock' ? new Set(salesMap(f).keys()) : sqSkuList;
+    return sqSortRows([...candidates].map(sku => sqBuildRow(sku, f)).filter(row => sqMatches(row, f)), sort);
+  }
+  sqExportRows = getRows;
+  // 沿用原导出字段及仓储模拟链，只把导出人口和顺序约束到当前查询结果。
+  const priorExport = sqUiExport;
+  sqUiExport = function () {
+    const wanted = getRows(sqUiState.filters, sqUiState.sort), download = cxDownloadCsv;
+    cxDownloadCsv = function (filename, headers, rows) {
+      const skuColumn = headers.indexOf('商品SKU');
+      if (String(filename).startsWith('SKU数据查询_') && skuColumn >= 0) {
+        const bySku = new Map(rows.map(row => [row[skuColumn], row]));
+        rows = wanted.map(row => bySku.get(row.sku));
+        if (rows.some(row => !row)) throw Error('查询与导出人口不一致');
+      }
+      return download(filename, headers, rows);
+    };
+    try { return priorExport(); } finally { cxDownloadCsv = download; }
+  };
+  sqQuery = function (filters, sort, page = 0, size = 50) {
+    const f = { ...defaults(), ...filters }, rows = getRows(f, sort), period = periodCoverage(f), known = rows.filter(row => finite(row.units)), amount = rows.filter(row => finite(row.salesAmount));
+    sqActiveRows = rows;
+    return { rows: rows.slice(page * size, (page + 1) * size), total: rows.length, facets: sqFacets,
+      summary: { skuCount: rows.length, units: known.length ? known.reduce((sum, row) => sum + row.units, 0) : null, unitsKnownCount: known.length,
+        salesAmount: amount.length ? amount.reduce((sum, row) => sum + row.salesAmount, 0) : null, salesAmountKnownCount: amount.length,
+        operatingMarginKnownCount: rows.filter(row => finite(row.operatingMargin)).length, profitMissingCount: rows.filter(row => !finite(row.operatingMargin)).length },
+      meta: { salesCutoff: core.coverage.native.end, salesBasis: period.label, salesCoverage: period.note, period,
+        productTypeRule: '库存分类沿已核身份；非库存属性按订单商品行区分。', message: '销售参考至' + core.coverage.annual.end + '；净量及近30/60天已核至' + core.coverage.native.end } };
+  };
+  sqUiRecentRange = days => core.windowRange(days, 'native');
+  const priorOrderHtml = sqOrdersHtml;
+  sqOrdersHtml = function (row) { return priorOrderHtml(row).replace(/商品金额USD/g, row.salesMode === 'annual' ? '源销售额参考USD（Amazon含客户运费）' : '商品金额USD'); };
+  const priorSummary = sqUiSummary;
+  sqUiSummary = function (result) {
+    const annual = result.meta.period.mode === 'annual';
+    let summary = priorSummary(result).replace('款SKU</span>', '个业务商品码</span>')
+      .replace('商品销售额', annual ? '源销售额参考' : '商品销售额');
+    if (annual && !result.meta.period.periodComplete) summary = summary.replace(' · 已覆盖部分',
+      result.meta.period.hasOverlap ? ' · 来源内小计' : ' · 所选期间未见来源记录');
+    return summary
+      + '<p class="cx-caption">业务商品码含当前经营库存SKU及所选期间有记录的商品码；当前库存人口未扩大。搜索可查历史商品身份。' + (annual ? core.sourceLabel : '') + '</p>';
+  };
+  const priorRender = sqRenderQuery;
+  sqRenderQuery = function () {
+    sqUiColumnLabels.salesAmount = resolveMode(sqUiState.filters) === 'annual' ? '源销售额参考USD' : '商品总销售额';
+    const result = priorRender(), host = cxEl('sqQueryBody');
+    for (const button of host?.querySelectorAll('[data-sq-window]') || []) { button.textContent = '净量' + button.dataset.sqWindow + '天'; button.title = '已核至' + core.coverage.native.end; }
+    const intro = host?.querySelector('.sq-intro>p'); if (intro) intro.textContent = '历史订单参考至' + core.coverage.annual.end + ' · 净量及近30/60天已核至' + core.coverage.native.end;
+    return result;
+  };
+  root.addEventListener('click', event => {
+    const button = event.target.closest('#sqQueryBody [data-sq-reset],#sqQueryBody [data-sq-preset],#sqQueryBody [data-sq-window],#sqQueryBody [data-sq-remove]'); if (!button) return;
+    event.preventDefault(); event.stopImmediatePropagation(); sqUiReadDraft();
+    if (button.hasAttribute('data-sq-reset')) sqUiState.draft = sqUiState.filters = { ...defaults() };
+    else if (button.hasAttribute('data-sq-remove')) {
+      const key = button.dataset.sqRemove, next = defaults();
+      if (key === 'dates') Object.assign(sqUiState.filters, { start: next.start, end: next.end, salesMode: next.salesMode });
+      else sqUiState.filters[key] = next[key] ?? '';
+      sqUiState.draft = { ...sqUiState.filters };
+    }
+    else if (button.hasAttribute('data-sq-window')) Object.assign(sqUiState.draft, core.windowRange(Number(button.dataset.sqWindow), 'native'), { salesMode: 'native' });
+    else if (button.dataset.sqPreset === 'missing') { sqUiState.draft = { ...defaults(), scope: 'active', evidenceMode: 'missing' }; sqUiState.filters = { ...sqUiState.draft }; }
+    else {
+      Object.assign(sqUiState.draft, core.windowRange(30, 'native'), { scope: 'active', salesMode: 'native', productType: 'regular', salesMin: 0, salesMax: 5,
+        availableMin: 1, availableMax: '', marginBasis: 'operating', marginMin: button.dataset.sqPreset === 'margin20' ? 20 : 15, marginMax: '',
+        evidenceMode: sqUiState.draft.evidenceMode === 'missing' ? 'current' : sqUiState.draft.evidenceMode });
+      sqUiState.filters = { ...sqUiState.draft };
+    }
+    sqUiState.page = 0; sqUiState.error = ''; sqRenderQuery();
+  }, true);
+  sqUiState.draft = { ...defaults() }; sqUiState.filters = { ...defaults() }; sqUiState.page = 0;
+  const api = { ready: true, version: core.version, coverage: core.coverage, packetMeta: core.meta.historicalCoverage, resolveMode, periodCoverage, getRows, query: sqQuery, salesFor,
+    normalizeStore: (platform, store) => core.storeName(platform, store).toLowerCase(), datasetRows: core.sourceRows, inScope: core.inScope, defaults,
+    nearRange: days => core.windowRange(days, 'native'), exportResult: () => sqUiExport(), clearCaches: () => { aggregateCache.clear(); periodCache.clear(); } };
+  core.query = api; root.spQueryPeriodModel = api; root.qpModel = api;
+})(window);
+
+</script>
+<script>
+/* 新来源的取消、测试、金额资格与未知数量兼容；不把用途未核的订单画成0。 */
+(function (root) {
+  'use strict';
+  if (root.freshStatusModel?.ready) return;
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const fresh = row => Boolean(row.salesRefreshVersion || row.salesRefreshDataset);
+  const excluded = row => row.cancelled || row.technicalTest || row.businessTest;
+  const quantityUnknown = row => fresh(row) && !excluded(row) && !finite(row.quantity);
+  const pendingRows = rows => rows.filter(quantityUnknown).length;
+  const priorAmount = cxAmountEligible;
+  cxAmountEligible = function (row) { return fresh(row) ? finite(row.amount) && row.amountChartEligible === true && !excluded(row) : priorAmount(row); };
+  const priorMetrics = sxMetrics;
+  sxMetrics = function (rows) {
+    const result = priorMetrics(rows);
+    if (!sxAnnual()) return result;
+    const pending = pendingRows(rows), known = rows.length - pending;
+    return { ...result, units: pending && !known ? null : result.units,
+      amount: pending && !result.amountLines ? null : result.amount,
+      quantityPendingRows: pending, quantityKnownRows: known, quantityComplete: pending === 0 };
+  };
+  const priorOverviewMetrics = ovMetrics;
+  ovMetrics = function (rows = sxOrders()) {
+    const result = priorOverviewMetrics(rows), metrics = sxMetrics(rows);
+    return sxAnnual() ? { ...result, units: metrics.units, amount: metrics.quantityPendingRows && !metrics.amountLines ? null : result.amount,
+      quantityPendingRows: metrics.quantityPendingRows, quantityKnownRows: metrics.quantityKnownRows, quantityComplete: metrics.quantityComplete } : result;
+  };
+  const priorAggregates = cxSalesAggregates;
+  cxSalesAggregates = function (rows) {
+    const result = priorAggregates(rows);
+    if (!sxAnnual()) return result;
+    const counts = new Map();
+    for (const row of rows) {
+      if (!counts.has(row.sku)) counts.set(row.sku, { total: 0, pending: 0 });
+      const count = counts.get(row.sku); count.total++; if (quantityUnknown(row)) count.pending++;
+    }
+    for (const [sku, value] of result) {
+      const count = counts.get(sku);
+      if (count?.pending) Object.assign(value, { net: count.pending === count.total ? null : value.net, quantityPendingRows: count.pending });
+    }
+    return result;
+  };
+  const priorSrMetrics = srMetrics;
+  srMetrics = function (rows, annual = sxAnnual()) {
+    const result = priorSrMetrics(rows, annual), pending = annual ? pendingRows(rows) : 0;
+    return pending ? { ...result, units: pending === rows.length ? null : result.units, upper: null,
+      amount: result.amountKnown ? result.amount : null, quantityPendingRows: pending } : result;
+  };
+  const priorBreakdown = srBreakdown;
+  srBreakdown = function (row) {
+    const count = sxAnnual() ? pendingRows(row.rows || []) : 0;
+    return priorBreakdown(row) + (count ? cxSmall(count + '行数量／用途待核，已有数量仅为小计') : '');
+  };
+  const priorRank = biRankHtml;
+  biRankHtml = function () {
+    let html = priorRank.apply(this, arguments);
+    if (!sxAnnual()) return html;
+    const values = cxSalesAggregates(sxOrders({ ignoreSku: true })), bySku = new Map([...values].map(([sku, value]) => [cxEsc(sku), value]));
+    let unknown = 0;
+    for (const value of values.values()) if (value.quantityPendingRows && value.net === null) unknown++;
+    html = html.replace(/<div\b([^>]*class="bi-rank-row[^>]*>)([\s\S]*?)<\/div>/g, (tag, attributes) => {
+      const value = bySku.get(attr(attributes, 'data-bi-sku'));
+      if (!value?.quantityPendingRows) return tag;
+      if (value.net === null) return '';
+      return tag.replace(/(<span class="bi-rank-value">)([^<]+)(<\/span>)/, '$1≥$2$3')
+        .replace(/当前范围[^";；]*套/, '已知参考小计' + cxQty(value.net) + '，另' + value.quantityPendingRows + '行数量／用途待核');
+    });
+    return html + (unknown ? '<p class="cx-caption fsc-rank-note">' + unknown + '个商品码数量待核，未参与销量排名。</p>' : '');
+  };
+  const priorDownload = cxDownloadCsv;
+  cxDownloadCsv = function (filename, headers, rows) {
+    if (sxAnnual() && String(filename).startsWith('商品销量_')) {
+      const skuColumn = headers.indexOf('商品码'), values = new Map(srSalesRows().map(row => [row.sku, row.quantityPendingRows || 0]));
+      if (skuColumn >= 0) {
+        headers = [...headers.map(label => label.replace(/商品额/g, '源销售额参考')), '数量用途待核行数', '金额口径'];
+        rows = rows.map(row => [...row, values.get(row[skuColumn]) || 0, root.salesRefreshModel.sourceLabel]);
+      }
+    }
+    return priorDownload(filename, headers, rows);
+  };
+  const priorOverview = ovOverviewHtml;
+  ovOverviewHtml = function (context) {
+    let html = priorOverview(context);
+    if (!sxAnnual()) return html;
+    const metrics = sxMetrics(context.orders), count = metrics.quantityPendingRows;
+    if (!count) return html;
+    const note = '已知小计；' + count + '行数量／用途待核，不当作0';
+    const card = (key, label, value, detail) => ovKpi(key, label, value, detail, { title: '来源状态或付款／用途证据未闭合，完整数量仍待核。' });
+    html = html.replace(/<div class="ov-kpi [^"]*" data-ov-kpi="units"[\s\S]*?<\/div>/,
+      card('units', '历史参考数量', finite(metrics.units) ? '≥' + cxQty(metrics.units) : '待核', note));
+    html = html.replace(/<div class="ov-kpi [^"]*" data-ov-kpi="amount"[\s\S]*?<\/div>/,
+      card('amount', '源销售额参考', metrics.amountLines ? cxMoney(metrics.amount) : '待核',
+        (metrics.amountLines ? '已知小计；' : '') + count + '行数量／用途或付款待核，未计销售额'));
+    return html;
+  };
+
+  const priorBuild = sqBuildRow;
+  function queryNote(row) {
+    if (row.salesMode !== 'annual') return row;
+    const count = pendingRows(row._salesRows || []);
+    return count ? { ...row, salesKnown: false, unitsUpper: null, periodQuantityPendingRows: count,
+      coverageNote: row.coverageNote + '；' + count + '行数量／用途待核，已知数量为小计，未知不作0' } : row;
+  }
+  sqBuildRow = function () { return queryNote(priorBuild.apply(this, arguments)); };
+  const priorCell = sqUiCell;
+  sqUiCell = function (column, row) {
+    let html = priorCell(column, row);
+    if (column === 'units' && row.periodQuantityPendingRows) html = html.replace('本期未见计量证据', '源订单数量／用途待核')
+      + sqUiSmall(row.periodQuantityPendingRows + '行数量／用途待核；不是0销量');
+    return html;
+  };
+  const query = root.spQueryPeriodModel;
+  if (query?.salesFor) {
+    const priorSalesFor = query.salesFor;
+    query.salesFor = function () {
+      const result = priorSalesFor.apply(this, arguments), count = result.period.mode === 'annual' ? pendingRows(result.rows) : 0;
+      return count ? { ...result, salesKnown: false, unitsUpper: null, quantityPendingRows: count,
+        note: result.note + '；' + count + '行数量／用途待核，已有数量仅为小计' } : result;
+    };
+  }
+
+  const attr = (attributes, key) => new RegExp('(?:^|\\s)' + key + '="([^"]*)"').exec(attributes)?.[1] || '';
+  const hasClass = (attributes, key) => attr(attributes, 'class').split(/\s+/).includes(key);
+  const keyForDate = (date, grain) => grain === 'month' ? date.slice(0, 7) : grain === 'week' ? sxAdd(date, -new Date(date + 'T00:00:00Z').getUTCDay()) : date;
+  function trendModel(rows, options, measure = 'units') {
+    const groups = options.groups || sxPlatforms, grain = options.grain || 'month';
+    const buckets = sxTrendBuckets(rows, options), map = new Map(buckets.map(bucket => [bucket.key, { ...bucket, known: 0, pending: 0, total: 0, bySeries: new Map() }]));
+    for (const row of rows) {
+      const bucket = map.get(keyForDate(row.date, grain));
+      if (!bucket?.covered || row.date < bucket.coveredStart || row.date > bucket.coveredEnd) continue;
+      const key = String(row.platform || '');
+      if (!bucket.bySeries.has(key)) bucket.bySeries.set(key, { known: 0, pending: 0, total: 0 });
+      const series = bucket.bySeries.get(key), unknown = measure === 'units' ? quantityUnknown(row) : fresh(row) && !excluded(row) && !cxAmountEligible(row);
+      if (unknown) { series.pending++; bucket.pending++; continue; }
+      const value = excluded(row) ? 0 : measure === 'amount' ? cxAmountEligible(row) ? row.amount : 0 : (options.valueFn || cxNet)(row);
+      if (!finite(value)) continue;
+      series.known++; series.total += value; bucket.known++; bucket.total += value;
+    }
+    const hidden = new Set(), hiddenTotals = new Set();
+    for (const bucket of map.values()) {
+      if (!bucket.pending) continue;
+      if (!bucket.known) { bucket.total = null; hiddenTotals.add(bucket.key); }
+      for (const group of groups) {
+        const series = bucket.bySeries.get(group.key);
+        if (hiddenTotals.has(bucket.key) || series?.pending && !series.known) hidden.add(bucket.key + '|' + group.key);
+      }
+    }
+    return { map, buckets: [...map.values()], groups, hidden, hiddenTotals, pending: [...map.values()].reduce((sum, bucket) => sum + bucket.pending, 0) };
+  }
+  function trendHtml(html, options, model, measure) {
+    if (!model.pending) return html;
+    const action = options.actionAttribute || 'data-sx-bucket', centers = new Map();
+    html.replace(/<g\b([^>]*class="sx-trend-bucket[^>]*>)([\s\S]*?)<\/g>/g, (tag, attributes, content) => {
+      const hit = content.match(/<rect\b([^>]*class="sx-trend-hit"[^>]*)>/);
+      if (hit) centers.set(Math.round((Number(attr(hit[1], 'x')) + Number(attr(hit[1], 'width')) / 2) * 10), attr(attributes, action));
+      return tag;
+    });
+    const keyForX = x => centers.get(Math.round(Number(x) * 10));
+    const split = (points, series) => {
+      const segments = []; let current = [];
+      for (const point of points) {
+        if (model.hidden.has(keyForX(point.split(',')[0]) + '|' + series)) { if (current.length > 1) segments.push(current); current = []; }
+        else current.push(point);
+      }
+      if (current.length > 1) segments.push(current);
+      return segments;
+    };
+    html = html.replace(/<(circle|text|line|rect)\b([^>]*)>[\s\S]*?<\/\1>/g, (tag, name, attributes) => {
+      const key = attr(attributes, action), series = attr(attributes, 'data-sx-series');
+      if (model.hidden.has(key + '|' + series) && ['sx-trend-point', 'sx-trend-point-label', 'sx-trend-point-guide', 'sx-trend-bar', 'sx-trend-segment-label'].some(value => hasClass(attributes, value))) return '';
+      if (model.hiddenTotals.has(key) && hasClass(attributes, 'sx-trend-total-label')) return '';
+      if (hasClass(attributes, 'sx-trend-line-hit') && (model.hidden.has(key + '|' + series) || model.hidden.has(keyForX(attr(attributes, 'x1')) + '|' + series))) return '';
+      if (measure === 'units' && model.map.get(key)?.pending && hasClass(attributes, 'sx-trend-total-label')) return tag.replace(/>([^<]+)<\/text>$/, '>≥$1</text>');
+      if (measure === 'units' && model.map.get(key)?.bySeries.get(series)?.pending && ['sx-trend-point-label', 'sx-trend-segment-label'].some(value => hasClass(attributes, value))) return tag.replace(/>([^<]+)<\/text>$/, '>≥$1</text>');
+      return tag;
+    });
+    html = html.replace(/<polyline\b([^>]*)>[\s\S]*?<\/polyline>/g, (tag, attributes) => hasClass(attributes, 'sx-trend-line')
+      ? split(attr(attributes, 'points').trim().split(/\s+/), attr(attributes, 'data-sx-series')).map(points => tag.replace(/points="[^"]*"/, 'points="' + points.join(' ') + '"')).join('') : tag);
+    html = html.replace(/<g\b([^>]*)>([\s\S]*?)<\/g>/g, (tag, attributes, content) => {
+      if (!hasClass(attributes, 'sx-trend-tracer')) return tag;
+      const motion = content.match(/<animateMotion\b[^>]*path="([^"]*)"/);
+      return motion ? split(motion[1].replace(/^M/, '').split(/\s+L/), attr(attributes, 'data-sx-series'))
+        .map(points => tag.replace(/path="[^"]*"/, 'path="M' + points.join(' L') + '"')).join('') : tag;
+    });
+    const format = value => measure === 'amount' ? cxMoney(value) : cxQty(value), unit = measure === 'amount' ? '金额' : '数量／用途';
+    html = html.replace(/<g\b([^>]*class="sx-trend-bucket[^>]*>)([\s\S]*?)<\/g>/g, (tag, attributes, content) => {
+      const bucket = model.map.get(attr(attributes, action));
+      if (!bucket?.pending) return tag;
+      const title = bucket.label + '；' + (bucket.known ? '已知小计 ' + format(bucket.total) : unit + '待核') + '；' + model.groups.map(group => {
+        const series = bucket.bySeries.get(group.key);
+        return (group.label || group.key) + ' ' + (series?.pending ? (series.known ? '≥' + format(series.total) + '，' : '') + series.pending + '行待核' : format(series?.total || 0));
+      }).join('；') + '；' + bucket.pending + '行' + unit + '待核，未知不作0';
+      return '<g' + attributes.replace(/aria-label="[^"]*"/, 'aria-label="' + cxEsc(title) + '"')
+        + content.replace(/<title>[\s\S]*?<\/title>/, '<title>' + cxEsc(title) + '</title>')
+          .replace(model.hiddenTotals.has(bucket.key) ? /<line class="sx-trend-empty-bar"[^>]*>[\s\S]*?<\/line>/g : /$^/, '') + '</g>';
+    });
+    const viewBox = html.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/), height = Number(viewBox?.[2] || 310);
+    const markers = [...centers].filter(([, key]) => model.map.get(key)?.pending).map(([x, key]) => '<text class="fsc-pending-marker" ' + action + '="' + cxEsc(key) + '" x="' + (x / 10).toFixed(2) + '" y="' + (height - 61) + '" text-anchor="middle" font-size="11" fill="#65778e">待核' + model.map.get(key).pending + '</text>').join('');
+    html = html.replace('</svg>', markers + '</svg>');
+    return html + '<p class="cx-caption fsc-status-note">已知' + (measure === 'amount' ? '金额' : '数量') + '仅为来源内小计；' + model.pending + '行' + unit + '待核，未知部分不显示为0。</p>';
+  }
+  const priorTrend = sxTrendHtml;
+  sxTrendHtml = function (rows, options = {}) {
+    let html = priorTrend(rows, options);
+    const action = options.actionAttribute || 'data-sx-bucket';
+    if (!sxAnnual() || !/^data-sx-(?:detail-)?bucket$/.test(action)) return html;
+    const measure = action === 'data-sx-detail-bucket' ? root.faUiModel?.state.detailMeasure : root.faUiModel?.state.measure;
+    return trendHtml(html, options, trendModel(rows, options, measure === 'amount' ? 'amount' : 'units'), measure === 'amount' ? 'amount' : 'units');
+  };
+  root.freshStatusModel = { ready: true, quantityUnknown, pendingRows, trendModel, trendHtml, queryNote };
+})(window);
+
+</script>
+<script>
+/* 按最新逐商品核对结果同步净量、近30/60天窗口及待核说明；原审批方案保持原日期。 */
+(function (root) {
+  'use strict';
+  const core = root.salesRefreshModel;
+  if (!core?.query?.ready) throw Error('逐单净量需要已初始化的统一销量查询');
+  if (root.netRefreshModel?.ready) return;
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const excluded = row => row.cancelled || row.technicalTest || row.businessTest;
+  const unresolved = row => !excluded(row) && (row.pending === true || !finite(row.netLower) || !finite(row.netUpper) || row.netLower !== row.netUpper);
+  const basis = '按原订单日统计；截至本次核对时的有效商品量，扣已证商品取消／全退／实际退货；部分补偿和补发不按整件扣减';
+
+  function stats(rows) {
+    let lower = 0, upper = 0, upperKnown = true, pending = 0, exact = 0;
+    for (const row of rows) {
+      if (finite(row.netLower)) lower += row.netLower;
+      if (finite(row.netUpper)) upper += row.netUpper; else upperKnown = false;
+      if (unresolved(row)) pending++; else exact++;
+    }
+    return { lower, upper: upperKnown ? upper : null, pending, exact, rows: rows.length };
+  }
+
+  const beforeMetrics = sxMetrics;
+  sxMetrics = function (rows) {
+    const original = beforeMetrics(rows);
+    if (sxAnnual()) return original;
+    const value = stats(rows);
+    return { ...original, quantityPendingRows: value.pending, quantityKnownRows: value.exact,
+      quantityComplete: value.pending === 0, netUpper: value.upper };
+  };
+  const beforeOverview = ovOverviewHtml;
+  ovOverviewHtml = function (context) {
+    let html = beforeOverview(context);
+    if (sxAnnual() || context.period?.empty) return html;
+    const value = stats(context.orders || []);
+    const text = value.pending ? (value.lower > 0 ? '≥' + cxQty(value.lower) : '待核') : cxQty(value.lower);
+    const description = value.pending ? value.pending + '行净数量待核，已知数量为下界；点击商品查看逐单依据' : '逐商品核对；纯金额补偿不扣件、补发不新增销量';
+    html = html.replace(/<div class="ov-kpi [^"]*" data-ov-kpi="units"[\s\S]*?<\/div>/,
+      ovKpi('units', '已核净数量' + (value.pending ? '（下界）' : ''), text, description, { title: basis }));
+    return html;
+  };
+
+  // 待核行的0下界不是已证0；沿用现有缺失值几何处理，保留已证的正下界。
+  const beforeTrend = sxTrendHtml;
+  sxTrendHtml = function (rows, options = {}) {
+    const html = beforeTrend(rows, options), action = options.actionAttribute || 'data-sx-bucket';
+    if (sxAnnual() || !/^data-sx-(?:detail-)?bucket$/.test(action)) return html;
+    const measure = action === 'data-sx-detail-bucket' ? root.faUiModel?.state.detailMeasure : root.faUiModel?.state.measure;
+    if (measure === 'amount' || measure === 'share') return html;
+    const modeled = rows.flatMap(row => unresolved(row)
+      ? [...(row.netLower > 0 ? [{ ...row, pending: false }] : []), { ...row, quantity: null }]
+      : (options.valueFn || cxNet)(row) > 0 ? [row] : []);
+    const model = root.freshStatusModel.trendModel(modeled, options, 'units');
+    return root.freshStatusModel.trendHtml(html, options, model, 'units')
+      .replace(/数量／用途待核/g, '净数量待核');
+  };
+  const beforeRank = biRankHtml;
+  biRankHtml = function () {
+    if (sxAnnual()) return beforeRank.apply(this, arguments);
+    const groups = new Map();
+    for (const row of sxOrders({ ignoreSku: true })) {
+      if (!groups.has(row.sku)) groups.set(row.sku, []);
+      groups.get(row.sku).push(row);
+    }
+    const values = new Map([...groups].map(([sku, rows]) => [cxEsc(sku), stats(rows)]));
+    let hidden = 0;
+    let html = beforeRank.apply(this, arguments);
+    html = html.replace(/<div\b([^>]*class="bi-rank-row[^>]*>)([\s\S]*?)<\/div>/g, (tag, attributes) => {
+      const match = /data-bi-sku="([^"]*)"/.exec(attributes), value = values.get(match?.[1]);
+      if (value?.pending && value.lower === 0) { hidden++; return ''; }
+      return value?.pending ? tag.replace(/(<span class="bi-rank-value">)([^<]+)(<\/span>)/, '$1≥$2$3') : tag;
+    });
+    return html + (hidden ? '<p class="cx-caption">' + hidden + '个商品净数量全部待核，未按0件参与排名。</p>' : '');
+  };
+
+  // 近30/60天继续使用原统一缓存函数；runtime已把其共同截止同步到本次来源。
+  const beforeQueryRow = sqBuildRow;
+  const beforeSalesFor = core.query.salesFor;
+  core.query.salesFor = function () {
+    const value = beforeSalesFor.apply(this, arguments);
+    if (value.period.mode !== 'native') return value;
+    const summary = stats(value.rows || []);
+    return summary.pending ? { ...value, salesKnown: false, netPendingRows: summary.pending,
+      note: value.note + '；' + summary.pending + '行净数量待核，保留已核下界和可能上界' } : value;
+  };
+  const beforeWindow = core.skuWindow;
+  core.skuWindow = function (sku, days, mode = 'annual', filters = {}) {
+    const value = beforeWindow(sku, days, mode, filters);
+    if (mode !== 'native' || value.sourceRows.length || finite(value.lower)) return value;
+    const checked = core.query.salesFor(sku, { ...filters, ...core.windowRange(days, 'native'), salesMode: 'native', scope: filters.scope || 'business' });
+    return checked.units === 0 && checked.unitsUpper === 0 ? { ...value, lower: 0, upper: 0, known: 1, zeroFromCompleteCoverage: true } : value;
+  };
+  sqBuildRow = function () {
+    const row = beforeQueryRow.apply(this, arguments);
+    if (row.salesMode !== 'native') return row;
+    const value = stats(row._salesRows || []);
+    return value.pending ? { ...row, salesKnown: false, periodNetPendingRows: value.pending,
+      coverageNote: row.coverageNote + '；' + value.pending + '行退款／退货或订单用途数量待核，显示已核下界' } : row;
+  };
+  const beforeQueryCell = sqUiCell;
+  sqUiCell = function (column, row) {
+    let html = beforeQueryCell(column, row);
+    if (column === 'units' && row.periodNetPendingRows) html += sqUiSmall(row.periodNetPendingRows + '行净数量待核，非0销量');
+    return html;
+  };
+  const beforeSkuOverview = cxSkuOverview;
+  cxSkuOverview = function (sku) {
+    const thirty = core.skuWindow(sku, 30, 'native'), sixty = core.skuWindow(sku, 60, 'native');
+    return '<div class="srf-latest-sales"><b>最新已核净量30／60天：' + cxRange(thirty.lower, thirty.upper) + ' / ' + cxRange(sixty.lower, sixty.upper)
+      + '</b><small>至' + cxEsc(core.coverage.native.end) + ' · 同平台／店铺原订单日；待核数量保留区间</small></div>' + beforeSkuOverview(sku);
+  };
+  const beforeOrder = cxOpenOrder;
+  cxOpenOrder = function (key) {
+    const result = beforeOrder(key), row = cxAllOrderMap.get(key), host = cxEl('cxOrderBody');
+    if (!row?.netAuditVersion || !host) return result;
+    const refs = row.evidenceRefs || row.netEvidence || row.refunds || [];
+    host.insertAdjacentHTML('afterbegin', '<details class="cx-fold" open><summary>本次净销量逐单核对 · 至'
+      + cxEsc(core.coverage.native.end) + '</summary><div class="cx-fold-body">'
+      + cxTable(['核对项目', '本商品行结论'], [
+        ['已核净数量', cxRange(row.netLower, row.netUpper)],
+        ['处理依据', cxEsc(row.netResolutionNote || row.netBasis || row.pendingReason || '本次来源状态与商品行已核')],
+        ['核对快照', cxEsc(core.meta.netAudit?.asOf || core.meta.asOf)],
+        ['原订单日', cxEsc(row.date) + cxSmall('退款金额仍按发生日展示；净商品量回到原订单行，避免重复扣减')]
+      ]) + '<details><summary>对应订单、退款及售后凭据</summary><pre class="cx-source">'
+      + cxEsc(JSON.stringify(refs, null, 2)) + '</pre></details></div></details>');
+    return result;
+  };
+  const beforeDownload = cxDownloadCsv;
+  cxDownloadCsv = function (filename, headers, rows) {
+    const nativeQuery = String(filename).startsWith('SKU数据查询_') && core.query.resolveMode(sqUiState.filters) === 'native';
+    const nativeSales = /商品销量_|商品业务_|SKU销量_/.test(String(filename)) && !sxAnnual();
+    if (nativeQuery || nativeSales) {
+      headers = [...headers, '净量核对截止', '净量口径'];
+      rows = rows.map(row => [...row, core.coverage.native.end, basis]);
+    }
+    return beforeDownload(filename, headers, rows);
+  };
+  core.query.clearCaches();
+  root.netRefreshModel = { ready: true, through: core.coverage.native.end, asOf: core.meta.netAudit?.asOf || core.meta.asOf,
+    basis, stats, unresolved };
+  const marker = document.createElement('span'); marker.id = 'netRefreshReady'; marker.hidden = true; document.body.appendChild(marker);
+})(window);
+
+</script>
+<script>
+/* 新品监控更新独立状态保留参考；原np补货计算和清仓审批快照保持原输入。 */
+(function (root) {
+  'use strict';
+  const core = root.salesRefreshModel; if (!core?.query?.ready) throw Error('销量查询未初始化');
+  const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const originalMonitor = new Map(nmData.rows.map(row => [row.sku, row]));
+  const cutoff = core.meta.monitorEnd || core.coverage.annual.end;
+  const monitorRows = (core.data.monitorRows || []).filter(row => originalMonitor.has(row.sku) && row.date <= cutoff);
+  const bySku = new Map(); for (const row of monitorRows) { if (!bySku.has(row.sku)) bySku.set(row.sku, []); bySku.get(row.sku).push(row); }
+  function stats(rows) {
+    let lower = 0, upper = 0, upperKnown = true;
+    for (const row of rows) { if (finite(row.netReferenceLower)) lower += row.netReferenceLower; if (finite(row.netReferenceUpper)) upper += row.netReferenceUpper; else upperKnown = false; }
+    return { rows: rows.length, lower, upper: upperKnown ? upper : null };
+  }
+  function windowRows(sku, days) { const start = sxAdd(cutoff, 1 - days); return (bySku.get(sku) || []).filter(row => row.date >= start && row.date <= cutoff); }
+  for (const original of originalMonitor.values()) {
+    const rows = bySku.get(original.sku) || [], retained = rows.filter(row => !row.excluded && row.netReferenceLower > 0), dates = retained.map(row => row.date).sort();
+    const pending = rows.some(row => !row.excluded && (row.partialRefundPending || row.statusUnknown || row.identityPending || row.countryPending || !finite(row.netReferenceUpper) || row.netReferenceLower !== row.netReferenceUpper));
+    const orderState = retained.length ? 'observed' : pending ? 'pending' : rows.some(row => row.fullRefundOrReturned) ? 'returned' : rows.length ? 'no_retained' : 'no_rows';
+    const recent30 = stats(windowRows(original.sku, 30)), recent60 = stats(windowRows(original.sku, 60));
+    const arrived = original.firstKnownArrival ? rows.filter(row => row.date >= original.firstKnownArrival) : [];
+    const days = original.firstKnownArrival ? Math.floor((sqDateNumber(cutoff) - sqDateNumber(original.firstKnownArrival)) / 86400000) : null;
+    const updated = { ...original, observedCumulative: stats(rows), sinceArrivalObserved: stats(arrived), sales30Lower: recent30.lower, sales30Upper: recent30.upper,
+      sales60Lower: recent60.lower, sales60Upper: recent60.upper, arrivalDaysAtCutoff: finite(days) && days >= 0 ? days : null,
+      firstObservedRetainedOrder: dates[0] || null, lastObservedRetainedOrder: dates.at(-1) || null,
+      firstObservedAfterArrival: original.firstKnownArrival ? dates.find(date => date >= original.firstKnownArrival) || null : null,
+      preArrivalObserved: stats(original.firstKnownArrival ? rows.filter(row => row.date < original.firstKnownArrival) : []),
+      orderState, orderLabel: nmOrderLabels[orderState],
+      cumulativeStart: original.firstKnownArrival || rows.map(row => row.date).sort()[0] || null,
+      cumulativeLabel: original.firstKnownArrival ? '到仓日后源内状态保留参考（非完整生命周期净量）' : '源内已见状态保留参考（到仓日待核）',
+      salesRefreshVersion: core.version };
+    const projected = root.faNewInventoryModel?.projected ? root.faNewInventoryModel.projected(updated) : updated;
+    nmBySku.set(original.sku, projected);
+  }
+  nmData.rows.splice(0, nmData.rows.length, ...[...originalMonitor.keys()].map(sku => nmBySku.get(sku)));
+  nmData.meta.salesCutoff = cutoff;
+  nmData.meta.freshness = '状态保留参考至' + cutoff + '；未覆盖日期不作0，原拟定补货保留方案日期。';
+  for (const source of core.meta.sources || []) if (source.file === '产品销量.xlsx' && !nmData.sources.some(old => old.sha256 === source.sha256))
+    nmData.sources.unshift({ path: source.file, sha256: source.sha256, meaning: '本轮最新状态保留参考；原数量及排除证据逐行保留' });
+  nmDetailRecords = function (row, ignoreBucket = false) {
+    const start = nmState.detailWindow === '30' ? sxAdd(cutoff, -29) : nmState.detailWindow === '60' ? sxAdd(cutoff, -59) : row.firstKnownArrival || '';
+    return (bySku.get(row.sku) || []).filter(order => (!start || order.date >= start) && order.date <= cutoff
+      && (ignoreBucket || !nmState.detailBucket || order.date.slice(0, 7) === nmState.detailBucket)).sort((a, b) => b.date.localeCompare(a.date) || Number(b.sourceRow) - Number(a.sourceRow));
+  };
+  nmDetailTrend = function (row) {
+    const records = nmDetailRecords(row, true), start = nmState.detailWindow === '30' ? sxAdd(cutoff, -29) : nmState.detailWindow === '60' ? sxAdd(cutoff, -59)
+      : row.firstKnownArrival || records.map(record => record.date).sort()[0];
+    if (!start) return '<p class="nm-muted">当前没有可核的源内日期起点。</p>';
+    return sxTrendHtml(records, { start, end: cutoff, coverageStart: start, coverageEnd: cutoff, grain: 'month', renderMode: 'bar', groups: sxPlatforms,
+      valueFn: order => order.excluded ? 0 : order.netReferenceLower || 0, pointLabels: false, pulseEnabled: false, width: 850, height: 260,
+      selectedBucket: nmState.detailBucket, title: '三平台 · 状态保留参考（月）', actionAttribute: 'data-nm-detail-bucket' })
+      + '<p class="nm-muted">状态保留参考至' + cxEsc(cutoff) + '，不作为全生命周期净量。</p>';
+  };
+  function short(date) { return date.slice(5).replace('-', '/').replace(/^0/, ''); }
+  function decorateMonitor(host) {
+    if (!host) return;
+    const replace = text => text.replace(/11\/11–11\/13的销量尚未覆盖。/g, '销量参考至' + short(cutoff) + '；测算保留原方案日期。')
+      .replace(/10\/12—11\/10/g, short(sxAdd(cutoff, -29)) + '—' + short(cutoff)).replace(/9\/12—11\/10/g, short(sxAdd(cutoff, -59)) + '—' + short(cutoff))
+      .replace(/截至11\/10/g, '截至' + short(cutoff)).replace(/—11\/10/g, '—' + short(cutoff));
+    if (typeof document.createTreeWalker === 'function') { const walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT); let node; while (node = walker.nextNode()) node.textContent = replace(node.textContent); }
+    if (!host.querySelector('.srf-monitor-source')) host.insertAdjacentHTML('afterbegin', '<p class="cx-caption srf-monitor-source">销量参考至' + cxEsc(cutoff) + '；测算保留原方案日期。</p>');
+  }
+  const beforeMonitor = nmRender; nmRender = function () { const result = beforeMonitor(); decorateMonitor(cxEl('cxNewsBody')); return result; };
+  const beforeMonitorDetail = nmRenderSku; nmRenderSku = function () { const result = beforeMonitorDetail(); decorateMonitor(cxEl('cxDetailBody')); return result; };
+  const beforeMonitorHeader = nmHeader; nmHeader = function () {
+    const result = beforeMonitorHeader(); if (cxState.view === 'newproducts' && nmState.mode === 'monitor') cxEl('subtitle').textContent = '新品状态保留销量参考至' + cutoff + ' · 库存主表'+nmData.meta.stockReadDate+' · 到仓与开发沿原证据'; return result;
+  };
+  function latestHtml(sku) {
+    const thirty = core.skuWindow(sku, 30), sixty = core.skuWindow(sku, 60);
+    return '<div class="srf-latest-sales"><b>最新30／60天参考：' + cxRange(thirty.lower, thirty.upper) + ' / ' + cxRange(sixty.lower, sixty.upper)
+      + '</b><small>至' + cxEsc(core.coverage.annual.end) + ' · 同SKU全部已见订单参考，非净量</small></div>';
+  }
+  const beforeLeaderSales = leaderSalesHtml;
+  leaderSalesHtml = function (row) { return latestHtml(row.sku) + '<details><summary>原方案净量快照</summary>' + beforeLeaderSales(row) + '</details>'; };
+  const beforeSkuOverview = cxSkuOverview;
+  cxSkuOverview = function (sku) { return latestHtml(sku) + beforeSkuOverview(sku); };
+  function parseCsv(value) {
+    const result = [], text = String(value).replace(/^\ufeff/, ''); let row = [], cell = '', quoted = false;
+    for (let index = 0; index < text.length; index++) {
+      const char = text[index];
+      if (char === '"') { if (quoted && text[index + 1] === '"') { cell += '"'; index++; } else quoted = !quoted; }
+      else if (!quoted && char === ',') { row.push(cell); cell = ''; }
+      else if (!quoted && (char === '\n' || char === '\r')) { if (char === '\r' && text[index + 1] === '\n') index++; row.push(cell); result.push(row); row = []; cell = ''; }
+      else cell += char;
+    }
+    if (cell || row.length) { row.push(cell); result.push(row); } return result;
+  }
+  const beforeLeaderCsv = leaderCsv;
+  leaderCsv = function () {
+    const originalDownload = downloadManual;
+    downloadManual = function (value, filename, type) {
+      if (!String(filename).startsWith('降价审批清单_')) return originalDownload(value, filename, type);
+      const rows = parseCsv(value), headers = ['最新参考截止', '最新30天参考下界', '最新30天参考上界', '最新60天参考下界', '最新60天参考上界', '参考口径'];
+      const output = rows.map((row, index) => {
+        if (!index) return [...row, ...headers];
+        const thirty = core.skuWindow(row[0], 30), sixty = core.skuWindow(row[0], 60);
+        return [...row, core.coverage.annual.end, thirty.lower, thirty.upper, sixty.lower, sixty.upper, '同SKU已见历史订单参考；原方案及净量快照不改'];
+      });
+      const quote = entry => '"' + String(entry ?? '').replace(/"/g, '""') + '"';
+      return originalDownload('\ufeff' + output.map(row => row.map(quote).join(',')).join('\r\n'), filename, type);
+    };
+    try { return beforeLeaderCsv(); } finally { downloadManual = originalDownload; }
+  };
+  const priorDownload = cxDownloadCsv;
+  cxDownloadCsv = function (filename, headers, rows) {
+    if (String(filename).startsWith('新品出单监控_')) filename = '新品出单监控_资料至' + cutoff.replace(/-/g, '') + '.csv';
+    return priorDownload(filename, headers, rows);
+  };
+  core.monitor = { ready: true, cutoff, rows: monitorRows, bySku, stats, windowRows, originalMonitor, latestHtml };
+  core.finish();
+})(window);
+
+</script>
+<script>
+(function(){if(!window.salesRefreshModel?.ready)throw new Error("最新销量尚未初始化");var node=document.createElement("span");node.id="salesRefreshReady";node.hidden=true;document.body.appendChild(node);})();
+</script>
+
+<style>
+#sxDateDialog .sx-date-presets .mtt-state-control[aria-pressed="true"] { background:#405b80; border-color:#405b80; color:#fff; box-shadow:0 1px 2px #314b6c24; }
+#sxDateDialog .sx-date-presets .mtt-state-control[aria-pressed="false"] { background:#fff; color:#405b80; border-color:#cbd8e8; box-shadow:none; }
+
+</style>
+<script>
+/* 日期快捷入口按美西业务今天取值，来源覆盖仍由销量模型判断。 */
+(function (root) {
+  'use strict';
+  if (root.monthTodayUiModel?.ready) return;
+  if (!root.salesRefreshModel?.runtimeReady) throw Error('月初至今天快捷入口需要销量模型');
+  const timeZone = 'America/Los_Angeles';
+  const formatter = new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' });
+  let selected = '';
+  function todayRange(instant = new Date()) {
+    const fields = Object.fromEntries(formatter.formatToParts(new Date(instant)).map(part => [part.type, part.value]));
+    const end = fields.year + '-' + fields.month + '-' + fields.day;
+    return { start: end.slice(0, 7) + '-01', end };
+  }
+  function presetRange(key, dataset) {
+    if (key === 'monthToday') return todayRange();
+    const coverage = root.salesRefreshModel.getCoverage(key === 'year' ? 'annual' : dataset);
+    return key === 'year' ? { start: coverage.start.slice(0, 4) + '-01-01', end: coverage.start.slice(0, 4) + '-12-31', dataset: 'annual' }
+      : { start: sxAdd(coverage.end, 1 - Number(key)), end: coverage.end };
+  }
+  function read() {
+    return { start: cxEl('sxDateStart')?.value, end: cxEl('sxDateEnd')?.value, dataset: cxEl('sxDateDataset')?.value };
+  }
+  function matches(key, range) {
+    const expected = presetRange(key, range.dataset);
+    return (!expected.dataset || range.dataset === expected.dataset) && range.start === expected.start && range.end === expected.end;
+  }
+  function sync() {
+    const dialog = cxEl('sxDateDialog'), buttons = [...dialog?.querySelectorAll('[data-mtt-preset]') || []];
+    if (!buttons.length) return;
+    const range = read(), keys = buttons.map(button => button.dataset.mttPreset);
+    if (!keys.includes(selected) || !matches(selected, range)) selected = keys.find(key => matches(key, range)) || '';
+    for (const button of buttons) {
+      const pressed = String(button.dataset.mttPreset === selected);
+      if (button.getAttribute('aria-pressed') !== pressed) button.setAttribute('aria-pressed', pressed);
+      button.classList.add('fa-state-control', 'mtt-state-control');
+      if (button.dataset.mttPreset === 'monthToday') {
+        const today = todayRange();
+        button.title = '美西业务日期（America/Los_Angeles）：' + today.start + '—' + today.end + '；未覆盖日期保留待核';
+      }
+    }
+  }
+  function install() {
+    const dialog = cxEl('sxDateDialog'), host = dialog?.querySelector('.sx-date-presets');
+    if (!host) return;
+    // 旧快捷监听会停止事件传播；只转换弹窗按钮属性，统一管理其互斥选中态。
+    for (const button of host.querySelectorAll('[data-srf-preset],[data-sx-preset]')) {
+      button.dataset.mttPreset = button.dataset.srfPreset || button.dataset.sxPreset;
+      button.removeAttribute('data-srf-preset'); button.removeAttribute('data-sx-preset');
+    }
+    if (!host.querySelector('[data-mtt-preset="monthToday"]')) {
+      const button = document.createElement('button'); button.type = 'button'; button.dataset.mttPreset = 'monthToday';
+      button.textContent = '月初至今天'; host.prepend(button);
+    }
+    sync();
+  }
+  const priorDialog = sxDateDialog;
+  sxDateDialog = function () { const result = priorDialog(); install(); return result; };
+  root.addEventListener('click', event => {
+    const button = event.target.closest('#sxDateDialog [data-mtt-preset]'); if (!button) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    selected = button.dataset.mttPreset;
+    const dataset = cxEl('sxDateDataset'), range = presetRange(selected, dataset.value);
+    if (range.dataset) dataset.value = range.dataset;
+    cxEl('sxDateStart').value = range.start; cxEl('sxDateEnd').value = range.end;
+    cxEl('sxMonth').value = range.end.slice(0, 7);
+    cxEl('sxDateError').textContent = '';
+    sxDateHint(); sync();
+  }, true);
+  function manual(event) {
+    if (!['sxDateStart', 'sxDateEnd', 'sxDateDataset', 'sxMonth'].includes(event.target.id)) return;
+    selected = '';
+    Promise.resolve().then(sync);
+  }
+  document.addEventListener('input', manual, true); document.addEventListener('change', manual, true);
+  root.monthTodayUiModel = { ready: true, timeZone, todayRange, presetRange, matches, install, sync };
+})(window);
+
+</script>
+<script>
+(function(){if(!window.monthTodayUiModel?.ready||!window.monthTodaySourceModel?.ready||!window.freshStatusModel?.ready||!window.netRefreshModel?.ready)throw Error("逐单净销量更新未就绪");var n=document.createElement("span");n.id="monthTodayReady";n.hidden=true;document.body.appendChild(n);})();
+</script>
