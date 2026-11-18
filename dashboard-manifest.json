@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.17-own-profit-d4d019d641bc",
-  "generatedAt": "2026-11-17T07:08:37.721180+00:00",
+  "version": "2026.11.18-markdown-review-b2e452a1f56d",
+  "generatedAt": "2026-11-18T03:04:00.210494+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -221,10 +221,15 @@
         "url": "own-profit-12-db00fde44d431cd5.txt",
         "bytes": 1269404,
         "sha256": "db00fde44d431cd5752dc3603e6c429106572dc2fbdd63cfe1c44f70bf357509"
+      },
+      {
+        "url": "markdown-review-01-9adfd813bf180d2f.txt",
+        "bytes": 635618,
+        "sha256": "9adfd813bf180d2f6bc3e64699d94110f0697d4fd6c61946211d538f35e97431"
       }
     ],
-    "bytes": 73649538,
-    "sha256": "5be25d547dd83e5a57c6c0117098b3e09e7ba3f4cd17b8b67230f5737f9eac9b",
+    "bytes": 74285156,
+    "sha256": "d586ed49cf833b801e6f3d90de15898460720d0e1a4a72bce32c78747d90ddf2",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -238,9 +243,10 @@
       "#netRefreshReady",
       "#profitPriceReady",
       "#btzDateReady",
-      "#allSkuOwnProfitReady"
+      "#allSkuOwnProfitReady",
+      "#markdownReviewReady"
     ]
   },
-  "renderedHtmlBytes": 272332392,
-  "renderedHtmlSha256": "d4d019d641bc57029df522a51fe9d93634ab4ef5cfcab39c74486e8e72c0a9d0"
+  "renderedHtmlBytes": 272968010,
+  "renderedHtmlSha256": "b2e452a1f56ddd17904068f78ab0bbc6698c95744c2a5cee53b14a5c26c9b64d"
 }
