@@ -1,0 +1,256 @@
+
+<style>
+.raf-region-heading{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.raf-region-heading small{font-size:.72rem;color:#516682;font-weight:400}
+.rw-region .raf-region-metrics{grid-template-columns:repeat(2,minmax(0,1fr));margin:1rem 0 .25rem}
+.raf-warehouses .rw-wh-header,.raf-warehouses .rw-warehouse{grid-template-columns:minmax(105px,1fr) minmax(85px,1.35fr) minmax(60px,.42fr)}
+.raf-sku-card{margin-top:14px}
+
+</style>
+
+<script>
+/* 库龄点选按实际分仓龄档计数，所有汇总、明细与导出共用一套结果。 */
+(function () {
+  'use strict';
+  const source = window.freshYqnModel;
+  if (!source?.ready) throw Error('YQN库龄数据尚未接入');
+
+  const meta = source.data.meta;
+  const bands = Object.keys(meta.ageBucketMap);
+  const regions = ['CA', 'GA', 'NJ'];
+  const esc = value => cxEsc(String(value ?? ''));
+  const bandLabel = band => meta.ageUiBandLabels[band] || band;
+  const warehouseKey = code => code.replace(/_US$/, '');
+  const knownGroups = [];
+  for (const record of source.data.rows) {
+    for (const group of record.warehouseGroups || []) {
+      if (group.inventory_type !== 'Sellable' || !group.age_source_rows.length) continue;
+      const code = warehouseKey(group.warehouse_code);
+      const region = code.split('_').at(-1);
+      if (!regions.includes(region)) throw Error('YQN库龄仓区未识别：' + code);
+      const warehouse = {key: code, code, region, type: 'external', label: group.warehouse};
+      const quantities = Object.fromEntries(bands.map(band => [band, group.age_band_complete_sets?.[band] ?? null]));
+      knownGroups.push({sku: record.sku, active: record.active, warehouse, quantities});
+    }
+  }
+  const pageSize = 70;
+  function matchesSearch(group, search) {
+    return !search || [group.sku, group.warehouse.code, wlWarehouseName(group.warehouse), wlWarehousePlace(group.warehouse)]
+      .some(value => String(value || '').toLowerCase().includes(search));
+  }
+  function rollup(groups, band) {
+    const skuSet = new Set();
+    let units = 0, known = false;
+    for (const group of groups) {
+      const value = group.quantities[band];
+      if (value === null) continue;
+      known = true;
+      units += value;
+      if (value > 0) skuSet.add(group.sku);
+    }
+    return {units: known ? units : null, skus: skuSet.size};
+  }
+  function view({band = cxState.stock.age, scope = cxState.stock.scope, search = cxState.stock.search,
+                 region = rwState.region, warehouse = rwState.warehouse} = {}) {
+    const token = search.trim().toLowerCase();
+    const base = knownGroups.filter(g => (scope === 'all' || g.active) && matchesSearch(g, token));
+    const scoped = base.filter(g => (!region || g.warehouse.region === region) && (!warehouse || g.warehouse.key === warehouse));
+    const distribution = bands.map(key => ({key, label: bandLabel(key), value: rollup(scoped, key).units}));
+    const regionCards = regions.map(key => {
+      const groups = scoped.filter(g => g.warehouse.region === key);
+      return {key, ...rollup(groups, band)};
+    });
+    const byWarehouse = new Map(), bySku = new Map();
+    for (const group of scoped) {
+      const quantity = group.quantities[band];
+      if (!(quantity > 0)) continue;
+      const key = group.warehouse.key;
+      if (!byWarehouse.has(key)) byWarehouse.set(key, {warehouse: group.warehouse, units: 0, skus: new Set()});
+      const row = byWarehouse.get(key);
+      row.units += quantity;
+      row.skus.add(group.sku);
+      if (!bySku.has(group.sku)) bySku.set(group.sku, {sku: group.sku, units: 0, warehouses: new Map()});
+      const skuRow = bySku.get(group.sku);
+      skuRow.units += quantity;
+      skuRow.warehouses.set(key, (skuRow.warehouses.get(key) || 0) + quantity);
+    }
+    const skuRows = [...bySku.values()];
+    const direction = rwState.direction || -1;
+    skuRows.sort((a, b) => rwState.sort === 'sku' ? direction * a.sku.localeCompare(b.sku) :
+      direction * (a.units - b.units) || a.sku.localeCompare(b.sku));
+    const warehouseRows = [...byWarehouse.values()].sort((a, b) => regions.indexOf(a.warehouse.region) - regions.indexOf(b.warehouse.region)
+      || b.units - a.units || a.warehouse.key.localeCompare(b.warehouse.key));
+    return {band, scope, search, region, warehouse, distribution, regionCards, warehouseRows, skuRows, total: rollup(scoped, band)};
+  }
+  function scopeLabel(model) {
+    return model.warehouse || rwLabels[model.region] || '全国';
+  }
+  function ageChart(model) {
+    const items = model.distribution;
+    const scoped = scopeLabel(model);
+    return '<section class="cx-chart wl-age-chart"><h3>' + esc(scoped) + ' · YQN库龄</h3>'
+      + cxBarChart(items, 'data-cx-stock-age', model.band)
+      + '<p class="cx-note">点击库龄查看该档的地区、仓库和SKU，再点一次恢复。每档为同仓、同版本齐套的物理套数下界，含预留。</p></section>';
+  }
+  function regionCards(model) {
+    return '<div class="rw-regions">' + model.regionCards.map(card => {
+      const active = model.region === card.key;
+        const outside = model.region && !active;
+      return '<button type="button" class="rw-region' + (active ? ' is-active' : outside ? ' is-muted' : '')
+        + '" data-rw-region="' + card.key + '" aria-pressed="' + Boolean(active) + '">'
+        + '<span class="raf-region-heading"><b>' + esc(rwLabels[card.key]) + '</b><small>' + esc(meta.queryDateShanghai) + ' · YQN</small></span>'
+        + '<span class="rw-region-metrics raf-region-metrics"><span><b>' + (outside ? '—' : cxQty(card.units))
+        + '</b><small>' + (outside ? '点击切换地区' : '该档物理齐套下界') + '</small></span><span><b>' + (outside ? '—' : card.skus)
+        + '</b><small>SKU款数</small></span></span></button>';
+    }).join('') + '</div>';
+  }
+  function warehouseTable(model) {
+    const max = Math.max(1, ...model.warehouseRows.map(row => row.units));
+    return '<section class="cx-chart rw-warehouses raf-warehouses"><div class="rw-section-title"><h3>具体仓库 · ' + esc(bandLabel(model.band))
+      + '</h3><span>点击仓库查看明细</span></div><div class="rw-wh-header"><span>仓库</span><span>该档物理齐套下界</span><span>SKU款数</span></div>'
+      + model.warehouseRows.map(row => {
+        const w = row.warehouse;
+        const active = model.warehouse === w.key;
+        return '<button type="button" class="rw-warehouse' + (active ? ' is-active' : '') + '" data-rw-warehouse="' + esc(w.key)
+          + '" data-rw-parent="' + esc(w.region) + '" aria-pressed="' + active + '" title="' + esc(w.label) + '"><span><b>' + esc(wlWarehouseName(w))
+          + '</b><small>' + esc(wlWarehousePlace(w)) + '</small></span><span class="rw-wh-value"><span class="rw-mini-track"><i style="width:'
+          + 100 * row.units / max + '%"></i></span><b>' + cxQty(row.units) + ' 套</b></span><span>' + row.skus.size + ' 款</span></button>';
+      }).join('') + (model.warehouseRows.length ? '' : '<p class="cx-caption">当前范围没有已证实的正量齐套记录。</p>')
+      + '<p class="cx-note">SKU在各仓分别去重。若同一SKU分布多仓，全国SKU款数只计一次。</p></section>';
+  }
+  function skuTable(model) {
+    const rows = model.skuRows;
+    const pageCount = Math.max(1, Math.ceil(rows.length / pageSize));
+    const page = Math.min(rwState.page || 0, pageCount - 1);
+    rwState.page = page;
+    return '<section class="cx-card raf-sku-card"><div class="rw-section-title"><h3>该档SKU明细 · ' + rows.length + '款</h3></div>'
+      + '<div class="cx-table-wrap"><table class="cx-table"><thead><tr><th>' + rwSortHeader('SKU', 'sku') + '</th><th>' + rwSortHeader('该档物理齐套下界', 'selectedAge')
+      + '</th><th>含该档齐套的仓库</th></tr></thead><tbody>' + rows.slice(page * pageSize, (page + 1) * pageSize).map(row =>
+        '<tr><td>' + cxSkuButton(row.sku) + '</td><td>' + cxQty(row.units) + ' 套</td><td>' + esc([...row.warehouses].map(([warehouse, units]) => warehouse + ' · ' + cxQty(units) + '套').join(' / ')) + '</td></tr>'
+      ).join('') + '</tbody></table></div><div class="cx-page-controls"><span>' + (page + 1) + ' / ' + pageCount
+      + '页</span><button class="btn" data-rw-page="-1" ' + (page ? '' : 'disabled') + '>上一页</button><button class="btn" data-rw-page="1" '
+      + (page + 1 < pageCount ? '' : 'disabled') + '>下一页</button></div></section>';
+  }
+  function renderAge() {
+    const host = cxEl('cxStockBody');
+    if (!host) return;
+    const model = view();
+    host.innerHTML = '<div class="cx-card"><div class="cx-controls"><input id="rwStockSearch" placeholder="搜索SKU、仓库、中文区域" aria-label="库存SKU或仓库搜索" value="'
+      + esc(model.search) + '"><label>范围<select id="rwStockScope"><option value="active">当前关注SKU</option><option value="all">包含历史身份</option></select></label>'
+      + '<button class="btn" data-wl-clear-age>取消库龄点选</button><button class="btn" data-rw-reset>恢复全部</button><button class="btn" data-rw-export>导出当前库龄CSV</button></div>'
+      + '<div class="rw-stats raf-stats">' + rwMetric(scopeLabel(model) + ' · ' + bandLabel(model.band) + ' · 物理齐套下界', model.total.units)
+      + rwMetric('命中SKU款数', model.total.skus) + '</div><p class="cx-caption">YQN库龄查询 ' + esc(meta.queryDateShanghai)
+      + '。该档物理量含预留。可用、预留和在途的分项可在取消库龄点选后查看。</p></div>'
+      + regionCards(model) + '<div class="rw-focus"><span>' + esc(scopeLabel(model) + ' / ' + bandLabel(model.band)) + '</span>'
+      + (model.region || model.warehouse ? '<button class="btn" data-rw-clear>恢复全国</button>' : '') + '</div>'
+      + '<div class="cx-charts two rw-detail-charts wl-detail-charts">' + warehouseTable(model) + ageChart(model) + '</div>' + skuTable(model);
+    cxEl('rwStockScope').value = model.scope;
+    source.mount();
+  }
+  const renderStock = cxRenderStock;
+  wlAgeChart = function () { return ageChart(view()); };
+  cxRenderStock = rwRender = wlRender = function () {
+    return cxState.stock.age ? renderAge() : renderStock.apply(this, arguments);
+  };
+  const exportStock = rwExport;
+  cxExportStock = rwExport = function () {
+    if (!cxState.stock.age) return exportStock.apply(this, arguments);
+    const model = view();
+    cxDownloadCsv('YQN库龄分仓_' + meta.queryDateShanghai.replaceAll('-', '') + '.csv',
+      ['SKU', '范围', '当前区域', '当前仓库', '库龄档', '该档物理齐套下界', '分仓齐套下界', 'YQN库龄查询日期'],
+      model.skuRows.map(row => [row.sku, model.scope === 'all' ? '包含历史身份' : '当前关注SKU', model.region || '全国', model.warehouse || '全部',
+        bandLabel(model.band), row.units, [...row.warehouses].map(([key, units]) => key + ' ' + units + '套').join(' / '), meta.queryDateShanghai]));
+  };
+  window.addEventListener('click', event => {
+    const button = event.target.closest('#cxStockBody [data-cx-stock-age]');
+    if (!button) return;
+    const band = button.dataset.cxStockAge;
+    if (!bands.includes(band)) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const entering = cxState.stock.age !== band;
+    cxState.stock.age = entering ? band : '';
+    rwState.page = 0;
+    if (entering) {
+      wlState.status = '';
+      if (rwState.region === 'unknown') rwState.region = '';
+      if (rwState.warehouse.startsWith('OWN_')) rwState.warehouse = '';
+      if (rwState.sort !== 'sku' && rwState.sort !== 'selectedAge') {
+        rwState.sort = 'selectedAge';
+        rwState.direction = -1;
+      }
+    }
+    cxRenderStock();
+  }, true);
+  window.yqnAgeScopeModel = {view};
+  if (cxState.view === 'warehouses') cxRenderStock();
+  const marker = document.createElement('span');
+  marker.hidden = true;
+  marker.id = 'yqnAgeScopeReady';
+  document.body.appendChild(marker);
+})();
+
+</script>
+
+<style>
+.ra-refresh-sources{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem 1.5rem;color:#435873;font-size:.8rem;line-height:1.65}
+.ra-refresh-sources strong{color:#304963}
+.ra-refresh-sources .ra-btn{margin-top:.35rem}
+
+</style>
+
+<script>
+/* 在退款售后模块标明取数时点、观察边界及Wayfair后台入口。 */
+(function () {
+  'use strict';
+  const pane = document.getElementById('raPane');
+  const intro = pane?.querySelector('.ra-intro');
+  const packet = window.faRefundModel?.data;
+  if (!intro || !packet) throw Error('退款售后来源尚未接入');
+  const {coverage, sourceRefresh: refresh = {}} = packet.meta;
+  const formatSourceTime = value => {
+    const date = new Date(value || '');
+    return Number.isNaN(date.valueOf()) ? '' : new Intl.DateTimeFormat('zh-CN', {
+      timeZone: 'Asia/Shanghai', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+    }).format(date) + '（北京时间）';
+  };
+  const sourceLabel = (key, name, dateType) => {
+    const stamp = formatSourceTime(refresh.sources?.[key]?.downloadedAtUtc);
+    return name + ' · ' + (stamp ? stamp + '重读 · ' : '') + '最新' + dateType + ' ' + (coverage[key]?.end || '待核');
+  };
+  const wayfair = refresh.wayfair;
+  const wayfairText = wayfair?.end
+    ? 'Wayfair 后台凭证 · ' + wayfair.start + ' 至 ' + wayfair.end + ' 的扣款观察记录，完整售后工单待补'
+    : 'Wayfair 后台凭证 · 2026年10月已核';
+  const status = document.createElement('section');
+  status.className = 'ra-card ra-refresh-sources';
+  status.setAttribute('aria-label', '退款售后数据来源与更新时间');
+  const sourceBlock = document.createElement('div');
+  const title = document.createElement('strong');
+  title.textContent = 'Amazon、独立站 · 飞书登记';
+  sourceBlock.append(title);
+  for (const description of [sourceLabel('aftersales', '美国站售后表', '售后日'), sourceLabel('refunds', '美国站订单退款表', '退款完成日')]) {
+    const line = document.createElement('div');
+    line.textContent = description;
+    sourceBlock.append(line);
+  }
+  status.append(sourceBlock);
+  const wayfairBlock = document.createElement('div');
+  const label = document.createElement('div');
+  label.textContent = wayfairText;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'ra-btn';
+  button.dataset.raTab = 'platform';
+  button.dataset.raPlatform = 'Wayfair';
+  button.textContent = '查看Wayfair后台凭证';
+  wayfairBlock.append(label, button);
+  status.append(wayfairBlock);
+  intro.after(status);
+  const marker = document.createElement('span');
+  marker.hidden = true;
+  marker.id = 'aftersalesSourceReady';
+  document.body.appendChild(marker);
+})();
+
+</script>

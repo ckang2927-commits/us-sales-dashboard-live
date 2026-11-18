@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.18-live-refresh-d0eaa1bcd58f",
-  "generatedAt": "2026-11-18T04:38:11.000309+00:00",
+  "version": "2026.11.18-age-refunds-e5f10b9a9345",
+  "generatedAt": "2026-11-18T05:58:09.662480+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -43,84 +43,84 @@
   "extension": {
     "parts": [
       {
-        "url": "live-refresh-refundAftersalesDetailData-01-2f601e8b2305650a.txt",
+        "url": "age-refunds-data-1243a61d9de6f05d472e.txt",
         "bytes": 524288,
-        "sha256": "2f601e8b2305650a9afa351e106728c2e2815631c905d8ff9ace4f9b24b2b9b5"
+        "sha256": "1243a61d9de6f05d472ef23e033823f6352b2893284348fa89ccd8b82cd9d17b"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-02-f176730668d9c25c.txt",
+        "url": "age-refunds-data-7f2f61d4cc254ed7d915.txt",
         "bytes": 524288,
-        "sha256": "f176730668d9c25ce1a5ae2aa36374cb24a6dc3f6b776d62bcdf21a1e95f579a"
+        "sha256": "7f2f61d4cc254ed7d915a6330c9f8e8d6d508d1c675605ff7dbcb5b7d461a977"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-03-fa9df8e524e21faa.txt",
+        "url": "age-refunds-data-163795287aa2d21c23dc.txt",
         "bytes": 524288,
-        "sha256": "fa9df8e524e21faae216d70384bdd19196f0f5668c29eb2e1a2bc56efdfa2ec8"
+        "sha256": "163795287aa2d21c23dcfa3a3fa54584b4bc1a421a5bc849b5d7a0210ca99119"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-04-1059bedecab97314.txt",
+        "url": "age-refunds-data-c08e1e80c36d70cdb65d.txt",
+        "bytes": 524288,
+        "sha256": "c08e1e80c36d70cdb65deb08d547c7151e62e85d0499e1dcfcd8cbb59a23afda"
+      },
+      {
+        "url": "age-refunds-data-2e92f52278d7b23c93f8.txt",
+        "bytes": 524288,
+        "sha256": "2e92f52278d7b23c93f88b73e47da1358c10ce7ad19c953f6cfdbb2f662c5613"
+      },
+      {
+        "url": "age-refunds-data-12c0eb49e2bce06c4271.txt",
+        "bytes": 524288,
+        "sha256": "12c0eb49e2bce06c42718c281d10cdbb7debeaa10511d35e76c5b1bf6964f7c4"
+      },
+      {
+        "url": "age-refunds-data-e6284f87161a7fa865c9.txt",
+        "bytes": 524288,
+        "sha256": "e6284f87161a7fa865c931c462e38da4676e2eb001939b2162965b848f5307d0"
+      },
+      {
+        "url": "age-refunds-data-72632e41f800bd4a6943.txt",
+        "bytes": 524286,
+        "sha256": "72632e41f800bd4a694396415fbd354f4273e34bd2064436c9f5e28cec6af92d"
+      },
+      {
+        "url": "age-refunds-data-33480ca3436280ec9fed.txt",
+        "bytes": 524286,
+        "sha256": "33480ca3436280ec9fed7700cc953aa5d579f2b241d548406738737f45b0915c"
+      },
+      {
+        "url": "age-refunds-data-59dec675854d74c1da6e.txt",
+        "bytes": 524288,
+        "sha256": "59dec675854d74c1da6eee2e691b94382a6b9bb2ca22ca3d9c48debad4d48b07"
+      },
+      {
+        "url": "age-refunds-data-3059151bdc9955f13daf.txt",
         "bytes": 524287,
-        "sha256": "1059bedecab97314e9d607932186020a54b6435a5b68ef10317444be2b39a7fb"
+        "sha256": "3059151bdc9955f13daf36a7e5c09865d61a80e1e175d72988abb29190c80755"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-05-5dc16cb115f94e3b.txt",
+        "url": "age-refunds-data-ef1dba39caaa8ce4d26e.txt",
+        "bytes": 524287,
+        "sha256": "ef1dba39caaa8ce4d26e16d5f2a2309173c66d5bfb96dd19610e14dc6b0e9134"
+      },
+      {
+        "url": "age-refunds-data-fc92caea8d69625a58b9.txt",
         "bytes": 524288,
-        "sha256": "5dc16cb115f94e3b8a7ec4c3d05f0bf5f6bc7bbde21494f68ad480ffc3673a94"
+        "sha256": "fc92caea8d69625a58b9965c28c974c76b93cb6408973c350547996fa8cff2ed"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-06-6c487631e29af05e.txt",
+        "url": "age-refunds-data-188c0a72fcfdd43823f5.txt",
         "bytes": 524288,
-        "sha256": "6c487631e29af05e10a8f56e879cf7dfc32b4c390fa3b6a25ac2f6364a87d130"
+        "sha256": "188c0a72fcfdd43823f5322c09ce86ffd8d5745f5e0e33f1979d1bb7f74cf285"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-07-c4e8d8545d5823ec.txt",
-        "bytes": 524288,
-        "sha256": "c4e8d8545d5823ec75f102133cef8bbf66a8620de21f613aace120a86b538662"
+        "url": "age-refunds-data-7d50a4be16770ef57616.txt",
+        "bytes": 524286,
+        "sha256": "7d50a4be16770ef5761689b23cc6ebe105e47f1535bbd9233cfa242984f2da3f"
       },
       {
-        "url": "live-refresh-refundAftersalesDetailData-08-85cfb1274fc543ec.txt",
-        "bytes": 524288,
-        "sha256": "85cfb1274fc543ec7f52792f9cd8106212eff1667139c1b31ab242a890eabd43"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-09-aef233dfd9af8d34.txt",
-        "bytes": 524288,
-        "sha256": "aef233dfd9af8d3474e6fd180409e71236c804a53b0ecba78277ca51c2775f6d"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-10-397ac86cedd6e74f.txt",
-        "bytes": 524288,
-        "sha256": "397ac86cedd6e74f9d1b3185db206226e0c5d4f5bdb692a6bef6bfe46dfd514d"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-11-6e27783d2ac41850.txt",
-        "bytes": 524288,
-        "sha256": "6e27783d2ac41850907197be9ced8e8772f74bd758b1e219a5d3428446a22c88"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-12-c8e60252ea7e9a29.txt",
-        "bytes": 524288,
-        "sha256": "c8e60252ea7e9a296723d75baba4ce1a479a121ec6fb69db09f31c2fea946c30"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-13-83213005864ac7f8.txt",
-        "bytes": 524288,
-        "sha256": "83213005864ac7f89631904f44fe8097b18c05573be3ab91487e46769960efad"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-14-ec11d33e5450a28b.txt",
-        "bytes": 524288,
-        "sha256": "ec11d33e5450a28baf46a81690213c6336665022e3aaad1359e28c5808e51038"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-15-01c96ec1cac0c26e.txt",
-        "bytes": 524288,
-        "sha256": "01c96ec1cac0c26ecfbd3cb0aa943c9927a4f5914eec63e79bd3b68e3ddf11b5"
-      },
-      {
-        "url": "live-refresh-refundAftersalesDetailData-16-f8b6a218cde144b5.txt",
-        "bytes": 101198,
-        "sha256": "f8b6a218cde144b5503429b051d4873c4c36c52d709989270d85d730dc447263"
+        "url": "age-refunds-data-a3332c0809ec27a06ac2.txt",
+        "bytes": 219797,
+        "sha256": "a3332c0809ec27a06ac2b684111ce97a2dd83e87f66624178875d7289fd8b750"
       },
       {
         "url": "sales-inventory-addon-3b6f6ec7f410efd1.txt",
@@ -481,10 +481,15 @@
         "url": "live-refresh-yqn-19-6d077937b6acdd62.txt",
         "bytes": 19903,
         "sha256": "6d077937b6acdd6272a11fc596f27b681d384dfb16271a759dc78fb4a8f83447"
+      },
+      {
+        "url": "age-refunds-ui-00a53b558837d865435c.txt",
+        "bytes": 14831,
+        "sha256": "00a53b558837d865435c06ba74e94596397f4e293a3d0ae9029f0fcbb07b2118"
       }
     ],
-    "bytes": 88221502,
-    "sha256": "ec6ecc1355bd3e28b81ddc6a5e8cf2864bb849a377f8a216ee3603730d96afbd",
+    "bytes": 88354925,
+    "sha256": "9779cc968f3f6bc469ac72d0d6822dba8b418e9aeaba6d2fdff9ea3e47df4157",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -502,9 +507,11 @@
       "#markdownReviewReady",
       "#dashboardConsistencyReady",
       "#freshYqnReady",
-      "#liveRefreshReady"
+      "#liveRefreshReady",
+      "#yqnAgeScopeReady",
+      "#aftersalesSourceReady"
     ]
   },
-  "renderedHtmlBytes": 286904356,
-  "renderedHtmlSha256": "d0eaa1bcd58f43a926ea80e031e723efe28b687b8676a65ed199dc95e3a07cfb"
+  "renderedHtmlBytes": 287037779,
+  "renderedHtmlSha256": "e5f10b9a934587865e48c702abd34ecf43a8772992dd3cb958e32f66bd4dd316"
 }
