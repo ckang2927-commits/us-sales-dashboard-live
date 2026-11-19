@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.19-regional-margin-1858b2a25401",
-  "generatedAt": "2026-11-19T07:40:27.588038+00:00",
+  "version": "2026.11.19-platform-cost-40835a87fbd2",
+  "generatedAt": "2026-11-19T07:51:13.699309+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -313,44 +313,44 @@
         "sha256": "d6dcd2efd004040094ff38584516b0116466e3212059e6ca5dfb95cbae900748"
       },
       {
-        "url": "boss-extension-1dab94b96582169324e04b7e.txt",
+        "url": "boss-extension-34c000da43b48982acdb15a6.txt",
         "bytes": 524288,
-        "sha256": "1dab94b96582169324e04b7e433bc421233e7715189f837bc8c6db9959175866"
+        "sha256": "34c000da43b48982acdb15a67459ac4f87834a3d823139e13c441bf02891bd61"
       },
       {
-        "url": "boss-extension-f0b0e8cd3845de4f848ff0f7.txt",
+        "url": "boss-extension-f721792621a5c61ae0f281b4.txt",
         "bytes": 524288,
-        "sha256": "f0b0e8cd3845de4f848ff0f77baa26a6fdb545e14e5632f03ae325c7bc4f0f86"
+        "sha256": "f721792621a5c61ae0f281b46bc1c45f582cf9f9f9ea036d70a11b7cb01bbda7"
       },
       {
-        "url": "boss-extension-2d7ed9a72b99be9eb08e89c1.txt",
+        "url": "boss-extension-1bdd6c6fd87a664f02573f48.txt",
         "bytes": 524288,
-        "sha256": "2d7ed9a72b99be9eb08e89c163a60a7caf345a3edf7d0f48dc0d0ab916555c9b"
+        "sha256": "1bdd6c6fd87a664f02573f48d44dd1c7b21646e51e577ff074062ff474e971af"
       },
       {
-        "url": "boss-extension-8ab7aeb3ee7353280b7b9941.txt",
+        "url": "boss-extension-8d75121f9c85c52233ae61e8.txt",
         "bytes": 524288,
-        "sha256": "8ab7aeb3ee7353280b7b9941234895dbd886fb4e2702aee10f9abaf9e8f07e49"
+        "sha256": "8d75121f9c85c52233ae61e8e70627a6dde39f3018e6c119da5977704d281311"
       },
       {
-        "url": "boss-extension-c5fe44ca262c00ddbae78727.txt",
-        "bytes": 524288,
-        "sha256": "c5fe44ca262c00ddbae78727d5b76c8f1571799fc8d9df27bfd5ef911596dd06"
+        "url": "boss-extension-fc6afb6354c0e4b913392b8d.txt",
+        "bytes": 524287,
+        "sha256": "fc6afb6354c0e4b913392b8d4f42de9360745d50778c44bf630d8bea6a15fcee"
       },
       {
-        "url": "boss-extension-ff357d1f45da74182b28f07a.txt",
+        "url": "boss-extension-4b508f2dff30c0bdc6fd8e22.txt",
         "bytes": 524288,
-        "sha256": "ff357d1f45da74182b28f07a5bc7803335c8a30d09706678eec154a014411c53"
+        "sha256": "4b508f2dff30c0bdc6fd8e223da9d099ce3e9d106d543d0aca3a6ef706c6c7d5"
       },
       {
-        "url": "boss-extension-a7f7c742c674bdb93b65c71c.txt",
+        "url": "boss-extension-c06e0a8f353e2a6e28f90238.txt",
         "bytes": 524288,
-        "sha256": "a7f7c742c674bdb93b65c71c85df161db8fa255c89e7dcccfda3bd317604cc9b"
+        "sha256": "c06e0a8f353e2a6e28f902387c4cb91da25616313f675d797170485e94d3a32a"
       },
       {
-        "url": "boss-extension-4877221a0e2b2d2a902e3406.txt",
-        "bytes": 315066,
-        "sha256": "4877221a0e2b2d2a902e34061a2da64b43691845941f068aaa6cddbee50d7340"
+        "url": "boss-extension-dae207f4b208b1975dbbe38f.txt",
+        "bytes": 455100,
+        "sha256": "dae207f4b208b1975dbbe38fd7d639210914dd00863df4716d95a83ffc1df785"
       },
       {
         "url": "boss-extension-91c261f6deb811b08dd12916.txt",
@@ -453,9 +453,9 @@
         "sha256": "f82d01e4a1a85415b71a626e2fe3666f6e4616e2d63e5ce00cac9a052a65b54b"
       },
       {
-        "url": "boss-extension-1cb030cb9f52fa671edbedde.txt",
-        "bytes": 472103,
-        "sha256": "1cb030cb9f52fa671edbedde0e3f3d66c911031504f4fbb3455eb1a427f547d0"
+        "url": "boss-extension-8a3a179c472adc0ae9f1d138.txt",
+        "bytes": 473335,
+        "sha256": "8a3a179c472adc0ae9f1d1389f5d2ea07c5a721c7284a8e2257cf5c785aaca34"
       },
       {
         "url": "live-refresh-yqn-01-31b1d0f085af3494.txt",
@@ -573,8 +573,8 @@
         "sha256": "54e8670d077b5ada8a18b00b39e6a3fb4102ad4bc08c0ec0055fc3fac5062167"
       }
     ],
-    "bytes": 92389836,
-    "sha256": "6e0c7c06ff98b3ef1ebe1145b5f6c905ff7e628c97a9964b3ff033c3b7bd9e7a",
+    "bytes": 92531101,
+    "sha256": "e3e25a4dd453ed9ec687b9079951d72f9cd7461510d8e7bd0098adf66315476c",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -600,11 +600,12 @@
       "#refundBossRepairReady",
       "#bossDetailReady",
       "#orderMarginReady",
-      "#regionalMarginReady"
+      "#regionalMarginReady",
+      "#platformCostBreakdownReady"
     ]
   },
-  "renderedHtmlBytes": 291073647,
-  "renderedHtmlSha256": "1858b2a254011440cce017c2e7c8b21d61ec61b0f469d5da14c769cbd17ca21c",
+  "renderedHtmlBytes": 291214912,
+  "renderedHtmlSha256": "40835a87fbd2fc0f5ab3352a4c0011c8426df0689e431ee9cdbddb522ab5b752",
   "baseEdits": [
     {
       "start": 198354983,
