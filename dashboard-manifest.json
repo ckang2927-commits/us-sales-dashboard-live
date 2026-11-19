@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.19-order-margin-a29cb8f8d296",
-  "generatedAt": "2026-11-19T07:13:29.560805+00:00",
+  "version": "2026.11.19-regional-margin-1858b2a25401",
+  "generatedAt": "2026-11-19T07:40:27.588038+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -308,19 +308,49 @@
         "sha256": "d3f4c690cbff733575eca79070dd7a9b6a4ef72ec96c1c379d69b87e7974e7b8"
       },
       {
-        "url": "boss-extension-50a9eca27541ddf7b04f8b55.txt",
+        "url": "boss-extension-d6dcd2efd004040094ff3858.txt",
         "bytes": 524288,
-        "sha256": "50a9eca27541ddf7b04f8b553ee5bf476db070e577c773792527346b27a02d0e"
+        "sha256": "d6dcd2efd004040094ff38584516b0116466e3212059e6ca5dfb95cbae900748"
       },
       {
-        "url": "boss-extension-503ed9aafcc93a34462ec7d5.txt",
+        "url": "boss-extension-1dab94b96582169324e04b7e.txt",
         "bytes": 524288,
-        "sha256": "503ed9aafcc93a34462ec7d5adb279f154aeb63325b10156ad37a342392b3c5b"
+        "sha256": "1dab94b96582169324e04b7e433bc421233e7715189f837bc8c6db9959175866"
       },
       {
-        "url": "boss-extension-ee87a06a12603079c754540c.txt",
+        "url": "boss-extension-f0b0e8cd3845de4f848ff0f7.txt",
         "bytes": 524288,
-        "sha256": "ee87a06a12603079c754540cce23bbdfaf87015ae6623aa688bbc64e390d724e"
+        "sha256": "f0b0e8cd3845de4f848ff0f77baa26a6fdb545e14e5632f03ae325c7bc4f0f86"
+      },
+      {
+        "url": "boss-extension-2d7ed9a72b99be9eb08e89c1.txt",
+        "bytes": 524288,
+        "sha256": "2d7ed9a72b99be9eb08e89c163a60a7caf345a3edf7d0f48dc0d0ab916555c9b"
+      },
+      {
+        "url": "boss-extension-8ab7aeb3ee7353280b7b9941.txt",
+        "bytes": 524288,
+        "sha256": "8ab7aeb3ee7353280b7b9941234895dbd886fb4e2702aee10f9abaf9e8f07e49"
+      },
+      {
+        "url": "boss-extension-c5fe44ca262c00ddbae78727.txt",
+        "bytes": 524288,
+        "sha256": "c5fe44ca262c00ddbae78727d5b76c8f1571799fc8d9df27bfd5ef911596dd06"
+      },
+      {
+        "url": "boss-extension-ff357d1f45da74182b28f07a.txt",
+        "bytes": 524288,
+        "sha256": "ff357d1f45da74182b28f07a5bc7803335c8a30d09706678eec154a014411c53"
+      },
+      {
+        "url": "boss-extension-a7f7c742c674bdb93b65c71c.txt",
+        "bytes": 524288,
+        "sha256": "a7f7c742c674bdb93b65c71c85df161db8fa255c89e7dcccfda3bd317604cc9b"
+      },
+      {
+        "url": "boss-extension-4877221a0e2b2d2a902e3406.txt",
+        "bytes": 315066,
+        "sha256": "4877221a0e2b2d2a902e34061a2da64b43691845941f068aaa6cddbee50d7340"
       },
       {
         "url": "boss-extension-91c261f6deb811b08dd12916.txt",
@@ -423,9 +453,9 @@
         "sha256": "f82d01e4a1a85415b71a626e2fe3666f6e4616e2d63e5ce00cac9a052a65b54b"
       },
       {
-        "url": "boss-extension-f5b492e05afd77c7a611c9c8.txt",
-        "bytes": 471757,
-        "sha256": "f5b492e05afd77c7a611c9c823bd6224421032679766513a4e0f4d2aeb100290"
+        "url": "boss-extension-1cb030cb9f52fa671edbedde.txt",
+        "bytes": 472103,
+        "sha256": "1cb030cb9f52fa671edbedde0e3f3d66c911031504f4fbb3455eb1a427f547d0"
       },
       {
         "url": "live-refresh-yqn-01-31b1d0f085af3494.txt",
@@ -536,10 +566,15 @@
         "url": "boss-extension-bb7ded2f7c0d3de073143133.txt",
         "bytes": 43,
         "sha256": "bb7ded2f7c0d3de07314313316145661d22ab005a8672d6d9a3a61b68a1d8f85"
+      },
+      {
+        "url": "boss-extension-54e8670d077b5ada8a18b00b.txt",
+        "bytes": 46,
+        "sha256": "54e8670d077b5ada8a18b00b39e6a3fb4102ad4bc08c0ec0055fc3fac5062167"
       }
     ],
-    "bytes": 89452938,
-    "sha256": "6aeb97df3ef6740d24408976cafe8404610f8ce9812ffcf4be29ed0d485dd6c9",
+    "bytes": 92389836,
+    "sha256": "6e0c7c06ff98b3ef1ebe1145b5f6c905ff7e628c97a9964b3ff033c3b7bd9e7a",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -564,11 +599,12 @@
       "#bossSalesRepairReady",
       "#refundBossRepairReady",
       "#bossDetailReady",
-      "#orderMarginReady"
+      "#orderMarginReady",
+      "#regionalMarginReady"
     ]
   },
-  "renderedHtmlBytes": 288136749,
-  "renderedHtmlSha256": "a29cb8f8d296369b988cf7fca62919208b28aee6f3452e0e01c65ca3e86ca32f",
+  "renderedHtmlBytes": 291073647,
+  "renderedHtmlSha256": "1858b2a254011440cce017c2e7c8b21d61ec61b0f469d5da14c769cbd17ca21c",
   "baseEdits": [
     {
       "start": 198354983,
