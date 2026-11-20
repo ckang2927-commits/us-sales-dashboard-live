@@ -1,7 +1,7 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.20-chart-items-3f26aa025b0e",
+  "version": "2026.11.20-markdown-charts-dd38bb0f3c42",
   "generatedAt": "2026-11-20T03:26:00.484979+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
@@ -438,9 +438,9 @@
         "sha256": "e72f2842acfdd5da41edf6cbca5e098416b821f84f40b4c3d02d7184a3552400"
       },
       {
-        "url": "boss-extension-8757902a2915888a6077f25e.txt",
-        "bytes": 114895,
-        "sha256": "8757902a2915888a6077f25e09ee744733d46cb3b0bdd55a40fb87c31a66115b"
+        "url": "boss-extension-0920f31d333a2fc2088e8adb.txt",
+        "bytes": 120673,
+        "sha256": "0920f31d333a2fc2088e8adb8689b06e4f77011fd11cf23d1fd90e8f5d5de91c"
       },
       {
         "url": "live-refresh-inventoryConsistencyData-salesScope-01-ebd93aa341e2cb41.txt",
@@ -603,13 +603,13 @@
         "sha256": "7cc411fa22680c358fd933c0a2ca64823db1c1a56713dd73fb8e747bb5532040"
       },
       {
-        "url": "boss-extension-68fd86f716c75e4ccee2f645.txt",
-        "bytes": 27180,
-        "sha256": "68fd86f716c75e4ccee2f6458243cfb5d8d7d9826e70cf5d1252c6827c54fc98"
+        "url": "boss-extension-caf5094bfff370fb7e4f2f76.txt",
+        "bytes": 33522,
+        "sha256": "caf5094bfff370fb7e4f2f76d2774e4649cea8c1984e038b7c24c7e1540263cf"
       }
     ],
-    "bytes": 95473849,
-    "sha256": "15e55143b0f2ec37d5465a734d3ca5e3d4c23517919d173f02e46e81b6e493c4",
+    "bytes": 95485969,
+    "sha256": "b4b237f972a4e9331db646ece8175fcd0e76a39a105052273d32167aca6358ad",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -643,8 +643,8 @@
     ],
     "transport": {
       "compression": "gzip",
-      "bytes": 5879082,
-      "sha256": "fbcd402e01f4fdd2db0c29a27ee67156090fb19f99d6011dc4b0fc0060c4adab",
+      "bytes": 5882074,
+      "sha256": "636eecd5aa5f92da3378653afdee39fdfb666979c13bc40576ce173291632b4a",
       "parts": [
         {
           "url": "dashboard-fast-extension-eaee79163b11bc2651b59fa7.bin",
@@ -682,20 +682,20 @@
           "sha256": "e652c8d57f38897d63407733ba2143e75b7aae8f1e371df56b91f921fa0737aa"
         },
         {
-          "url": "dashboard-fast-extension-dd86167d731a376cb3cd4f70.bin",
+          "url": "dashboard-fast-extension-58a6442814e3e2f57f6195c9.bin",
           "bytes": 720896,
-          "sha256": "dd86167d731a376cb3cd4f708dfc5d9d078c410bd1c7f219e807281556dd995e"
+          "sha256": "58a6442814e3e2f57f6195c9cfac1aad14fee654e6e2a73aa4e0e781db59278d"
         },
         {
-          "url": "dashboard-fast-extension-3cacd730dfe596669c98fad4.bin",
-          "bytes": 111914,
-          "sha256": "3cacd730dfe596669c98fad40a6ef1aa8987ced4869e2d572035cce47edbdff1"
+          "url": "dashboard-fast-extension-6185f536429ca5b40f3fc68d.bin",
+          "bytes": 114906,
+          "sha256": "6185f536429ca5b40f3fc68df05ff24830e462bbfadc089189b95fd6d697a384"
         }
       ]
     }
   },
-  "renderedHtmlBytes": 294157660,
-  "renderedHtmlSha256": "3f26aa025b0e7bbcd0a6bbb5125d5d9a6bfe869b6b6207c84de33d846ec82a00",
+  "renderedHtmlBytes": 294169780,
+  "renderedHtmlSha256": "dd38bb0f3c42645f568da52eda7754deb0460123289062181b9d73fcf6443926",
   "baseEdits": [
     {
       "start": 198354983,
