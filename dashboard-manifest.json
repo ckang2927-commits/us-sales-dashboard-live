@@ -1,8 +1,8 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.19-own-warehouse-cost-2d3fff4237c8",
-  "generatedAt": "2026-11-19T09:28:42.726884+00:00",
+  "version": "2026.11.20-inventory-service-5ae0d5b01859",
+  "generatedAt": "2026-11-20T03:26:00.484979+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
   "htmlSha256": "514aead62cd5b380543bc371c540ff92191b0e5079ad86be6835d9ea3aed3832",
@@ -43,84 +43,84 @@
   "extension": {
     "parts": [
       {
-        "url": "age-refunds-data-1243a61d9de6f05d472e.txt",
+        "url": "boss-extension-71d64ab2b05330e1a8261a1e.txt",
         "bytes": 524288,
-        "sha256": "1243a61d9de6f05d472ef23e033823f6352b2893284348fa89ccd8b82cd9d17b"
+        "sha256": "71d64ab2b05330e1a8261a1e75cf31f9073370dec315e833c0e5ceec71f751d3"
       },
       {
-        "url": "age-refunds-data-7f2f61d4cc254ed7d915.txt",
-        "bytes": 524288,
-        "sha256": "7f2f61d4cc254ed7d915a6330c9f8e8d6d508d1c675605ff7dbcb5b7d461a977"
-      },
-      {
-        "url": "age-refunds-data-163795287aa2d21c23dc.txt",
-        "bytes": 524288,
-        "sha256": "163795287aa2d21c23dcfa3a3fa54584b4bc1a421a5bc849b5d7a0210ca99119"
-      },
-      {
-        "url": "age-refunds-data-c08e1e80c36d70cdb65d.txt",
-        "bytes": 524288,
-        "sha256": "c08e1e80c36d70cdb65deb08d547c7151e62e85d0499e1dcfcd8cbb59a23afda"
-      },
-      {
-        "url": "age-refunds-data-2e92f52278d7b23c93f8.txt",
-        "bytes": 524288,
-        "sha256": "2e92f52278d7b23c93f88b73e47da1358c10ce7ad19c953f6cfdbb2f662c5613"
-      },
-      {
-        "url": "age-refunds-data-12c0eb49e2bce06c4271.txt",
-        "bytes": 524288,
-        "sha256": "12c0eb49e2bce06c42718c281d10cdbb7debeaa10511d35e76c5b1bf6964f7c4"
-      },
-      {
-        "url": "age-refunds-data-e6284f87161a7fa865c9.txt",
-        "bytes": 524288,
-        "sha256": "e6284f87161a7fa865c931c462e38da4676e2eb001939b2162965b848f5307d0"
-      },
-      {
-        "url": "age-refunds-data-72632e41f800bd4a6943.txt",
-        "bytes": 524286,
-        "sha256": "72632e41f800bd4a694396415fbd354f4273e34bd2064436c9f5e28cec6af92d"
-      },
-      {
-        "url": "age-refunds-data-33480ca3436280ec9fed.txt",
-        "bytes": 524286,
-        "sha256": "33480ca3436280ec9fed7700cc953aa5d579f2b241d548406738737f45b0915c"
-      },
-      {
-        "url": "age-refunds-data-59dec675854d74c1da6e.txt",
-        "bytes": 524288,
-        "sha256": "59dec675854d74c1da6eee2e691b94382a6b9bb2ca22ca3d9c48debad4d48b07"
-      },
-      {
-        "url": "age-refunds-data-3059151bdc9955f13daf.txt",
+        "url": "boss-extension-5423a04c2fb87f82660fc66b.txt",
         "bytes": 524287,
-        "sha256": "3059151bdc9955f13daf36a7e5c09865d61a80e1e175d72988abb29190c80755"
+        "sha256": "5423a04c2fb87f82660fc66b0a27d5b67d46a6f7cc6f93893e8b0908c38b6a5b"
       },
       {
-        "url": "age-refunds-data-ef1dba39caaa8ce4d26e.txt",
-        "bytes": 524287,
-        "sha256": "ef1dba39caaa8ce4d26e16d5f2a2309173c66d5bfb96dd19610e14dc6b0e9134"
-      },
-      {
-        "url": "age-refunds-data-fc92caea8d69625a58b9.txt",
+        "url": "boss-extension-9253862210aac79401ac5045.txt",
         "bytes": 524288,
-        "sha256": "fc92caea8d69625a58b9965c28c974c76b93cb6408973c350547996fa8cff2ed"
+        "sha256": "9253862210aac79401ac5045227811900036121e21a4f4b9f8f5bed6beedaaf7"
       },
       {
-        "url": "age-refunds-data-188c0a72fcfdd43823f5.txt",
+        "url": "boss-extension-cc5ab54c3591c0b2146b0988.txt",
         "bytes": 524288,
-        "sha256": "188c0a72fcfdd43823f5322c09ce86ffd8d5745f5e0e33f1979d1bb7f74cf285"
+        "sha256": "cc5ab54c3591c0b2146b0988d6f576db10a698556edde664f897c9d7dbd2fbfd"
       },
       {
-        "url": "age-refunds-data-7d50a4be16770ef57616.txt",
+        "url": "boss-extension-36151a28449f43792db62062.txt",
+        "bytes": 524288,
+        "sha256": "36151a28449f43792db62062161759eae5a2764fbd7e5768dc435fd7de429074"
+      },
+      {
+        "url": "boss-extension-5cb259a330b1c61d41c93e62.txt",
+        "bytes": 524288,
+        "sha256": "5cb259a330b1c61d41c93e6214bc5166756dfdc2d2f25b3d8822f3713880e79f"
+      },
+      {
+        "url": "boss-extension-d3bed3226a6e4b63d5d60fae.txt",
         "bytes": 524286,
-        "sha256": "7d50a4be16770ef5761689b23cc6ebe105e47f1535bbd9233cfa242984f2da3f"
+        "sha256": "d3bed3226a6e4b63d5d60faef36de0c528a6ad8c1f634f8666d6f2731033b0f3"
       },
       {
-        "url": "boss-extension-fbaca274ce1e86576222625f.txt",
-        "bytes": 228259,
-        "sha256": "fbaca274ce1e86576222625f04d4af2399dfefe12f9705bdbde44396174c9b75"
+        "url": "boss-extension-df050b16af182660ce7fe4ac.txt",
+        "bytes": 524288,
+        "sha256": "df050b16af182660ce7fe4acba02d474a88deb3492a961b5d5a717c8854a97ce"
+      },
+      {
+        "url": "boss-extension-037cb6844dbda4597bf241f1.txt",
+        "bytes": 524286,
+        "sha256": "037cb6844dbda4597bf241f103f349e48d1abbbf60d1f3e93a96fb55d862f7c5"
+      },
+      {
+        "url": "boss-extension-213e93e2252048894e658c7c.txt",
+        "bytes": 524288,
+        "sha256": "213e93e2252048894e658c7c41cb8b712a9d1f16297ff024042f267302c9a8a4"
+      },
+      {
+        "url": "boss-extension-6c47b49ba8dc63baaa44cdb6.txt",
+        "bytes": 524288,
+        "sha256": "6c47b49ba8dc63baaa44cdb6b38b00a5121c20d57f2ae06ac3d38d981d208b85"
+      },
+      {
+        "url": "boss-extension-9661296c040bd355af525a56.txt",
+        "bytes": 524288,
+        "sha256": "9661296c040bd355af525a5676946b7ee891f4eb0f97776550f9ec64c2818cac"
+      },
+      {
+        "url": "boss-extension-3e44312e88b5001aa769e96e.txt",
+        "bytes": 524288,
+        "sha256": "3e44312e88b5001aa769e96e261da2d29e022c8644742148915b1659d06af180"
+      },
+      {
+        "url": "boss-extension-914dd5b5da173b8e087d4b73.txt",
+        "bytes": 524288,
+        "sha256": "914dd5b5da173b8e087d4b73acc3bafa44275429f562cf5dcd52e96cfa5d578b"
+      },
+      {
+        "url": "boss-extension-9dd429a1875e2ed9b6a6d0ea.txt",
+        "bytes": 524286,
+        "sha256": "9dd429a1875e2ed9b6a6d0ea4256a89451908ec93dbc17fe4320ff9c4a10f1fc"
+      },
+      {
+        "url": "boss-extension-36952ac4d0fa44bdaee0b28a.txt",
+        "bytes": 447904,
+        "sha256": "36952ac4d0fa44bdaee0b28a6383dfcb26257502350424a33c71a91817708abe"
       },
       {
         "url": "sales-inventory-addon-3b6f6ec7f410efd1.txt",
@@ -563,9 +563,9 @@
         "sha256": "00a53b558837d865435c06ba74e94596397f4e293a3d0ae9029f0fcbb07b2118"
       },
       {
-        "url": "boss-extension-7d0620ad0f68a37485485b24.txt",
-        "bytes": 19983,
-        "sha256": "7d0620ad0f68a37485485b24a7d643bdb8a92ee4eb84add9753c860c2bde0eb4"
+        "url": "boss-extension-26a1962af8d32f712326f707.txt",
+        "bytes": 20067,
+        "sha256": "26a1962af8d32f712326f70762cf95abf40b45c3faf0167554a57e5c083f0fd5"
       },
       {
         "url": "boss-extension-bb7ded2f7c0d3de073143133.txt",
@@ -576,10 +576,35 @@
         "url": "boss-extension-54e8670d077b5ada8a18b00b.txt",
         "bytes": 46,
         "sha256": "54e8670d077b5ada8a18b00b39e6a3fb4102ad4bc08c0ec0055fc3fac5062167"
+      },
+      {
+        "url": "boss-extension-0e641e909cf29346e162ce30.txt",
+        "bytes": 524288,
+        "sha256": "0e641e909cf29346e162ce30e66533d99f1934dd56314156990d751a1e379974"
+      },
+      {
+        "url": "boss-extension-d8d9a69eee05c19867e6f5fd.txt",
+        "bytes": 524288,
+        "sha256": "d8d9a69eee05c19867e6f5fde5b27ef0fc0fe112071a0a788033d2b3b6d360d3"
+      },
+      {
+        "url": "boss-extension-34435e7f0d3b6c92a51abbfd.txt",
+        "bytes": 524288,
+        "sha256": "34435e7f0d3b6c92a51abbfd7e950b9e04de2fe1bff7e6bec3372e192512699a"
+      },
+      {
+        "url": "boss-extension-3949c7559b3e353585969790.txt",
+        "bytes": 524288,
+        "sha256": "3949c7559b3e35358596979040b588b3eff9da966db7f14de1df948df929521f"
+      },
+      {
+        "url": "boss-extension-7cc411fa22680c358fd933c0.txt",
+        "bytes": 381639,
+        "sha256": "7cc411fa22680c358fd933c0a2ca64823db1c1a56713dd73fb8e747bb5532040"
       }
     ],
-    "bytes": 92748148,
-    "sha256": "6888d52813d76690232a6367fb8fba14d4f0aaed41eab0f9545a53155d0f638e",
+    "bytes": 95446669,
+    "sha256": "209bea875e6f38df64a426e86c69ef02c2244e37647d5d27bdeb351ef33b1199",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -606,11 +631,14 @@
       "#bossDetailReady",
       "#orderMarginReady",
       "#regionalMarginReady",
-      "#platformCostBreakdownReady"
+      "#platformCostBreakdownReady",
+      "#inventoryServiceProfitReady",
+      "#residualInventoryReady",
+      "#aftersalesReasonChartReady"
     ]
   },
-  "renderedHtmlBytes": 291431959,
-  "renderedHtmlSha256": "2d3fff4237c8507d8761fe7fd002f75df67bf245e3469d13b3ea7b8ff4a21865",
+  "renderedHtmlBytes": 294130480,
+  "renderedHtmlSha256": "5ae0d5b01859b4b632b9b331afb85d2bedf15346e744802a8ad20864d9be0dfc",
   "baseEdits": [
     {
       "start": 198354983,
