@@ -1,7 +1,7 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.20-inventory-service-5ae0d5b01859",
+  "version": "2026.11.20-inventory-service-5ae0d5b01859-fast-4a6b6e602269",
   "generatedAt": "2026-11-20T03:26:00.484979+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
@@ -635,7 +635,59 @@
       "#inventoryServiceProfitReady",
       "#residualInventoryReady",
       "#aftersalesReasonChartReady"
-    ]
+    ],
+    "transport": {
+      "compression": "gzip",
+      "bytes": 5871954,
+      "sha256": "4a6b6e602269e1c1aad66128fc29a60aac0ac7e49519c1913569dcc92a283e21",
+      "parts": [
+        {
+          "url": "dashboard-fast-extension-eaee79163b11bc2651b59fa7.bin",
+          "bytes": 720896,
+          "sha256": "eaee79163b11bc2651b59fa729c8e5030dea9e76de0527db0ba6c387724b9e3d"
+        },
+        {
+          "url": "dashboard-fast-extension-16200a185ded71d32cb2afe9.bin",
+          "bytes": 720896,
+          "sha256": "16200a185ded71d32cb2afe9bc2ab4cf62c9a0310c3a9254f0aa1a01054cc768"
+        },
+        {
+          "url": "dashboard-fast-extension-62521b01abccfda063868e4f.bin",
+          "bytes": 720896,
+          "sha256": "62521b01abccfda063868e4fc865d7bb59fa13f2d5787b5dfbfe59190895bbd6"
+        },
+        {
+          "url": "dashboard-fast-extension-aff56c192877bdf42dad4950.bin",
+          "bytes": 720896,
+          "sha256": "aff56c192877bdf42dad495011b014ac952da608039f7f47443eb2f20cc9ec29"
+        },
+        {
+          "url": "dashboard-fast-extension-cc6932d8dd3c096c94b35840.bin",
+          "bytes": 720896,
+          "sha256": "cc6932d8dd3c096c94b35840de3c11fdee7f1c81e6f374c9aefe31d9236c6fdc"
+        },
+        {
+          "url": "dashboard-fast-extension-57bfa72542ef2238bc472244.bin",
+          "bytes": 720896,
+          "sha256": "57bfa72542ef2238bc47224452860e3ad744c74c963d0c4c0594c7f001d86dc9"
+        },
+        {
+          "url": "dashboard-fast-extension-e652c8d57f38897d63407733.bin",
+          "bytes": 720896,
+          "sha256": "e652c8d57f38897d63407733ba2143e75b7aae8f1e371df56b91f921fa0737aa"
+        },
+        {
+          "url": "dashboard-fast-extension-dd86167d731a376cb3cd4f70.bin",
+          "bytes": 720896,
+          "sha256": "dd86167d731a376cb3cd4f708dfc5d9d078c410bd1c7f219e807281556dd995e"
+        },
+        {
+          "url": "dashboard-fast-extension-bc0cc8cc06b57775364eba47.bin",
+          "bytes": 104786,
+          "sha256": "bc0cc8cc06b57775364eba47cc5cc327544b18da14c3f539c7a70e612acfb055"
+        }
+      ]
+    }
   },
   "renderedHtmlBytes": 294130480,
   "renderedHtmlSha256": "5ae0d5b01859b4b632b9b331afb85d2bedf15346e744802a8ad20864d9be0dfc",
