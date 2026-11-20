@@ -1,0 +1,436 @@
+
+<style data-chart-upgrade="hover.css">
+#dashboard-chart-tooltip {
+  position: fixed;
+  z-index: 2147483646;
+  inset: 0 auto auto 0;
+  max-width: min(320px, calc(100vw - 16px));
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: #233952;
+  color: #fff;
+  box-shadow: 0 2px 8px #23395238;
+  font: 500 12px/1.5 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+#dashboard-chart-tooltip[hidden] { display: none; }
+
+:is(.sx-pie-ring, .ra-donut) :is(path,circle)[role="button"] {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: scale 120ms ease-out, filter 120ms ease-out;
+}
+:is(.sx-pie-ring, .ra-donut) :is(path,circle)[data-chart-hover] {
+  scale: 1.05;
+  filter: brightness(1.08);
+  opacity: 1;
+}
+
+:is(.sx-trend-point, .ra-point, .ld-scatter-point, .nm-scatter circle[data-nm-sku]) {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: scale 120ms ease-out;
+}
+:is(.sx-trend-point, .ra-point, .ld-scatter-point, .nm-scatter circle[data-nm-sku])[data-chart-hover] {
+  scale: 1.2;
+  opacity: 1;
+}
+
+:is(.sx-trend-bar, .ld-contribution-column > rect) {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: scale 120ms ease-out, filter 120ms ease-out;
+}
+.sx-trend-bar[data-chart-hover],
+.sx-trend-bucket[data-chart-hover] > .sx-trend-bar,
+.ld-contribution-column[data-chart-hover] > rect {
+  scale: 1.045 1;
+  filter: brightness(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.sx-pie-ring, .ra-donut) :is(path,circle)[role="button"],
+  :is(.sx-trend-point, .ra-point, .ld-scatter-point, .nm-scatter circle[data-nm-sku]),
+  :is(.sx-trend-bar, .ld-contribution-column > rect) { transition: none; }
+}
+
+</style>
+
+<style data-chart-upgrade="chart_rows.css">
+/* A chart row moves as one item, with its place in the grid fixed. */
+:is(.bi-rank .bi-rank-row, .bi-bar-row, .cx-bar, .ra-bar, .ra-reason-row, .ri-bar,
+    [data-ov-store].ov-store-row, .rf-store-bars > button, .sx-pie-legend > button) {
+  position: relative;
+  border-radius: 5px;
+  transform-origin: center;
+  transition: transform 130ms ease-out, background-color 130ms ease-out, opacity 130ms ease-out;
+}
+
+.bi-rank .bi-rank-row.is-selected {
+  border-color: transparent;
+  background: #eaf1fb;
+  box-shadow: inset 0 0 0 1px #a4b8d3;
+}
+
+.bi-rank .bi-rank-row > :is(.bi-rank-sku, .bi-rank-mark) {
+  outline: 0;
+}
+
+.bi-rank .bi-rank-row > .bi-rank-mark[aria-pressed="true"] {
+  border-color: transparent !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.bi-rank .bi-rank-row:has(> :focus-visible) {
+  box-shadow: inset 0 0 0 2px #5079a7;
+}
+
+.bi-rank .bi-rank-row > .bi-rank-sku:focus-visible {text-decoration: underline;}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(.bi-rank .bi-rank-row, .bi-bar-row, .cx-bar, .ra-bar, .ra-reason-row, .ri-bar,
+      [data-ov-store].ov-store-row, .rf-store-bars > button, .sx-pie-legend > button):hover {
+    z-index: 1;
+    transform: scale(1.018);
+    background-color: #f0f5fc;
+  }
+
+  .bi-rank .bi-rank-row.is-selected:hover {
+    background-color: #eaf1fb;
+  }
+}
+
+#cxSalesBody .cx-chart,
+#raPane .ra-charts,
+#riResidualPane :is(.ri-charts, .ri-age-chart),
+:is(#biWarehouse, #biAudit, #biPieces) {
+  overflow-anchor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.bi-rank .bi-rank-row, .bi-bar-row, .cx-bar, .ra-bar, .ra-reason-row, .ri-bar,
+      [data-ov-store].ov-store-row, .rf-store-bars > button, .sx-pie-legend > button) {
+    transition: none;
+  }
+}
+
+</style>
+
+<script data-chart-upgrade="hover.js">
+/* Delegated hover for chart marks and chart rows, including marks rebuilt by filters. */
+(() => {
+  'use strict';
+  if (document.getElementById('dashboard-chart-tooltip')) return;
+
+  const chartTargets = [
+    '.bi-rank-row', '.cx-bar', '.bi-bar-row', '.ra-bar', '.ra-reason-row', '.ri-bar',
+    '.wl-status-bar', '.rw-warehouse', '.rf-store-bars > button[data-rf-store]',
+    '.sx-pie-legend > button[data-sx-pick]', '.ra-pie-key', '.lb-donut-layout button[data-bi-key]',
+    '.ra-trend-hit', '.sx-trend-bar', '.sx-trend-segment-label', '.sx-trend-point-label',
+    '.sx-trend-bucket', '.sx-trend-uncovered',
+    'svg :is(g,rect,path,circle,line,polyline)[role="button"]',
+  ].join(',');
+  const tooltip = document.createElement('div');
+  tooltip.id = 'dashboard-chart-tooltip';
+  tooltip.setAttribute('role', 'tooltip');
+  tooltip.hidden = true;
+  const tooltipText = document.createTextNode('');
+  tooltip.append(tooltipText);
+  document.body.append(tooltip);
+
+  let active = null, frame = 0, position = null;
+  const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+  const textOf = node => clean(node?.textContent);
+  const attrOf = (node, name) => clean(node?.getAttribute(name));
+  const directTitle = node => node?.querySelector(':scope > title');
+  const keySelector = (name, value) => '[' + name + '=' + CSS.escape(value) + ']';
+  const chartTarget = element => element?.closest?.(chartTargets) || null;
+
+  function visualTarget(target) {
+    const svg = target.ownerSVGElement;
+    if (target.matches('.ra-trend-hit')) {
+      return svg.querySelector('.ra-point' + keySelector('data-ra-value', target.dataset.raValue)) || target;
+    }
+    if (target.matches('.sx-trend-segment-label,.sx-trend-point-label')) {
+      const key = target.hasAttribute('data-sx-detail-bucket') ? 'data-sx-detail-bucket' : 'data-sx-bucket';
+      const slot = target.getAttribute(key), series = target.dataset.sxSeries;
+      if (slot && series) {
+        const shape = target.matches('.sx-trend-segment-label') ? '.sx-trend-bar' : '.sx-trend-point';
+        return svg.querySelector(shape + keySelector(key, slot) + keySelector('data-sx-series', series)) || target;
+      }
+    }
+    return target;
+  }
+
+  function labelOf(target, visual) {
+    if (visual.matches('.ra-donut circle[data-ra-value]')) {
+      const key = keySelector('data-ra-value', visual.dataset.raValue);
+      const legend = visual.closest('.ra-donut-layout')?.querySelector('.ra-pie-key' + key);
+      if (legend) return splitLegend(legend, 'b');
+    }
+    if (target.matches('.sx-pie-legend > button')) return splitLegend(target, '.sx-pie-number');
+    if (target.matches('.ra-pie-key')) return splitLegend(target, 'b');
+    if (target.matches('.bi-rank-row')) {
+      const sku = textOf(target.querySelector('.bi-rank-sku'));
+      const value = textOf(target.querySelector('.bi-rank-value'));
+      return sku && value ? sku + ' · 销量 ' + value : attrOf(target.querySelector('.bi-rank-mark'), 'title');
+    }
+    if (target.matches('.rw-warehouse,.rf-store-bars > button')) {
+      return [...target.children].map(textOf).filter(Boolean).join(' · ');
+    }
+    const explicit = attrOf(visual, 'data-chart-tooltip') || attrOf(visual, 'aria-label')
+      || attrOf(visual, 'title') || textOf(directTitle(visual));
+    if (explicit) return explicit;
+    if (visual !== target) return attrOf(target, 'aria-label') || attrOf(target, 'title') || textOf(directTitle(target));
+    if (target.ownerSVGElement) return textOf(directTitle(target.closest('.sx-trend-bucket')));
+    return [...target.children].map(textOf).filter(Boolean).join(' · ');
+  }
+
+  function splitLegend(legend, selector) {
+    const amount = legend.querySelector(selector);
+    const percent = [...(amount?.childNodes || [])].filter(node => node.nodeType === 3).map(node => clean(node.textContent)).join(' ');
+    return [textOf(legend.querySelector('span')), textOf(amount?.querySelector('small')), percent].filter(Boolean).join(' · ');
+  }
+
+  function hide() {
+    if (!active) return;
+    cancelAnimationFrame(frame);
+    frame = 0;
+    for (const mark of active.marks) mark.removeAttribute('data-chart-hover');
+    for (const restore of active.restore) restore();
+    tooltip.hidden = true;
+    active = null;
+    position = null;
+  }
+
+  // Disable native title popups while the single dashboard tooltip is visible.
+  function quietNative(node, restore) {
+    if (!node) return;
+    if (node.hasAttribute('title')) {
+      const value = node.getAttribute('title');
+      node.removeAttribute('title');
+      restore.push(() => node.setAttribute('title', value));
+    }
+    const titleText = directTitle(node)?.firstChild;
+    if (titleText?.nodeType === 3) {
+      const value = titleText.nodeValue;
+      titleText.nodeValue = '';
+      restore.push(() => { titleText.nodeValue = value; });
+    }
+  }
+
+  function place() {
+    frame = 0;
+    if (!active?.target.isConnected) return hide();
+    const anchor = position || active.target.getBoundingClientRect();
+    active.tooltipBox ||= tooltip.getBoundingClientRect();
+    const {width, height} = active.tooltipBox;
+    const x = position ? anchor.x + 14 : anchor.left;
+    const y = position ? anchor.y + 16 : anchor.bottom + 8;
+    const left = Math.max(8, Math.min(x, active.viewportWidth - width - 8));
+    const alternative = position ? anchor.y - height - 12 : anchor.top - height - 8;
+    const top = Math.max(8, y + height + 8 <= active.viewportHeight ? y : alternative);
+    tooltip.style.transform = `translate3d(${Math.round(left)}px,${Math.round(top)}px,0)`;
+  }
+
+  function move(point) {
+    position = point;
+    if (!frame) frame = requestAnimationFrame(place);
+  }
+
+  function show(target, origin, point, leaf) {
+    if (active?.target === target && active.origin === origin) return move(point);
+    hide();
+    const visual = visualTarget(target);
+    const label = labelOf(target, visual);
+    if (!label) return;
+    const marks = new Set([target, visual]);
+    const restore = [];
+    const rowTitles = target.matches('.bi-rank-row') ? [...target.querySelectorAll('[title]')] : [];
+    const native = new Set([...marks, ...rowTitles, leaf?.closest?.('[title]'), target.closest('.sx-trend-bucket')]);
+    for (const node of native) quietNative(node, restore);
+    const description = origin === 'focus' ? leaf : null;
+    if (description && !description.hasAttribute('aria-describedby')) {
+      description.setAttribute('aria-describedby', tooltip.id);
+      restore.push(() => description.removeAttribute('aria-describedby'));
+    }
+    const viewport = document.documentElement;
+    active = {target, origin, marks, restore, viewportWidth:viewport.clientWidth, viewportHeight:viewport.clientHeight};
+    for (const mark of marks) mark.setAttribute('data-chart-hover', '');
+    tooltipText.nodeValue = label;
+    tooltip.hidden = false;
+    move(point);
+  }
+
+  const isMouse = event => event.pointerType === 'mouse' || event.pointerType === 'pen';
+  document.addEventListener('pointerover', event => {
+    if (!isMouse(event)) return;
+    const target = chartTarget(event.target);
+    if (target) show(target, 'pointer', {x:event.clientX, y:event.clientY}, event.target);
+  }, {passive:true});
+  document.addEventListener('pointermove', event => {
+    if (active?.origin === 'pointer' && isMouse(event)) move({x:event.clientX, y:event.clientY});
+  }, {passive:true});
+  document.addEventListener('pointerout', event => {
+    if (active?.origin === 'pointer' && isMouse(event) && chartTarget(event.relatedTarget) !== active.target) hide();
+  }, {passive:true});
+  document.addEventListener('focusin', event => {
+    const target = chartTarget(event.target);
+    if (target && event.target.matches(':focus-visible')) show(target, 'focus', null, event.target);
+  });
+  document.addEventListener('focusout', () => { if (active?.origin === 'focus') hide(); });
+  document.addEventListener('pointerdown', hide, {capture:true, passive:true});
+  document.addEventListener('click', hide, {capture:true, passive:true});
+  document.addEventListener('scroll', hide, {capture:true, passive:true});
+  document.addEventListener('keydown', event => { if (['Escape','Enter',' '].includes(event.key)) hide(); });
+  window.addEventListener('blur', hide);
+  window.addEventListener('resize', hide);
+})();
+
+</script>
+
+<script data-chart-upgrade="sales_click.js">
+/* Preserve the original sales filters and avoid replaying chart entrances on selection. */
+(() => {
+  'use strict';
+
+  cancelAnimationFrame(biMotionFrame);
+  for (const animation of document.getAnimations?.() || []) {
+    if (animation.id === 'bi-chart-motion') animation.cancel();
+  }
+  biCaptureMotion = () => new Map();
+  biScheduleMotion = () => {};
+
+  let renderCache = null;
+  let pendingRank = null;
+  let rankFrame = null;
+  let renderFrame = null;
+
+  function once(cache, key, read) {
+    if (!cache.has(key)) cache.set(key, read());
+    return cache.get(key);
+  }
+
+  function periodKey() {
+    return [sxState.dataset, sxState.start, sxState.end, cxState.sales.stockScope];
+  }
+
+  const readPeriodOrders = cxPeriodOrders;
+  cxPeriodOrders = function () {
+    if (!renderCache) return readPeriodOrders.apply(this, arguments);
+    return once(renderCache.periods, JSON.stringify(periodKey()), () => readPeriodOrders.apply(this, arguments));
+  };
+
+  const readSalesOrders = sxOrders;
+  sxOrders = function (options = {}) {
+    if (!renderCache) return readSalesOrders.apply(this, arguments);
+    const {platform, sku, search} = cxState.sales;
+    const {chartPlatform, store, stockClass, bucket, grain} = sxState;
+    const key = JSON.stringify([periodKey(), platform, sku, search, chartPlatform, store,
+      stockClass, bucket, grain, bxState.history, ldState.filters,
+      Object.keys(options).sort().map(name => [name, options[name]])]);
+    return once(renderCache.orders, key, () => readSalesOrders.apply(this, arguments));
+  };
+
+  const readNativeWindow = srNativeWindow;
+  srNativeWindow = function (sku, days, scope = cxState.sales.stockScope, classification = '') {
+    if (!renderCache) return readNativeWindow.apply(this, arguments);
+    if (!renderCache.nativeBySku) {
+      renderCache.nativeBySku = new Map();
+      for (const order of pcRuntime.orders) {
+        if (!renderCache.nativeBySku.has(order.sku)) renderCache.nativeBySku.set(order.sku, []);
+        renderCache.nativeBySku.get(order.sku).push(order);
+      }
+    }
+    const end = srData.meta.commonNativeEnd;
+    const start = sxAdd(end, 1 - days);
+    const rows = (renderCache.nativeBySku.get(sku) || []).filter(order => order.date >= start && order.date <= end
+      && srOrderInScope(order, scope) && srContextMatch(order) && (!classification || srClass(order) === classification));
+    if (rows.length) return srMetrics(rows, false);
+    return {units:classification === 'stock' && cxStock(sku)?.salesCoverage?.coverage60 === true ? 0 : null,
+      upper:null, amount:null, lines:0};
+  };
+
+  const buildSalesRows = srSalesRows;
+  srSalesRows = function (orders = sxOrders()) {
+    if (!renderCache) return buildSalesRows.call(this, orders);
+    const {platform, stockScope} = cxState.sales;
+    const key = JSON.stringify([platform, stockScope, sxState.chartPlatform, sxState.store, sxState.stockClass,
+      ldState.filters.store, srState.sort, srState.direction]);
+    const rollups = once(renderCache.rollups, orders, () => new Map());
+    return once(rollups, key, () => buildSalesRows.call(this, orders));
+  };
+
+  function cancelRankFrames() {
+    if (rankFrame !== null) cancelAnimationFrame(rankFrame);
+    if (renderFrame !== null) cancelAnimationFrame(renderFrame);
+    rankFrame = renderFrame = null;
+  }
+
+  function rankMarkFor(sku) {
+    const marks = cxEl('cxSalesBody')?.querySelectorAll('.sp-rank [data-sx-top-sku]') || [];
+    return Array.from(marks).find(mark => mark.dataset.sxTopSku === sku);
+  }
+
+  const renderSales = cxRenderSales;
+  cxRenderSales = function () {
+    if (renderCache) return renderSales.apply(this, arguments);
+    const action = pendingRank;
+    pendingRank = null;
+    cancelRankFrames();
+    const mark = action && rankMarkFor(action.sku);
+    const position = mark?.closest('.bi-rank-row')?.getBoundingClientRect().top;
+    renderCache = {periods:new Map(), orders:new Map(), rollups:new Map(), nativeBySku:null};
+    try {
+      return renderSales.apply(this, arguments);
+    } finally {
+      renderCache = null;
+      const replacement = action && rankMarkFor(action.sku);
+      if (replacement) {
+        const row = replacement.closest('.bi-rank-row');
+        const delta = row.getBoundingClientRect().top - position;
+        if (Number.isFinite(delta) && Math.abs(delta) > 1) window.scrollBy({top:delta, behavior:'instant'});
+        if (action.keyboard) replacement.focus({preventScroll:true});
+      }
+    }
+  };
+
+  window.addEventListener('click', event => {
+    const mark = event.target.closest?.('#cxSalesBody .sp-rank [data-sx-top-sku]');
+    if (!mark || cxState.view !== 'sales') return;
+    const rank = mark.closest('.sp-rank');
+    const sku = mark.dataset.sxTopSku;
+    if (!sku || !rank) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const selected = cxState.sales.sku === sku ? '' : sku;
+    cxState.sales.sku = selected;
+    cxState.sales.page = cxState.sales.orderPage = 0;
+    rank.classList.toggle('has-sku-selection', Boolean(selected));
+    for (const button of rank.querySelectorAll('[data-sx-top-sku]')) {
+      const active = selected === button.dataset.sxTopSku;
+      const row = button.closest('.bi-rank-row');
+      row.classList.toggle('is-selected', active);
+      row.classList.toggle('is-muted', Boolean(selected) && !active);
+      button.setAttribute('aria-pressed', String(active));
+    }
+
+    pendingRank = {sku, keyboard:event.detail === 0};
+    cancelRankFrames();
+    // Give the selected state a frame to paint before recalculating the linked charts.
+    rankFrame = requestAnimationFrame(() => {
+      rankFrame = null;
+      renderFrame = requestAnimationFrame(() => {
+        renderFrame = null;
+        if (cxState.view === 'sales') sxRefresh();
+        else pendingRank = null;
+      });
+    });
+  }, true);
+})();
+
+</script>

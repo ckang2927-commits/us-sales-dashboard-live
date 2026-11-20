@@ -95,6 +95,20 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
 @media(max-width:920px){.overview-grid{grid-template-columns:1fr}}
 @media(max-width:690px){.stock-grid,.candidate-chart,.review-panel .review-links{grid-template-columns:1fr}.candidate-chart{gap:11px}.candidate-focus{margin:0 0 6px}.trend-panel .section-head{flex-wrap:wrap;row-gap:8px}}
 @media(max-width:460px){.chart-link{font-size:11px}#salesTrend{height:175px}.trend-focus{column-gap:8px}.trend-focus input{width:90px}.table-foot{flex-wrap:wrap}.channel-panel .channel{padding:9px 0}}
+
+@media (hover: hover) and (pointer: fine) {
+  .scatter-mark {transition: transform 130ms ease-out;}
+  .scatter-mark:hover {transform: translate(-50%,50%) scale(1.15);}
+  :is(.stock-row, .channel) {
+    border-radius: 4px;
+    transition: transform 130ms ease-out, background-color 130ms ease-out;
+  }
+  :is(.stock-row, .channel):hover {transform: scale(1.018);background-color: #f0f5fc;}
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.stock-row, .channel, .scatter-mark) {transition: none;}
+}
+
 </style>
 </head>
 <body>
@@ -208,7 +222,7 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
     const slot = {metric:'amountCents',channel:'total'};
     const dayCount = periods[0].days.length;
     dayControl.max = dayCount;
-    let hoveredDay = dayCount - 1;
+    let hoveredDay = dayCount - 1, hoveringTrend = false;
     const points = period => period.days.map(row => slot.channel === 'total' ? row.total : row.platforms[slot.channel]);
     get('trendDates').textContent = '各期按第几天对齐 · ' + periods.map(period =>
       shortDate(period.start)+'–'+shortDate(period.end)).join(' 对比 ');
@@ -275,7 +289,7 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
         ctx.stroke();
         ctx.setLineDash([]);
         ctx.fillStyle = colors[i];
-        ctx.beginPath(); ctx.arc(focus,y(values[hoveredDay]),4,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(focus,y(values[hoveredDay]),hoveringTrend ? 6 : 4,0,Math.PI*2); ctx.fill();
         ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.15; ctx.stroke();
       }
     }
@@ -293,10 +307,12 @@ td a{font-weight:700}.table-foot{display:flex;align-items:center;justify-content
       const left = slot.metric === 'amountCents' ? 51 : 35;
       const segment = (event.clientX - rect.left - left) / (rect.width - left - 13);
       const next = Math.max(0,Math.min(dayCount-1,Math.round(segment * (dayCount-1))));
-      if (next !== hoveredDay) {hoveredDay = next;draw();}
+      const mouse = event.pointerType === "mouse";
+      if (next !== hoveredDay || mouse !== hoveringTrend) {hoveredDay = next;hoveringTrend = mouse;draw();}
     }
     chart.addEventListener('pointermove', event => {if (event.pointerType === 'mouse') pointNear(event);});
     chart.addEventListener('pointerdown',pointNear);
+    chart.addEventListener('pointerleave', () => {if (hoveringTrend) {hoveringTrend = false;draw();}});
     new ResizeObserver(draw).observe(chart);
     draw();
   }

@@ -1,7 +1,7 @@
 {
   "schema": "complete-html-gzip-parts.v1",
   "title": "美国站经营数据看板",
-  "version": "2026.11.20-inventory-service-5ae0d5b01859-fast-4a6b6e602269",
+  "version": "2026.11.20-chart-interactions-f5e9f3e5a366",
   "generatedAt": "2026-11-20T03:26:00.484979+00:00",
   "compression": "gzip",
   "htmlBytes": 198682854,
@@ -601,10 +601,15 @@
         "url": "boss-extension-7cc411fa22680c358fd933c0.txt",
         "bytes": 381639,
         "sha256": "7cc411fa22680c358fd933c0a2ca64823db1c1a56713dd73fb8e747bb5532040"
+      },
+      {
+        "url": "boss-extension-e0c5d94dc41fb12b98da620c.txt",
+        "bytes": 17793,
+        "sha256": "e0c5d94dc41fb12b98da620cfbb66136cc630a0cc2cac973981ac7de9ca87fb5"
       }
     ],
-    "bytes": 95446669,
-    "sha256": "209bea875e6f38df64a426e86c69ef02c2244e37647d5d27bdeb351ef33b1199",
+    "bytes": 95464462,
+    "sha256": "28f246c0354c1caebba637cef3db0b9eeffedbec57d3cf0e5a2901ec91aa3912",
     "insertAt": 198682839,
     "readySelectors": [
       "#raPane",
@@ -638,8 +643,8 @@
     ],
     "transport": {
       "compression": "gzip",
-      "bytes": 5871954,
-      "sha256": "4a6b6e602269e1c1aad66128fc29a60aac0ac7e49519c1913569dcc92a283e21",
+      "bytes": 5876801,
+      "sha256": "430c4d2ffe70abf271f4273201029572581b5ccd15db14e41b25037304563101",
       "parts": [
         {
           "url": "dashboard-fast-extension-eaee79163b11bc2651b59fa7.bin",
@@ -682,15 +687,15 @@
           "sha256": "dd86167d731a376cb3cd4f708dfc5d9d078c410bd1c7f219e807281556dd995e"
         },
         {
-          "url": "dashboard-fast-extension-bc0cc8cc06b57775364eba47.bin",
-          "bytes": 104786,
-          "sha256": "bc0cc8cc06b57775364eba47cc5cc327544b18da14c3f539c7a70e612acfb055"
+          "url": "dashboard-fast-extension-30ce00f194c3cab1c541035c.bin",
+          "bytes": 109633,
+          "sha256": "30ce00f194c3cab1c541035c839a9b3c4e36660ba6fe733c5dae6c66b01c4f09"
         }
       ]
     }
   },
-  "renderedHtmlBytes": 294130480,
-  "renderedHtmlSha256": "5ae0d5b01859b4b632b9b331afb85d2bedf15346e744802a8ad20864d9be0dfc",
+  "renderedHtmlBytes": 294148273,
+  "renderedHtmlSha256": "f5e9f3e5a366b271f41457376b8d1f2fc4fb20aa3f933716d436b251d5b5114b",
   "baseEdits": [
     {
       "start": 198354983,
