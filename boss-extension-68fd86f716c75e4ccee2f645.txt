@@ -1,0 +1,642 @@
+
+<style data-chart-item-release="hover.css">
+#dashboard-chart-tooltip {
+  position: fixed;
+  z-index: 2147483646;
+  inset: 0 auto auto 0;
+  max-width: min(280px, calc(100vw - 16px));
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: #233952;
+  color: #fff;
+  box-shadow: 0 2px 8px #23395238;
+  font: 500 12px/1.5 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+#dashboard-chart-tooltip[hidden] {display: none;}
+
+:is(.sx-pie-ring, .ra-donut, .lb-donut-layout, .cx-donut) :is(path,circle),
+:is(.ra-point, .ld-scatter-point, .nm-scatter circle[data-nm-sku], .ld-contribution-column > rect) {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: scale 120ms ease-out, filter 120ms ease-out;
+}
+
+:is(.sx-pie-ring, .ra-donut, .lb-donut-layout, .cx-donut) :is(path,circle)[data-chart-hover] {scale: 1.05;}
+:is(.ra-point, .ld-scatter-point, .nm-scatter circle[data-nm-sku])[data-chart-hover] {scale: 1.18;}
+.ld-contribution-column[data-chart-hover] > rect {scale: 1.04 1;}
+[data-chart-hover] {filter: brightness(1.06);}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.sx-pie-ring, .ra-donut, .lb-donut-layout, .cx-donut) :is(path,circle),
+  :is(.ra-point, .ld-scatter-point, .nm-scatter circle[data-nm-sku], .ld-contribution-column > rect) {transition: none;}
+}
+
+</style>
+
+<style data-chart-item-release="chart_rows.css">
+/* The hover attribute is set on an individual item by the shared tooltip handler. */
+:is(.bi-rank .bi-rank-row, button.cx-bar, button.bi-bar-row, button.bx-row,
+    .ld-bars > button[data-ld-dimension], .ov-store-list > button[data-ov-store],
+    button.ra-bar, button.ra-reason-row, button.ri-bar, button.wl-status-bar,
+    button.rw-region[data-rw-region], button.rw-warehouse[data-rw-warehouse],
+    .rf-store-bars > button[data-rf-store], .sx-pie-legend > button[data-sx-pick],
+    button.ra-pie-key, .lb-donut-layout button[data-bi-key],
+    button.matrix-cell[data-decision-cell], button.warehouse-card[data-warehouse],
+    button.sr-class-pick[data-sr-class], button.ov-refund-card[data-fa-refund]) {
+  position: relative;
+  transform-origin: center;
+  transition: transform 130ms ease-out, background-color 130ms ease-out, opacity 130ms ease-out;
+}
+
+[data-chart-row-hover] {
+  z-index: 1;
+  transform: scale(1.018);
+  background-color: #f0f5fc;
+}
+
+:is(button.cx-bar, button.bi-bar-row, button.bx-row, .ld-bars > button[data-ld-dimension],
+    .ov-store-list > button[data-ov-store], button.ra-bar, button.ra-reason-row, button.ri-bar,
+    button.wl-status-bar, .rf-store-bars > button[data-rf-store],
+    button.matrix-cell[data-decision-cell], button.warehouse-card[data-warehouse],
+    button.sr-class-pick[data-sr-class])[aria-pressed="true"] {
+  background-color: #eaf1fb;
+  border-color: transparent;
+  box-shadow: inset 0 0 0 1px #a4b8d3;
+}
+
+.bi-rank .bi-rank-row.is-selected {
+  border-color: transparent;
+  background: #eaf1fb;
+  box-shadow: inset 0 0 0 1px #a4b8d3;
+}
+
+.bi-rank .bi-rank-row > :is(.bi-rank-sku, .bi-rank-mark) {outline: 0;}
+
+.bi-rank .bi-rank-row > .bi-rank-mark[aria-pressed="true"] {
+  border-color: transparent !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.bi-rank .bi-rank-row:has(> :focus-visible) {box-shadow: inset 0 0 0 2px #5079a7;}
+.bi-rank .bi-rank-row > .bi-rank-sku:focus-visible {text-decoration: underline;}
+
+#cxSalesBody .cx-chart,
+#raPane .ra-charts,
+#riResidualPane :is(.ri-charts, .ri-age-chart),
+:is(#biWarehouse, #biAudit, #biPieces) {overflow-anchor: none;}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-chart-row-hover] {transition: none;}
+}
+
+</style>
+
+<style data-chart-item-release="trend.css">
+/* The trend selection is drawn on the chosen mark, inside the existing plot. */
+.sx-trend .sx-trend-bucket:is(:hover, :focus, .is-selected) > .sx-trend-hit {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.sx-trend .sx-trend-bucket:focus-visible > .sx-trend-hit {
+  stroke: #839ab5;
+  stroke-dasharray: 3 3;
+}
+
+.sx-trend .sx-trend-bucket:hover .sx-trend-bar {
+  opacity: 1;
+}
+
+.sx-trend.has-highlight .sx-trend-bucket:hover .sx-trend-bar.is-muted {
+  opacity: .25;
+}
+
+.sx-trend :is(.sx-trend-bar, .sx-trend-point)[data-trend-picked] {
+  transform-box: fill-box;
+  transform-origin: center;
+  stroke: #294d70;
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  opacity: 1;
+}
+
+.sx-trend .sx-trend-bar[data-trend-picked] { scale: 1.045 1; }
+.sx-trend .sx-trend-point[data-trend-picked] { scale: 1.16; }
+
+</style>
+
+<style data-chart-item-release="inventory.css">
+/* 库存项使用已有单一边框表示选中，筛选时维持滚动位置。 */
+#cxStockBody :is(.rw-regions, .rw-detail-charts) {overflow-anchor: none;}
+
+#cxStockBody :is(button.rw-region[data-rw-region], button.rw-warehouse[data-rw-warehouse],
+                 button.cx-bar[data-cx-stock-age], button.wl-status-bar[data-wl-status])[aria-pressed="true"] {
+  background: #eaf1fb;
+  border-color: #8fa7c6;
+  box-shadow: none;
+}
+
+#cxStockBody :is(button.rw-region[data-rw-region], button.rw-warehouse[data-rw-warehouse],
+                 button.cx-bar[data-cx-stock-age], button.wl-status-bar[data-wl-status]):focus-visible {
+  outline: 2px solid #5079a7;
+  outline-offset: -2px;
+  border-color: transparent;
+}
+
+#cxStockBody :is(button.rw-region[data-rw-region], button.rw-warehouse[data-rw-warehouse],
+                 button.wl-status-bar[data-wl-status])[data-chart-row-hover] {opacity: 1;}
+
+</style>
+
+<script data-chart-item-release="inventory.js">
+/* 从当前按钮读取已展示的仓区、库龄和状态数据，随看板筛选自动更新。 */
+(() => {
+  'use strict';
+
+  const clean = value => String(value ?? '').replace(/\s+/g, ' ').trim();
+  const text = node => clean(node?.textContent);
+  const directText = node => clean(Array.from(node?.childNodes || [])
+    .filter(child => child.nodeType === 3).map(child => child.textContent).join(' '));
+  const join = parts => parts.filter(Boolean).join(' · ');
+  const units = value => /^[≥≤~\d.,–-]+$/.test(value) ? value + '套' : value;
+
+  window.dashboardInventoryChartLabel = function(target) {
+    if (!target?.closest('#cxStockBody')) return '';
+
+    if (target.matches('button.rw-region[data-rw-region]')) {
+      const title = text(target.querySelector(':is(.rw-region-title, .raf-region-heading) > b'));
+      const metrics = Array.from(target.querySelectorAll('.rw-region-metrics > span'), metric => {
+        const label = text(metric.querySelector('small'));
+        const value = text(metric.querySelector('b'));
+        if (label === '点击切换地区') return label;
+        if (value === '—') return '';
+        return label + ' ' + (label === 'SKU款数' ? value + '款' : units(value));
+      });
+      return join([title, ...metrics]);
+    }
+
+    if (target.matches('button.rw-warehouse[data-rw-warehouse]')) {
+      const title = text(target.firstElementChild?.querySelector('b'));
+      const columns = target.closest('.rw-warehouses')?.querySelector('.rw-wh-header')?.children || [];
+      const metrics = Array.from(target.children).slice(1).map((metric, index) => {
+        const label = text(columns[index + 1]);
+        const value = text(metric.querySelector('b')) || directText(metric);
+        const pending = text(metric.querySelector('.rw-pending'));
+        if (!label || !value) return '';
+        const amount = label === 'SKU款数' ? value : units(value);
+        return label + ' ' + amount + (pending ? '（' + pending + '）' : '');
+      });
+      return join([title, ...metrics]);
+    }
+
+    if (target.matches('button.cx-bar[data-cx-stock-age]')) {
+      return join([text(target.querySelector('.cx-bar-label')),
+        '物理齐套下界 ' + units(text(target.querySelector('.cx-bar-value')))]);
+    }
+
+    if (target.matches('button.wl-status-bar[data-wl-status]')) {
+      const label = target.firstElementChild;
+      const value = directText(target.lastElementChild);
+      return join([directText(label), units(value), text(label?.querySelector('small'))]);
+    }
+
+    return '';
+  };
+})();
+
+</script>
+
+<script data-chart-item-release="hover.js">
+/* Hover attaches to a single quantitative mark or row. */
+(() => {
+  'use strict';
+  const rank = '.bi-rank-row';
+  const warehouse = 'button.rw-warehouse[data-rw-warehouse]';
+  const region = 'button.rw-region[data-rw-region]';
+  const store = '.ov-store-list > button[data-ov-store]';
+  const simpleRows = [
+    'button.cx-bar', 'button.bi-bar-row', 'button.bx-row', '.ld-bars > button[data-ld-dimension]',
+    'button.ra-bar', 'button.ra-reason-row', 'button.ri-bar', 'button.wl-status-bar',
+    '.rf-store-bars > button[data-rf-store]', '.sx-pie-legend > button[data-sx-pick]',
+    'button.ra-pie-key', '.lb-donut-layout button[data-bi-key]',
+    'button.matrix-cell[data-decision-cell]', 'button.warehouse-card[data-warehouse]',
+    'button.sr-class-pick[data-sr-class]', 'button.ov-refund-card[data-fa-refund]',
+  ].join(',');
+  const rowTargets = [rank, warehouse, region, store, simpleRows].join(',');
+  const svgTargets = [
+    '.sx-pie-ring path[data-sx-pick]', '.ra-donut circle[data-ra-pick]',
+    '.lb-donut-layout path[data-bi-key]', '.cx-donut [role="button"]',
+    '.ra-trend-hit', '.ra-point[data-ra-pick]', '.ld-contribution-column',
+    '.ld-scatter-point', '.nm-scatter circle[data-nm-sku]',
+  ].join(',');
+  const targets = rowTargets + ',' + svgTargets;
+  const tooltip = document.createElement('div');
+  tooltip.id = 'dashboard-chart-tooltip';
+  tooltip.setAttribute('role', 'tooltip');
+  tooltip.hidden = true;
+  const tooltipText = document.createTextNode('');
+  tooltip.append(tooltipText);
+  document.body.append(tooltip);
+
+  const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+  const field = (element, selector) => clean(element.querySelector(selector)?.textContent);
+  const labelParts = (...items) => items.filter(Boolean).join(' · ');
+  const titleOf = node => node.querySelector(':scope > title');
+  const keySelector = (name, value) => '[' + name + '=' + CSS.escape(value) + ']';
+  let active = null, animation = 0, pointer = null;
+
+  function targetFor(leaf) {
+    if (leaf?.closest?.('.sx-trend')) return null;
+    return leaf?.closest?.(targets) || null;
+  }
+
+  function legendText(legend, amountSelector) {
+    const amount = legend.querySelector(amountSelector);
+    const first = [...(amount?.childNodes || [])].filter(node => node.nodeType === 3).map(node => clean(node.textContent)).join(' ');
+    return labelParts(field(legend, 'span'), field(legend, amountSelector + ' small'), first);
+  }
+
+  function firstText(node) {
+    return clean([...node.childNodes].filter(child => child.nodeType === 3).map(child => child.textContent).join(' '));
+  }
+
+  function rowText(target) {
+    if (target.matches(rank)) {
+      const value = field(target, '.bi-rank-value');
+      return labelParts(field(target, '.bi-rank-sku'), value && '销量 ' + value);
+    }
+    if (target.matches(store)) {
+      const platformShare = field(target, '.ov-share-platform');
+      const rangeShare = field(target, '.ov-share-range');
+      return labelParts(field(target, '.ov-store-name'), field(target, '.ov-store-amount'),
+        platformShare && '占本平台 ' + platformShare, rangeShare && '占本范围 ' + rangeShare);
+    }
+    if (target.matches('.sx-pie-legend > button')) return legendText(target, '.sx-pie-number');
+    if (target.matches('.ra-pie-key')) return legendText(target, 'b');
+    const inventoryLabel = window.dashboardInventoryChartLabel?.(target);
+    if (inventoryLabel) return inventoryLabel;
+    if (target.matches('.ra-reason-row')) return clean(target.getAttribute('aria-label'));
+    if (target.matches('.ri-bar')) return labelParts(field(target, ':scope > span:first-child'), field(target, ':scope > strong'));
+    if (target.matches('.matrix-cell')) return clean(target.title);
+    if (target.matches('.ov-refund-card')) return labelParts(field(target, ':scope > span'), field(target, ':scope > strong'));
+    if (!target.matches(simpleRows)) return '';
+    return labelParts(...[...target.children]
+      .filter(node => !node.matches('[class*="track"], svg') && !node.hasAttribute('aria-hidden'))
+      .slice(0, 5).map(node => labelParts(firstText(node) || field(node, 'b'), field(node, 'small'))));
+  }
+
+  function markFor(target) {
+    if (target.matches('.ra-trend-hit')) {
+      return target.ownerSVGElement?.querySelector('.ra-point' + keySelector('data-ra-value', target.dataset.raValue)) || target;
+    }
+    return target;
+  }
+
+  function markText(mark) {
+    if (mark.matches('.ra-donut circle[data-ra-value]')) {
+      const legend = mark.closest('.ra-donut-layout')?.querySelector('.ra-pie-key' + keySelector('data-ra-value', mark.dataset.raValue));
+      if (legend) return legendText(legend, 'b');
+    }
+    return clean(mark.getAttribute('aria-label') || titleOf(mark)?.textContent);
+  }
+
+  function hide() {
+    if (!active) return;
+    cancelAnimationFrame(animation);
+    animation = 0;
+    active.mark.removeAttribute('data-chart-hover');
+    active.mark.removeAttribute('data-chart-row-hover');
+    for (const restore of active.restore) restore();
+    tooltip.hidden = true;
+    active = null;
+    pointer = null;
+  }
+
+  function silenceNative(node, restore) {
+    const attribute = node.getAttribute('title');
+    if (attribute) {
+      node.removeAttribute('title');
+      restore.push(() => node.setAttribute('title', attribute));
+    }
+    const title = titleOf(node)?.firstChild;
+    if (title?.nodeType === 3) {
+      const value = title.nodeValue;
+      title.nodeValue = '';
+      restore.push(() => { title.nodeValue = value; });
+    }
+  }
+
+  function positionTooltip() {
+    animation = 0;
+    if (!active?.target.isConnected) return hide();
+    const anchor = pointer || active.target.getBoundingClientRect();
+    active.size ||= tooltip.getBoundingClientRect();
+    const {width, height} = active.size;
+    const view = document.documentElement;
+    const x = pointer ? anchor.x + 14 : anchor.left;
+    const y = pointer ? anchor.y + 16 : anchor.bottom + 8;
+    const left = Math.max(8, Math.min(x, view.clientWidth - width - 8));
+    const alternative = (pointer ? anchor.y : anchor.top) - height - 12;
+    const top = Math.max(8, y + height + 8 <= view.clientHeight ? y : alternative);
+    tooltip.style.transform = `translate3d(${Math.round(left)}px,${Math.round(top)}px,0)`;
+  }
+
+  function move(point) {
+    pointer = point;
+    if (!animation) animation = requestAnimationFrame(positionTooltip);
+  }
+
+  function show(target, point, leaf) {
+    const origin = point ? 'pointer' : 'focus';
+    if (active?.target === target && active.origin === origin) return move(point);
+    hide();
+    const svg = Boolean(target.ownerSVGElement);
+    const mark = svg ? markFor(target) : target;
+    let label = svg ? markText(mark) : rowText(target);
+    label ||= clean(mark.getAttribute('data-chart-summary') || mark.title);
+    label = label.replace(/\s*[，；。]?\s*(?:点击(?:筛选|切换|查看)|再次点击|再点取消).*/,'');
+    if (!label) return;
+    const restore = [];
+    silenceNative(mark, restore);
+    const titledLeaf = leaf.closest?.('[title]');
+    if (titledLeaf && titledLeaf !== mark && target.contains(titledLeaf)) silenceNative(titledLeaf, restore);
+    if (origin === 'focus' && !leaf.hasAttribute('aria-describedby')) {
+      leaf.setAttribute('aria-describedby', tooltip.id);
+      restore.push(() => leaf.removeAttribute('aria-describedby'));
+    }
+    active = {target, origin, mark, restore};
+    mark.setAttribute(svg ? 'data-chart-hover' : 'data-chart-row-hover', '');
+    tooltipText.nodeValue = label.length > 108 ? label.slice(0, 106) + '…' : label;
+    tooltip.hidden = false;
+    move(point);
+  }
+
+  const fine = event => event.pointerType === 'mouse' || event.pointerType === 'pen';
+  const pointFor = event => ({x:event.clientX, y:event.clientY});
+  document.addEventListener('pointerover', event => {
+    if (!fine(event)) return;
+    const item = targetFor(event.target);
+    if (item) show(item, pointFor(event), event.target);
+  }, {passive:true});
+  document.addEventListener('pointermove', event => {
+    if (active?.origin === 'pointer' && fine(event)) move(pointFor(event));
+  }, {passive:true});
+  document.addEventListener('pointerout', event => {
+    if (active?.origin === 'pointer' && fine(event) && targetFor(event.relatedTarget) !== active.target) hide();
+  }, {passive:true});
+  document.addEventListener('focusin', event => {
+    const item = targetFor(event.target);
+    if (item && event.target.matches(':focus-visible')) show(item, null, event.target);
+  });
+  document.addEventListener('focusout', () => { if (active?.origin === 'focus') hide(); });
+  document.addEventListener('pointerdown', hide, {capture:true, passive:true});
+  document.addEventListener('click', hide, {capture:true, passive:true});
+  document.addEventListener('scroll', hide, {capture:true, passive:true});
+  document.addEventListener('keydown', event => { if (['Escape','Enter',' '].includes(event.key)) hide(); });
+  window.addEventListener('blur', hide);
+  window.addEventListener('resize', hide);
+})();
+
+</script>
+
+<script data-chart-item-release="trend.js">
+/* Preserve the native date and platform filters; decorate one explicitly selected mark. */
+(() => {
+  'use strict';
+  const markSelector = '.sx-trend-bar[data-sx-series], .sx-trend-point[data-sx-series]';
+  const targetSelector = `${markSelector}, .sx-trend-segment-label[data-sx-series], .sx-trend-point-label[data-sx-series]`;
+  const bucketSelector = '[data-sx-bucket], [data-sx-detail-bucket]';
+  const picked = {sales: null, detail: null};
+  const revision = {sales: 0, detail: 0};
+
+  function currentContext(detail) {
+    return [sxState.start, sxState.end, sxState.dataset, detail ? cxState.detail.sku : 'sales'].join('|');
+  }
+
+  function isSelected(item, detail) {
+    if (item.context !== currentContext(detail)) return false;
+    return (detail ? sxState.detailBucket : sxState.bucket) === item.bucket;
+  }
+
+  function decorate(root, scope) {
+    if (!root) return;
+    // The date group keeps its aria-label and keyboard behavior without a large native tooltip.
+    root.querySelectorAll('.sx-trend-svg .sx-trend-bucket > title').forEach(title => title.remove());
+    const detail = scope === 'detail';
+    const item = picked[scope];
+    root.querySelector('[data-trend-picked]')?.removeAttribute('data-trend-picked');
+    const segment = detail ? null : sgState.segment;
+    if (segment) {
+      // The existing week and month filter handles the click before other listeners.
+      const segmentSelector = '[data-sx-bucket="' + CSS.escape(segment.bucket)
+        + '"][data-sx-series="' + CSS.escape(segment.platform) + '"]';
+      root.querySelector('.sx-trend-bar' + segmentSelector + ', .sx-trend-point' + segmentSelector)
+        ?.setAttribute('data-trend-picked', '');
+      picked[scope] = null;
+      return;
+    }
+    if (!item || !isSelected(item, detail)) {
+      picked[scope] = null;
+      return;
+    }
+
+    const chart = root.querySelector(`.sx-trend[data-sx-trend-grain="${CSS.escape(item.grain)}"][data-sx-render-mode="${CSS.escape(item.mode)}"]`);
+    const attr = detail ? 'data-sx-detail-bucket' : 'data-sx-bucket';
+    const shape = chart?.querySelector(`${item.shape}[${attr}="${CSS.escape(item.bucket)}"][data-sx-series="${CSS.escape(item.series)}"]`);
+    if (shape) shape.setAttribute('data-trend-picked', '');
+    else picked[scope] = null;
+  }
+
+  window.addEventListener('click', event => {
+    const action = event.target.closest?.(bucketSelector);
+    const chart = action?.closest('.sx-trend');
+    if (!chart || !action.ownerSVGElement) return;
+    const detail = action.hasAttribute('data-sx-detail-bucket');
+    const scope = detail ? 'detail' : 'sales';
+    const root = chart.closest(detail ? '#cxDetailBody' : '#cxSalesBody');
+    if (!root) return;
+    const mark = event.target.closest(targetSelector);
+    const bucket = detail ? action.dataset.sxDetailBucket : action.dataset.sxBucket;
+    const grain = chart.dataset.sxTrendGrain;
+    const mode = chart.dataset.sxRenderMode;
+    const bar = !!mark?.matches('.sx-trend-bar, .sx-trend-segment-label');
+    picked[scope] = mark && bucket && grain && mode ? {
+      shape: bar ? '.sx-trend-bar' : '.sx-trend-point', bucket, grain, mode, series: mark.dataset.sxSeries,
+      context: currentContext(detail),
+    } : null;
+    // Let the existing mark or date handler toggle its filter first.
+    const before = revision[scope];
+    queueMicrotask(() => {
+      if (before === revision[scope]) decorate(root, scope);
+    });
+  }, true);
+
+  const renderSales = cxRenderSales;
+  cxRenderSales = function () {
+    const result = renderSales.apply(this, arguments);
+    revision.sales++;
+    decorate(document.getElementById('cxSalesBody'), 'sales');
+    return result;
+  };
+
+  const renderSku = cxRenderSku;
+  cxRenderSku = function () {
+    const result = renderSku.apply(this, arguments);
+    revision.detail++;
+    decorate(document.getElementById('cxDetailBody'), 'detail');
+    return result;
+  };
+
+  decorate(document.getElementById('cxSalesBody'), 'sales');
+  decorate(document.getElementById('cxDetailBody'), 'detail');
+})();
+
+</script>
+
+<script data-chart-item-release="sales_click.js">
+/* Preserve the original sales filters and avoid replaying chart entrances on selection. */
+(() => {
+  'use strict';
+
+  cancelAnimationFrame(biMotionFrame);
+  for (const animation of document.getAnimations?.() || []) {
+    if (animation.id === 'bi-chart-motion') animation.cancel();
+  }
+  biCaptureMotion = () => new Map();
+  biScheduleMotion = () => {};
+
+  let renderCache = null;
+  let pendingRank = null;
+  let rankFrame = null;
+  let renderFrame = null;
+
+  function once(cache, key, read) {
+    if (!cache.has(key)) cache.set(key, read());
+    return cache.get(key);
+  }
+
+  function periodKey() {
+    return [sxState.dataset, sxState.start, sxState.end, cxState.sales.stockScope];
+  }
+
+  const readPeriodOrders = cxPeriodOrders;
+  cxPeriodOrders = function () {
+    if (!renderCache) return readPeriodOrders.apply(this, arguments);
+    return once(renderCache.periods, JSON.stringify(periodKey()), () => readPeriodOrders.apply(this, arguments));
+  };
+
+  const readSalesOrders = sxOrders;
+  sxOrders = function (options = {}) {
+    if (!renderCache) return readSalesOrders.apply(this, arguments);
+    const {platform, sku, search} = cxState.sales;
+    const {chartPlatform, store, stockClass, bucket, grain} = sxState;
+    const key = JSON.stringify([periodKey(), platform, sku, search, chartPlatform, store,
+      stockClass, bucket, grain, bxState.history, ldState.filters,
+      Object.keys(options).sort().map(name => [name, options[name]])]);
+    return once(renderCache.orders, key, () => readSalesOrders.apply(this, arguments));
+  };
+
+  const readNativeWindow = srNativeWindow;
+  srNativeWindow = function (sku, days, scope = cxState.sales.stockScope, classification = '') {
+    if (!renderCache) return readNativeWindow.apply(this, arguments);
+    if (!renderCache.nativeBySku) {
+      renderCache.nativeBySku = new Map();
+      for (const order of pcRuntime.orders) {
+        if (!renderCache.nativeBySku.has(order.sku)) renderCache.nativeBySku.set(order.sku, []);
+        renderCache.nativeBySku.get(order.sku).push(order);
+      }
+    }
+    const end = srData.meta.commonNativeEnd;
+    const start = sxAdd(end, 1 - days);
+    const rows = (renderCache.nativeBySku.get(sku) || []).filter(order => order.date >= start && order.date <= end
+      && srOrderInScope(order, scope) && srContextMatch(order) && (!classification || srClass(order) === classification));
+    if (rows.length) return srMetrics(rows, false);
+    return {units:classification === 'stock' && cxStock(sku)?.salesCoverage?.coverage60 === true ? 0 : null,
+      upper:null, amount:null, lines:0};
+  };
+
+  const buildSalesRows = srSalesRows;
+  srSalesRows = function (orders = sxOrders()) {
+    if (!renderCache) return buildSalesRows.call(this, orders);
+    const {platform, stockScope} = cxState.sales;
+    const key = JSON.stringify([platform, stockScope, sxState.chartPlatform, sxState.store, sxState.stockClass,
+      ldState.filters.store, srState.sort, srState.direction]);
+    const rollups = once(renderCache.rollups, orders, () => new Map());
+    return once(rollups, key, () => buildSalesRows.call(this, orders));
+  };
+
+  function cancelRankFrames() {
+    if (rankFrame !== null) cancelAnimationFrame(rankFrame);
+    if (renderFrame !== null) cancelAnimationFrame(renderFrame);
+    rankFrame = renderFrame = null;
+  }
+
+  function rankMarkFor(sku) {
+    const marks = cxEl('cxSalesBody')?.querySelectorAll('.sp-rank [data-sx-top-sku]') || [];
+    return Array.from(marks).find(mark => mark.dataset.sxTopSku === sku);
+  }
+
+  const renderSales = cxRenderSales;
+  cxRenderSales = function () {
+    if (renderCache) return renderSales.apply(this, arguments);
+    const action = pendingRank;
+    pendingRank = null;
+    cancelRankFrames();
+    const mark = action && rankMarkFor(action.sku);
+    const position = mark?.closest('.bi-rank-row')?.getBoundingClientRect().top;
+    renderCache = {periods:new Map(), orders:new Map(), rollups:new Map(), nativeBySku:null};
+    try {
+      return renderSales.apply(this, arguments);
+    } finally {
+      renderCache = null;
+      const replacement = action && rankMarkFor(action.sku);
+      if (replacement) {
+        const row = replacement.closest('.bi-rank-row');
+        const delta = row.getBoundingClientRect().top - position;
+        if (Number.isFinite(delta) && Math.abs(delta) > 1) window.scrollBy({top:delta, behavior:'instant'});
+        if (action.keyboard) replacement.focus({preventScroll:true});
+      }
+    }
+  };
+
+  window.addEventListener('click', event => {
+    const mark = event.target.closest?.('#cxSalesBody .sp-rank [data-sx-top-sku]');
+    if (!mark || cxState.view !== 'sales') return;
+    const rank = mark.closest('.sp-rank');
+    const sku = mark.dataset.sxTopSku;
+    if (!sku || !rank) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const selected = cxState.sales.sku === sku ? '' : sku;
+    cxState.sales.sku = selected;
+    cxState.sales.page = cxState.sales.orderPage = 0;
+    rank.classList.toggle('has-sku-selection', Boolean(selected));
+    for (const button of rank.querySelectorAll('[data-sx-top-sku]')) {
+      const active = selected === button.dataset.sxTopSku;
+      const row = button.closest('.bi-rank-row');
+      row.classList.toggle('is-selected', active);
+      row.classList.toggle('is-muted', Boolean(selected) && !active);
+      button.setAttribute('aria-pressed', String(active));
+    }
+
+    pendingRank = {sku, keyboard:event.detail === 0};
+    cancelRankFrames();
+    // Give the selected state a frame to paint before recalculating the linked charts.
+    rankFrame = requestAnimationFrame(() => {
+      rankFrame = null;
+      renderFrame = requestAnimationFrame(() => {
+        renderFrame = null;
+        if (cxState.view === 'sales') sxRefresh();
+        else pendingRank = null;
+      });
+    });
+  }, true);
+})();
+
+</script>
